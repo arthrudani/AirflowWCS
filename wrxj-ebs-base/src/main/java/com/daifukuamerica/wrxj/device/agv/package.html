@@ -1,0 +1,22 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD><TITLE>AGV Message Handler</TITLE></HEAD>
+<BODY>
+<B>AGV Interface</B>
+<P>This package facilitates message processing from the SAM system.  The main class of interest
+   in this package is the {@link com.daifukuamerica.wrxj.device.agv.AGVController AGVController}. This
+   class handles all of the message traffic between SAM and WarehouseRx, and calls the appropriate parser
+   and formatter.</P><P>An attempt has been made to write this package in a portable manner.  The main item
+   in this package that is not portable is the AGVController.  This is written strictly as a Wrx JMS
+   controller (thread).  All of the logic for message handling here will need to be ported to the
+   architecture of the target system.  In addition, the following interfaces will need to be implemented:
+   {@link com.daifukuamerica.wrxj.device.agv.AGVLogger AGVLogger},
+   {@link com.daifukuamerica.wrxj.device.agv.CMSStatusNotifier CMSStatusNotifier}, and
+   {@link com.daifukuamerica.wrxj.device.agv.AGVDBInterface AGVDBInterface} interfaces.</P><P>The AGVLogger interface
+   is used for logging messages.  WarehouseRx uses custom logging and so this interface is necessary for portability.</P>
+   <P>The CMSStatusNotifier interface is to be used for accessing the system's message service.  For WarehouseRx this is of course JBoss.
+   If there is no message service provider on the target system, a stub implementation will be required.</P><P>The AGVDBInterface
+   interface is necessary to tie into any custom api that may have been written for database operations.  This package also uses its
+   own tables as much as possible for portability.</P>
+</BODY>
+</HTML>

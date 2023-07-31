@@ -1,0 +1,56 @@
+<!-- LOAD MODIFY  -->
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+	<div id="er-store-modal" class="modal fade">
+
+		<div class="modal-dialog modal-lg">
+
+			<div class="modal-content">
+
+				<div class="modal-header">
+
+					<button type="button" class="close" data-dismiss="modal"
+						aria-hidden="true">&times;</button>
+
+					<h4 class="modal-title">Do you want to add these Items?</h4>
+
+				</div>
+
+				<div class="modal-body">
+				
+					<table id="expected-receipts-table" class="table table-striped">
+						<thead>
+							<tr>
+								<th width="40%">Item ID</th>
+								<th width="30%">Quantity</th>
+								<th width="30%">Order ID</th>
+								
+							</tr>
+						</thead>
+						<tbody id="expected-receipt-data">
+						</tbody>
+					</table>
+				
+				<spring:url value="/store/add/expectedReceipt" var="erFormUrl" />
+				<form:form action="${erFormUrl}">
+  					<input type="hidden" name="formExpectedReceiptId" value="">
+				</form:form>
+				
+
+				</div>
+
+				<div class="modal-footer">
+
+					<button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+
+					<button id="confirm-er-add-button" type="button" class="btn btn-primary">Yes</button>
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</div>
+<!-- END LOAD MODIFY  -->

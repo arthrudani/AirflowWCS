@@ -1,0 +1,19 @@
+<div id="settings-none-selected">
+	<div class="row">
+		<div class="col-lg-6">
+			<div class="panel panel-default grey-background-override">
+				<div class="panel-body">
+					<center>
+						<h5>None Selected</h5>
+					</center>
+				</div>
+			</div>
+		</div>
+		<div class="col-lg-6">
+
+			<div id="detail-description">Select a load to begin recovery.</div>
+		</div>
+	</div>
+	<div class="row"></div>
+
+</div>

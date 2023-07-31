@@ -1,0 +1,6 @@
+use [wrxj]
+go
+drop user asrs;
+drop schema asrs;
+drop login asrs;
+go

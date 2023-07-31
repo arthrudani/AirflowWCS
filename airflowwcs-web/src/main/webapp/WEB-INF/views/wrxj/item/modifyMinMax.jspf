@@ -1,0 +1,32 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+	<!-- Item Min/Max MODIFY  -->
+	<div id="minmax-modify-modal" class="modal fade">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					<h4 class="modal-title">Modify Item(s) Min/Max Qty</h4>
+				</div>
+
+				<div class="modal-body">
+					<div class="form-group">
+						<label class="control-label col-sm-2" for="minQuantity">Min Qty:</label>
+						<div class="col-sm-4">
+							<input path="minQty" style="color: Black" class="form-control" id="minQty" placeholder="Min Qty"/>
+						</div>
+						<label class="control-label col-sm-2" for="maxQuantity">Max Qty:</label>
+						<div class="col-sm-4">
+							<input path="maxQty" style="color: Black" class="form-control" id="maxQty" placeholder="Max Qty" />
+						</div>
+					</div>
+				</div>
+
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+					<button id="minmax-modify-button" type="button" class="btn btn-primary">Update</button>
+				</div>
+			</div>
+		</div>
+	</div>

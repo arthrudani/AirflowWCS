@@ -1,0 +1,36 @@
+.timerComponent {
+            display: flex;
+            align-items: center;
+        }
+
+.timeInput {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0 5px;
+        }
+
+.timeInput button {
+            outline: 0;
+            border: none;
+            background: none;
+            color: #3768d7;
+            cursor: pointer;
+
+        }
+
+.timeInput button i {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+.timeInput input {
+            border: 1px solid rgb(192, 192, 192);
+            height: 35px;
+            width: 45px;
+            padding: 0 10px;
+            border-radius: 5px;
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+        }

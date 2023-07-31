@@ -1,0 +1,1020 @@
+SiteEquipment=Warsaw
+
+FrameHeight=675
+FrameWidth=1275
+
+EquipmentLabelX=0
+EquipmentLabelY=0
+
+EquipmentLogo=/graphics/WarehouseRx-DAC.png
+EquipmentLogoX=5,450,450,450,450,450,450,450,450
+EquipmentLogoY=190,65,65,65,65,65,65,65,65
+
+LightTowerPanelHeight=120
+LightTowerPanelWidth=260
+LightTowerPanelRows=6
+LightTowerPanelCols=1
+LightTowerPanelX=10,565,565,565,565,565,565,565,565,
+LightTowerPanelY=350,65,65,65,65,65,65,65,65
+LightTowerPanelShowing=1,1,1,1,1,1,1,1,1
+
+LegendPanelHeight=130
+LegendPanelWidth=260
+LegendPanelRows=7
+LegendPanelCols=1
+LegendPanelX=5,780,780,780,780,780,780,780,780,
+LegendPanelY=40,65,65,65,65,65,65,65,65
+LegendPanelShowing=1,1,1,1,1,1,1,1,1
+
+LoadStatusPanelHeight=135
+LoadStatusPanelWidth=960
+LoadStatusPanelY=500
+LoadStatusPanelX=10
+
+ExtraTabGroups=AS/RS-11,AS/RS-12,AS/RS-21,AS/RS-22,AS/RS-31,AS/RS-32,AS/RS-41,AS/RS-42
+TabPanelsHorzScaling=100,125,125,125,125,125,125,125,125
+TabPanelsVertScaling=100,125,125,125,125,125,125,125,125
+
+GroupHasMosConnection=AS/RS-11:true,AS/RS-12:true,AS/RS-21:true,AS/RS-22:true,AS/RS-31:true,AS/RS-32:true,AS/RS-41:true,AS/RS-42:true
+
+// Mode change
+AS/RS-11.HasModeChange=true
+AS/RS-12.HasModeChange=true
+AS/RS-21.HasModeChange=true
+AS/RS-22.HasModeChange=true
+AS/RS-31.HasModeChange=true
+AS/RS-32.HasModeChange=true
+AS/RS-41.HasModeChange=true
+AS/RS-42.HasModeChange=true
+
+
+// Long Load IDs
+// If false, Load ID == MC Key.  If Load ID == barcode, the barcode has 8 or fewer characters.
+// If true, Load ID == barcode that has more than 8 characters, so the MC key is different.
+UseLongLoadIDs=false
+
+// For "xxx Online" in pop-up
+// Only applies if there is no MOS connection, and default is "AGC"
+// You can change the default value with Default.DeviceType
+// This will only need to be defined for 9x/9y ARC/SRC devices
+//SR01.DeviceType=SRC
+
+// Error Set Definitions
+ErrorSet.AS21=com.daifukuamerica.wrxj.errorcodes.as21.As21ErrorGuide
+ErrorSet.9y=com.daifukuamerica.wrxj.errorcodes.niney.NineYErrorCodes
+
+
+// Graphic Class Definitions
+GraphicClass.BcrButton=com.daifukuamerica.wrxj.swingui.equipment.button.BcrButton
+GraphicClass.CaptiveFullnessButton=com.daifukuamerica.wrxj.swingui.equipment.button.CaptiveFullnessButton
+GraphicClass.ControlsButton=com.daifukuamerica.wrxj.swingui.equipment.button.ControlsButton
+GraphicClass.CraneButton=com.daifukuamerica.wrxj.swingui.equipment.button.CraneButton
+GraphicClass.DetailedRackButton=com.daifukuamerica.wrxj.swingui.equipment.button.DetailedRackButton
+GraphicClass.DualCraneButton=com.daifukuamerica.wrxj.swingui.equipment.button.DualCraneButton
+GraphicClass.FullnessButton=com.daifukuamerica.wrxj.swingui.equipment.button.FullnessButton
+GraphicClass.FullnessMonitorButton=com.daifukuamerica.wrxj.swingui.equipment.button.FullnessMonitorButton
+GraphicClass.LabelButton=com.daifukuamerica.wrxj.swingui.equipment.button.LabelButton
+GraphicClass.PortButton=com.daifukuamerica.wrxj.swingui.equipment.button.PortButton
+GraphicClass.RackButton=com.daifukuamerica.wrxj.swingui.equipment.button.RackButton
+GraphicClass.RailButton=com.daifukuamerica.wrxj.swingui.equipment.button.RailButton
+GraphicClass.ShuttleCartButton=com.daifukuamerica.wrxj.swingui.equipment.button.ShuttleCartButton
+GraphicClass.CaptiveShuttleCartButton=com.daifukuamerica.wrxj.swingui.equipment.button.CaptiveShuttleCartButton
+GraphicClass.StationButton=com.daifukuamerica.wrxj.swingui.equipment.button.StationButton
+GraphicClass.StatusButton=com.daifukuamerica.wrxj.swingui.equipment.button.StatusButton
+GraphicClass.StvLoopButton=com.daifukuamerica.wrxj.swingui.equipment.button.StvLoopButton
+
+EquipmentStatusGroup	Warsaw
+
+//-----------------------------------------------------------------------------
+//  Rack
+//-----------------------------------------------------------------------------
+
+EquipmentName	AS/RS-11:Rack-1L
+Description	Rack
+Category	NoStatus
+ErrorSet	AS21
+MCController	SR11
+MOSController	*NONE*
+AisleGroup	*NONE*
+HostID		*NONE*
+DeviceID	*NONE*
+StationID	01|01
+MCID		*NONE*
+MOSID		*NONE*
+GraphicClass	RackButton
+
+EquipmentName	AS/RS-11:Rack-2L
+Description	Rack
+Category	NoStatus
+ErrorSet	AS21
+MCController	SR11
+MOSController	*NONE*
+AisleGroup	*NONE*
+HostID		*NONE*
+DeviceID	*NONE*
+StationID	02|02
+MCID		*NONE*
+MOSID		*NONE*
+GraphicClass	RackButton
+
+EquipmentName	AS/RS-21:Rack-1L
+Description	Rack
+Category	NoStatus
+ErrorSet	AS21
+MCController	SR21
+MOSController	*NONE*
+AisleGroup	*NONE*
+HostID		*NONE*
+DeviceID	*NONE*
+StationID	03|03
+MCID		*NONE*
+MOSID		*NONE*
+GraphicClass	RackButton
+
+EquipmentName	AS/RS-21:Rack-2L
+Description	Rack
+Category	NoStatus
+ErrorSet	AS21
+MCController	SR21
+MOSController	*NONE*
+AisleGroup	*NONE*
+HostID		*NONE*
+DeviceID	*NONE*
+StationID	04|04
+MCID		*NONE*
+MOSID		*NONE*
+GraphicClass	RackButton
+
+EquipmentName	AS/RS-31:Rack-1L
+Description	Rack
+Category	NoStatus
+ErrorSet	AS21
+MCController	SR31
+MOSController	*NONE*
+AisleGroup	*NONE*
+HostID		*NONE*
+DeviceID	*NONE*
+StationID	05|05
+MCID		*NONE*
+MOSID		*NONE*
+GraphicClass	RackButton
+
+EquipmentName	AS/RS-31:Rack-2L
+Description	Rack
+Category	NoStatus
+ErrorSet	AS21
+MCController	SR31
+MOSController	*NONE*
+AisleGroup	*NONE*
+HostID		*NONE*
+DeviceID	*NONE*
+StationID	06|06
+MCID		*NONE*
+MOSID		*NONE*
+GraphicClass	RackButton
+
+EquipmentName	AS/RS-41:Rack-1L
+Description	Rack
+Category	NoStatus
+ErrorSet	AS21
+MCController	SR41
+MOSController	*NONE*
+AisleGroup	*NONE*
+HostID		*NONE*
+DeviceID	*NONE*
+StationID	07|07
+MCID		*NONE*
+MOSID		*NONE*
+GraphicClass	RackButton
+
+EquipmentName	AS/RS-41:Rack-2L
+Description	Rack
+Category	NoStatus
+ErrorSet	AS21
+MCController	SR41
+MOSController	*NONE*
+AisleGroup	*NONE*
+HostID		*NONE*
+DeviceID	*NONE*
+StationID	08|08
+MCID		*NONE*
+MOSID		*NONE*
+GraphicClass	RackButton
+
+
+EquipmentName	AS/RS-12:Rack-1R
+Description	Rack
+Category	NoStatus
+ErrorSet	AS21
+MCController	SR12
+MOSController	*NONE*
+AisleGroup	*NONE*
+HostID		*NONE*
+DeviceID	*NONE*
+StationID	01|01
+MCID		*NONE*
+MOSID		*NONE*
+GraphicClass	RackButton
+
+EquipmentName	AS/RS-12:Rack-2R
+Description	Rack
+Category	NoStatus
+ErrorSet	AS21
+MCController	SR12
+MOSController	*NONE*
+AisleGroup	*NONE*
+HostID		*NONE*
+DeviceID	*NONE*
+StationID	02|02
+MCID		*NONE*
+MOSID		*NONE*
+GraphicClass	RackButton
+
+EquipmentName	AS/RS-22:Rack-1R
+Description	Rack
+Category	NoStatus
+ErrorSet	AS21
+MCController	SR22
+MOSController	*NONE*
+AisleGroup	*NONE*
+HostID		*NONE*
+DeviceID	*NONE*
+StationID	03|03
+MCID		*NONE*
+MOSID		*NONE*
+GraphicClass	RackButton
+
+EquipmentName	AS/RS-22:Rack-2R
+Description	Rack
+Category	NoStatus
+ErrorSet	AS21
+MCController	SR22
+MOSController	*NONE*
+AisleGroup	*NONE*
+HostID		*NONE*
+DeviceID	*NONE*
+StationID	04|04
+MCID		*NONE*
+MOSID		*NONE*
+GraphicClass	RackButton
+
+EquipmentName	AS/RS-32:Rack-1R
+Description	Rack
+Category	NoStatus
+ErrorSet	AS21
+MCController	SR32
+MOSController	*NONE*
+AisleGroup	*NONE*
+HostID		*NONE*
+DeviceID	*NONE*
+StationID	05|05
+MCID		*NONE*
+MOSID		*NONE*
+GraphicClass	RackButton
+
+EquipmentName	AS/RS-32:Rack-2R
+Description	Rack
+Category	NoStatus
+ErrorSet	AS21
+MCController	SR32
+MOSController	*NONE*
+AisleGroup	*NONE*
+HostID		*NONE*
+DeviceID	*NONE*
+StationID	06|06
+MCID		*NONE*
+MOSID		*NONE*
+GraphicClass	RackButton
+
+EquipmentName	AS/RS-42:Rack-1R
+Description	Rack
+Category	NoStatus
+ErrorSet	AS21
+MCController	SR42
+MOSController	*NONE*
+AisleGroup	*NONE*
+HostID		*NONE*
+DeviceID	*NONE*
+StationID	07|07
+MCID		*NONE*
+MOSID		*NONE*
+GraphicClass	RackButton
+
+EquipmentName	AS/RS-42:Rack-2R
+Description	Rack
+Category	NoStatus
+ErrorSet	AS21
+MCController	SR42
+MOSController	*NONE*
+AisleGroup	*NONE*
+HostID		*NONE*
+DeviceID	*NONE*
+StationID	08|08
+MCID		*NONE*
+MOSID		*NONE*
+GraphicClass	RackButton
+
+
+
+//-----------------------------------------------------------------------------
+// Equipment with status Aisle 1 SR11
+//-----------------------------------------------------------------------------
+
+EquipmentName	AS/RS-11:Input-L
+Description	Input-AA0111
+Category	Equipment
+ErrorSet	AS21
+MCController	*NONE*
+MOSController	*NONE*
+AisleGroup	1
+HostID		*NONE*
+DeviceID	*NONE*
+StationID	0111
+MCID		210001
+MOSID		121001
+GraphicClass	StationButton
+
+EquipmentName	AS/RS-11:Output-L
+Description	Output-AA0112
+Category	Equipment
+ErrorSet	AS21
+MCController	*NONE*
+MOSController	*NONE*
+AisleGroup	1
+HostID		*NONE*
+DeviceID	*NONE*
+StationID	0112
+MCID		210002
+MOSID		121002
+GraphicClass	StationButton
+
+EquipmentName	AS/RS-11:Output-UL
+Description	Output-AA0115
+Category	Equipment
+ErrorSet	AS21
+MCController	*NONE*
+MOSController	*NONE*
+AisleGroup	1
+HostID		*NONE*
+DeviceID	*NONE*
+StationID	0115
+MCID		210003
+MOSID		121003
+GraphicClass	StationButton
+
+EquipmentName	AS/RS-11:Crane-L
+Description	Crane-11
+Category	Equipment
+ErrorSet	AS21
+MCController	SR11
+MOSController	SR11-Mos
+AisleGroup	1
+HostID		*NONE*
+DeviceID	SR11
+StationID	*NONE*
+MCID		110011
+MOSID		111011
+GraphicClass	DualCraneButton
+
+
+//-----------------------------------------------------------------------------
+// Equipment with status Aisle 1 SR12
+//-----------------------------------------------------------------------------
+
+EquipmentName	AS/RS-12:Input-R
+Description	Input-AA0114
+Category	Equipment
+ErrorSet	AS21
+MCController	*NONE*
+MOSController	*NONE*
+AisleGroup	1
+HostID		*NONE*
+DeviceID	*NONE*
+StationID	0114
+MCID		210005
+MOSID		121005
+GraphicClass	StationButton
+
+EquipmentName	AS/RS-12:Output-R
+Description	Output-AA0113
+Category	Equipment
+ErrorSet	AS21
+MCController	*NONE*
+MOSController	*NONE*
+AisleGroup	1
+HostID		*NONE*
+DeviceID	*NONE*
+StationID	0113
+MCID		210004
+MOSID		121004
+GraphicClass	StationButton
+
+EquipmentName	AS/RS-12:Output-UR
+Description	Output-AA0116
+Category	Equipment
+ErrorSet	AS21
+MCController	*NONE*
+MOSController	*NONE*
+AisleGroup	1
+HostID		*NONE*
+DeviceID	*NONE*
+StationID	0116
+MCID		210006
+MOSID		121006
+GraphicClass	StationButton
+
+EquipmentName	AS/RS-12:Crane-R
+Description	Crane-12
+Category	Equipment
+ErrorSet	AS21
+MCController	SR12
+MOSController	SR12-Mos
+AisleGroup	1
+HostID		*NONE*
+DeviceID	SR12
+StationID	*NONE*
+MCID		110012
+MOSID		111012
+GraphicClass	DualCraneButton
+
+
+//-----------------------------------------------------------------------------
+// Equipment with status Aisle 2 SR21
+//-----------------------------------------------------------------------------
+
+EquipmentName	AS/RS-21:Input-L
+Description	Input-AA0211
+Category	Equipment
+ErrorSet	AS21
+//MCController	SR21
+//MOSController	SR21-Mos
+MCController	*NONE*
+MOSController	*NONE*
+AisleGroup	2
+HostID		*NONE*
+DeviceID	*NONE*
+StationID	0211
+MCID		210007
+MOSID		121007
+GraphicClass	StationButton
+
+EquipmentName	AS/RS-21:Output-L
+Description	Output-AA0212
+Category	Equipment
+ErrorSet	AS21
+//MCController	SR21
+//MOSController	SR21-Mos
+MCController	*NONE*
+MOSController	*NONE*
+AisleGroup	2
+HostID		*NONE*
+DeviceID	*NONE*
+StationID	0212
+MCID		210008
+MOSID		121008
+GraphicClass	StationButton
+
+EquipmentName	AS/RS-21:Output-UL
+Description	Output-AA0215
+Category	Equipment
+ErrorSet	AS21
+//MCController	SR21
+//MOSController	SR21-Mos
+MCController	*NONE*
+MOSController	*NONE*
+AisleGroup	2
+HostID		*NONE*
+DeviceID	*NONE*
+StationID	0215
+MCID		210009
+MOSID		121009
+GraphicClass	StationButton
+
+EquipmentName	AS/RS-21:Crane-L
+Description	Crane-21
+Category	Equipment
+ErrorSet	AS21
+MCController	SR21
+MOSController	SR21-Mos
+AisleGroup	2
+HostID		*NONE*
+DeviceID	SR21
+StationID	*NONE*
+MCID		110021
+MOSID		111021
+GraphicClass	DualCraneButton
+
+
+//-----------------------------------------------------------------------------
+// Equipment with status Aisle 2 SR21
+//-----------------------------------------------------------------------------
+
+EquipmentName	AS/RS-22:Input-R
+Description	Input-AA0214
+Category	Equipment
+ErrorSet	AS21
+MCController	*NONE*
+MOSController	*NONE*
+AisleGroup	1
+HostID		*NONE*
+DeviceID	*NONE*
+StationID	0214
+MCID		210011
+MOSID		121011
+GraphicClass	StationButton
+
+EquipmentName	AS/RS-22:Output-R
+Description	Output-AA0213
+Category	Equipment
+ErrorSet	AS21
+MCController	*NONE*
+MOSController	*NONE*
+AisleGroup	2
+HostID		*NONE*
+DeviceID	*NONE*
+StationID	0213
+MCID		210010
+MOSID		121010
+GraphicClass	StationButton
+
+EquipmentName	AS/RS-22:Output-UR
+Description	Output-AA0216
+Category	Equipment
+ErrorSet	AS21
+MCController	*NONE*
+MOSController	*NONE*
+AisleGroup	2
+HostID		*NONE*
+DeviceID	*NONE*
+StationID	0216
+MCID		210012
+MOSID		121012
+GraphicClass	StationButton
+
+EquipmentName	AS/RS-22:Crane-R
+Description	Crane-22
+Category	Equipment
+ErrorSet	AS21
+MCController	SR22
+MOSController	SR22-Mos
+AisleGroup	2
+HostID		*NONE*
+DeviceID	SR22
+StationID	*NONE*
+MCID		110022
+MOSID		111022
+GraphicClass	DualCraneButton
+
+
+//-----------------------------------------------------------------------------
+// Equipment with status Aisle 3 SR31
+//-----------------------------------------------------------------------------
+
+EquipmentName	AS/RS-31:Input-L
+Description	Input-AA0311
+Category	Equipment
+ErrorSet	AS21
+MCController	*NONE*
+MOSController	*NONE*
+AisleGroup	3
+HostID		*NONE*
+DeviceID	*NONE*
+StationID	0311
+MCID		210013
+MOSID		121013
+GraphicClass	StationButton
+
+EquipmentName	AS/RS-31:Output-L
+Description	Output-AA0312
+Category	Equipment
+ErrorSet	AS21
+MCController	*NONE*
+MOSController	*NONE*
+AisleGroup	3
+HostID		*NONE*
+DeviceID	*NONE*
+StationID	0312
+MCID		210014
+MOSID		121014
+GraphicClass	StationButton
+
+EquipmentName	AS/RS-31:Output-UL
+Description	Output-AA0315
+Category	Equipment
+ErrorSet	AS21
+MCController	*NONE*
+MOSController	*NONE*
+AisleGroup	3
+HostID		*NONE*
+DeviceID	*NONE*
+StationID	0315
+MCID		210015
+MOSID		121015
+GraphicClass	StationButton
+
+EquipmentName	AS/RS-31:Crane-L
+Description	Crane-31
+Category	Equipment
+ErrorSet	AS21
+MCController	SR31
+MOSController	SR31-Mos
+AisleGroup	3
+HostID		*NONE*
+DeviceID	SR31
+StationID	*NONE*
+MCID		110031
+MOSID		111031
+GraphicClass	DualCraneButton
+
+//-----------------------------------------------------------------------------
+// Equipment with status Aisle 3 SR32
+//-----------------------------------------------------------------------------
+
+EquipmentName	AS/RS-32:Input-R
+Description	Input-AA0314
+Category	Equipment
+ErrorSet	AS21
+MCController	*NONE*
+MOSController	*NONE*
+AisleGroup	3
+HostID		*NONE*
+DeviceID	*NONE*
+StationID	0314
+MCID		210017
+MOSID		121017
+GraphicClass	StationButton
+
+EquipmentName	AS/RS-32:Output-R
+Description	Output-AA0313
+Category	Equipment
+ErrorSet	AS21
+MCController	*NONE*
+MOSController	*NONE*
+AisleGroup	3
+HostID		*NONE*
+DeviceID	*NONE*
+StationID	0313
+MCID		210016
+MOSID		121016
+GraphicClass	StationButton
+
+EquipmentName	AS/RS-32:Output-UR
+Description	Output-AA0316
+Category	Equipment
+ErrorSet	AS21
+MCController	*NONE*
+MOSController	*NONE*
+AisleGroup	3
+HostID		*NONE*
+DeviceID	*NONE*
+StationID	0316
+MCID		210018
+MOSID		121018
+GraphicClass	StationButton
+
+EquipmentName	AS/RS-32:Crane-R
+Description	Crane-32
+Category	Equipment
+ErrorSet	AS21
+MCController	SR32
+MOSController	SR32-Mos
+AisleGroup	3
+HostID		*NONE*
+DeviceID	SR32
+StationID	*NONE*
+MCID		110032
+MOSID		111032
+GraphicClass	DualCraneButton
+
+
+//-----------------------------------------------------------------------------
+// Equipment with status Aisle 4 SR41
+//-----------------------------------------------------------------------------
+
+EquipmentName	AS/RS-41:Input-L
+Description	Input-AA0411
+Category	Equipment
+ErrorSet	AS21
+MCController	*NONE*
+MOSController	*NONE*
+AisleGroup	4
+HostID		*NONE*
+DeviceID	*NONE*
+StationID	0411
+MCID		210019
+MOSID		121019
+GraphicClass	StationButton
+
+EquipmentName	AS/RS-41:Output-L
+Description	Output-AA0412
+Category	Equipment
+ErrorSet	AS21
+MCController	*NONE*
+MOSController	*NONE*
+AisleGroup	4
+HostID		*NONE*
+DeviceID	*NONE*
+StationID	0412
+MCID		210020
+MOSID		121020
+GraphicClass	StationButton
+
+EquipmentName	AS/RS-41:Output-UL
+Description	Output-AA0415
+Category	Equipment
+ErrorSet	AS21
+MCController	*NONE*
+MOSController	*NONE*
+AisleGroup	4
+HostID		*NONE*
+DeviceID	*NONE*
+StationID	0415
+MCID		210021
+MOSID		121021
+GraphicClass	StationButton
+
+EquipmentName	AS/RS-41:Crane-L
+Description	Crane-41
+Category	Equipment
+ErrorSet	AS21
+MCController	SR41
+MOSController	SR41-Mos
+AisleGroup	4
+HostID		*NONE*
+DeviceID	SR41
+StationID	*NONE*
+MCID		110041
+MOSID		111041
+GraphicClass	DualCraneButton
+
+//-----------------------------------------------------------------------------
+// Equipment with status Aisle 4 SR42
+//-----------------------------------------------------------------------------
+
+EquipmentName	AS/RS-42:Input-R
+Description	Input-AA0414
+Category	Equipment
+ErrorSet	AS21
+MCController	*NONE*
+MOSController	*NONE*
+AisleGroup	4
+HostID		*NONE*
+DeviceID	*NONE*
+StationID	0414
+MCID		210023
+MOSID		121023
+GraphicClass	StationButton
+
+EquipmentName	AS/RS-42:Output-R
+Description	Output-AA0413
+Category	Equipment
+ErrorSet	AS21
+MCController	*NONE*
+MOSController	*NONE*
+AisleGroup	4
+HostID		*NONE*
+DeviceID	*NONE*
+StationID	0413
+MCID		210022
+MOSID		121022
+GraphicClass	StationButton
+
+EquipmentName	AS/RS-42:Output-UR
+Description	Output-AA0416
+Category	Equipment
+ErrorSet	AS21
+MCController	*NONE*
+MOSController	*NONE*
+AisleGroup	4
+HostID		*NONE*
+DeviceID	*NONE*
+StationID	0416
+MCID		210024
+MOSID		121024
+GraphicClass	StationButton
+
+EquipmentName	AS/RS-42:Crane-R
+Description	Crane-42
+Category	Equipment
+ErrorSet	AS21
+MCController	SR42
+MOSController	SR42-Mos
+AisleGroup	4
+HostID		*NONE*
+DeviceID	SR42
+StationID	*NONE*
+MCID		110042
+MOSID		111042
+GraphicClass	DualCraneButton
+
+
+//-----------------------------------------------------------------------------
+//  Host
+//-----------------------------------------------------------------------------
+
+EquipmentName	PHost:Transporter
+Description	Host
+Category	Equipment
+ErrorSet        *NONE*
+MCController	HostController-1
+MOSController	*NONE*
+AisleGroup	*NONE*
+HostID		*NONE*
+DeviceID	*NONE*
+StationID	*NONE*
+MCID		skechershost
+MOSID		*NONE*
+GraphicClass	PortButton
+
+EquipmentName	RHost:Transporter
+Description	Host
+Category	Equipment
+ErrorSet        *NONE*
+MCController	HostController-1
+MOSController	*NONE*
+AisleGroup	*NONE*
+HostID		*NONE*
+DeviceID	*NONE*
+StationID	*NONE*
+MCID		skechershost
+MOSID		*NONE*
+GraphicClass	PortButton
+
+
+
+EquipmentStatusGroupEnd
+
+//-----------------------------------------------------------------------------
+//-----------------------------------------------------------------------------
+EquipmentGroup	Warsaw
+AS/RS-11	350,135		300,25	EBSLeftGroup
+AS/RS-12	350,135		690,25	EBSRightGroup
+AS/RS-21	350,135		300,165	EBSLeftGroup
+AS/RS-22	350,135		690,165	EBSRightGroup
+AS/RS-31	350,135		300,305	EBSLeftGroup
+AS/RS-32	350,135		690,305	EBSRightGroup
+AS/RS-41	350,135		300,445	EBSLeftGroup
+AS/RS-42	350,135		690,445	EBSRightGroup
+EquipmentGroupEnd
+
+
+
+
+//-----------------------------------------------------------------------------
+//-----------------------------------------------------------------------------
+
+
+
+LibraryGroup		EBSLeftGroup
+UnitloadEBS				Crane-L			60,36
+RConveyorEBS-Horiz		Input-L			20,10
+LConveyorEBS-Horiz		Output-L		20,68
+LConveyorEBS-Horiz		Output-UL		90,68
+Rack2EBS				Rack-1L 		60,10
+Rack2EBS				Rack-2L			60,68
+LibraryGroupEnd
+
+LibraryGroup		EBSRightGroup
+UnitloadEBS				Crane-R			35,36
+RConveyorEBS-Horiz		Input-R			279,10
+LConveyorEBS-Horiz		Output-R		279,68
+RConveyorEBS-Horiz		Output-UR		205,68
+Rack2EBS				Rack-1R			35,10
+Rack2EBS				Rack-2R			35,68
+LibraryGroupEnd
+
+LibraryGroup		HostGroup
+HostPort		Transporter	0,0
+LibraryGroupEnd
+
+
+//-----------------------------------------------------------------------------
+//-----------------------------------------------------------------------------
+
+			
+LibraryDevice		Rack2EBS
+			0,0,,0,24,,240,24,,240,0
+
+LibraryDevice		Unitload
+			0,0,,34,0,,34,190,,0,190
+			
+LibraryDevice		UnitloadEBS
+			0,0,,240,0,,240,30,,0,30
+
+LibraryDevice		Conveyor
+			0,0,,24,0,,24,24,,0,24
+
+LibraryDevice		OConveyor
+			0,0,,12,6,,24,0,,24,24,,12,30,,0,24
+
+LibraryDevice		IConveyor
+			0,6,,12,0,,24,6,,24,30,,12,24,,0,30
+
+LibraryDevice		ConveyorEBS
+			0,0,,24,0,,24,24,,0,24
+
+LibraryDevice		RConveyorEBS-Horiz
+			0,0,,30,0,,36,12,,30,24,,0,24
+
+LibraryDevice		LConveyorEBS-Horiz
+			0,12,,6,0,,36,0,,36,24,,6,24
+
+
+LibraryDevice		Process
+			0,0,,10,0,,10,10,,0,10
+
+LibraryDevice		Lifter
+			0,0,,30,0,,30,30,,0,30
+
+LibraryDevice		Fullness
+			0,0,,40,0,,40,20,,0,20
+
+LibraryDevice		BCR
+			0,10,,20,0,,20,20
+
+LibraryDevice		Label
+			0,0,,240,0,,240,30,,0,30
+
+LibraryDevice		HostPort
+			0,0,,100,0,,100,16,,0,16
+
+
+LibraryDevice		Conveyor-Block
+			0,0,,5,0,,5,5,,0,5
+
+LibraryDevice		Conveyor-Horiz
+			0,0,,10,0,,10,5,,0,5
+
+LibraryDevice		Conveyor-Horiz-Med
+			0,0,,30,0,,30,5,,0,5
+
+LibraryDevice		Conveyor-Horiz-EOA
+			0,0,,20,0,,20,5,,0,5
+
+LibraryDevice		Conveyor-Horiz-Long
+			0,0,,100,0,,100,20,,0,20
+			
+LibraryDevice		Conveyor-Horiz-Tiny
+			0,0,,6,0,,6,3,,0,3
+
+LibraryDevice		Conveyor-Vert
+			0,0,,5,0,,5,10,,0,10
+			
+LibraryDevice		Conveyor-Vert-Tiny
+			0,0,,3,0,,3,6,,0,6
+
+LibraryDevice		Conveyor-Vert-Med
+			0,0,,5,0,,5,30,,0,30
+
+LibraryDevice		Conveyor-Vert-Long
+			0,0,,5,0,,5,50,,0,50
+
+LibraryDevice		Conveyor-Vert-Stacker
+			0,0,,5,0,,5,80,,0,80
+			
+LibraryDevice		Conveyor-L-Tiny
+			0,48,,8,48,,8,45,,3,45,,3,0,,0,0
+			
+LibraryDevice 	Conveyor-RevL-Tiny
+			0,48,,8,48,,8,0,,5,0,,5,45,,0,45
+			
+LibraryDevice 	Conveyor-U-Tiny
+			0,48,,16,48,,16,0,,13,0,,13,45,,3,45,,3,0,,0,0
+
+LibraryDevice		Conveyor-Recv
+			0,0,,5,0,,5,10,,0,10
+
+LibraryDevice		Conveyor-Pallet-Vert1
+			0,0,,5,0,,5,185,,0,185
+
+LibraryDevice		Conveyor-Pallet-Vert2
+			0,0,,5,0,,5,210,,0,210
+
+LibraryDevice		Conveyor-Pallet-Horz1
+			0,0,,170,0,,170,5,,0,5
+
+LibraryDevice		Conveyor-Pallet-Horz2
+			0,0,,195,0,,195,5,,0,5
+
+LibraryDevice		Conveyor-Sleever1
+			0,0,,100,0,,100,5,,0,5
+
+LibraryDevice		Conveyor-Sleever2
+			0,0,,140,0,,140,5,,0,5
+
+LibraryDevice		Conveyor-Pallet-TLCorn
+			0,15,,0,5,,1,3,,2,2,,3,1,,5,0,,15,0,,15,5,,8,5,,6,6,,5,10,,5,15
+
+LibraryDevice		Conveyor-Pallet-TRCorn
+			0,0,,10,0,,12,1,,13,2,,14,3,,15,5,,15,15,,10,15,,10,8,,8,6,,5,5,,0,5
+
+LibraryDevice		Conveyor-Pallet-BLCorn
+			0,0,,0,10,,1,12,,2,13,,3,14,,5,15,,15,15,,15,10,,7,10,,6,7,,5,9,,5,0
+
+LibraryDevice		Conveyor-Pallet-BRCorn
+			0,10,,5,10,,7,9,,8,8,,9,7,,10,5,,10,0,,15,0,,15,10,,14,12,,13,13,,12,14,,9,15,,0,15
+
+LibraryDevice		STV-Loop-V
+			0,0,,40,0,,40,260,,0,260
+
+LibraryDeviceEnd

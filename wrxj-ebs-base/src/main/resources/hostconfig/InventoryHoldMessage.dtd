@@ -1,0 +1,12 @@
+  <!--
+     Document Type Definition for the Inventory Hold Message from a host system.
+
+     Author: A.D.
+     Version 1.0      06/02/05
+     Copyright 2005 Daifuku America Corporation  All Rights Reserved.
+  -->
+  <!ELEMENT InventoryHoldMessage (InventoryHold+)>
+  <!ELEMENT InventoryHold (sItem?, sLot?, sHoldReason?)>
+  <!ELEMENT sItem        (#PCDATA)>
+  <!ELEMENT sLot         (#PCDATA)>
+  <!ELEMENT sHoldReason  (#PCDATA)>

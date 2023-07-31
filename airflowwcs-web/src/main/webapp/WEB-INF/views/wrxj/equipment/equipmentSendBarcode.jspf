@@ -1,0 +1,19 @@
+<div class="modal fade" id="bc-dialog" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="modal-dialog modal-sm">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+				<h4 class="modal-title">Send Barcode</h4>
+			</div>
+			<div class="modal-body">
+				<label for="bc-bcr">Barcode Reader</label>
+				<br/><input type="text" name="bc-bcr" id="bc-bcr" placeholder="BCR" disabled class="form-control"/>
+				<br/><label for="bcdata">Barcode Data</label>
+				<br/><input type="text" name="bc-bcdata" id="bc-bcdata" placeholder="Barcode" class="form-control"/>
+			</div>
+			<div class="modal-footer">
+				<button id="bc-button" class="btn btn-default">Send Barcode</button>
+			</div>
+		</div>
+	</div>
+</div>

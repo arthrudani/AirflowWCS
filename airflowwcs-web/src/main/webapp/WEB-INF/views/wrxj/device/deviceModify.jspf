@@ -1,0 +1,53 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+	<!-- LOCATION MODIFY -->
+	<div id="modify-modal" class="modal fade">
+		<div class="modal-dialog modal-sm">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					<h4 class="modal-title">Modify Device</h4>
+				</div>
+
+				<div class="modal-body">
+					<spring:url value="/device/modify" var="modifyFormUrl"/>
+					<form:form cssClass="form-horizontal" id="modify-form" action="${modifyFormUrl}" method="POST" modelAttribute="deviceModel">
+						<%------- Device -------%>
+						<div class="row">
+							<div class="form-group-sm col-sm-12">
+								<label for="deviceMod" class="control-label">Device ID</label>
+								<div class="input-group">
+									<form:input path="deviceId" cssClass="form-control" id="deviceIdMod" placeholder="Device" size="12" readonly="true"/>
+								</div>
+							</div>
+						</div>
+						<%------- Device Type -------%>
+						<div class="row">
+							<div class="form-group-sm col-sm-12">
+								<label for="deviceTypeMod" class="control-label">Device Type</label>
+								<form:select path="deviceType" cssClass="form-control" id="deviceTypeMod" readonly="true" disabled="true">
+									<form:options items="${dropdownMenus.deviceTypes}" />
+								</form:select>
+							</div>
+						</div>
+						<%------- Operational Status -------%>
+						<div class="row">
+							<div class="form-group-sm col-sm-12">
+								<label for="operationalStatus" class="control-label">Operational Status</label>
+								<form:select path="operationalStatus" cssClass="form-control" id="operationalStatusMod">
+									<form:options items="${dropdownMenus.operationalStatuses}" />
+								</form:select>
+							</div>
+						</div>
+					</form:form>
+				</div>
+				
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					<button id="modify-button" type="button" class="btn btn-primary">Update</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	

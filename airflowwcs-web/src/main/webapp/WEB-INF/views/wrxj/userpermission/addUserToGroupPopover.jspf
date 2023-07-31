@@ -1,0 +1,30 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@ taglib uri="wrxj-taglib" prefix="wrxj"%>
+	<!-- ADD USER TO GROUP -->
+	<div id="add-modal" class="modal fade">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					<i class="fa fa-user-plus fa-2x pull-left" aria-hidden="true" style="color:green"></i>
+					<h4 class="modal-title">Add Users to Group <span id="group-select-name-title"></span></h4>
+				</div>
+				<div class="modal-body">
+					<h4>Select users to add to group <span id="group-select-name-div"></span> </h4>
+					<wrxj:hibernateAjaxTable
+								ajaxUri="/airflowwcs/userpermission/users/all" 
+								tableId="AddUsers" hasFilter="true"
+								explicitColumns="${inGroupColumns}"
+								prefHideColumns="${userPref.tableColumnVisibility['AddUsersPermission']}"
+								metaId="User" inModal="true" />
+				</div>
+
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					<button id="user-grant-button" type="button" class="btn btn-primary">Grant User(s) Access</button>
+				</div>
+			</div>
+		</div>
+	</div>

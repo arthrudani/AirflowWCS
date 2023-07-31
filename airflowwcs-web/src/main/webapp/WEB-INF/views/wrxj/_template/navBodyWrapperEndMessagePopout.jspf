@@ -1,0 +1,53 @@
+       		</span>
+        </div>
+    </div>
+</section> 
+
+<%@include file="../_template/message_scripts.jspf"%>
+<script src="<spring:url value="/resources/js/message.js"/>" type="text/javascript"></script>
+<div id="styleSelector">
+	<div class="selector-toggle">
+		<a href="javascript:void(0)"></a>
+	</div>
+	<ul>
+		<li>
+			<p class="selector-title">Message Debug Tool</p>
+		</li>
+		<li>
+			<button id="test-message-button" type="button" class="btn btn-primary btn-lg">Test Message</button>
+		</li>
+		<li>
+		<form class="form-inline">
+								<div class="form-group">
+									
+									<select name="topic" id="message-type"  >
+										<option></option>
+										<option value="loadArrival">Load Arrival</option>
+										<option value="getWeight">Get Weight</option>
+									</select>
+									<button id="send-message" class="btn btn-default"  disabled="disabled">Send</button>
+									<button id="connect" class="btn btn-default" type="button">New</button>
+									<button id="disconnect" class="btn btn-default" type="button"
+										disabled="disabled">Disconnect</button>
+								</div>
+			</form>
+			<table id="log-table" class="table table-striped">
+				<thead>
+					<tr>
+						<th>Origin</th>
+						<th>Level</th>
+						<th>Message</th>
+					</tr>
+				</thead>
+				<tbody id="messages">
+				</tbody>
+			</table>
+		</li>
+	</ul>
+</div>
+
+<%@include file="../message/messageLoadArrivalPopover.jspf"%>
+<%@include file="../message/messageWeightPopover.jspf"%>
+</body>
+<!-- The message popup has to be put after the section tag and before the end of the body -->
+<!-- Wrap End of body in collapsable nav bar -->

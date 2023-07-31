@@ -1,0 +1,110 @@
+/* ***************************************************************************
+  Copyright (c) ZZZYEARZZZ Daifuku North America Holding Company. All Rights Reserved.
+
+  THIS WORK IS SUBJECT TO U.S. AND INTERNATIONAL COPYRIGHT LAWS AND TREATIES. 
+  NO PART OF THIS WORK MAY BE USED, PRACTICED, PERFORMED COPIED, DISTRIBUTED, 
+  REVISED, MODIFIED, TRANSLATED, ABRIDGED, CONDENSED, EXPANDED, COLLECTED, 
+  COMPILED, LINKED, RECAST, TRANSFORMED OR ADAPTED WITHOUT THE PRIOR WRITTEN 
+  CONSENT OF Wynright Corporation.  ANY USE OR EXPLOITATION OF THIS WORK 
+  WITHOUT AUTHORIZATION COULD SUBJECT THE PERPETRATOR TO CRIMINAL AND CIVIL 
+  LIABILITY.
+ ****************************************************************************/
+package com.daifukuamerica.wrxj.dbadapter.data;
+
+import com.daifukuamerica.wrxj.dbadapter.BaseDBInterface;
+import com.daifukuamerica.wrxj.factory.Factory;
+import com.daifukuamerica.wrxj.jdbc.DBConstants;
+import com.daifukuamerica.wrxj.jdbc.DBException;
+import java.util.List;
+import java.util.Map;
+
+/**
+ * Class to support database operations on the ZZZTABLENAMEZZZ table
+ */
+public class ZZZOBJECTNAMEZZZ extends BaseDBInterface
+{
+  public ZZZOBJECTNAMEZZZ()
+  {
+    super("ZZZOBJECTNAMEZZZ");
+  }
+
+  /**
+   * Get a particular ZZZOBJECTNAMEZZZ record
+   * 
+   * @param isKey
+   * @return
+   * @throws DBException
+   */
+  public ZZZOBJECTNAMEZZZData getData(String isKey)
+      throws DBException
+  {
+  	ZZZOBJECTNAMEZZZData vpZZZOBJECTNAMEZZZData = Factory.create(ZZZOBJECTNAMEZZZData.class);
+    // TODO: Correct key values
+    vpZZZOBJECTNAMEZZZData.setKey(ZZZOBJECTNAMEZZZData.KEY_NAME, isKey);
+    
+    return getElement(vpZZZOBJECTNAMEZZZData, DBConstants.NOWRITELOCK);
+  }
+  
+  /**
+   * Get a ZZZOBJECTNAMEZZZ list
+   * 
+   * @return
+   * @throws DBException
+   */
+  @SuppressWarnings("rawtypes")
+  public List<Map> getList() throws DBException
+  {
+  	ZZZOBJECTNAMEZZZData vpZZZOBJECTNAMEZZZData = Factory.create(ZZZOBJECTNAMEZZZData.class);
+    // TODO: Correct order by values
+    vpZZZOBJECTNAMEZZZData.addOrderByColumn(ZZZOBJECTNAMEZZZData.ORDER_BY_NAME);
+
+    return getAllElements(vpZZZOBJECTNAMEZZZData);
+  }
+
+  /**
+   * Delete a particular ZZZOBJECTNAMEZZZ record
+   * 
+   * @param isKey
+   * @throws DBException
+   */
+  public void delete(String isKey) throws DBException
+  {
+    // TODO: Correct key values
+    if (exists(isKey))
+    {
+      ZZZOBJECTNAMEZZZData vpZZZOBJECTNAMEZZZData = Factory.create(ZZZOBJECTNAMEZZZData.class);
+      vpZZZOBJECTNAMEZZZData.setKey(ZZZOBJECTNAMEZZZData.KEY_NAME, isKey);
+      deleteElement(vpZZZOBJECTNAMEZZZData);
+    }
+  }
+
+  /**
+   * Determines whether or not a ZZZOBJECTNAMEZZZ record exists
+   * 
+   * @param isKey
+   * @return
+   * @throws DBException
+   */
+  public boolean exists(String isKey) throws DBException
+  {
+    return getData(isKey) != null;
+  }
+
+  /**
+   * Update a particular ZZZOBJECTNAMEZZZ record
+   * 
+   * @param ipZZZOBJECTNAMEZZZData
+   * @throws DBException
+   */
+  public void update(ZZZOBJECTNAMEZZZData ipZZZOBJECTNAMEZZZData)
+      throws DBException
+  {
+    // TODO: Correct key values
+    if (ipZZZOBJECTNAMEZZZData.getKeyCount() == 0)
+    {
+      ipZZZOBJECTNAMEZZZData.setKey(ZZZOBJECTNAMEZZZData.ID_NAME, ipZZZOBJECTNAMEZZZData.getId());
+      ipZZZOBJECTNAMEZZZData.deleteColumnObject(ZZZOBJECTNAMEZZZData.ID_NAME);
+    }
+    modifyElement(ipZZZOBJECTNAMEZZZData);
+  }
+}

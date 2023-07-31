@@ -1,0 +1,83 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+
+	<!-- LOAD ADD  -->
+	<div id="add-modal" class="modal fade">
+		<div class="modal-dialog modal-md">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					<h4 class="modal-title">Add User</h4>
+				</div>
+
+				<div class="modal-body">
+					<spring:url value="/users/add" var="formUrl"/>
+					<form:form cssClass="form-horizontal" id="user-add-form" action="${formUrl}" method="POST" modelAttribute="userModel">
+
+						<div class="form-group">
+							<label class="control-label col-sm-3" for="userId">User ID:</label>
+							<div class="col-sm-6">
+								<form:input path="userId" cssClass="form-control" id="userId" placeholder="Enter User ID (login id)"
+								 required="required" maxlength="${maxLengthUserId}" autocomplete="new-userid"/>
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<label class="control-label col-sm-3" for="userName">User Name:</label>
+							<div class="col-sm-6">
+								<form:input path="userName" cssClass="form-control" id="userName" placeholder="Enter username (Display Name)" 
+								 required="required" maxlength="${maxLengthUserName}" autocomplete="new-username"/>
+							</div>
+							<div class="col-sm-6">
+							</div>
+						</div>
+						
+						<div class="form-group" style="display: none;">
+							<%-- Swing UI Role is not applicable to web --%>
+							<%-- Just a warning: this list will default to Administrator due to alphabetical order --%>
+							<label class="control-label col-sm-3" for="role">Role:</label>
+							<div class="col-sm-6">
+								<form:select path="role" cssClass="form-control" id="role" items="${dropdownMenus.roles}" required="required"/>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label class="control-label col-sm-3" for="password">Password:</label>
+							<div class="col-sm-6">
+								<form:password path="password" cssClass="form-control" id="password" placeholder="Enter Password"
+								 required="required" autocomplete="new-password"/>
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<label class="control-label col-sm-3" for="passwordConfirm">Confirm Password:</label>
+							<div class="col-sm-6">
+								<form:password path="confirmPassword" cssClass="form-control" id="confirmPassword" placeholder="Re-enter Password"
+								 required="required" autocomplete="new-passwordConfirm"/>
+							</div>
+						</div>
+<%--
+						TODO: Add check box and change to date picker with default date 3 months from today 
+						<div class="form-group" id="nextLocationContainer">
+						<label class="control-label col-sm-4">Password Expiration: </label>
+							<div class="col-sm-6">
+								<form:input path="passwordExpiration" cssClass="form-control" id="passwordExpiration" placeholder="Date password will expire (not required)" />
+							</div>
+						</div>
+ --%>
+ 						<div class="col-sm-6">
+							<small id="passwordHelp" class="text-danger">
+							</small>  
+						</div>
+ 
+					</form:form>
+				</div>
+
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+					<button id="user-add-button" type="button" class="btn btn-primary">Add User</button>
+				</div>
+			</div>
+		</div>
+	</div>

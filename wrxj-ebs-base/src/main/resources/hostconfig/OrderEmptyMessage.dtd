@@ -1,0 +1,37 @@
+<!--
+     Document Type Definition for the Order Empty message from a host
+     system.  The declarations below require that each tag appear zero or 1 
+     time, BUT when these elements appear, they must occur in the order 
+     specified here.
+
+     Author: A.D.
+     Version 1.0      08/28/08
+     Copyright 2008 Daifuku America Corporation  All Rights Reserved.
+-->
+<!ELEMENT OrderEmptyMessage (Order+)>
+<!ELEMENT Order (OrderHeader*, OrderLine*)>
+<!ATTLIST Order action          (ADD|DELETE)  #REQUIRED
+                sOrderID        NMTOKEN       #REQUIRED
+                iPriority       (1|2|3|4|5|6|7|8|9)  "5"
+                iOrderStatus    (READY|HOLD|UNKNOWN) "UNKNOWN">
+<!ELEMENT OrderHeader 
+          (sDestinationStation? , 
+           sDescription?)>
+
+<!ELEMENT sDestinationStation   (#PCDATA)>
+<!ELEMENT sDescription          (#PCDATA)>
+
+<!-- ================== -->
+<!--  Order Line setup  -->
+<!-- ================== -->
+<!ELEMENT OrderLine
+          (sContainerType? ,
+	   iHeight?        ,
+	   fOrderQuantity?)>
+<!ATTLIST OrderLine sItem      CDATA  #IMPLIED
+                    sOrderLot  CDATA  #IMPLIED>
+
+<!ELEMENT sContainerType   (#PCDATA)>
+<!ELEMENT iHeight          (#PCDATA)>
+<!ELEMENT fOrderQuantity   (#PCDATA)>
+

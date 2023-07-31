@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AppSettings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <!-- Manualy copy or modify file located in C:\ProgramData\BCS Group\AAA\AirflowDeviceSimulator-->
+  <!-- Increment version number for merging to take place -->
+  <!-- V 1 added flight number request-->
+  <Version>1</Version>
+  <Servers>
+    <!--
+    <Server HostName="127.0.0.1" Name="Local Host" />
+    -->
+    <Server HostName="10.65.27.47" Name="Test AKLTT088" />
+    <Server HostName="10.65.27.48" Name="Test AKLTT089" />
+
+    <Server HostName="10.65.12.217" Name="Qual AKLQL088" />
+    <Server HostName="10.65.12.218" Name="Qual AKLQL089" />
+
+    <Server HostName="10.65.12.2157" Name="Prod AKLAP088" />
+    <Server HostName="10.65.12.216" Name="Prod AKLAP089" />
+  </Servers>
+  <Devices>
+    <Device TcpPort="26506" DeviceId="10" LocationId="0" NetworkByteOrder="false" Configurable="false" TcpServer="false" Name="AKL Int PLC" />
+    <Device TcpPort="26503" DeviceId="10" LocationId="12" NetworkByteOrder="false" Configurable="false" TcpServer="false" Name="AKL Dom PLC" />
+    <Device TcpPort="26520" DeviceId="10" LocationId="21" NetworkByteOrder="false" Configurable="false" TcpServer="false" Name="CHC PLC" />
+    <Device TcpPort="26504" DeviceId="10" LocationId="12" NetworkByteOrder="false" Configurable="false" TcpServer="false" Name="WLG PLC" />
+    <Device TcpPort="26508" DeviceId="10" LocationId="0" NetworkByteOrder="false" Configurable="false" TcpServer="false" Name="ZQN PLC" />
+   </Devices>
+  <DeviceMessages>
+    <DeviceMessage Name="Keep Alive" Id="sf_keep_alive" ReceiveOnly="false" />
+    <DeviceMessage Name="Route Decision" Id="sf_route_decision" ReceiveOnly="false" />
+    <!--
+    <DeviceMessage Name="Keep Alive" Id="af_keep_alive" ReceiveOnly="false" />
+    <DeviceMessage Name="Weight Reconciliation" Id="af_weight_reconcile" ReceiveOnly="false" />
+    <DeviceMessage Name="Fallback Request" Id="af_fallback_request" ReceiveOnly="false" />
+    <DeviceMessage Name="Flight No Request" Id="af_flight_no_request" ReceiveOnly="false" />
+    -->
+  </DeviceMessages>
+  
+  <SelectedServer>0</SelectedServer>
+  <SelectedDevice>0</SelectedDevice>
+  <SelectedFactory>0</SelectedFactory>
+  <SelectedMessage1>0</SelectedMessage1>
+  <SelectedMessage2>0</SelectedMessage2>
+  <SelectedMessage3>0</SelectedMessage3>
+  <Message1Interval>10000</Message1Interval>
+  <Message2Interval>10000</Message2Interval>
+  <Message3Interval>10000</Message3Interval>
+</AppSettings>

@@ -1,0 +1,38 @@
+<div id="settings-ltw-restore" style="display: none;">
+	<div class="row">
+		<div class="col-lg-6">
+			<div class="panel panel-default grey-background-override">
+				<div class="panel-body">
+					<center>
+					
+							
+					<input id="ltw-restore-method" data-toggle="toggle" data-on="Yes" data-off="No"
+						data-onstyle="success" data-offstyle="danger" type="checkbox">
+
+						
+					</center>
+				</div>
+			</div>
+		</div>
+		<div class="col-lg-6">
+			<h4>
+				<span class="label label-default">RE-STORE LOAD</span>
+			</h4>
+			<div id="detail-description">This recovery option will RE-STORE the load into the aisle, via the STV loop.</div>
+		</div>
+	</div>
+	
+	<div class="row">
+		<div class="col-md-12">
+			<div class="col-md-4"></div>
+			<div class="col-md-4">
+				<center>
+					<button id="recover-ltw-restore-button" type="button"
+						class="btn btn-success btn-default">Start Recovery</button>
+				</center>
+			</div>
+			<div class="col-md-4"></div>
+		</div>
+
+	</div>
+</div>

@@ -1,0 +1,80 @@
+<!-- ITEM DETAIL MODIFY  -->
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+	<div id="item-detail-add-modal" class="modal fade">
+
+		<div class="modal-dialog modal-lg">
+
+			<div class="modal-content">
+
+				<div class="modal-header">
+
+					<button type="button" class="close" data-dismiss="modal"
+						aria-hidden="true">&times;</button>
+
+					<h4 class="modal-title">Add Item Detail</h4>
+
+				</div>
+
+				<div class="modal-body">
+				
+				
+				<spring:url value="/itemdetail/add" var="formUrl"/>
+				<form:form cssClass="form-horizontal" id="item-detail-add-form"
+					action="${formUrl}" method="POST" modelAttribute="ItemDetailModel">
+
+					<div class="form-group">
+						<label class="control-label col-sm-2" for="item">Item:</label>
+						<div class="col-sm-4">
+							<form:input path="item" cssClass="form-control" id="itemAdd"
+								placeholder="Enter itemD" required="required" readonly="false" />
+						</div>
+
+					</div>
+					<div class="form-group">
+							<label class="control-label col-sm-2" for="loadid">Load
+							ID:</label>
+						<div class="col-sm-4">
+							<form:input path="loadId" cssClass="form-control" id="loadIdAdd"
+								placeholder="Enter Load ID" required="required" readonly="false" />
+						</div>
+							
+					</div>
+					<!--  
+					<div class="form-group">
+							<label class="control-label col-sm-2" for="lot">Flight #:</label>
+						<div class="col-sm-4">
+							<form:input path="lot" cssClass="form-control" id="lotAdd"
+								placeholder="Enter Flight #" required="false" readonly="false" />
+						</div>
+							
+					</div>-->
+					<div class="form-group">
+							<label class="control-label col-sm-2" for="holdType">HoldType:</label>
+							<div class="col-sm-4">
+								
+								<form:select path="holdType" cssClass="form-control" id="holdType">
+								        <form:option id="holdTypeAdd"   value = ""></form:option>
+     									<form:options items="${dropdownMenus.itemDetailHoldType}" />
+								</form:select>
+							</div>
+					</div>
+				</form:form>
+
+			</div>
+
+				<div class="modal-footer">
+
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+
+					<button id="item-detail-add-button" type="button" class="btn btn-primary">Add</button>
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</div>
+<!-- END ITEM DETAIL ADD  -->

@@ -1,0 +1,8 @@
+-- If IMPLICIT_TRANSACTION = OFF all transactions are auto started and commited.
+-- If IMPLICIT_TRANSACTION = ON all transactions need to be explicitly started and committed
+-- (technically you don't need the BEGIN TRAN even in this case since it will still be executed
+--  automatically for you though the commit or rollback will not).
+--
+DECLARE @IMPLICIT_TRANSACTIONS VARCHAR(3) = 'OFF';
+IF ( (2 & @@OPTIONS) = 2 ) SET @IMPLICIT_TRANSACTIONS = 'ON';
+SELECT @IMPLICIT_TRANSACTIONS AS IMPLICIT_TRANSACTIONS;

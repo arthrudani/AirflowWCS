@@ -1,0 +1,29 @@
+/* ---- MOBILE DEVICES ---- */
+@media screen and (min-width: 0px) 
+{
+	#alert-area
+	{
+	  position:static; 
+	}
+}
+/* ---- #END MOBILE DEVICES ---- */
+
+/* ---- TABLET DEVICES ---- */
+@media screen and (min-width: 768px) 
+{
+	#alert-area
+	{
+	 /* -- ineherit from large --*/
+	}
+}
+/* ---- END TABLET DEVICES ---- */
+
+
+/* ---- LARGE DEVICES ---- */
+#alert-area
+{
+	position:absolute;
+    bottom: 0;
+    right:0; 
+}
+/* ---- END LARGE DEVICES ---- */

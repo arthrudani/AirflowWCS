@@ -1,0 +1,36 @@
+<%@taglib uri = "http://www.springframework.org/tags/form" prefix = "form"%>
+<div id="settings-arrived" style="display: none;">
+	<div class="row">
+
+		<div class="col-md-6">
+			<h4>
+				<span class="label label-default">AUTO PICK LOAD</span>
+			</h4>
+			<div id="detail-description">When there are moves for a load, complete the move. When there are no moves execute the following logic: <ul><li>IF load at <strong>CAPTIVE</strong> or <strong>SEMI-CAPTIVE</strong> station, delete inventory on load.</li><li> IF NOT, both the load AND the inventory will be deleted.</li></ul></div>
+		</div>
+		<div class="col-md-6">
+			<div class="panel panel-default grey-background-override">
+				<div class="panel-body">
+
+					<input id="auto-pick-method" data-toggle="toggle" data-on="Yes" data-off="No"
+						data-onstyle="success" data-offstyle="danger" type="checkbox">
+
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			<div class="col-md-4"></div>
+			<div class="col-md-4">
+				<center>
+					<button id="recover-arrived-button" type="button"
+						class="btn btn-success btn-default">Start Recovery</button>
+				</center>
+			</div>
+			<div class="col-md-4"></div>
+		</div>
+
+	</div>
+
+</div>

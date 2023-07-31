@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<taglib xmlns="http://java.sun.com/xml/ns/j2ee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_0.xsd"
+    version="2.0">
+<description>Wrxj web custom tags</description>
+<tlib-version>2.1</tlib-version>
+<short-name>wrxj</short-name>
+<uri>wrxj-taglib</uri>
+<tag>
+	<name>favPanel</name>
+	<tag-class>com.daifukuamerica.wrxj.web.ui.tag.FavPanelTag</tag-class>
+	<body-content>empty</body-content>
+
+	<attribute>
+		<name>pretty</name>
+		<required>false</required>
+	</attribute>
+</tag>
+
+<tag>
+	<name>navPanel</name>
+	<tag-class>com.daifukuamerica.wrxj.web.ui.tag.NavPanelTag</tag-class>
+	<body-content>empty</body-content>
+
+	<attribute>
+		<name>pretty</name>
+		<required>false</required>
+	</attribute>
+</tag>
+
+<tag>
+	<name>ajaxTable</name>
+	<tag-class>com.daifukuamerica.wrxj.web.ui.tag.AjaxTableTag</tag-class>
+	<body-content>empty</body-content>
+	
+	<attribute>
+	<name>metaDataName</name>
+	<required>true</required>
+	</attribute>
+	
+	<attribute>
+	<name>ajaxUri</name>
+	<required>true</required>
+	<rtexprvalue>true</rtexprvalue>
+	</attribute>
+	
+	<attribute>
+	<name>tableId</name>
+	<required>false</required>
+	</attribute>
+
+	<attribute>
+	<name>hideColumns</name>
+	<required>false</required>
+	<rtexprvalue>true</rtexprvalue>
+	<type>java.lang.String[]</type>
+	</attribute>
+	
+	<attribute>
+	<name>prefHideColumns</name>
+	<required>false</required>
+	<rtexprvalue>true</rtexprvalue>
+	</attribute>
+	
+	<attribute>
+	<name>metaId</name>
+	<required>true</required>
+	</attribute>
+	
+	<attribute>
+	<name>hasSearch</name>
+	<required>false</required>
+	</attribute>
+	
+	<attribute>
+	<name>hasAdd</name>
+	<required>false</required>
+	</attribute>
+	
+	<attribute>
+	<name>hasRefresh</name>
+	<required>false</required>
+	</attribute>
+	
+	<attribute>
+	<name>hasExcel</name>
+	<required>false</required>
+	</attribute>
+	
+	<attribute>
+	<name>hasColVis</name>
+	<required>false</required>
+	</attribute>
+	
+	<attribute>
+	<name>hasAutoRefresh</name>
+	<required>false</required>
+	</attribute>
+	
+	<attribute>
+	<name>hasFilter</name>
+	<required>false</required>
+	</attribute>
+	
+	<attribute>
+	<name>hasEdit</name>
+	<required>false</required>
+	</attribute>
+	
+	<attribute>
+	<name>hasDelete</name>
+	<required>false</required>
+	</attribute>
+	
+	<attribute>
+	<name>hasFooter</name>
+	<required>false</required>
+	</attribute>
+	
+	<attribute>
+	<name>inModal</name>
+	<required>false</required>
+	</attribute>
+	
+	<attribute>
+	<name>inSidebar</name>
+	<required>false</required>
+	</attribute>
+
+	
+	<attribute>
+	<name>numPageLength</name>
+	<required>false</required>
+	</attribute>
+	
+	<attribute>
+	<name>refreshRateSec</name>
+	<required>false</required>
+	</attribute>
+	
+	<attribute>
+	<name>theme</name>
+	<required>false</required>
+	</attribute>
+	
+	<attribute>
+	<name>compact</name>
+	<required>false</required>
+	</attribute>
+	
+	<attribute>
+	<name>regexHighlightList</name>
+	<required>false</required>
+	<rtexprvalue>true</rtexprvalue>
+	<type>java.lang.String[]</type>
+	</attribute>
+
+</tag>
+<tag>
+<name>hibernateAjaxTable</name>
+	<tag-class>com.daifukuamerica.wrxj.web.ui.tag.HibernateAjaxTableTag</tag-class>
+	<body-content>empty</body-content>
+	
+	<attribute>
+	<name>entity</name>
+	<required>false</required>
+	<rtexprvalue>true</rtexprvalue>
+	<type>java.lang.String</type>
+	</attribute>
+	
+	<attribute>
+	<name>ajaxUri</name>
+	<required>true</required>
+	<rtexprvalue>true</rtexprvalue>
+	</attribute>
+	
+	<attribute>
+	<name>tableId</name>
+	<required>false</required>
+	</attribute>
+
+	<attribute>
+	<name>hideColumns</name>
+	<required>false</required>
+	<rtexprvalue>true</rtexprvalue>
+	<type>java.lang.String[]</type>
+	</attribute>
+	
+	<attribute>
+	<name>explicitColumns</name>
+	<required>false</required>
+	<rtexprvalue>true</rtexprvalue>
+	<type>java.lang.String[]</type>
+	</attribute>
+	
+	
+	<attribute>
+	<name>hqlquery</name>
+	<required>false</required>
+	<rtexprvalue>true</rtexprvalue>
+	<type>java.lang.String</type>
+	</attribute>
+	
+	<attribute>
+	<name>prefHideColumns</name>
+	<required>false</required>
+	<rtexprvalue>true</rtexprvalue>
+	</attribute>
+	
+	<attribute>
+	<name>hasSearch</name>
+	<required>false</required>
+	</attribute>
+	
+	<attribute>
+	<name>hasAdd</name>
+	<required>false</required>
+	</attribute>
+	
+	<attribute>
+	<name>hasRefresh</name>
+	<required>false</required>
+	</attribute>
+	
+	<attribute>
+	<name>hasExcel</name>
+	<required>false</required>
+	</attribute>
+	
+	<attribute>
+	<name>hasColVis</name>
+	<required>false</required>
+	</attribute>
+	
+	<attribute>
+	<name>hasAutoRefresh</name>
+	<required>false</required>
+	</attribute>
+	
+	<attribute>
+	<name>hasFilter</name>
+	<required>false</required>
+	</attribute>
+	
+	<attribute>
+	<name>hasEdit</name>
+	<required>false</required>
+	</attribute>
+	
+	<attribute>
+	<name>hasDelete</name>
+	<required>false</required>
+	</attribute>
+	
+	<attribute>
+	<name>hasBottomColumnHeaders</name>
+	<required>false</required>
+	</attribute>
+	
+	<attribute>
+	<name>inModal</name>
+	<required>false</required>
+	</attribute>
+	
+	<attribute>
+	<name>metaId</name>
+	<required>true</required>
+	</attribute>
+	
+	<attribute>
+	<name>numPageLength</name>
+	<required>false</required>
+	</attribute>
+	
+	<attribute>
+	<name>refreshRateSec</name>
+	<required>false</required>
+	</attribute>
+	
+	<attribute>
+	<name>theme</name>
+	<required>false</required>
+	</attribute>
+	
+	<attribute>
+	<name>regexHighlightList</name>
+	<required>false</required>
+	<rtexprvalue>true</rtexprvalue>
+	<type>java.lang.String[]</type>
+	</attribute>
+	
+	<attribute>
+	<name>colButtonProperties</name>
+	<required>false</required>
+	<rtexprvalue>true</rtexprvalue>
+	<type>java.lang.String[]</type>
+	</attribute>
+</tag>
+
+</taglib>

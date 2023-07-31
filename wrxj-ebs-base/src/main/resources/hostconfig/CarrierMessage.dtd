@@ -1,0 +1,22 @@
+  <!--
+     Document Type Definition for the Carrier message from a host system.
+     The declarations below require that each tag appear zero or 1 time, BUT
+     when these elements appear, they must occur in the order specified here.
+
+     Author: A.D.
+     Version 1.0      05/02/05
+     Copyright 2005 Daifuku America Corporation  All Rights Reserved.
+  -->
+  <!ELEMENT CarrierMessage (Carrier+)>
+  <!ELEMENT Carrier
+    (sCarrierID?       ,
+     sCarrierName?     ,
+     sCarrierContact?  ,
+     sCarrierPhone?)>
+
+  <!ATTLIST Carrier action (ADD|MODIFY|DELETE) #REQUIRED>
+
+  <!ELEMENT sCarrierID       (#PCDATA)>
+  <!ELEMENT sCarrierName     (#PCDATA)>
+  <!ELEMENT sCarrierContact  (#PCDATA)>
+  <!ELEMENT sCarrierPhone    (#PCDATA)>

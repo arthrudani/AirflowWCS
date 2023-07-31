@@ -1,0 +1,6 @@
+---
+type: specs.openrewrite.org/v1beta/recipe
+name: com.daifukuoc.airflowwcs
+recipeList:
+  # - org.openrewrite.java.migrate.Java8toJava11
+  # - org.openrewrite.java.logging.slf4j.Log4jToSlf4j

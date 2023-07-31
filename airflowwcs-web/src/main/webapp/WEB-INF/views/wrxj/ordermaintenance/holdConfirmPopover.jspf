@@ -1,0 +1,18 @@
+<%-- Confirm MODAL  --%>
+<div id="confirm-hold-modal" class="modal fade">
+	<div class="modal-dialog modal-sm">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h4 class="modal-title">Confirm Order Hold</h4>
+			</div>
+			<div class="modal-body">
+				Are you sure you want to HOLD selected order(s)?
+			</div>
+			<div class="modal-footer">
+				<button id="confirm-hold-button" type="button" class="btn btn-primary">Yes</button>
+				<button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+			</div>
+		</div>
+	</div>
+</div>
+<%-- END Confirm MODAL--%>

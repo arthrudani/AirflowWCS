@@ -1,0 +1,745 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <!-- Use version-maven-plugin to update version -->
+  <!-- 1. mvn versions:set -DnewVersion=1.0.1-SNAPSHOT -->
+  <!-- 2. Review the change -->
+  <!-- 3. mvn versions:commit or mvn versions:revert -->
+  <groupId>com.daifukuoc</groupId>
+  <artifactId>airflowwcs</artifactId>  
+  <version>0.0.1-SNAPSHOT</version>
+  <name>airflowwcs</name>
+  <url>http://www.daifuku.com</url>
+  <packaging>pom</packaging>
+  
+  <modules>
+    <module>wrxj-ebs-base</module>
+    <module>wrxj-ebs-custom</module>
+    <module>airflowwcs-web</module>
+    <module>distribution</module>
+  </modules>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.source>11</maven.compiler.source>
+    <maven.compiler.target>11</maven.compiler.target>
+
+    <external.lib.dir>${basedir}\share\external-libs</external.lib.dir>    
+    <external.lib.version>1.0.0</external.lib.version>
+    
+    <!-- TODO: Remove all versions in dependencyManagement and create new properties -->
+    <spring.framework.version>5.3.23</spring.framework.version>
+    <spring-security.framework.version>5.7.4</spring-security.framework.version>
+    <log4j2.version>2.19.0</log4j2.version>
+    <junit5.jupiter.version>5.8.1</junit5.jupiter.version>
+    <mockito.version>4.9.0</mockito.version>
+  </properties>
+  
+  <dependencyManagement>
+    <!-- Common dependencies that will be included in all child projects -->
+    <!-- Child projects don't need to include these again in their pom.xml -->
+    <dependencies>
+      <!-- External libraries imported as jar files -->
+      <!-- These are in external-lib directory -->
+      <dependency>
+        <groupId>com.daifukuamerica.wrxj</groupId>
+        <artifactId>DacLabelGenerator</artifactId>
+        <version>${external.lib.version}</version>
+      </dependency>      
+      <dependency>
+        <groupId>com.daifukuamerica.wrxj</groupId>
+        <artifactId>DACTcpip</artifactId>
+        <version>${external.lib.version}</version>
+      </dependency>      
+      <dependency>
+        <groupId>com.daifukuamerica.wrxj</groupId>
+        <artifactId>errorcodes-9y</artifactId>
+        <version>${external.lib.version}</version>
+      </dependency>      
+      <dependency>
+        <groupId>com.daifukuamerica.wrxj</groupId>
+        <artifactId>errorcodes-api</artifactId>
+        <version>${external.lib.version}</version>
+      </dependency>      
+      <dependency>
+        <groupId>com.daifukuamerica.wrxj</groupId>
+        <artifactId>errorcodes-as21</artifactId>
+        <version>${external.lib.version}</version>
+      </dependency>
+  
+      <!-- Apache Commons Pool2 -->
+      <dependency>
+        <groupId>org.apache.commons</groupId>
+        <artifactId>commons-pool2</artifactId>
+        <version>2.6.0</version>
+      </dependency>
+  
+      <!-- Gson 2.8.5 -->
+      <dependency>
+          <groupId>com.google.code.gson</groupId>
+          <artifactId>gson</artifactId>
+          <version>2.8.5</version>
+      </dependency>
+  
+      <!-- JCalendar 1.4 -->
+      <dependency>
+        <groupId>com.toedter</groupId>
+        <artifactId>jcalendar</artifactId>
+        <version>1.4</version>
+      </dependency>
+  
+      <!-- JDOM -->
+      <dependency>
+        <groupId>org.jdom</groupId>
+        <artifactId>jdom2</artifactId>
+        <version>2.0.6</version>
+      </dependency>
+  
+      <!-- JFreeChart -->
+      <dependency>
+        <groupId>org.jfree</groupId>
+        <artifactId>jfreechart</artifactId>
+        <version>1.0.19</version>
+      </dependency>
+  
+      <!-- org.jfree.jfreechart uses org.jfree.jcommon 1.0.23 -->
+      <dependency>
+        <groupId>org.jfree</groupId>
+        <artifactId>jcommon</artifactId>
+        <version>1.0.23</version>
+      </dependency>
+  
+      <!-- Oracle JDBC -->
+      <!-- Shouldn't we need to use ojdbc8 for oracle 19.3? See https://mvnrepository.com/artifact/com.oracle.database.jdbc/ojdbc8? -->
+      <!-- In dep.properties:
+      # Oracle Client 19 for Java 8
+      ojdbc.jar=lib/ojdbc8.jar
+      library.ojdbc.jar=${library}/oracle.com/Oracle_Client/19.3/ojdbc8.jar
+      -->
+      <!-- The following is not found
+      <dependency>
+        <groupId>com.oracle</groupId>
+        <artifactId>ojdbc</artifactId>
+        <version>12.1.0.2</version>
+      </dependency>
+      -->
+      <dependency>
+        <groupId>com.oracle.database.jdbc</groupId>
+        <artifactId>ojdbc8</artifactId>
+        <version>19.3.0.0</version>
+      </dependency>
+  
+      <!-- Microsoft SQL Server -->
+      <!-- Shouldn't we need to use ms jdbc for sql server 7.4.1.jre8? See https://mvnrepository.com/artifact/com.microsoft.sqlserver/mssql-jdbc/7.4.1.jre8 -->
+      <!-- In dep.properties:
+      # SQL Server 2019 for Java 8
+      sqljdbc.jar=lib/mssql-jdbc-7.4.1.jre8.jar
+      library.sqljdbc.jar=${library}/microsoft.com/jdbc/7.4.1.0/mssql-jdbc-7.4.1.jre8.jar
+      -->
+      <!-- The following is not found
+      <dependency>
+        <groupId>com.microsoft.sqlserver</groupId>
+        <artifactId>sqljdbc42</artifactId>
+        <version>6.0.8112.200</version>
+      </dependency>
+      -->
+      <dependency>
+        <groupId>com.microsoft.sqlserver</groupId>
+        <artifactId>mssql-jdbc</artifactId>
+        <version>7.4.1.jre8</version>
+      </dependency>
+      
+      <dependency>
+        <groupId>org.apache.commons</groupId>
+        <artifactId>commons-dbcp2</artifactId>
+        <version>2.9.0</version>
+      </dependency>
+  
+      <!-- Xerces (XML) -->
+      <!-- Don't we need to have xml-api dependency? Should we use the current jar file -->
+      <!-- In dep.properties
+      # Xerces-J 2.12.0
+      xercesImpl.jar=lib/xercesImpl.jar
+      library.xercesImpl.jar=${library}/apache.org/xml/Xerces-J/2.12.0/xercesImpl.jar
+      xml-apis.jar=lib/xml-apis.jar
+      library.xml-apis.jar=${library}/apache.org/xml/Xerces-J/2.12.0/xml-apis.jar
+      -->
+      <dependency>
+        <groupId>xerces</groupId>
+        <artifactId>xercesImpl</artifactId>
+        <version>2.12.0</version>
+        <!-- org.xml.sax could be included in multiple modules -->
+        <!-- xml-apis is a transitive dependency of xercesImpl -->
+        <!-- mvn build goes ok, but STS is not happy with it as more than 1 modules have the same package -->
+        <!-- So, it's necessary to exclude it from here -->
+        <exclusions>
+          <exclusion>
+            <groupId>xml-apis</groupId>
+            <artifactId>xml-apis</artifactId>
+          </exclusion>
+        </exclusions>
+      </dependency>
+      
+      <dependency>
+        <groupId>org.apache.commons</groupId>
+        <artifactId>commons-lang3</artifactId>
+        <version>3.9</version>
+      </dependency>
+      
+      <!-- JSP/Servlet/J2EE dependencies -->
+      <dependency>
+        <groupId>javax.servlet</groupId>
+        <artifactId>jstl</artifactId>
+        <version>1.2</version>
+      </dependency>      
+      <dependency>
+        <groupId>javax.servlet.jsp</groupId>
+        <artifactId>jsp-api</artifactId>
+        <version>2.2</version>
+      </dependency>      
+      <dependency>
+        <groupId>javax</groupId>
+        <artifactId>javaee-api</artifactId>
+        <version>7.0</version>
+      </dependency>
+  
+      <!-- Spring dependency elements -->
+      <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-web</artifactId>
+        <version>${spring.framework.version}</version>
+      </dependency>      
+      <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-context</artifactId>
+        <version>${spring.framework.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-beans</artifactId>
+        <version>${spring.framework.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-webmvc</artifactId>
+        <version>${spring.framework.version}</version>
+      </dependency>
+      
+      <!-- Web Socket -->
+      <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-websocket</artifactId>
+        <version>${spring.framework.version}</version>
+      </dependency>
+  
+      <!-- JMS dependencies -->
+      <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-messaging</artifactId>
+        <version>${spring.framework.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-jms</artifactId>
+        <version>${spring.framework.version}</version>
+      </dependency>
+  
+      <!-- Spring Security dependency elements -->
+      <dependency>
+        <groupId>org.springframework.security</groupId>
+        <artifactId>spring-security-web</artifactId>
+        <version>${spring-security.framework.version}</version>
+      </dependency>      
+      <dependency>
+        <groupId>org.springframework.security</groupId>
+        <artifactId>spring-security-core</artifactId>
+        <version>${spring-security.framework.version}</version>
+      </dependency>      
+      <dependency>
+        <groupId>org.springframework.security</groupId>
+        <artifactId>spring-security-config</artifactId>
+        <version>${spring-security.framework.version}</version>
+      </dependency>      
+      <dependency>
+        <groupId>org.springframework.security</groupId>
+        <artifactId>spring-security-taglibs</artifactId>
+        <version>${spring-security.framework.version}</version>
+      </dependency>
+      
+      <!--  Maybe not required for now and also it's not maintained anymore(last updated 2015) -->
+      <!--
+      <dependency>
+        <groupId>com.mangofactory</groupId>
+        <artifactId>swagger-springmvc</artifactId>
+        <version>1.0.2</version>
+      </dependency>
+      -->  
+ 
+      <!-- ORM dependency elements -->
+      <dependency>
+        <groupId>org.hibernate</groupId>
+        <artifactId>hibernate-validator</artifactId>
+        <version>5.4.2.Final</version>
+      </dependency>      
+      <dependency>
+        <groupId>org.hibernate</groupId>
+        <artifactId>hibernate-core</artifactId>
+        <version>5.4.2.Final</version>
+      </dependency>
+      <dependency>
+        <groupId>org.hibernate</groupId>
+        <artifactId>hibernate-c3p0</artifactId>
+        <version>5.4.2.Final</version>
+      </dependency>
+      
+      <dependency>
+        <groupId>io.projectreactor</groupId>
+        <artifactId>reactor-core</artifactId>
+        <!-- <version>2.0.8.RELEASE</version>-->
+        <version>3.4.24</version>
+      </dependency>
+      
+      <dependency>
+        <groupId>io.projectreactor.netty</groupId>
+        <artifactId>reactor-netty</artifactId>
+        <version>1.0.11</version>
+      </dependency>
+      <!--
+        <dependency>
+            <groupId>io.projectreactor</groupId>
+            <artifactId>reactor-bom</artifactId>
+            <version>2020.0.24</version> 
+            <type>pom</type>
+            <scope>import</scope>
+        </dependency>
+      -->
+      <!--
+      <dependency>
+        <groupId>io.projectreactor</groupId>
+        <artifactId>reactor-net</artifactId>
+        <version>2.0.8.RELEASE</version>
+      </dependency>
+      -->
+     <!--
+     <dependency>
+        <groupId>io.netty</groupId>
+        <artifactId>netty-all</artifactId>
+        <version>4.1.82.Final</version>
+      </dependency>
+      -->
+  
+        <!-- Apache ActiveMQ Artemis JMS -->
+      <dependency>
+        <groupId>org.apache.activemq</groupId>
+        <artifactId>artemis-jms-client-all</artifactId>
+        <version>2.19.0</version>
+      </dependency>
+      
+      <!-- Guava - Google core libraries for java -->
+      <dependency>
+        <groupId>com.google.guava</groupId>
+        <artifactId>guava</artifactId>
+        <version>27.1-jre</version>
+      </dependency>
+      
+      <!-- Spring state machine -->
+      <dependency>
+        <groupId>org.springframework.statemachine</groupId>
+        <artifactId>spring-statemachine-core</artifactId>
+        <version>3.2.0</version>
+      </dependency>
+      
+      <dependency>
+        <groupId>org.springframework.statemachine</groupId>
+        <artifactId>spring-statemachine-test</artifactId>
+        <version>3.2.0</version>
+        <scope>test</scope>
+      </dependency>
+  
+      <!-- Log4J 2.x -->
+      <dependency>
+        <groupId>org.apache.logging.log4j</groupId>
+        <artifactId>log4j-api</artifactId>
+        <version>${log4j2.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.logging.log4j</groupId>
+        <artifactId>log4j-core</artifactId>
+        <version>${log4j2.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.logging.log4j</groupId>
+        <artifactId>log4j-slf4j2-impl</artifactId>
+        <version>${log4j2.version}</version>
+      </dependency>
+      
+      <!-- JUnit5 including JUnit4 annotation support -->
+      <dependency>
+        <groupId>org.junit</groupId>
+        <artifactId>junit-bom</artifactId>
+        <version>${junit5.jupiter.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      
+      <!-- Mockito -->
+      <dependency>
+        <groupId>org.mockito</groupId>
+        <artifactId>mockito-core</artifactId>
+        <version>${mockito.version}</version>
+        <scope>test</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.mockito</groupId>
+        <artifactId>mockito-inline</artifactId>
+        <version>${mockito.version}</version>
+        <scope>test</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.mockito</groupId>
+        <artifactId>mockito-junit-jupiter</artifactId>
+        <version>${mockito.version}</version>
+        <scope>test</scope>
+      </dependency>
+      
+      <!-- Selenium to test web pages -->
+      <dependency>
+        <groupId>org.seleniumhq.selenium</groupId>
+        <artifactId>selenium-api</artifactId>
+        <version>3.141.59</version>
+        <scope>test</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.seleniumhq.selenium</groupId>
+        <artifactId>selenium-java</artifactId>
+        <version>3.141.59</version>
+        <scope>test</scope>
+      </dependency>      
+      <dependency>
+        <groupId>org.seleniumhq.selenium</groupId>
+        <artifactId>selenium-support</artifactId>
+        <version>3.141.59</version>
+        <scope>test</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.seleniumhq.selenium</groupId>
+        <artifactId>selenium-firefox-driver</artifactId>
+        <version>3.141.59</version>
+        <scope>test</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+  
+  <build>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>        
+          <artifactId>maven-compiler-plugin</artifactId>
+          <version>3.10.1</version>          
+          <configuration>
+            <source>11</source>
+            <target>11</target>
+            <debug>true</debug>
+            <optimize>true</optimize>
+          </configuration>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>        
+          <artifactId>maven-source-plugin</artifactId>
+          <version>3.2.1</version>
+          <executions>
+            <execution>
+              <id>attach-sources</id>
+              <goals>
+                <goal>jar-no-fork</goal>
+              </goals>
+            </execution>
+          </executions>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-surefire-plugin</artifactId>
+          <version>3.0.0-M7</version>
+        </plugin>
+        <plugin>
+          <groupId>org.jacoco</groupId>
+          <artifactId>jacoco-maven-plugin</artifactId>
+          <version>0.8.8</version>
+          <executions>
+            <execution>
+              <goals>
+                <goal>prepare-agent</goal>
+              </goals>
+            </execution>
+            <execution>
+              <id>report</id>
+              <phase>prepare-package</phase>
+              <goals>
+                <goal>report</goal>
+              </goals>
+            </execution>
+          </executions>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-war-plugin</artifactId>
+          <version>3.3.2</version>          
+          <configuration>
+            <!--  There are too many places using absolute path with /airflowwcs -->
+            <!--  For now, let's change the war file name so that it can be deployed to /airflowwcs -->
+            <!--  TODO: Remove this after fixing hardcoded absolute path issue -->
+            <warName>airflowwcs</warName>
+            <failOnMissingWebXml>false</failOnMissingWebXml>
+            <attachClasses>true</attachClasses>
+          </configuration>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-install-plugin</artifactId>
+          <version>2.5.1</version>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-enforcer-plugin</artifactId>
+          <version>3.1.0</version>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-site-plugin</artifactId>
+          <version>3.12.1</version>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-project-info-reports-plugin</artifactId>
+          <version>3.4.1</version>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-antrun-plugin</artifactId>
+          <version>3.1.0</version>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-assembly-plugin</artifactId>
+          <version>3.4.2</version>
+        <executions>
+          <execution>
+            <id>create-distribution</id>
+            <phase>package</phase>
+            <goals>
+              <goal>single</goal>
+            </goals>
+            <configuration>
+              <appendAssemblyId>false</appendAssemblyId>
+              <outputDirectory>dist</outputDirectory>
+              <descriptors>
+                <descriptor>src/assembly/distribution.xml</descriptor>
+              </descriptors>
+            </configuration>
+          </execution>
+        </executions>
+        </plugin>
+        <plugin>
+          <artifactId>maven-clean-plugin</artifactId>
+          <version>3.2.0</version>
+          <configuration>
+            <filesets>
+              <fileset>
+                <directory>dist</directory>
+              </fileset>
+            </filesets>
+          </configuration>
+        </plugin>
+        <plugin>
+          <groupId>org.openrewrite.maven</groupId>
+          <artifactId>rewrite-maven-plugin</artifactId>
+          <version>4.36.0</version>
+          <configuration>
+            <configLocation>${maven.multiModuleProjectDirectory}/../share/rewrite/rewrite.yml</configLocation>
+            <exclusions>
+              <exclude>**/*.zip</exclude>
+              <exclude>**/*.war</exclude>
+              <exclude>**/*.jar</exclude>
+            </exclusions>
+            <skipMavenParsing>true</skipMavenParsing>
+            <activeRecipes>
+              <recipe>com.daifukuoc.airflowwcs</recipe>
+            </activeRecipes>
+          </configuration>
+          <dependencies>
+          <dependency>
+              <groupId>org.openrewrite.recipe</groupId>
+              <artifactId>rewrite-migrate-java</artifactId>
+              <version>1.13.0</version>
+            </dependency>
+            <dependency>
+              <groupId>org.openrewrite.recipe</groupId>
+              <artifactId>rewrite-logging-frameworks</artifactId>
+              <version>1.14.0</version>
+            </dependency>
+          </dependencies>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+    
+    <plugins>
+      <plugin>
+        <artifactId>maven-install-plugin</artifactId>
+        <!-- Child projects shouldn't inherit this as we just need to install the following jar files once -->
+        <inherited>false</inherited>
+        <!-- Install external libraries into local maven repository(~/.m2) -->
+        <!-- You can run `mvn validate` to test this out -->
+        <executions>
+          <execution>
+            <id>install-DacLabelGenerator</id>
+            <phase>validate</phase>
+            <goals>
+              <goal>install-file</goal>
+            </goals>
+            <configuration>
+              <file>${external.lib.dir}\DacLabelGenerator.jar</file>
+              <groupId>com.daifukuamerica.wrxj</groupId>
+              <artifactId>DacLabelGenerator</artifactId>
+              <version>${external.lib.version}</version>
+              <packaging>jar</packaging>
+              <generatePom>true</generatePom>
+            </configuration>
+          </execution>
+          <execution>
+            <id>install-DACTcpip</id>
+            <phase>validate</phase>
+            <goals>
+              <goal>install-file</goal>
+            </goals>
+            <configuration>
+              <file>${external.lib.dir}\DACTcpip.jar</file>
+              <groupId>com.daifukuamerica.wrxj</groupId>
+              <artifactId>DACTcpip</artifactId>
+              <version>${external.lib.version}</version>
+              <packaging>jar</packaging>
+              <generatePom>true</generatePom>
+            </configuration>
+          </execution>
+          <execution>
+            <id>install-errorcodes-9y</id>
+            <phase>validate</phase>
+            <goals>
+              <goal>install-file</goal>
+            </goals>
+            <configuration>
+              <file>${external.lib.dir}\errorcodes-9y.jar</file>
+              <groupId>com.daifukuamerica.wrxj</groupId>
+              <artifactId>errorcodes-9y</artifactId>
+              <version>${external.lib.version}</version>
+              <packaging>jar</packaging>
+              <generatePom>true</generatePom>
+            </configuration>
+          </execution>
+          <execution>
+            <id>install-errorcodes-api</id>
+            <phase>validate</phase>
+            <goals>
+              <goal>install-file</goal>
+            </goals>
+            <configuration>
+              <file>${external.lib.dir}\errorcodes-api.jar</file>
+              <groupId>com.daifukuamerica.wrxj</groupId>
+              <artifactId>errorcodes-api</artifactId>
+              <version>${external.lib.version}</version>
+              <packaging>jar</packaging>
+              <generatePom>true</generatePom>
+            </configuration>
+          </execution>
+          <execution>
+            <id>install-errorcodes-as21</id>
+            <phase>validate</phase>
+            <goals>
+              <goal>install-file</goal>
+            </goals>
+            <configuration>
+              <file>${external.lib.dir}\errorcodes-as21.jar</file>
+              <groupId>com.daifukuamerica.wrxj</groupId>
+              <artifactId>errorcodes-as21</artifactId>
+              <version>${external.lib.version}</version>
+              <packaging>jar</packaging>
+              <generatePom>true</generatePom>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <artifactId>maven-enforcer-plugin</artifactId>
+        <!-- Child projects shouldn't inherit this as we just need to check this once -->
+        <inherited>false</inherited>
+        <configuration>
+          <!-- Run `mvn enforcer:display-info` to get the current configurations -->
+          <rules>
+            <requireMavenVersion>
+              <version>3.8.1</version>
+            </requireMavenVersion>
+            <requireJavaVersion>
+              <version>11.0.16-1</version>
+            </requireJavaVersion>
+            <requireJavaVendor>
+              <includes>
+                <include>Eclipse Adoptium</include>
+              </includes>
+            </requireJavaVendor>
+          </rules>
+        </configuration>
+        <executions>
+          <execution>
+            <id>enforce-maven</id>
+            <phase>validate</phase>
+            <goals>
+              <goal>enforce</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <artifactId>maven-antrun-plugin</artifactId>
+        <!-- Child projects shouldn't inherit this as we just need to do this once -->
+        <inherited>false</inherited>
+        <executions>
+          <execution>
+            <id>prepare</id>
+            <phase>validate</phase>
+            <configuration>
+              <target>
+                <echo>Unzipping the included yajsw installation file</echo>
+                <unzip src="share/tools/yajsw-stable-13.04.zip" dest="share/tools/" />
+                <echo>Renaming yajsw installation directory for packaging later</echo>
+                <move file="share/tools/yajsw-stable-13.04" tofile="share/tools/yajsw" />
+                <echo>Unzipping the included hugo installation file</echo>
+                <unzip src="share/tools/hugo_extended_0.96.0_Windows-64bit.zip" dest="share/tools/hugo" />
+              </target>
+            </configuration>
+            <goals>
+              <goal>run</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+  
+  <reporting>
+    <plugins>
+      <plugin>
+        <groupId>org.jacoco</groupId>
+        <artifactId>jacoco-maven-plugin</artifactId>
+        <reportSets>
+          <reportSet>
+            <reports>
+              <!-- select non-aggregate reports -->
+              <report>report</report>
+            </reports>
+          </reportSet>
+        </reportSets>
+      </plugin>
+    </plugins>
+  </reporting>
+</project>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="ERROR">
+  <Appenders>
+    <Null name="NULL"/>
+    <JDBC name="WRXLOG" tableName="WRXLOG">
+      <ConnectionFactory  class="com.daifukuamerica.wrxj.log.database.DbLoggingConnectionFactory" method="getConnection" />
+      <Column name="IDENTITY_NAME" literal="'WRx'" />
+      <Column name="DATE_TIME" literal="SYSDATETIME()" />
+      <Column name="SOURCE" pattern="%X{LogSource}" />
+      <Column name="AREA" pattern="%X{LogArea}" />
+      <Column name="POSITION" pattern="%X{LogPosition}" />
+      <Column name="DESCRIPTION" pattern="%d{yyyy/MM/dd HH:mm:ss.SSS XXX} - %m" />
+      <Column name="SUBJECT" pattern="%X{LogSubject}" />
+      <Column name="INFOWARNFATAL" pattern="left('%p',1)" />
+    </JDBC>
+    <JDBC name="WRXEQUIPLOG" tableName="WRXEQUIPLOG">
+      <ConnectionFactory  class="com.daifukuamerica.wrxj.log.database.DbLoggingConnectionFactory" method="getConnection" />
+      <Column name="IDENTITY_NAME" literal="'WRx'" />
+      <Column name="DATE_TIME" literal="SYSDATETIME()" />
+      <Column name="DEVICEID" pattern="%X{LogDeviceid}" />
+      <Column name="IDIRECTION" pattern="%X{LogDirection}" />
+      <Column name="COUNT" pattern="%X{LogCount}" />
+      <Column name="DATA" pattern="%X{LogData}"/>
+    </JDBC>
+    <Async name="Async_WRXLOG" bufferSize="80">
+      <AppenderRef ref="WRXLOG"/>
+    </Async>
+    <Async name="Async_WRXEQUIPLOG" bufferSize="80">
+      <AppenderRef ref="WRXEQUIPLOG"/>
+    </Async>    
+  </Appenders>
+  <Loggers>
+    <Root level="INFO">
+      <AppenderRef ref="NULL"/>
+    </Root>
+    <Logger name="WRxDbLoggerErr" level="INFO" additivity="false">
+      <AppenderRef ref="Async_WRXLOG"/>
+    </Logger>
+    <Logger name="WRxDbLoggerInf" level="INFO" additivity="false">
+      <AppenderRef ref="Async_WRXLOG"/>
+    </Logger>
+    <Logger name="WRxDbLoggerEquip" level="INFO" additivity="false">
+      <AppenderRef ref="Async_WRXEQUIPLOG"/>
+    </Logger>
+  </Loggers>
+</Configuration>

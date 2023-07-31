@@ -1,0 +1,122 @@
+<!-- LOAD ADD  -->
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+	<div id="add-modal" class="modal fade">
+
+		<div class="modal-dialog modal-lg">
+
+			<div class="modal-content">
+
+				<div class="modal-header">
+
+					<button type="button" class="close" data-dismiss="modal"
+						aria-hidden="true">&times;</button>
+
+					<h4 class="modal-title">Add Item to load: </h4>
+
+				</div>
+
+				<div class="modal-body">
+				
+				
+				<spring:url value="/store/addItemDetail" var="formUrl"/>
+				<form:form cssClass="form-horizontal" id="lli-add-form" action="${formUrl}" method="POST" modelAttribute="lliData">
+						<div class="form-group">
+							<label class="control-label col-sm-2" for="loadID">Load ID:</label>
+							<div class="col-sm-4">
+								<form:input path="loadID" cssClass="form-control" id="loadID"/>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="control-label col-sm-2" for="expectedReceipt">Expected Receipt:</label>
+							<div class="col-sm-4">
+								<form:input path="expectedReceipt" cssClass="form-control" id="expectedReceipt"/>
+							</div>
+							<label class="control-label col-sm-2" for="item">Item #:</label>
+							<div class="col-sm-4">
+								<form:input path="item" cssClass="form-control" id="item" required="required"/>
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<label class="control-label col-sm-2" for="lot">Lot:</label>
+							<div class="col-sm-4">
+								<form:input path="lot" cssClass="form-control" id="lot"/>
+							</div>
+							<label class="control-label col-sm-2" for="lineID">Line ID:</label>
+							<div class="col-sm-4">
+								<form:input path="lineID" cssClass="form-control " id="lineID"/>
+							</div>
+						
+						</div>
+
+
+
+						<div class="form-group" id="nextLocationContainer">
+						
+
+						</div>
+
+						<div class="form-group">
+							<label class="control-label col-sm-2" for="agingDate">Aging date:</label>
+							<div class="col-sm-4">
+								<form:select path="agingDate" cssClass="form-control col-sm-2" id="agingDate"/>
+
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<label class="control-label col-sm-2" for="expirationDate">Expiration Date:</label>
+							<div class="col-sm-2">
+								<form:input path="expirationDate" cssClass="form-control col-sm-2" id="expirationDate" />
+							</div>
+							<label class="control-label col-sm-2" for="holdType">Hold Type:</label>
+							<div class="col-sm-4">
+								<form:input path="holdType" cssClass="form-control" id="holdType"/>
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<label class="control-label col-sm-2" for="priorityAllocation">Priority Allocation:</label>
+							<div class="col-sm-10">
+								<form:input path="priorityAllocation" cssClass="form-control" id="priorityAllocation"/>
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<label class="control-label col-sm-2" for="currentQuantity">Add quantity:</label>
+							<div class="col-sm-10">
+								<form:input path="currentQuantity" cssClass="form-control" id="currentQuantity" />
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<label class="control-label col-sm-2" for="lastCCIDate">CCI Date:</label>
+							<div class="col-sm-4">
+								<form:input path="lastCCIDate" cssClass="form-control" id="lastCCIDate"/>
+							</div>
+						</div>
+				
+				</form:form>
+
+
+					
+
+				</div>
+
+				<div class="modal-footer">
+
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+
+					<button id="load-add-button" type="button" class="btn btn-primary">Add Item</button>
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</div>
+
+<!-- END LOAD ADD -->

@@ -1,0 +1,36 @@
+<%@taglib uri = "http://www.springframework.org/tags/form" prefix = "form"%>
+<div id="settings-arrival-pending" style="display: none;">
+	<div class="row">
+
+		<div class="col-md-6">
+			<h4>
+				<span class="label label-default">RESEND ARRIVAL</span>
+			</h4>
+			<div id="detail-description">This recovery option will resend the arrival report for the load.</div>
+		</div>
+		<div class="col-md-6">
+			<div class="panel panel-default grey-background-override">
+				<div class="panel-body">
+
+					<input id="method-resend-arrival" data-toggle="toggle" data-on="Yes" data-off="No"
+						data-onstyle="success" data-offstyle="danger" type="checkbox">
+
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			<div class="col-md-4"></div>
+			<div class="col-md-4">
+				<center>
+					<button id="recover-arrival-pending-button" type="button"
+						class="btn btn-success btn-default">Start Recovery</button>
+				</center>
+			</div>
+			<div class="col-md-4"></div>
+		</div>
+
+	</div>
+
+</div>

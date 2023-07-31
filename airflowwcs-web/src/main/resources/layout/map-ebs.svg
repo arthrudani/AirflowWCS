@@ -1,0 +1,133 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="350" viewBox="0 0 763.3 476.06">
+	<title>map-ebs</title>
+	<g id="BaseLayer">
+		<path id="crane-9001-animate" d="M357.5,131.5h0Z" transform="translate(-60.6 -82.87)" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+		<rect class="baseLayerMapComponent"  x="245.5" y="-8.5" width="33" height="217" transform="translate(301.4 -244.87) rotate(90)" fill="#ededee" stroke="#000" stroke-miterlimit="10"/>
+		<rect class="baseLayerMapComponent"  x="246" y="54" width="32" height="217" transform="translate(363.9 -182.37) rotate(90)" fill="#ededee" stroke="#000" stroke-miterlimit="10"/>
+		<rect class="baseLayerMapComponent"  x="322" y="82" width="8" height="99" transform="translate(396.9 -277.37) rotate(90)" fill="#520f91" stroke="#000" stroke-miterlimit="10"/>
+		<rect class="baseLayerMapComponent"  x="149.5" y="53.5" width="8" height="156" transform="translate(224.4 -104.87) rotate(90)" fill="#520f91" stroke="#000" stroke-miterlimit="10"/>
+		<rect class="baseLayerMapComponent"  x="243.47" y="119.36" width="33" height="217" transform="translate(427.22 -114.98) rotate(90)" fill="#ededee" stroke="#000" stroke-miterlimit="10"/>
+		<rect class="baseLayerMapComponent"  x="243.97" y="182.86" width="32" height="217" transform="translate(490.72 -51.48) rotate(90)" fill="#ededee" stroke="#000" stroke-miterlimit="10"/>
+		<rect class="baseLayerMapComponent"  x="319.97" y="209.86" width="8" height="99" transform="translate(522.72 -147.48) rotate(90)" fill="#520f91" stroke="#000" stroke-miterlimit="10"/>
+		<rect class="baseLayerMapComponent"  x="147.47" y="181.36" width="8" height="156" transform="translate(350.22 25.02) rotate(90)" fill="#520f91" stroke="#000" stroke-miterlimit="10"/>
+		<path id="crane-9021-animate" d="M355.47,259.36h0Z" transform="translate(-60.6 -82.87)" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+		<path id="crane-9011-animate" d="M355.47,131.5h0Z" transform="translate(-60.6 -82.87)" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+		<rect class="baseLayerMapComponent"  x="243.28" y="246.19" width="33" height="217" transform="translate(553.87 12.05) rotate(90)" fill="#ededee" stroke="#000" stroke-miterlimit="10"/>
+		<rect class="baseLayerMapComponent"  x="243.78" y="309.69" width="32" height="217" transform="translate(617.37 75.55) rotate(90)" fill="#ededee" stroke="#000" stroke-miterlimit="10"/>
+		<rect class="baseLayerMapComponent"  x="319.78" y="336.69" width="8" height="99" transform="translate(649.37 -20.45) rotate(90)" fill="#520f91" stroke="#000" stroke-miterlimit="10"/>
+		<rect class="baseLayerMapComponent"  x="147.28" y="308.19" width="8" height="156" transform="translate(476.87 152.05) rotate(90)" fill="#520f91" stroke="#000" stroke-miterlimit="10"/>
+		<path id="crane-9031-animate" d="M355.28,386.19h0Z" transform="translate(-60.6 -82.87)" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+		<rect class="baseLayerMapComponent"  x="244.28" y="370.43" width="33" height="217" transform="translate(679.1 135.28) rotate(90)" fill="#ededee" stroke="#000" stroke-miterlimit="10"/>
+		<rect class="baseLayerMapComponent"  x="244.78" y="433.93" width="32" height="217" transform="translate(742.6 198.78) rotate(90)" fill="#ededee" stroke="#000" stroke-miterlimit="10"/>
+		<rect class="baseLayerMapComponent"  x="320.78" y="460.93" width="8" height="99" transform="translate(774.6 102.78) rotate(90)" fill="#520f91" stroke="#000" stroke-miterlimit="10"/>
+		<rect class="baseLayerMapComponent"  x="148.28" y="432.43" width="8" height="156" transform="translate(602.1 275.28) rotate(90)" fill="#520f91" stroke="#000" stroke-miterlimit="10"/>
+		<path id="crane-9041-animate" d="M356.28,510.43h0Z" transform="translate(-60.6 -82.87)" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+		<path id="crane-9001-animate-2" data-name="crane-9001-animate" d="M531.2,131.37h0Z" transform="translate(-60.6 -82.87)" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+		<rect class="baseLayerMapComponent"  x="609.2" y="-8.63" width="33" height="217" transform="translate(664.96 -608.7) rotate(90)" fill="#ededee" stroke="#000" stroke-miterlimit="10"/>
+		<rect class="baseLayerMapComponent"  x="609.7" y="53.87" width="32" height="217" transform="translate(727.46 -546.2) rotate(90)" fill="#ededee" stroke="#000" stroke-miterlimit="10"/>
+		<rect class="baseLayerMapComponent"  x="558.7" y="81.87" width="8" height="99" transform="translate(370.73 611.2) rotate(-90)" fill="#520f91" stroke="#000" stroke-miterlimit="10"/>
+		<rect class="baseLayerMapComponent"  x="731.2" y="53.37" width="8" height="156" transform="translate(543.23 783.7) rotate(-90)" fill="#520f91" stroke="#000" stroke-miterlimit="10"/>
+		<rect class="baseLayerMapComponent"  x="607.17" y="119.22" width="33" height="217" transform="translate(790.78 -478.81) rotate(90)" fill="#ededee" stroke="#000" stroke-miterlimit="10"/>
+		<rect class="baseLayerMapComponent"  x="607.67" y="182.72" width="32" height="217" transform="translate(854.28 -415.31) rotate(90)" fill="#ededee" stroke="#000" stroke-miterlimit="10"/>
+		<rect class="baseLayerMapComponent"  x="556.67" y="209.72" width="8" height="99" transform="translate(240.84 737.02) rotate(-90)" fill="#520f91" stroke="#000" stroke-miterlimit="10"/>
+		<rect class="baseLayerMapComponent"  x="729.17" y="181.22" width="8" height="156" transform="translate(413.34 909.52) rotate(-90)" fill="#520f91" stroke="#000" stroke-miterlimit="10"/>
+		<path id="crane-9022-animate" d="M529.17,259.22h0Z" transform="translate(-60.6 -82.87)" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+		<path id="crane-9012-animate" d="M533.23,131.37h0Z" transform="translate(-60.6 -82.87)" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+		<rect class="baseLayerMapComponent"  x="606.98" y="246.06" width="33" height="217" transform="translate(917.43 -351.79) rotate(90)" fill="#ededee" stroke="#000" stroke-miterlimit="10"/>
+		<rect class="baseLayerMapComponent"  x="607.48" y="309.56" width="32" height="217" transform="translate(980.93 -288.29) rotate(90)" fill="#ededee" stroke="#000" stroke-miterlimit="10"/>
+		<rect class="baseLayerMapComponent"  x="556.48" y="336.56" width="8" height="99" transform="translate(113.81 863.67) rotate(-90)" fill="#520f91" stroke="#000" stroke-miterlimit="10"/>
+		<rect class="baseLayerMapComponent"  x="728.98" y="308.06" width="8" height="156" transform="translate(286.31 1036.17) rotate(-90)" fill="#520f91" stroke="#000" stroke-miterlimit="10"/>
+		<path id="crane-9032-animate" d="M529,386.06h0Z" transform="translate(-60.6 -82.87)" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+		<rect class="baseLayerMapComponent"  x="607.98" y="370.29" width="33" height="217" transform="translate(1042.66 -228.55) rotate(90)" fill="#ededee" stroke="#000" stroke-miterlimit="10"/>
+		<rect class="baseLayerMapComponent"  x="608.48" y="433.79" width="32" height="217" transform="translate(1106.16 -165.05) rotate(90)" fill="#ededee" stroke="#000" stroke-miterlimit="10"/>
+		<rect class="baseLayerMapComponent"  x="557.48" y="460.79" width="8" height="99" transform="translate(-9.42 988.9) rotate(-90)" fill="#520f91" stroke="#000" stroke-miterlimit="10"/>
+		<rect class="baseLayerMapComponent"  x="729.98" y="432.29" width="8" height="156" transform="translate(163.08 1161.4) rotate(-90)" fill="#520f91" stroke="#000" stroke-miterlimit="10"/>
+		<path id="crane-9042-animate" d="M530,510.29h0Z" transform="translate(-60.6 -82.87)" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+		<text transform="translate(292.72 19.16)" font-size="12" font-family="MyriadPro-Regular, Myriad Pro">01</text>
+		<text transform="translate(292.72 83.16)" font-size="12" font-family="MyriadPro-Regular, Myriad Pro">02</text>
+		<text transform="translate(292.72 148.16)" font-size="12" font-family="MyriadPro-Regular, Myriad Pro">03</text>
+		<text transform="translate(292.72 212.16)" font-size="12" font-family="MyriadPro-Regular, Myriad Pro">04</text>
+		<text transform="translate(292.54 275)" font-size="12" font-family="MyriadPro-Regular, Myriad Pro">05</text>
+		<text transform="translate(292.54 339)" font-size="12" font-family="MyriadPro-Regular, Myriad Pro">06</text>
+		<text transform="translate(293.54 399.23)" font-size="12" font-family="MyriadPro-Regular, Myriad Pro">07</text>
+		<text transform="translate(293.54 463.23)" font-size="12" font-family="MyriadPro-Regular, Myriad Pro">08</text>
+		<text transform="translate(461.42 20.03)" font-size="12" font-family="MyriadPro-Regular, Myriad Pro">01</text>
+		<text transform="translate(461.42 84.03)" font-size="12" font-family="MyriadPro-Regular, Myriad Pro">02</text>
+		<text transform="translate(461.42 149.03)" font-size="12" font-family="MyriadPro-Regular, Myriad Pro">03</text>
+		<text transform="translate(461.42 213.03)" font-size="12" font-family="MyriadPro-Regular, Myriad Pro">04</text>
+		<text transform="translate(461.23 275.87)" font-size="12" font-family="MyriadPro-Regular, Myriad Pro">05</text>
+		<text transform="translate(461.23 339.87)" font-size="12" font-family="MyriadPro-Regular, Myriad Pro">06</text>
+		<text transform="translate(462.23 400.1)" font-size="12" font-family="MyriadPro-Regular, Myriad Pro">07</text>
+		<text transform="translate(462.23 464.1)" font-size="12" font-family="MyriadPro-Regular, Myriad Pro">08</text>
+	</g>
+	<g id="LayerInput" class="selectableArea">
+		<polygon id="AS-RS-42-Input-R" points="677.4 407.57 677.4 386.57 751.4 386.57 761.4 396.57 751.4 406.57 677.4 407.57" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+		<text id="AS-RS-42-Input-Text" transform="translate(703.9 402.01)" font-size="14" font-family="MyriadPro-Regular, Myriad Pro">0414</text>
+		<polygon   id="AS-RS-32-Input-R" points="676.4 283.34 676.4 262.34 750.4 262.34 760.4 272.34 750.4 282.34 676.4 283.34" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+		<text id="AS-RS-32-Input-Text" transform="translate(702.9 277.78)" font-size="14" font-family="MyriadPro-Regular, Myriad Pro">0314</text>
+		<polygon   id="AS-RS-22-Input-R" points="676.59 156.5 676.59 135.5 750.59 135.5 760.59 145.5 750.59 155.5 676.59 156.5" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+		<text id="AS-RS-22-Input-Text" transform="translate(703.09 150.94)" font-size="14" font-family="MyriadPro-Regular, Myriad Pro">0214</text>
+		<polygon   id="AS-RS-12-Input-R" points="678.59 27.5 678.59 6.5 752.59 6.5 762.59 16.5 752.59 26.5 678.59 27.5" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+		<text id="AS-RS-12-Input-Text" transform="translate(702.09 20.94)" font-size="14" font-family="MyriadPro-Regular, Myriad Pro">0114</text>
+		<polygon   id="AS-RS-41-Input-L" points="3.71 407.7 3.71 386.7 77.71 386.7 87.71 396.7 77.71 406.7 3.71 407.7" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+		<text id="AS-RS-41-Input-Text" transform="translate(28.21 402.14)" font-size="14" font-family="MyriadPro-Regular, Myriad Pro">0411</text>
+		<polygon   id="AS-RS-31-Input-L" points="2.71 283.47 2.71 262.47 76.71 262.47 86.71 272.47 76.71 282.47 2.71 283.47" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+		<text id="AS-RS-31-Input-Text" transform="translate(27.21 277.91)" font-size="14" font-family="MyriadPro-Regular, Myriad Pro">0311</text>
+		<polygon   id="AS-RS-21-Input-L" points="2.9 156.63 2.9 135.63 76.9 135.63 86.9 145.63 76.9 155.63 2.9 156.63" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+		<text id="AS-RS-21-Input-Text" transform="translate(27.4 151.07)" font-size="14" font-family="MyriadPro-Regular, Myriad Pro">0211</text>
+		<polygon   id="AS-RS-11-Input-L" points="4.9 27.63 4.9 6.63 78.9 6.63 88.9 16.63 78.9 26.63 4.9 27.63" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+		<text id="AS-RS-11-Input-Text" transform="translate(26.4 21.07)" font-size="14" font-family="MyriadPro-Regular, Myriad Pro">0111</text>
+	</g>
+	<g id="LayerOutput"  class="selectableArea">
+		<polygon   id="AS-RS-42-Output-UR" points="605.9 469.57 605.9 448.57 660.96 448.57 668.4 458.57 660.96 468.57 605.9 469.57" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+		<text id="AS-RS-42-Output-U-Text" transform="translate(622.9 464.01)" font-size="14" font-family="MyriadPro-Regular, Myriad Pro">0416</text>
+		<polygon   id="AS-RS-42-Output-R" points="761.4 447.57 761.4 468.57 687.4 468.57 677.4 458.57 687.4 448.57 761.4 447.57" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+		<text id="AS-RS-42-Output-Text" transform="translate(700.9 463.01)" font-size="14" font-family="MyriadPro-Regular, Myriad Pro">0413</text>
+		<polygon   id="AS-RS-32-Output-UR" points="604.9 345.34 604.9 324.34 659.96 324.34 667.4 334.34 659.96 344.34 604.9 345.34" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+		<text id="AS-RS-32-Output-U-Text" transform="translate(621.9 339.78)" font-size="14" font-family="MyriadPro-Regular, Myriad Pro">0316</text>
+		<polygon   id="AS-RS-32-Output-R" points="760.4 323.34 760.4 344.34 686.4 344.34 676.4 334.34 686.4 324.34 760.4 323.34" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+		<text id="AS-RS-32-Output-Text" transform="translate(699.9 338.78)" font-size="14" font-family="MyriadPro-Regular, Myriad Pro">0313</text>
+		<polygon   id="AS-RS-22-Output-UR" points="605.09 218.5 605.09 197.5 660.15 197.5 667.59 207.5 660.15 217.5 605.09 218.5" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+		<text id="AS-RS-22-Output-U-Text" transform="translate(622.09 212.94)" font-size="14" font-family="MyriadPro-Regular, Myriad Pro">0216</text>
+		<polygon   id="AS-RS-22-Output-R" points="760.59 196.5 760.59 217.5 686.59 217.5 676.59 207.5 686.59 197.5 760.59 196.5" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+		<text id="AS-RS-22-Output-Text" transform="translate(700.09 211.94)" font-size="14" font-family="MyriadPro-Regular, Myriad Pro">0213</text>
+		<polygon   id="AS-RS-12-Output-R" points="762.59 69.5 762.59 90.5 688.59 90.5 678.59 80.5 688.59 70.5 762.59 69.5" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+		<text id="AS-RS-12-Output-Text" transform="translate(703.09 84.94)" font-size="14" font-family="MyriadPro-Regular, Myriad Pro">0113</text>
+		<polygon   id="AS-RS-12-Output-UR" points="607.59 91.5 607.59 70.5 662.65 70.5 670.09 80.5 662.65 90.5 607.59 91.5" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+		<text id="AS-RS-12-Output-U-Text" transform="translate(626.09 85.94)" font-size="14" font-family="MyriadPro-Regular, Myriad Pro">0116</text>
+		<polygon   id="AS-RS-41-Output-UL" points="158.71 447.7 158.71 468.7 103.65 468.7 96.21 458.7 103.65 448.7 158.71 447.7" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+		<text id="AS-RS-41-Output-U-Text" transform="translate(113.21 463.14)" font-size="14" font-family="MyriadPro-Regular, Myriad Pro">0415</text>
+		<polygon   id="AS-RS-41-Output-L" points="85.71 447.7 85.71 468.7 11.71 468.7 1.71 458.7 11.71 448.7 85.71 447.7" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+		<text id="AS-RS-41-Output-Text" transform="translate(27.21 463.14)" font-size="14" font-family="MyriadPro-Regular, Myriad Pro">0412</text>
+		<polygon   id="AS-RS-31-Output-UL" points="157.71 323.47 157.71 344.47 102.65 344.47 95.21 334.47 102.65 324.47 157.71 323.47" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+		<text id="AS-RS-31-Output-U-Text" transform="translate(112.21 338.91)" font-size="14" font-family="MyriadPro-Regular, Myriad Pro">0315</text>
+		<polygon   id="AS-RS-31-Output-L" points="84.71 323.47 84.71 344.47 10.71 344.47 0.71 334.47 10.71 324.47 84.71 323.47" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+		<text id="AS-RS-31-Output-Text" transform="translate(26.21 338.91)" font-size="14" font-family="MyriadPro-Regular, Myriad Pro">0312</text>
+		<polygon   id="AS-RS-21-Output-UL" points="157.9 196.63 157.9 217.63 102.84 217.63 95.4 207.63 102.84 197.63 157.9 196.63" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+		<text id="AS-RS-21-Output-U-Text" transform="translate(112.4 212.07)" font-size="14" font-family="MyriadPro-Regular, Myriad Pro">0215</text>
+		<polygon   id="AS-RS-21-Output-L" points="84.9 196.63 84.9 217.63 10.9 217.63 0.9 207.63 10.9 197.63 84.9 196.63" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+		<text id="AS-RS-21-Output-Text" transform="translate(25.4 212.07)" font-size="14" font-family="MyriadPro-Regular, Myriad Pro">0212</text>
+		<polygon   id="AS-RS-11-Output-L" points="86.9 69.63 86.9 90.63 12.9 90.63 2.9 80.63 12.9 70.63 86.9 69.63" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+		<text id="AS-RS-11-Output-Text" transform="translate(27.4 85.07)" font-size="14" font-family="MyriadPro-Regular, Myriad Pro">0112</text>
+		<polygon   id="AS-RS-11-Output-UL" points="160.4 69.63 160.4 90.63 105.34 90.63 97.9 80.63 105.34 70.63 160.4 69.63" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+		<text id="AS-RS-11-Output-U-Text" transform="translate(116.4 85.07)" font-size="14" font-family="MyriadPro-Regular, Myriad Pro">0115</text>
+	</g>
+	<g id="Cranes"  class="selectableArea">
+		<polygon class="selectableMapComponent"  id="AS-RS-11-Crane-L" points="215.9 43.63 204.9 43.63 204.9 36.63 180.9 36.63 180.9 43.63 170.9 43.63 170.9 53.63 180.9 53.63 180.9 60.63 204.9 60.63 204.9 53.63 215.9 53.63 215.9 43.63" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+		<text id="AS-RS-11-Crane-Text" transform="translate(185.33 53.26)" font-size="14" font-family="MyriadPro-Regular, Myriad Pro">11</text>
+		<polygon class="selectableMapComponent"  id="AS-RS-21-Crane-L" points="213.86 171.49 202.86 171.49 202.86 164.49 178.86 164.49 178.86 171.49 168.86 171.49 168.86 181.49 178.86 181.49 178.86 188.49 202.86 188.49 202.86 181.49 213.86 181.49 213.86 171.49" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+		<text id="AS-RS-21-Crane-Text" transform="translate(184.29 181.12)" font-size="14" font-family="MyriadPro-Regular, Myriad Pro">21</text>
+		<polygon class="selectableMapComponent"  id="AS-RS-31-Crane-L" points="213.67 298.32 202.67 298.32 202.67 291.32 178.67 291.32 178.67 298.32 168.67 298.32 168.67 308.32 178.67 308.32 178.67 315.32 202.67 315.32 202.67 308.32 213.67 308.32 213.67 298.32" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+		<text id="AS-RS-31-Crane-Text" transform="translate(184.11 307.95)" font-size="14" font-family="MyriadPro-Regular, Myriad Pro">31</text>
+		<polygon class="selectableMapComponent"  id="AS-RS-41-Crane-L" points="214.67 422.56 203.67 422.56 203.67 415.56 179.67 415.56 179.67 422.56 169.67 422.56 169.67 432.56 179.67 432.56 179.67 439.56 203.67 439.56 203.67 432.56 214.67 432.56 214.67 422.56" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+		<text id="AS-RS-41-Crane-Text" transform="translate(185.11 432.19)" font-size="14" font-family="MyriadPro-Regular, Myriad Pro">41</text>
+		<polygon class="selectableMapComponent"  id="AS-RS-12-Crane-R" points="551.59 53.5 562.59 53.5 562.59 60.5 586.59 60.5 586.59 53.5 596.59 53.5 596.59 43.5 586.59 43.5 586.59 36.5 562.59 36.5 562.59 43.5 551.59 43.5 551.59 53.5" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+		<text id="AS-RS-12-Crane-Text" transform="translate(567.16 53.13)" font-size="14" font-family="MyriadPro-Regular, Myriad Pro">12</text>
+		<polygon class="selectableMapComponent"  id="AS-RS-22-Crane-R" points="549.56 181.36 560.56 181.36 560.56 188.36 584.56 188.36 584.56 181.36 594.56 181.36 594.56 171.36 584.56 171.36 584.56 164.36 560.56 164.36 560.56 171.36 549.56 171.36 549.56 181.36" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+		<text id="AS-RS-22-Crane-Text" transform="translate(566.13 180.98)" font-size="14" font-family="MyriadPro-Regular, Myriad Pro">22</text>
+		<polygon class="selectableMapComponent"  id="AS-RS-32-Crane-R" points="549.37 308.19 560.37 308.19 560.37 315.19 584.37 315.19 584.37 308.19 594.37 308.19 594.37 298.19 584.37 298.19 584.37 291.19 560.37 291.19 560.37 298.19 549.37 298.19 549.37 308.19" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+		<text id="AS-RS-32-Crane-Text" transform="translate(565.94 307.82)" font-size="14" font-family="MyriadPro-Regular, Myriad Pro">32</text>
+		<polygon class="selectableMapComponent"  id="AS-RS-42-Crane-R" points="550.37 432.43 561.37 432.43 561.37 439.43 585.37 439.43 585.37 432.43 595.37 432.43 595.37 422.43 585.37 422.43 585.37 415.43 561.37 415.43 561.37 422.43 550.37 422.43 550.37 432.43" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+		<text id="AS-RS-42-Crane-Text" transform="translate(566.94 432.05)" font-size="14" font-family="MyriadPro-Regular, Myriad Pro">42</text>
+	</g>
+</svg>

@@ -1,0 +1,7 @@
+				<!-- SEARCH PANEL -->
+				<div class="panel-heading">
+					<h4 class="panel-title">
+						<a data-toggle="collapse" href="#collapseCriteria"><i class="fa fa-search fa-fw" aria-hidden="true"></i> Search Criteria</a>
+					</h4>
+					<div class="clearfix"></div>
+				</div>

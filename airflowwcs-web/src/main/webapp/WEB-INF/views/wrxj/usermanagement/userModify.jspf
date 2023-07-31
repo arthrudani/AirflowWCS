@@ -1,0 +1,101 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+	<!-- USER MODIFY  -->
+	<div id="modify-modal" class="modal fade">
+		<div class="modal-dialog modal-md">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					<h4 class="modal-title">Modify User</h4>
+				</div>
+
+				<div class="modal-body">
+					<spring:url value="/users/update" var="formUrl"/>
+					<form:form cssClass="form-horizontal" id="user-modify-form" action="${formUrl}" method="POST" modelAttribute="userModel">
+
+						<div class="form-group">
+							<label class="control-label col-sm-3" for="userIdMod">User ID:</label>
+							<div class="col-sm-6">
+								<form:input path="userId" cssClass="form-control" id="userIdMod" required="required" readonly="true" />
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<label class="control-label col-sm-3" for="userNameMod">User Name:</label>
+							<div class="col-sm-6">
+								<form:input path="userName" cssClass="form-control" id="userNameMod" required="required" maxlength="${maxLengthUserName}"/>
+							</div>
+						</div>
+						
+						<div class="form-group" style="display: none;">
+							<%-- Swing UI Role is not applicable to web --%>
+							<label class="control-label col-sm-3" for="roleMod">Role:</label>
+							<div class="col-sm-6">
+								<form:select path="role" cssClass="form-control" id="roleMod" required="required">
+									<form:options items="${dropdownMenus.roles}"/>
+								</form:select>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="control-label col-sm-3" for="reset-password-button">Password:</label>
+							<div class="col-sm-6">
+								<button id="reset-password-button" type="button" class="btn btn-secondary">Reset Password</button>
+							</div>
+						</div>
+					</form:form>
+				</div>
+
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+					<button id="user-modify-button" type="button" class="btn btn-primary">Update User</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<!-- PASSWORD RESET  -->
+	<div id="reset-password-modal" class="modal fade">
+		<div class="modal-dialog modal-md">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					<h4 class="modal-title">Reset Password: ${userModel.userId}</h4>
+				</div>
+
+				<div class="modal-body">
+					<spring:url value="/users/update" var="formUrl"/>
+					<form:form cssClass="form-horizontal" id="user-password-modify-form" action="${formUrl}" method="POST" modelAttribute="userPasswordModel">
+						
+						<div class="form-group">
+							<label class="control-label col-sm-3" for="passwordMod2">Password:</label>
+							<div class="col-sm-6">
+								<form:password path="password" cssClass="form-control" id="passwordMod2"
+								 required="required" autocomplete="new-passwordMod2"/>
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<label class="control-label col-sm-3" for="confirmPasswordMod2">Confirm Password:</label>
+							<div class="col-sm-6">
+								<form:password path="confirmPassword" cssClass="form-control" id="confirmPasswordMod2"
+								 required="required" autocomplete="new-confirmPasswordMod2"/>
+							</div>
+						</div>
+						<div class="col-sm-6">
+							<small id="passwordHelpMod2" class="text-danger">
+							</small>  
+						</div>
+						<form:hidden path="userId" id="userIdMod2"/>
+						<form:hidden path="userName" id="userNameMod2"/>
+						<form:hidden path="role" id="roleMod2"/>
+					</form:form>
+				</div>
+
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+					<button id="user-password-modify-button" type="button" class="btn btn-primary">Update Password</button>
+				</div>
+			</div>
+		</div>
+	</div>

@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.daifukuoc</groupId>
+    <artifactId>airflowwcs</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+
+  <artifactId>wrxj-ebs-base</artifactId>
+  <name>wrxj-ebs-base</name>
+  <packaging>jar</packaging>
+
+  <dependencies>
+    <!-- External libraries imported as jar files -->
+    <dependency>
+      <groupId>com.daifukuamerica.wrxj</groupId>
+      <artifactId>DacLabelGenerator</artifactId>
+    </dependency>    
+    <dependency>
+      <groupId>com.daifukuamerica.wrxj</groupId>
+      <artifactId>DACTcpip</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.daifukuamerica.wrxj</groupId>
+      <artifactId>errorcodes-9y</artifactId>
+    </dependency>    
+    <dependency>
+      <groupId>com.daifukuamerica.wrxj</groupId>
+      <artifactId>errorcodes-api</artifactId>
+    </dependency>    
+    <dependency>
+      <groupId>com.daifukuamerica.wrxj</groupId>
+      <artifactId>errorcodes-as21</artifactId>
+    </dependency>
+    
+    <!-- Apache ActiveMQ Artemis JMS -->
+    <dependency>
+      <groupId>org.apache.activemq</groupId>
+      <artifactId>artemis-jms-client-all</artifactId>
+    </dependency>
+    
+    <!-- Apache Commons Pool2 -->
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-pool2</artifactId>
+    </dependency>
+    
+    <!-- Gson 2.8.5 -->
+    <dependency>
+        <groupId>com.google.code.gson</groupId>
+        <artifactId>gson</artifactId>
+    </dependency>
+    
+    <!-- JCalendar 1.4 -->
+    <dependency>
+      <groupId>com.toedter</groupId>
+      <artifactId>jcalendar</artifactId>
+    </dependency>
+    
+    <!-- JDOM -->
+    <dependency>
+      <groupId>org.jdom</groupId>
+      <artifactId>jdom2</artifactId>
+    </dependency>
+    
+    <!-- JFreeChart -->
+    <dependency>
+      <groupId>org.jfree</groupId>
+      <artifactId>jfreechart</artifactId>
+    </dependency>
+    
+    <!-- org.jfree.jfreechart uses org.jfree.jcommon 1.0.23 -->
+    <dependency>
+      <groupId>org.jfree</groupId>
+      <artifactId>jcommon</artifactId>
+    </dependency>
+    
+    <!-- Log4J 2.X -->
+    <dependency>
+      <groupId>org.apache.logging.log4j</groupId>
+      <artifactId>log4j-api</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.logging.log4j</groupId>
+      <artifactId>log4j-core</artifactId>
+    </dependency>
+    
+    <!-- Oracle JDBC -->
+    <!-- Shouldn't we need to use ojdbc8 for oracle 19.3? See https://mvnrepository.com/artifact/com.oracle.database.jdbc/ojdbc8? -->
+    <!-- In dep.properties:
+    # Oracle Client 19 for Java 8
+    ojdbc.jar=lib/ojdbc8.jar
+    library.ojdbc.jar=${library}/oracle.com/Oracle_Client/19.3/ojdbc8.jar
+    -->
+    <!-- The following is not found
+    <dependency>
+      <groupId>com.oracle</groupId>
+      <artifactId>ojdbc</artifactId>
+      <version>12.1.0.2</version>
+    </dependency>
+    -->
+    <dependency>
+      <groupId>com.oracle.database.jdbc</groupId>
+      <artifactId>ojdbc8</artifactId>
+    </dependency>
+    
+    <!-- Microsoft SQL Server -->
+    <!-- Shouldn't we need to use ms jdbc for sql server 7.4.1.jre8? See https://mvnrepository.com/artifact/com.microsoft.sqlserver/mssql-jdbc/7.4.1.jre8 -->
+    <!-- In dep.properties:
+    # SQL Server 2019 for Java 8
+    sqljdbc.jar=lib/mssql-jdbc-7.4.1.jre8.jar
+    library.sqljdbc.jar=${library}/microsoft.com/jdbc/7.4.1.0/mssql-jdbc-7.4.1.jre8.jar
+    -->
+    <!-- The following is not found
+    <dependency>
+      <groupId>com.microsoft.sqlserver</groupId>
+      <artifactId>sqljdbc42</artifactId>
+      <version>6.0.8112.200</version>
+    </dependency>
+    -->
+    <dependency>
+      <groupId>com.microsoft.sqlserver</groupId>
+      <artifactId>mssql-jdbc</artifactId>
+    </dependency>
+    
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-dbcp2</artifactId>
+    </dependency>
+    
+    <!-- Xerces (XML) -->
+    <!-- Don't we need to have xml-api dependency? Should we use the current jar file -->
+    <!-- In dep.properties
+    # Xerces-J 2.12.0
+    xercesImpl.jar=lib/xercesImpl.jar
+    library.xercesImpl.jar=${library}/apache.org/xml/Xerces-J/2.12.0/xercesImpl.jar
+    xml-apis.jar=lib/xml-apis.jar
+    library.xml-apis.jar=${library}/apache.org/xml/Xerces-J/2.12.0/xml-apis.jar
+    -->
+    <dependency>
+      <groupId>xerces</groupId>
+      <artifactId>xercesImpl</artifactId>
+    </dependency>
+    
+    <!-- Testing -->
+
+    <!-- JUnit5 including JUnit4 annotation support -->
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-api</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-engine</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.junit.vintage</groupId>
+      <artifactId>junit-vintage-engine</artifactId>
+    </dependency>
+    
+    <!-- Mockito -->
+    <dependency>
+      <groupId>org.mockito</groupId>
+      <artifactId>mockito-core</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.mockito</groupId>
+      <artifactId>mockito-inline</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.mockito</groupId>
+      <artifactId>mockito-junit-jupiter</artifactId>
+    </dependency>
+    
+  </dependencies>
+  
+  <build>
+    <plugins>
+      <plugin>       
+        <artifactId>maven-source-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>attach-sources</id>
+            <goals>
+              <goal>jar-no-fork</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <artifactId>maven-surefire-plugin</artifactId>
+      </plugin>
+      <plugin>
+        <groupId>org.openrewrite.maven</groupId>
+        <artifactId>rewrite-maven-plugin</artifactId>
+      </plugin>
+      <plugin>
+        <groupId>org.jacoco</groupId>
+        <artifactId>jacoco-maven-plugin</artifactId>
+      </plugin>
+    </plugins>
+  </build>
+</project>

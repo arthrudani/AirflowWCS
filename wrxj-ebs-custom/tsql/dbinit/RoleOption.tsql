@@ -1,0 +1,1313 @@
+use [WRXJ];
+go
+BEGIN TRANSACTION;
+Delete asrs.RoleOption;
+COMMIT TRANSACTION;
+go
+--
+-- Administrator
+--
+BEGIN TRANSACTION;
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('Administrator', 'Facility', 'Containers', '/graphics/container.png', 'container.ContainerListFrame',
+    2, 1, 1, 1, 1,
+    NULL, NULL, NULL);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('Administrator', 'Facility', 'Devices', '/graphics/device.png', 'device.DeviceMain',
+    2, 1, 1, 1, 1,
+    NULL, NULL, NULL);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('Administrator', 'Facility', 'Locations', '/graphics/location.png', 'location.LocationMain',
+    2, 1, 1, 1, 1,
+    NULL, NULL, NULL);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('Administrator', 'Facility', 'Reason Codes', '/graphics/reason.png', 'reasoncode.ReasonCodeListFrame',
+    2, 1, 1, 1, 1,
+    NULL, NULL, NULL);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('Administrator', 'Facility', 'Routes', '/graphics/routes.png', 'route.RouteListFrame',
+    1, 1, 1, 1, 1,
+    NULL, NULL, NULL);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('Administrator', 'Facility', 'Station Parameters', '/graphics/stationdtl.png', 'station.StationParameterMain',
+    1, 2, 2, 2, 1,
+    NULL, NULL, NULL);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('Administrator', 'Facility', 'Stations', '/graphics/station.png', 'station.StationListFrame',
+    1, 1, 1, 1, 1,
+    NULL, NULL, NULL);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('Administrator', 'Facility', 'Warehouse', '/graphics/warehouse.png', 'warehouse.WarehouseMain',
+    1, 1, 1, 1, 1,
+    NULL, NULL, NULL);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('Administrator', 'Facility', 'Zones-Locations', '/graphics/zone.png', 'zone.ZoneListFrame',
+    2, 1, 1, 1, 1,
+    NULL, NULL, NULL);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('Administrator', 'Facility', 'Zones-Recommended', '/graphics/zone_group.png', 'zone.ZoneGroupListFrame',
+    2, 1, 1, 1, 1,
+    NULL, NULL, NULL);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('Administrator', 'Inventory', 'Change Item Name', '/graphics/itemchange.png', 'item.ChangeItemName',
+    2, 1, 1, 1, 1,
+    NULL, NULL, NULL);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('Administrator', 'Inventory', 'Item Details', '/graphics/itemdtl.png', 'itemdetail.ItemDetailListFrame',
+    1, 1, 1, 1, 1,
+    NULL, NULL, NULL);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('Administrator', 'Inventory', 'Item Synonyms', '/graphics/itemsyn.png', 'item.ItemSynonymListFrame',
+    2, 1, 1, 1, 1,
+    NULL, NULL, NULL);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('Administrator', 'Inventory', 'Items', '/graphics/iteminfo.png', 'item.ItemMasterListFrame',
+    1, 1, 1, 1, 1,
+    NULL, NULL, NULL);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('Administrator', 'Inventory', 'Loads', '/graphics/loaddis.png', 'load.LoadListFrame',
+    1, 1, 1, 1, 1,
+    NULL, NULL, NULL);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('Administrator', 'Inventory', 'Locations', '/graphics/location.png', 'location.LocationMain',
+    1, 1, 1, 1, 1,
+    NULL, NULL, NULL);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('Administrator', 'Inventory', 'Modify Load Location', '/graphics/ldlocdet.png', 'loadlocdetail.LoadLocDetailFrame',
+    2, 1, 1, 1, 1,
+    NULL, NULL, NULL);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('Administrator', 'Inventory', 'Moves', '/graphics/movement.png', 'move.MoveListFrame',
+    1, 1, 1, 1, 1,
+    NULL, NULL, NULL);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('Administrator', 'Orders', 'Cycle Count', '/graphics/ordcyc.png', 'order.AddCciOrderFrame',
+    2, 1, 1, 1, 1,
+    NULL, NULL, NULL);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('Administrator', 'Orders', 'Empty Container', '/graphics/emptycont.png', 'load.OrderEmpties',
+    1, 1, 1, 1, 1,
+    NULL, NULL, NULL);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('Administrator', 'Orders', 'Expected Receipts', '/graphics/poinfo.png', 'purchaseorder.POMain',
+    1, 2, 2, 2, 1,
+    NULL, NULL, NULL);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('Administrator', 'Orders', 'New Item Order', '/graphics/ordinfo.png', 'order.ItemOrderFrame',
+    1, 1, 1, 1, 1,
+    NULL, NULL, NULL);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('Administrator', 'Orders', 'Order Maintenance', '/graphics/ordmaint.png', 'order.OrderMain',
+    1, 1, 1, 1, 1,
+    NULL, NULL, NULL);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('Administrator', 'Orders', 'Retrieve Loads', '/graphics/ordload.png', 'load.OrderLoad',
+    1, 1, 1, 1, 1,
+    NULL, NULL, NULL);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('Administrator', 'Tools', 'ASRS Meta-Data', '/graphics/metadata.png', 'utility.MetaDataMain',
+    2, 2, 2, 2, 1,
+    NULL, NULL, NULL);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('Administrator', 'Tools', 'Equipment Monitor', '/graphics/eqmonitor.png', 'equipment.EquipmentMonitorFrame',
+    1, 1, 1, 1, 1,
+    NULL, NULL, NULL);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('Administrator', 'Tools', 'Host Data Viewer', '/graphics/hostcomm.png', 'host.HostViewMain',
+    1, 2, 2, 2, 1,
+    NULL, NULL, NULL);
+INSERT INTO asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED)
+ VALUES
+   ('Administrator', 'Tools', 'Location Utilization', '/graphics/locationuse.png', 'location.LocationUtilizationFrame',
+    2, 2, 2, 2, 1);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('Administrator', 'Tools', 'Log Viewer', '/graphics/logviewer.png', 'log.LogViewerFrame',
+    1, 1, 1, 1, 1,
+    NULL, NULL, NULL);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('Administrator', 'Tools', 'Missing Translations', '/graphics/missingtran.png', 'utility.MissingTranslationFrame',
+    2, 1, 1, 1, 1,
+    NULL, NULL, NULL);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED)
+ Values
+   ('Administrator', 'Tools', 'Moves by Device', '/graphics/move_rpt.png', 'move.MovesByDeviceList',
+    2, 2, 2, 2, 1);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('Administrator', 'Tools', 'Recovery', '/graphics/recovery.png', 'recovery.RecoveryListFrame',
+    1, 1, 1, 1, 1,
+    NULL, NULL, NULL);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('Administrator', 'Tools', 'System Monitor', '/graphics/sysmonitor.png', 'monitor.MonitorFrame',
+    1, 1, 1, 1, 1,
+    NULL, NULL, NULL);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('Administrator', 'Tools', 'Transaction History', '/graphics/history.png', 'tranhistory.TranHistoryMain',
+    1, 1, 1, 1, 1,
+    NULL, NULL, NULL);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('Administrator', 'Users', 'Roles', '/graphics/userroles.png', 'role.RoleListFrame',
+    2, 1, 1, 1, 1,
+    NULL, NULL, NULL);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('Administrator', 'Users', 'Users', '/graphics/userinfo.png', 'user.UserListFrame',
+    2, 1, 1, 1, 1,
+    NULL, NULL, NULL);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('Administrator', 'Work', 'Pick', '/graphics/pick.png', 'pick.EOAPick',
+    2, 1, 1, 1, 1,
+    NULL, NULL, NULL);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('Administrator', 'Work', 'Store', '/graphics/store.png', 'store.StoreItemsMain',
+    2, 1, 1, 1, 1,
+    NULL, NULL, NULL);
+--
+-- Master
+--
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('Master', 'Facility', 'Containers', '/graphics/container.png', 'container.ContainerListFrame',
+    2, 1, 1, 1, 1,
+    NULL, NULL, NULL);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('Master', 'Facility', 'Devices', '/graphics/device.png', 'device.DeviceMain',
+    2, 1, 1, 1, 1,
+    NULL, NULL, NULL);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('Master', 'Facility', 'Locations', '/graphics/location.png', 'location.LocationMain',
+    2, 1, 1, 1, 1,
+    NULL, NULL, NULL);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('Master', 'Facility', 'Reason Codes', '/graphics/reason.png', 'reasoncode.ReasonCodeListFrame',
+    1, 1, 1, 1, 1,
+    NULL, NULL, NULL);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('Master', 'Facility', 'Routes', '/graphics/routes.png', 'route.RouteListFrame',
+    1, 1, 1, 1, 1,
+    NULL, NULL, NULL);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('Master', 'Facility', 'Station Parameters', '/graphics/stationdtl.png', 'station.StationParameterMain',
+    1, 2, 2, 2, 1,
+    NULL, NULL, NULL);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('Master', 'Facility', 'Stations', '/graphics/station.png', 'station.StationListFrame',
+    1, 1, 1, 1, 1,
+    NULL, NULL, NULL);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('Master', 'Facility', 'Warehouse', '/graphics/warehouse.png', 'warehouse.WarehouseMain',
+    1, 1, 1, 1, 1,
+    NULL, NULL, NULL);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('Master', 'Facility', 'Zones-Locations', '/graphics/zone.png', 'zone.ZoneListFrame',
+    1, 1, 1, 1, 1,
+    NULL, NULL, NULL);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('Master', 'Facility', 'Zones-Recommended', '/graphics/zone_group.png', 'zone.ZoneGroupListFrame',
+    1, 1, 1, 1, 1,
+    NULL, NULL, NULL);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('Master', 'Inventory', 'Change Item Name', '/graphics/itemchange.png', 'item.ChangeItemName',
+    2, 1, 1, 1, 1,
+    NULL, NULL, NULL);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('Master', 'Inventory', 'Item Details', '/graphics/itemdtl.png', 'itemdetail.ItemDetailListFrame',
+    1, 1, 1, 1, 1,
+    NULL, NULL, NULL);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('Master', 'Inventory', 'Item Synonyms', '/graphics/itemsyn.png', 'item.ItemSynonymListFrame',
+    1, 1, 1, 1, 1,
+    NULL, NULL, NULL);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('Master', 'Inventory', 'Items', '/graphics/iteminfo.png', 'item.ItemMasterListFrame',
+    1, 1, 1, 1, 1,
+    NULL, NULL, NULL);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('Master', 'Inventory', 'Loads', '/graphics/loaddis.png', 'load.LoadListFrame',
+    1, 1, 1, 1, 1,
+    NULL, NULL, NULL);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('Master', 'Inventory', 'Locations', '/graphics/location.png', 'location.LocationMain',
+    1, 1, 1, 1, 1,
+    NULL, NULL, NULL);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('Master', 'Inventory', 'Modify Load Location', '/graphics/ldlocdet.png', 'loadlocdetail.LoadLocDetailFrame',
+    2, 1, 1, 1, 1,
+    NULL, NULL, NULL);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('Master', 'Inventory', 'Moves', '/graphics/movement.png', 'move.MoveListFrame',
+    1, 1, 1, 1, 1,
+    NULL, NULL, NULL);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('Master', 'Orders', 'Cycle Count', '/graphics/ordcyc.png', 'order.AddCciOrderFrame',
+    2, 1, 1, 1, 1,
+    NULL, NULL, NULL);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('Master', 'Orders', 'Empty Container', '/graphics/emptycont.png', 'load.OrderEmpties',
+    1, 1, 1, 1, 1,
+    NULL, NULL, NULL);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('Master', 'Orders', 'Expected Receipts', '/graphics/poinfo.png', 'purchaseorder.POMain',
+    1, 2, 2, 2, 1,
+    NULL, NULL, NULL);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('Master', 'Orders', 'New Item Order', '/graphics/ordinfo.png', 'order.ItemOrderFrame',
+    1, 1, 1, 1, 1,
+    NULL, NULL, NULL);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('Master', 'Orders', 'Order Maintenance', '/graphics/ordmaint.png', 'order.OrderMain',
+    1, 1, 1, 1, 1,
+    NULL, NULL, NULL);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('Master', 'Orders', 'Retrieve Loads', '/graphics/ordload.png', 'load.OrderLoad',
+    1, 1, 1, 1, 1,
+    NULL, NULL, NULL);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('Master', 'Tools', 'Equipment Monitor', '/graphics/eqmonitor.png', 'equipment.EquipmentMonitorFrame',
+    1, 1, 1, 1, 1,
+    NULL, NULL, NULL);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('Master', 'Tools', 'Host Data Viewer', '/graphics/hostcomm.png', 'host.HostViewMain',
+    1, 2, 2, 2, 1,
+    NULL, NULL, NULL);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('Master', 'Tools', 'Load Captive Rack', '/graphics/loadcaptive.png', 'store.LoadCaptiveRack',
+    1, 1, 1, 1, 1,
+    NULL, NULL, NULL);
+INSERT INTO asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED)
+ VALUES
+   ('Master', 'Tools', 'Location Utilization', '/graphics/locationuse.png', 'location.LocationUtilizationFrame',
+    2, 2, 2, 2, 1);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('Master', 'Tools', 'Log Viewer', '/graphics/logviewer.png', 'log.LogViewerFrame',
+    1, 1, 1, 1, 1,
+    NULL, NULL, NULL);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('Master', 'Tools', 'Missing Translations', '/graphics/missingtran.png', 'utility.MissingTranslationFrame',
+    2, 1, 1, 1, 1,
+    NULL, NULL, NULL);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED)
+ Values
+   ('Master', 'Tools', 'Moves by Device', '/graphics/move_rpt.png', 'move.MovesByDeviceList',
+    2, 2, 2, 2, 1);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('Master', 'Tools', 'Recovery', '/graphics/recovery.png', 'recovery.RecoveryListFrame',
+    1, 1, 1, 1, 1,
+    NULL, NULL, NULL);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('Master', 'Tools', 'System Configuration', '/graphics/SysConfig.png', 'utility.SystemConfigMain',
+    2, 1, 1, 1, 1,
+    NULL, NULL, NULL);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('Master', 'Tools', 'System Monitor', '/graphics/sysmonitor.png', 'monitor.MonitorFrame',
+    1, 1, 1, 1, 1,
+    NULL, NULL, NULL);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('Master', 'Tools', 'Transaction History', '/graphics/history.png', 'tranhistory.TranHistoryMain',
+    1, 1, 1, 1, 1,
+    NULL, NULL, NULL);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED)
+ Values
+   ('Master', 'Tools', 'JVM Configuration', '/graphics/jvmconfig.png', 'config.JVMConfigMain',
+    2, 1, 1, 1, 1);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('Master', 'Users', 'Current Users', '/graphics/userinfo.png', 'user.LoginListFrame',
+    2, 1, 1, 1, 1,
+    NULL, NULL, NULL);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('Master', 'Users', 'Roles', '/graphics/userroles.png', 'role.RoleListFrame',
+    2, 1, 1, 1, 1,
+    NULL, NULL, NULL);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('Master', 'Users', 'Users', '/graphics/userinfo.png', 'user.UserListFrame',
+    2, 1, 1, 1, 1,
+    NULL, NULL, NULL);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('Master', 'Work', 'Pick', '/graphics/pick.png', 'pick.EOAPick',
+    2, 1, 1, 1, 1,
+    NULL, NULL, NULL);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('Master', 'Work', 'Store', '/graphics/store.png', 'store.StoreItemsMain',
+    2, 1, 1, 1, 1,
+    NULL, NULL, NULL);
+--
+-- ReadOnly
+--
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('ReadOnly', 'Facility', 'Locations', '/graphics/location.png', 'location.LocationMain',
+    2, 2, 2, 2, 1,
+    NULL, NULL, NULL);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('ReadOnly', 'Facility', 'Routes', '/graphics/routes.png', 'route.RouteListFrame',
+    2, 2, 2, 2, 1,
+    NULL, NULL, NULL);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('ReadOnly', 'Facility', 'Stations', '/graphics/station.png', 'station.StationListFrame',
+    2, 2, 2, 2, 1,
+    NULL, NULL, NULL);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('ReadOnly', 'Facility', 'Warehouse', '/graphics/warehouse.png', 'warehouse.WarehouseMain',
+    2, 2, 2, 2, 1,
+    NULL, NULL, NULL);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('ReadOnly', 'Inventory', 'Item Details', '/graphics/itemdtl.png', 'itemdetail.ItemDetailListFrame',
+    2, 2, 2, 2, 1,
+    NULL, NULL, NULL);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('ReadOnly', 'Inventory', 'Items', '/graphics/iteminfo.png', 'item.ItemMasterListFrame',
+    2, 2, 2, 2, 1,
+    NULL, NULL, NULL);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('ReadOnly', 'Inventory', 'Loads', '/graphics/loaddis.png', 'load.LoadListFrame',
+    2, 2, 2, 2, 1,
+    NULL, NULL, NULL);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('ReadOnly', 'Inventory', 'Locations', '/graphics/location.png', 'location.LocationMain',
+    2, 2, 2, 2, 1,
+    NULL, NULL, NULL);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('ReadOnly', 'Inventory', 'Moves', '/graphics/movement.png', 'move.MoveListFrame',
+    2, 2, 2, 2, 1,
+    NULL, NULL, NULL);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('ReadOnly', 'Orders', 'Cycle Count', '/graphics/ordcyc.png', 'order.AddCciOrderFrame',
+    2, 2, 2, 2, 1,
+    NULL, NULL, NULL);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('ReadOnly', 'Orders', 'Empty Container', '/graphics/emptycont.png', 'load.OrderEmpties',
+    2, 2, 2, 2, 1,
+    NULL, NULL, NULL);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('ReadOnly', 'Orders', 'New Item Order', '/graphics/ordinfo.png', 'order.ItemOrderFrame',
+    2, 2, 2, 2, 1,
+    NULL, NULL, NULL);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('ReadOnly', 'Orders', 'Order Maintenance', '/graphics/ordmaint.png', 'order.OrderMain',
+    2, 2, 2, 2, 1,
+    NULL, NULL, NULL);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('ReadOnly', 'Orders', 'Retrieve Loads', '/graphics/ordload.png', 'load.OrderLoad',
+    2, 2, 2, 2, 1,
+    NULL, NULL, NULL);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('ReadOnly', 'Tools', 'Equipment Monitor', '/graphics/eqmonitor.png', 'equipment.EquipmentMonitorFrame',
+    2, 2, 2, 2, 1,
+    NULL, NULL, NULL);
+INSERT INTO asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED)
+ VALUES
+   ('ReadOnly', 'Tools', 'Location Utilization', '/graphics/locationuse.png', 'location.LocationUtilizationFrame',
+    2, 2, 2, 2, 1);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('ReadOnly', 'Tools', 'Log Viewer', '/graphics/logviewer.png', 'log.LogViewerFrame',
+    2, 2, 2, 2, 1,
+    NULL, NULL, NULL);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('ReadOnly', 'Tools', 'Transaction History', '/graphics/history.png', 'tranhistory.TranHistoryMain',
+    2, 2, 2, 2, 1,
+    NULL, NULL, NULL);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('ReadOnly', 'Users', 'Roles', '/graphics/userroles.png', 'role.RoleListFrame',
+    2, 2, 2, 2, 1,
+    NULL, NULL, NULL);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('ReadOnly', 'Users', 'Users', '/graphics/userinfo.png', 'user.UserListFrame',
+    2, 2, 2, 2, 1,
+    NULL, NULL, NULL);
+--
+-- SKDaifuku
+--
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('SKDaifuku', 'Daifuku Review', 'Barcode Generator', '/graphics/barcode.png', 'com.daifukuamerica.wrxj.printer.SkdLabelGeneratorFrame',
+    2, 1, 1, 1, 1,
+    NULL, NULL, NULL);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('SKDaifuku', 'Daifuku Review', 'Consolidation', '/graphics/consolidate.png', 'consolidate.ConsolidateMain',
+    1, 1, 1, 1, 1,
+    NULL, NULL, NULL);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('SKDaifuku', 'Daifuku Review', 'Dedications', '/graphics/dedication.png', 'dedication.DedicationMain',
+    2, 1, 1, 1, 1,
+    NULL, NULL, NULL);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('SKDaifuku', 'Daifuku Test', 'Controls Emulation', '/graphics/conveyor.png', 'emulation.ControlsDeviceEmulationFrame',
+    2, 1, 1, 1, 1,
+    NULL, NULL, NULL);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('SKDaifuku', 'Daifuku Test', 'DB Table Diagnostic', '/graphics/DBdiag.png', 'utility.DBTableDiagnostic',
+    1, 1, 1, 1, 1,
+    NULL, NULL, NULL);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('SKDaifuku', 'Daifuku Test', 'DB Translations', '/graphics/DBTrans.png', 'utility.DBTranslationFrame',
+    2, 2, 2, 2, 1,
+    NULL, NULL, NULL);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('SKDaifuku', 'Daifuku Test', 'Emulation', '/graphics/emulation.png', 'emulation.EmulatorFrame',
+    2, 1, 1, 1, 1,
+    NULL, NULL, NULL);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('SKDaifuku', 'Daifuku Test', 'Java Monitor', '/graphics/javamonitor.png', 'com.daifukuamerica.wrxj.swing.JavaRuntimeMonitorFrame',
+    2, 1, 1, 1, 1,
+    NULL, NULL, NULL);
+INSERT INTO asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME, IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED)
+ VALUES
+   ('SKDaifuku', 'Daifuku Test', 'JBoss Message Viewer', '/graphics/JBossList.png', 'utility.JBossMessageListFrame', 2, 1, 1, 1, 1);
+INSERT INTO asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME, IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED)
+ VALUES
+   ('SKDaifuku', 'Daifuku Test', 'JBoss Monitor', '/graphics/JBoss.png', 'utility.JBossMonitorFrame', 1, 1, 1, 1, 1);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED)
+ Values
+   ('SKDaifuku', 'Daifuku Test', 'Rack Usage', '/graphics/RackUsage.png', 'rackusage.RackUsageFrame',
+    2, 1, 1, 1, 1);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('SKDaifuku', 'Daifuku Test', 'Single Item ER', '/graphics/simpleER.png', 'test.SimplePurchaseOrderListFrame',
+    2, 1, 1, 1, 1,
+    NULL, NULL, NULL);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('SKDaifuku', 'Daifuku Test', 'Single Item Orders', '/graphics/simpleOrder.png', 'test.SimpleItemOrderListFrame',
+    2, 1, 1, 1, 1,
+    NULL, NULL, NULL);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('SKDaifuku', 'Daifuku Test', 'Station Simulation', '/graphics/emulation.png', 'emulation.StationSimulation',
+    2, 1, 1, 1, 1,
+    NULL, NULL, NULL);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('SKDaifuku', 'Facility', 'Containers', '/graphics/container.png', 'container.ContainerListFrame',
+    2, 1, 1, 1, 1,
+    NULL, NULL, NULL);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('SKDaifuku', 'Facility', 'Devices', '/graphics/device.png', 'device.DeviceMain',
+    1, 1, 1, 1, 1,
+    NULL, NULL, NULL);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('SKDaifuku', 'Facility', 'Locations', '/graphics/location.png', 'location.LocationMain',
+    2, 1, 1, 1, 1,
+    NULL, NULL, NULL);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('SKDaifuku', 'Facility', 'Ports', '/graphics/ports.png', 'port.PortListFrame',
+    2, 1, 1, 1, 1,
+    NULL, NULL, NULL);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('SKDaifuku', 'Facility', 'Reason Codes', '/graphics/reason.png', 'reasoncode.ReasonCodeListFrame',
+    2, 1, 1, 1, 1,
+    NULL, NULL, NULL);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('SKDaifuku', 'Facility', 'Route Builder', '/graphics/RouteBuild.png', 'route.RouteBuilder',
+    1, 1, 1, 1, 1,
+    NULL, NULL, NULL);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('SKDaifuku', 'Facility', 'Routes', '/graphics/routes.png', 'route.RouteListFrame',
+    2, 1, 1, 1, 1,
+    NULL, NULL, NULL);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('SKDaifuku', 'Facility', 'Station Parameters', '/graphics/stationdtl.png', 'station.StationParameterMain',
+    1, 2, 2, 2, 1,
+    NULL, NULL, NULL);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('SKDaifuku', 'Facility', 'Stations', '/graphics/station.png', 'station.StationListFrame',
+    2, 1, 1, 1, 1,
+    NULL, NULL, NULL);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('SKDaifuku', 'Facility', 'Warehouse', '/graphics/warehouse.png', 'warehouse.WarehouseMain',
+    2, 1, 1, 1, 1,
+    NULL, NULL, NULL);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('SKDaifuku', 'Facility', 'Workstation Defaults', '/graphics/workstation.png', 'utility.GuiOptionFrame',
+    2, 1, 1, 1, 1,
+    NULL, NULL, NULL);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('SKDaifuku', 'Facility', 'Zones-Locations', '/graphics/zone.png', 'zone.ZoneListFrame',
+    2, 1, 1, 1, 1,
+    NULL, NULL, NULL);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('SKDaifuku', 'Facility', 'Zones-Recommended', '/graphics/zone_group.png', 'zone.ZoneGroupListFrame',
+    2, 1, 1, 1, 1,
+    NULL, NULL, NULL);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('SKDaifuku', 'Inventory', 'Change Item Name', '/graphics/itemchange.png', 'item.ChangeItemName',
+    2, 1, 1, 1, 1,
+    NULL, NULL, NULL);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('SKDaifuku', 'Inventory', 'Item Details', '/graphics/itemdtl.png', 'itemdetail.ItemDetailListFrame',
+    1, 1, 1, 1, 1,
+    NULL, NULL, NULL);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('SKDaifuku', 'Inventory', 'Item Synonyms', '/graphics/itemsyn.png', 'item.ItemSynonymListFrame',
+    2, 1, 1, 1, 1,
+    NULL, NULL, NULL);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('SKDaifuku', 'Inventory', 'Items', '/graphics/iteminfo.png', 'item.ItemMasterListFrame',
+    1, 1, 1, 1, 1,
+    NULL, NULL, NULL);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('SKDaifuku', 'Inventory', 'Loads', '/graphics/loaddis.png', 'load.LoadListFrame',
+    1, 1, 1, 1, 1,
+    NULL, NULL, NULL);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('SKDaifuku', 'Inventory', 'Locations', '/graphics/location.png', 'location.LocationMain',
+    1, 1, 1, 1, 1,
+    NULL, NULL, NULL);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('SKDaifuku', 'Inventory', 'Modify Load Location', '/graphics/ldlocdet.png', 'loadlocdetail.LoadLocDetailFrame',
+    2, 1, 1, 1, 1,
+    NULL, NULL, NULL);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('SKDaifuku', 'Inventory', 'Moves', '/graphics/movement.png', 'move.MoveListFrame',
+    1, 1, 1, 1, 1,
+    NULL, NULL, NULL);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('SKDaifuku', 'Orders', 'Cycle Count', '/graphics/ordcyc.png', 'order.AddCciOrderFrame',
+    2, 1, 1, 1, 1,
+    NULL, NULL, NULL);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('SKDaifuku', 'Orders', 'Empty Container', '/graphics/emptycont.png', 'load.OrderEmpties',
+    1, 1, 1, 1, 1,
+    NULL, NULL, NULL);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('SKDaifuku', 'Orders', 'Expected Receipts', '/graphics/poinfo.png', 'purchaseorder.POMain',
+    1, 1, 1, 1, 1,
+    NULL, NULL, NULL);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('SKDaifuku', 'Orders', 'New Item Order', '/graphics/ordinfo.png', 'order.ItemOrderFrame',
+    1, 1, 1, 1, 1,
+    NULL, NULL, NULL);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('SKDaifuku', 'Orders', 'Order Maintenance', '/graphics/ordmaint.png', 'order.OrderMain',
+    1, 1, 1, 1, 1,
+    NULL, NULL, NULL);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('SKDaifuku', 'Orders', 'Retrieve Loads', '/graphics/ordload.png', 'load.OrderLoad',
+    2, 1, 1, 1, 1,
+    NULL, NULL, NULL);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('SKDaifuku', 'Shipping', 'Carrier Stations', '/graphics/carstation.png', 'carrier.CarrierStationListFrame',
+    2, 1, 1, 1, 1,
+    NULL, NULL, NULL);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('SKDaifuku', 'Shipping', 'Carriers', '/graphics/carrier.png', 'carrier.CarrierMain',
+    2, 1, 1, 1, 1,
+    NULL, NULL, NULL);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('SKDaifuku', 'Shipping', 'Customers', '/graphics/cust.png', 'customer.CustomerListFrame',
+    2, 1, 1, 1, 1,
+    NULL, NULL, NULL);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('SKDaifuku', 'Shipping', 'Item Profiler', '/graphics/itemprofile.png', 'item.ItemProfiler',
+    2, 1, 1, 1, 1,
+    NULL, NULL, NULL);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('SKDaifuku', 'Shipping', 'Ship Load', '/graphics/shipload.png', 'shipment.ShipLoad',
+    2, 1, 1, 1, 1,
+    NULL, NULL, NULL);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('SKDaifuku', 'Shipping', 'Shipments', '/graphics/ship.png', 'shipment.ShipmentListFrame',
+    2, 1, 1, 1, 1,
+    NULL, NULL, NULL);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('SKDaifuku', 'Tools', 'ASRS Meta-Data', '/graphics/metadata.png', 'utility.MetaDataMain',
+    2, 2, 2, 2, 1,
+    NULL, NULL, NULL);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('SKDaifuku', 'Tools', 'Equipment Monitor', '/graphics/eqmonitor.png', 'equipment.EquipmentMonitorFrame',
+    1, 1, 1, 1, 1,
+    NULL, NULL, NULL);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('SKDaifuku', 'Tools', 'Host Configuration', '/graphics/hostconfig.png', 'host.HostConfigMain',
+    1, 1, 1, 1, 1,
+    NULL, NULL, NULL);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('SKDaifuku', 'Tools', 'Host Data Viewer', '/graphics/hostcomm.png', 'host.HostViewMain',
+    1, 2, 2, 2, 1,
+    NULL, NULL, NULL);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED)
+ Values
+   ('SKDaifuku', 'Tools', 'JVM Configuration', '/graphics/jvmconfig.png', 'config.JVMConfigMain',
+    2, 1, 1, 1, 1);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('SKDaifuku', 'Tools', 'Load Captive Rack', '/graphics/loadcaptive.png', 'store.LoadCaptiveRack',
+    1, 1, 1, 1, 1,
+    NULL, NULL, NULL);
+INSERT INTO asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED)
+ VALUES
+   ('SKDaifuku', 'Tools', 'Location Utilization', '/graphics/locationuse.png', 'location.LocationUtilizationFrame',
+    2, 2, 2, 2, 1);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('SKDaifuku', 'Tools', 'Log Viewer', '/graphics/logviewer.png', 'log.LogViewerFrame',
+    2, 1, 1, 1, 1,
+    NULL, NULL, NULL);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('SKDaifuku', 'Tools', 'Missing Translations', '/graphics/missingtran.png', 'utility.MissingTranslationFrame',
+    2, 1, 1, 1, 1,
+    NULL, NULL, NULL);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED)
+ Values
+   ('SKDaifuku', 'Tools', 'Moves by Device', '/graphics/move_rpt.png', 'move.MovesByDeviceList',
+    2, 2, 2, 2, 1);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('SKDaifuku', 'Tools', 'Recovery', '/graphics/recovery.png', 'recovery.RecoveryListFrame',
+    1, 1, 1, 1, 1,
+    NULL, NULL, NULL);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('SKDaifuku', 'Tools', 'System Monitor', '/graphics/sysmonitor.png', 'monitor.MonitorFrame',
+    1, 1, 1, 1, 1,
+    NULL, NULL, NULL);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('SKDaifuku', 'Tools', 'System Configuration', '/graphics/SysConfig.png', 'utility.SystemConfigMain',
+    2, 1, 1, 1, 1,
+    NULL, NULL, NULL);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('SKDaifuku', 'Tools', 'Transaction History', '/graphics/history.png', 'tranhistory.TranHistoryMain',
+    1, 1, 1, 1, 1,
+    NULL, NULL, NULL);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('SKDaifuku', 'Users', 'Current Users', '/graphics/userinfo.png', 'user.LoginListFrame',
+    2, 1, 1, 1, 1,
+    NULL, NULL, NULL);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('SKDaifuku', 'Users', 'Roles', '/graphics/userroles.png', 'role.RoleListFrame',
+    2, 1, 1, 1, 1,
+    NULL, NULL, NULL);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('SKDaifuku', 'Users', 'Users', '/graphics/userinfo.png', 'user.UserListFrame',
+    2, 1, 1, 1, 1,
+    NULL, NULL, NULL);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('SKDaifuku', 'Work', 'Pick', '/graphics/pick.png', 'pick.EOAPick',
+    2, 1, 1, 1, 1,
+    NULL, NULL, NULL);
+Insert into asrs.RoleOption
+   (SROLE, SCATEGORY, SOPTION, SICONNAME, SCLASSNAME,
+    IBUTTONBAR, IADDALLOWED, IMODIFYALLOWED, IDELETEALLOWED, IVIEWALLOWED,
+    DMODIFYTIME, SADDMETHOD, SUPDATEMETHOD)
+ Values
+   ('SKDaifuku', 'Work', 'Store', '/graphics/store.png', 'store.StoreItemsMain',
+    2, 1, 1, 1, 1,
+    NULL, NULL, NULL);
+COMMIT TRANSACTION;
+go

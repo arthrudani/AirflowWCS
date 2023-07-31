@@ -1,0 +1,13 @@
+  <!--
+     Document Type Definition for the Inventory Request message from a host
+     system.
+
+     Author: A.D.
+     Version 1.0      03/29/05
+     Copyright 2005 Daifuku America Corporation  All Rights Reserved.
+  -->
+  <!ELEMENT InventoryRequestMessage (InventoryTotalsUploadRequest+)>
+  <!ELEMENT InventoryTotalsUploadRequest (sWarehouse?, sItem?, sLot?)>
+  <!ELEMENT sWarehouse   (#PCDATA)>
+  <!ELEMENT sItem        (#PCDATA)>
+  <!ELEMENT sLot         (#PCDATA)>

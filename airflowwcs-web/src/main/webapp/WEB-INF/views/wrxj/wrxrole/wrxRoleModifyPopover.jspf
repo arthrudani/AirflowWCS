@@ -1,0 +1,62 @@
+<!-- ITEM DETAIL MODIFY  -->
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+	<div id="edit-modal" class="modal fade">
+
+		<div class="modal-dialog modal-lg">
+
+			<div class="modal-content">
+
+				<div class="modal-header">
+
+					<button type="button" class="close" data-dismiss="modal"
+						aria-hidden="true">&times;</button>
+
+					<h4 class="modal-title">Modify Role</h4>
+
+				</div>
+
+				<div class="modal-body">
+				
+				
+
+				<spring:url value="/role/modify" var="formUrl"/>
+				<form:form cssClass="form-horizontal" id="role-modify-form"
+					action="${formUrl}" method="POST" modelAttribute="RoleModel">
+
+					<div class="form-group">
+						<label class="control-label col-sm-2" for="article">Role:</label>
+							<div class="col-sm-4">
+								<form:input path="role" cssClass="form-control" id="roleMod"
+									placeholder="Enter Role" required="required" readonly="true"/>
+							</div>
+						
+						<label class="control-label col-sm-2" for="item">Role Description:</label>
+						<div class="col-sm-4">
+							<form:input path="roleDescription" cssClass="form-control" id="roleDescriptionMod"
+								placeholder="Role Description" required="required" />
+						</div>
+
+					</div>
+				
+				</form:form>
+
+
+
+			</div>
+
+				<div class="modal-footer">
+
+					<button id="role-modify-cancel-button" type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+
+					<button id="role-modify-button" type="button" class="btn btn-warning">Update</button>
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</div>
+<!-- END ITEM DETAIL MODIFY  -->

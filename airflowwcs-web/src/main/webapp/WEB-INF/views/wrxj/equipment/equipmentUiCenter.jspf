@@ -1,0 +1,27 @@
+<script>
+	var ctx = "${pageContext.request.contextPath}"; 
+</script> 
+<div id="center-area"
+	data-options="region:'center',title:'Equipment Status Map',iconCls:'icon-cog'">
+	<div id="center-tabs" class="easyui-tabs"
+		data-options="fit:true,border:false,plain:true">
+		<div id="area-1" title="Area 1" style="padding: 10px">
+			<div id="mapContainer" class="col-xs-12 col-md-12">
+		    	<!-- There should be generated contents for the SVG element rendered 
+		    		and drawn in equipment.js - The SVG elements will be appended here 
+		    		in order of importance (consume click events last->first) -->
+		    </div>
+		</div>
+		<security:authorize access="hasAnyRole('ROLE_ELEVATED','ROLE_ADMIN','ROLE_MASTER')">
+		<div title="Table Overview" style="padding: 5px">
+				<wrxj:ajaxTable metaDataName="EquipmentDetail"
+					ajaxUri="/airflowwcs/equipment/status/list" tableId="EquipmentDetail"
+					metaId="Equipment ID" hasRefresh="true" hasFilter="true"
+					regexHighlightList="${regexHighlights }" hasExcel="true"
+					hasColVis="true"
+					prefHideColumns="${userPref.tableColumnVisibility['EquipmentDetail']}"
+					numPageLength="19"></wrxj:ajaxTable>
+		</div>
+		</security:authorize>
+	</div>
+</div>

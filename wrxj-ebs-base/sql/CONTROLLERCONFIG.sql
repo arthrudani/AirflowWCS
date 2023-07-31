@@ -1,0 +1,162 @@
+SET DEFINE OFF;
+Insert into CONTROLLERCONFIG
+   (SCONTROLLER, SPROPERTYNAME, SPROPERTYVALUE, SPROPERTYDESC, ISCREENCHANGEALLOWED, IENABLED)
+ Values
+   ('TimedEventScheduler', 'Task.JavaMonitor.class', 'JavaMonitorTask', 'Task to monitor JVM stats.', 2, 1);
+Insert into CONTROLLERCONFIG
+   (SCONTROLLER, SPROPERTYNAME, SPROPERTYVALUE, SPROPERTYDESC, ISCREENCHANGEALLOWED, IENABLED)
+ Values
+   ('TimedEventScheduler', 'Task.JavaMonitor.LogType', 'Debug', 'Log type: Debug, Error, or Operation', 2, 1);
+Insert into CONTROLLERCONFIG
+   (SCONTROLLER, SPROPERTYNAME, SPROPERTYVALUE, SPROPERTYDESC, ISCREENCHANGEALLOWED, IENABLED)
+ Values
+   ('TimedEventScheduler', 'Task.JavaMonitor.interval', '60', 'Run the task every X seconds.', 2, 1);
+Insert into CONTROLLERCONFIG
+   (SCONTROLLER, SPROPERTYNAME, SPROPERTYVALUE, SPROPERTYDESC, ISCREENCHANGEALLOWED, IENABLED)
+ Values
+   ('MOS2', 'HidePollingResults', 'true', 'Hide (true) or log (false) polling messages (tracking data)', 2, 2);
+Insert into CONTROLLERCONFIG
+   (SCONTROLLER, SPROPERTYNAME, SPROPERTYVALUE, SPROPERTYDESC, ISCREENCHANGEALLOWED, IENABLED)
+ Values
+   ('SRC1-Emulator', 'ID33CompletionClass', '0', 'Completion Classification for ID 33', 2, 1);
+Insert into CONTROLLERCONFIG
+   (SCONTROLLER, SPROPERTYNAME, SPROPERTYVALUE, SPROPERTYDESC, ISCREENCHANGEALLOWED, IENABLED)
+ Values
+   ('SRC1-Emulator', 'RetrieveArrivalReportDelay', '2400', 'Time (in ms) between previous message and Arrival', 2, 1);
+Insert into CONTROLLERCONFIG
+   (SCONTROLLER, SPROPERTYNAME, SPROPERTYVALUE, SPROPERTYDESC, ISCREENCHANGEALLOWED, IENABLED)
+ Values
+   ('SRC1-Emulator', 'RetrieveTriggerOfOperationIndicationDelay', '1400', 'Time (in ms) between previous message and Trigger of Operation', 2, 1);
+Insert into CONTROLLERCONFIG
+   (SCONTROLLER, SPROPERTYNAME, SPROPERTYVALUE, SPROPERTYDESC, ISCREENCHANGEALLOWED, IENABLED)
+ Values
+   ('SRC1-Emulator', 'RetrieveCompletionDelay', '6000', 'Time (in ms) between previous message and Retrieve Complete', 2, 1);
+Insert into CONTROLLERCONFIG
+   (SCONTROLLER, SPROPERTYNAME, SPROPERTYVALUE, SPROPERTYDESC, ISCREENCHANGEALLOWED, IENABLED)
+ Values
+   ('SRC1-Emulator', 'StoreCompletionDelay', '5900', 'Time (in ms) between previous message and Store Complete', 2, 1);
+Insert into CONTROLLERCONFIG
+   (SCONTROLLER, SPROPERTYNAME, SPROPERTYVALUE, SPROPERTYDESC, ISCREENCHANGEALLOWED, IENABLED)
+ Values
+   ('SRC1-Emulator', 'StorePickupCompletionDelay', '4900', 'Time (in ms) between previous message and Pickup Complete', 2, 1);
+Insert into CONTROLLERCONFIG
+   (SCONTROLLER, SPROPERTYNAME, SPROPERTYVALUE, SPROPERTYDESC, ISCREENCHANGEALLOWED, IENABLED)
+ Values
+   ('SRC1-Emulator', 'SpeedFactor', '1', 'Divisor applied to ALL times.  Valid range is 1+.', 2, 1);
+Insert into CONTROLLERCONFIG
+   (SCONTROLLER, SPROPERTYNAME, SPROPERTYVALUE, SPROPERTYDESC, ISCREENCHANGEALLOWED, IENABLED)
+ Values
+   ('SRC1-Emulator', 'StatusChangeInterval', '10000', 'Time (in ms) between status changes when ROTATE or RANDOM', 2, 1);
+Insert into CONTROLLERCONFIG
+   (SCONTROLLER, SPROPERTYNAME, SPROPERTYVALUE, SPROPERTYDESC, ISCREENCHANGEALLOWED, IENABLED)
+ Values
+   ('SRC1-Emulator', 'StatusChangeType', 'NONE', 'NONE, ROTATE or RANDOM', 2, 1);
+Insert into CONTROLLERCONFIG
+   (SCONTROLLER, SPROPERTYNAME, SPROPERTYVALUE, SPROPERTYDESC, ISCREENCHANGEALLOWED, IENABLED)
+ Values
+   ('SRC1-Emulator', 'UsePickupCompletion', 'true', 'Use the Pickip Completion Report (ID 64)', 2, 1);
+Insert into CONTROLLERCONFIG
+   (SCONTROLLER, SPROPERTYNAME, SPROPERTYVALUE, SPROPERTYDESC, ISCREENCHANGEALLOWED, IENABLED)
+ Values
+   ('SRC1-Emulator', 'UseTriggerOfOperation', 'false', 'Use the Trigger of Operation (IN 68)', 2, 1);
+Insert into CONTROLLERCONFIG
+   (SCONTROLLER, SPROPERTYNAME, SPROPERTYVALUE, ISCREENCHANGEALLOWED, IENABLED)
+ Values
+   ('TimedEventScheduler', 'type', 'TimedEventScheduler', 2, 1);
+Insert into CONTROLLERCONFIG
+   (SCONTROLLER, SPROPERTYNAME, SPROPERTYVALUE, ISCREENCHANGEALLOWED, IENABLED)
+ Values
+   ('TimedEventScheduler', 'Task.HostCleanup.class', 'HostCleanupTask', 2, 1);
+Insert into CONTROLLERCONFIG
+   (SCONTROLLER, SPROPERTYNAME, SPROPERTYVALUE, ISCREENCHANGEALLOWED, IENABLED)
+ Values
+   ('TimedEventScheduler', 'Task.HostCleanup.interval', '1', 2, 1);
+Insert into CONTROLLERCONFIG
+   (SCONTROLLER, SPROPERTYNAME, SPROPERTYVALUE, ISCREENCHANGEALLOWED, IENABLED)
+ Values
+   ('TimedEventScheduler', 'Task.HostCleanup.DaysToKeep', '2', 2, 1);
+Insert into CONTROLLERCONFIG
+   (SCONTROLLER, SPROPERTYNAME, SPROPERTYVALUE, SPROPERTYDESC, ISCREENCHANGEALLOWED, IENABLED)
+ Values
+   ('TimedEventScheduler', 'Task.ItemCleanup.class', 'ItemMasterTask', 'Task to delete obsolete item masters.', 2, 1);
+Insert into CONTROLLERCONFIG
+   (SCONTROLLER, SPROPERTYNAME, SPROPERTYVALUE, ISCREENCHANGEALLOWED, IENABLED)
+ Values
+   ('TimedEventScheduler', 'Task.ItemCleanup.interval', '60', 2, 1);
+Insert into CONTROLLERCONFIG
+   (SCONTROLLER, SPROPERTYNAME, SPROPERTYVALUE, SPROPERTYDESC, ISCREENCHANGEALLOWED, IENABLED)
+ Values
+   ('TimedEventScheduler', 'Task.ScheduleWork.class', 'CheckForWorkTask', 'Task to keep things moving after a missed event.', 2, 1);
+Insert into CONTROLLERCONFIG
+   (SCONTROLLER, SPROPERTYNAME, SPROPERTYVALUE, ISCREENCHANGEALLOWED, IENABLED)
+ Values
+   ('TimedEventScheduler', 'Task.ScheduleWork.interval', '10', 2, 1);
+Insert into CONTROLLERCONFIG
+   (SCONTROLLER, SPROPERTYNAME, SPROPERTYVALUE, SPROPERTYDESC, ISCREENCHANGEALLOWED, IENABLED)
+ Values
+   ('TimedEventScheduler', 'Task.NudgeEquipmentMonitorTask.class', 'NudgeEquipmentMonitorTask', 'Task to nudge the Equipment Monitor (make the buttons refresh).', 2, 1);
+Insert into CONTROLLERCONFIG
+   (SCONTROLLER, SPROPERTYNAME, SPROPERTYVALUE, ISCREENCHANGEALLOWED, IENABLED)
+ Values
+   ('TimedEventScheduler', 'Task.NudgeEquipmentMonitorTask.interval', '60', 2, 1);
+Insert into CONTROLLERCONFIG
+   (SCONTROLLER, SPROPERTYNAME, SPROPERTYVALUE, ISCREENCHANGEALLOWED, IENABLED)
+ Values
+   ('TimedEventScheduler', 'Task.Archive.class', 'ArchiveTask', 2, 1);
+Insert into CONTROLLERCONFIG
+   (SCONTROLLER, SPROPERTYNAME, SPROPERTYVALUE, SPROPERTYDESC, ISCREENCHANGEALLOWED, IENABLED)
+ Values
+   ('TimedEventScheduler', 'Task.Archive.interval', '1', 'The interval at which to run the archiver.  Default is 1 which means run every day. (2 means run every two days etc.)', 2, 1);
+Insert into CONTROLLERCONFIG
+   (SCONTROLLER, SPROPERTYNAME, SPROPERTYVALUE, SPROPERTYDESC, ISCREENCHANGEALLOWED, IENABLED)
+ Values
+   ('TimedEventScheduler', 'Task.Archive.ExecutionTime', '01:00:00', 'The time of day to run the archiver (24 hour clock).', 2, 1);
+Insert into CONTROLLERCONFIG
+   (SCONTROLLER, SPROPERTYNAME, SPROPERTYVALUE, SPROPERTYDESC, ISCREENCHANGEALLOWED, IENABLED)
+ Values
+   ('TimedEventScheduler', 'Task.Archive.DaysToKeep', '15', 'The number of days worth of data to maintain  in the database.', 2, 1);
+Insert into CONTROLLERCONFIG
+   (SCONTROLLER, SPROPERTYNAME, SPROPERTYVALUE, SPROPERTYDESC, ISCREENCHANGEALLOWED, IENABLED)
+ Values
+   ('TimedEventScheduler', 'Task.Archive.ArchiveFileCount', '0', 'The number of files to save.  If set to 0 no files are saved *and* records will be deleted from TransactionHistory Table.', 2, 1);
+Insert into CONTROLLERCONFIG
+   (SCONTROLLER, SPROPERTYNAME, SPROPERTYVALUE, SPROPERTYDESC, ISCREENCHANGEALLOWED, IENABLED)
+ Values
+   ('TimedEventScheduler', 'Task.ShortOrderCheck.OrdersPerBatch', '10', 'The number of orders to consider per interval run. This value keeps the allocator from being saturated with orders. Set to -1 if you want all orders considered per interval (not recommended).', 2, 1);
+Insert into CONTROLLERCONFIG
+   (SCONTROLLER, SPROPERTYNAME, SPROPERTYVALUE, SPROPERTYDESC, ISCREENCHANGEALLOWED, IENABLED)
+ Values
+   ('TimedEventScheduler', 'Task.ShortOrderCheck.class', 'ShortOrderTask', 'Task to check for Short orders on the system.', 2, 1);
+Insert into CONTROLLERCONFIG
+   (SCONTROLLER, SPROPERTYNAME, SPROPERTYVALUE, SPROPERTYDESC, ISCREENCHANGEALLOWED, IENABLED)
+ Values
+   ('TimedEventScheduler', 'Task.ShortOrderCheck.interval', '30', 'Number of seconds before we check for short orders to reallocate.', 2, 1);
+Insert into CONTROLLERCONFIG
+   (SCONTROLLER, SPROPERTYNAME, SPROPERTYVALUE, SPROPERTYDESC, ISCREENCHANGEALLOWED, 
+    IENABLED)
+Values
+   ('TimedEventScheduler', 'Task.OrderAllocation.NumOrdersPerRun', '16', 'Number of Orders to try and allocate per run of the timer thread.', 2, 1);
+Insert into CONTROLLERCONFIG
+   (SCONTROLLER, SPROPERTYNAME, SPROPERTYVALUE, SPROPERTYDESC, ISCREENCHANGEALLOWED, 
+    IENABLED)
+Values
+   ('TimedEventScheduler', 'Task.OrderAllocation.class', 'OrderAllocationTask', 'Order Allocation Task to control Window of active orders.', 2, 1);
+Insert into CONTROLLERCONFIG
+   (SCONTROLLER, SPROPERTYNAME, SPROPERTYVALUE, SPROPERTYDESC, ISCREENCHANGEALLOWED, 
+    IENABLED)
+Values
+   ('TimedEventScheduler', 'Task.OrderAllocation.interval', '10', 'Frequency of Allocation checks.', 2, 1);
+Insert into CONTROLLERCONFIG
+   (SCONTROLLER, SPROPERTYNAME, SPROPERTYVALUE, SPROPERTYDESC, ISCREENCHANGEALLOWED, IENABLED)
+ Values
+   ('AGVController', 'type', 'AGVController', 'Device To control AGVs', 2, 2);
+Insert into CONTROLLERCONFIG
+   (SCONTROLLER, SPROPERTYNAME, SPROPERTYVALUE, SPROPERTYDESC, ISCREENCHANGEALLOWED, IENABLED)
+ Values 
+   ('WebMessageController', 'class', 'com.daifukuamerica.wrxj.web.stomp.controller.WebMessageController', '', 1, 1);
+Insert into CONTROLLERCONFIG
+   (SCONTROLLER, SPROPERTYNAME, SPROPERTYVALUE, SPROPERTYDESC, ISCREENCHANGEALLOWED, IENABLED)
+ Values 
+   ('WebMessageController','type','WebMessageController', 'Message relay to subscribed WRx web clients',1,1);
+
+COMMIT;

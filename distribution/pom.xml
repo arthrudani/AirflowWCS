@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.daifukuoc</groupId>
+    <artifactId>airflowwcs</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+
+  <artifactId>distribution</artifactId>
+  <name>distribution</name>
+  <packaging>pom</packaging>
+
+  <dependencies>
+    <!-- wrxj-ebs-base -->
+    <dependency>
+      <groupId>com.daifukuoc</groupId>
+      <artifactId>wrxj-ebs-base</artifactId>
+      <version>0.0.1-SNAPSHOT</version>
+    </dependency>
+    
+    <!-- wrxj-ebs-custom -->
+    <dependency>
+      <groupId>com.daifukuoc</groupId>
+      <artifactId>wrxj-ebs-custom</artifactId>
+      <version>0.0.1-SNAPSHOT</version>
+    </dependency>
+    
+    <!-- airflowwcs-web -->
+    <dependency>
+      <groupId>com.daifukuoc</groupId>
+      <artifactId>airflowwcs-web</artifactId>
+      <version>0.0.1-SNAPSHOT</version>
+      <classifier>classes</classifier>
+    </dependency>
+  </dependencies>
+  
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-assembly-plugin</artifactId>
+      </plugin>
+      <plugin>
+        <groupId>org.openrewrite.maven</groupId>
+        <artifactId>rewrite-maven-plugin</artifactId>
+      </plugin>
+    </plugins>
+  </build>
+</project>

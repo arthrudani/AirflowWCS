@@ -1,0 +1,31 @@
+<!--
+     Document Type Definition for the Expected Receipt message from a host
+     system.  The declarations below require that each tag appear zero or 1
+     time, BUT when these elements appear, they must occur in the order 
+     specified here.
+
+     Author: A.D.
+     Version 1.0      04/18/05
+     Copyright 2005 Daifuku America Corporation  All Rights Reserved.
+-->
+<!ELEMENT ExpectedReceiptMessage (ExpectedReceipt+)>
+<!ELEMENT ExpectedReceipt (ExpectedReceiptHeader*, ExpectedReceiptLine*)>
+<!ATTLIST ExpectedReceipt action          (ADD|DELETE)    #REQUIRED
+                          sOrderID        NMTOKEN         #REQUIRED>
+<!ELEMENT ExpectedReceiptHeader (dExpectedDate?, sStoreStation?)>
+<!ELEMENT dExpectedDate   (#PCDATA)>
+<!ELEMENT sStoreStation   (#PCDATA)>
+
+<!-- ============================= -->
+<!--  Expected Receipt Line setup  -->
+<!-- ============================= -->
+<!ELEMENT ExpectedReceiptLine
+          (fExpectedQuantity? ,
+           sRouteID? ,
+           sHoldReason?)>
+<!ATTLIST ExpectedReceiptLine sItem   CDATA    #REQUIRED
+                              sLot    CDATA    #IMPLIED>
+
+<!ELEMENT fExpectedQuantity (#PCDATA)>
+<!ELEMENT sRouteID          (#PCDATA)>
+<!ELEMENT sHoldReason       (#PCDATA)>

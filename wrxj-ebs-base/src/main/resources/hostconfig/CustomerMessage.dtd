@@ -1,0 +1,41 @@
+  <!--
+     Document Type Definition for the Customer message from a host system.
+     The declarations below require that each tag appear zero or 1 time, BUT
+     when these elements appear, they must occur in the order specified here.
+
+     Author: A.D.
+     Version 1.0      05/02/05
+     Copyright 2005 Daifuku America Corporation  All Rights Reserved.
+  -->
+  <!ELEMENT CustomerMessage (Customer+)>
+  <!ELEMENT Customer
+    (sCustomer        ,
+     sDescription1?   ,
+     sDescription2?   ,
+     sStreetAddress1? ,
+     sStreetAddress2? ,
+     sCity?           ,
+     sState?          ,
+     sCountry?        ,
+     sZipcode?        ,
+     sAttention?      ,
+     sPhone?          ,
+     sContact?        ,
+     sNote?)>
+
+  <!ATTLIST Customer action          (ADD|MODIFY|DELETE) #REQUIRED
+                     iDeleteOnUse    (YES|NO)            "NO">
+
+  <!ELEMENT sCustomer          (#PCDATA)>
+  <!ELEMENT sDescription1      (#PCDATA)>
+  <!ELEMENT sDescription2      (#PCDATA)>
+  <!ELEMENT sStreetAddress1    (#PCDATA)>
+  <!ELEMENT sStreetAddress2    (#PCDATA)>
+  <!ELEMENT sCity              (#PCDATA)>
+  <!ELEMENT sState             (#PCDATA)>
+  <!ELEMENT sCountry           (#PCDATA)>
+  <!ELEMENT sZipcode           (#PCDATA)>
+  <!ELEMENT sAttention         (#PCDATA)>
+  <!ELEMENT sPhone             (#PCDATA)>
+  <!ELEMENT sContact           (#PCDATA)>
+  <!ELEMENT sNote              (#PCDATA)>

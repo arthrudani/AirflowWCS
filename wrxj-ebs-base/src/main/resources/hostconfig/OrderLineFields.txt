@@ -1,0 +1,16 @@
+#
+# Message fields for the Order Line message.  This file allows for
+# dynamic specification changes of delimited host messages without always
+# requiring code changes (as long as the fields are part of the primary
+# table.  Fields in this file MUST be separated by a semicolon. Field1 = name,
+# Field2=default value, and Field3=field length.  If Field3 is empty, look
+# in database to find length by field name.
+#
+sOrderID         ;;;
+sItem            ;;;
+sLot             ;;;
+fOrderQuantity   ;;;
+sRouteID         ;;;
+sLoadID          ;;;
+sDescription     ;;;
+sLastLine        ;NO;;

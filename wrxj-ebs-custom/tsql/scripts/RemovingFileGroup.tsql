@@ -1,0 +1,10 @@
+-- Two steps: (1) remove physical file under filegroup, (2) remove filegroup.
+USE [WRXJ]
+GO
+-- Remove the file.  Note that the FILE [Hostdata] refers to the name the file
+-- group was assigned when first created.
+ALTER DATABASE [WRXJ] REMOVE FILE [HostData];
+
+-- Remove the filegroup
+ALTER DATABASE [WRXJ] REMOVE FILEGROUP [HostData];
+

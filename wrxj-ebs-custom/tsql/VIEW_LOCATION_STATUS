@@ -1,0 +1,32 @@
+use [EBSWRXJ];
+go
+
+IF OBJECT_ID ('VIEW_LOCATION_STATUS', 'V') IS NOT NULL
+DROP VIEW VIEW_LOCATION_STATUS;
+go
+
+CREATE VIEW VIEW_LOCATION_STATUS
+(   
+    Location,
+    Status,
+    Availability
+)
+AS SELECT
+	lc.SADDRESS,
+    CASE lc.ILOCATIONSTATUS
+		WHEN 29 THEN 'Available'
+		WHEN 30 THEN 'Unavailable'
+		WHEN 31 THEN 'Prohibited'
+		ELSE 'Unknown'
+	END,
+	CASE lc.IEMPTYFLAG
+		WHEN 21 THEN 'Empty'
+		WHEN 22 THEN 'Occupied'
+		WHEN 23 THEN 'Reserved'
+		WHEN 24 THEN 'Swap'
+		WHEN 25 THEN 'Double-Deep Movement'
+		ELSE 'Unknown'
+	END
+FROM asrs.LOCATION lc with (nolock)
+WHERE lc.ILOCATIONTYPE = 10
+go

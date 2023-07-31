@@ -1,0 +1,30 @@
+<div class="modal fade" id="confirm-dialog" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+				<h4 id="confirm-title" class="modal-title">Title</h4>
+			</div>
+			<div class="modal-body">
+				<h4 id="confirm-message">Message</h4>
+			</div>
+			<div class="modal-footer">
+				<button data-dismiss="modal" class="btn btn-default" >Cancel</button>
+				<button id="confirm-button" class="btn btn-primary">OK</button>
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+function confirmDlg(title, message, buttonText, confirmFn) {
+	$("#confirm-title").html(title);
+	$("#confirm-message").html(message);
+	$("#confirm-button").html(buttonText);
+	$("#confirm-button").off();
+	$("#confirm-button").on('click', confirmFn);
+	$('#confirm-dialog').modal('show');
+}
+function confirmDlgComplete() {
+	$('#confirm-dialog').modal('hide');
+}
+</script>

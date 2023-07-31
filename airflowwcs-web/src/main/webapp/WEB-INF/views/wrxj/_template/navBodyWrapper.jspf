@@ -1,0 +1,114 @@
+<%-- Wrap beginning of body in collapsible nav bar --%>
+<%@ taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:choose>
+	<c:when test="${userPref.messageBox}">
+		<body hoe-navigation-type="vertical-compact" hoe-nav-placement="left" theme-layout="wide-layout" theme-bg="bg1" >
+	</c:when>
+	<c:otherwise>
+		<body hoe-navigation-type="vertical" hoe-nav-placement="left" theme-layout="wide-layout" theme-bg="bg1" >
+	</c:otherwise>
+</c:choose>
+
+<script>
+var userName = '${user.userName}';
+var userId = '${user.userId}';
+</script>
+
+<div id="hoeapp-wrapper" class="hoe-hide-lpanel" hoe-device-type="desktop">
+	<header id="hoe-header" hoe-lpanel-effect="shrink" hoe-color-type="logo-bg8">
+		<div class="hoe-left-header" >
+			<a href="<spring:url value="/welcome"/>"><span>Airflow WCS</span></a>
+			<span class="hoe-sidebar-toggle"><a href="#"></a></span>
+		</div>
+		<%-- Begin top header (After sidebar corner) --%>
+		<div class="hoe-right-header" hoe-position-type="relative">
+			<span class="hoe-sidebar-toggle" id="sidebar-toggle-icon" ><a href="#"></a></span>
+			<ul class="mobile-navbar padding-left-0">
+				<%--
+				<li id="mobile-navbar-notify" class="dropdown hoe-rheader-submenu hoe-header-profile">
+					<a href="#" class="dropdown-toggle light-link" data-toggle="dropdown">
+						<i class=" fa fa-bell fa-2x"></i><span class="right-nav-dropdown-text"> <b>Alerts</b> <i class=" fa fa-angle-down"></i></span>
+					</a>
+					<ul class="dropdown-menu" id="mobile-notification-area">
+						<li class="success-notification">
+							<a href="#"><i class=" fa fa-bell-slash fa-2x"></i>No notifications..</a>
+						</li>
+					</ul>
+				</li>
+				--%>
+				<li class="dropdown hoe-rheader-submenu hoe-header-profile">
+					<a href="#" class="dropdown-toggle light-link" data-toggle="dropdown">
+						<i class=" fa fa-user-circle"></i><span class="right-nav-dropdown-text"><b>${user.userName}</b><i class=" fa fa-angle-down"></i></span>
+					</a>
+					<ul class="dropdown-menu ">
+						<li><a href="<spring:url value="/userpreference/view"/>"><i class="fa fa-user"></i>User Preferences</a></li>
+						<spring:url value="/perform_logout" var="formUrl"/>
+						<form id="logout-form" action="${formUrl}" method="POST">
+							<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+						</form>
+						<li><a id="logout-link" href="#"><i class="fa fa-power-off"></i>Logout</a></li>
+					</ul>
+				</li>
+			</ul>
+			<ul class="left-navbar text-center">
+				<b>${pageName}</b>
+				<ul class="right-navbar padding-left-0">
+					<%--
+					<li class="dropdown hoe-rheader-submenu hoe-header-profile">
+						<a href="#" class="dropdown-toggle light-link" data-toggle="dropdown">
+							<i class=" fa fa-bell fa-2x"></i><span class="right-nav-dropdown-text"> <b>Notifications</b> <i class=" fa fa-angle-down"></i></span>
+						</a>
+						<ul class="dropdown-menu" id="notification-area">
+							<li class="success-notification">
+									<a href="#"><i class=" fa fa-bell-slash fa-2x"></i>No notifications..</a>
+							</li>
+						</ul>
+					</li>
+					--%>
+					<li class="dropdown hoe-rheader-submenu hoe-header-profile">
+						<a href="#" class="dropdown-toggle light-link" data-toggle="dropdown">
+							<i class=" fa fa-user-circle"></i><span class="right-nav-dropdown-text"> <b>${user.userName}</b> <i class=" fa fa-angle-down"></i></span>
+						</a>
+						<ul class="dropdown-menu ">
+							<li><a href="<spring:url value="/userpreference/view"/>"><i class="fa fa-user"></i>User Preferences</a></li>
+							<spring:url value="/perform_logout" var="formUrl"/>
+							<form id="logout-form" action="${formUrl}" method="POST">
+								<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+							</form>
+							<li><a id="logout-link" href="#"><i class="fa fa-power-off"></i>Logout</a></li>
+						</ul>
+					</li>
+				</ul>
+			</ul>
+		</div>
+		<%-- End top header (After sidebar corner) --%>
+	</header>
+	
+	<div id="hoeapp-container" hoe-color-type="lpanel-bg8" hoe-lpanel-effect="shrink">
+		<security:authorize access="hasAnyRole('ROLE_USER','ROLE_READONLY')">
+			<aside id="hoe-left-panel" hoe-position-type="absolute">
+				<div class="profile-box">
+					<div class="media">
+						<a class="pull-left" href="user-profile.html"></a>
+						<div class="media-body">
+							<h5 class="media-heading">Welcome <span><strong>${user.userName}</strong></span></h5>
+							<security:authorize access="isAuthenticated()">
+								User ID: <security:authentication property="principal.username" />
+							</security:authorize><br/>
+						</div>
+					</div>
+				</div>
+
+				<%-- Navigation Panel --%>
+				<wrxj:navPanel pretty="true"/>
+				<%-- Navigation Panel --%>
+			</aside>
+		</security:authorize>
+			
+		<section id="main-content">
+			<div id="loading">
+				<i style="display:none" class="fa fa-circle-o-notch fa-spin fa-3x fa-fw"></i>
+			</div>
+			<span id="main-content-body">

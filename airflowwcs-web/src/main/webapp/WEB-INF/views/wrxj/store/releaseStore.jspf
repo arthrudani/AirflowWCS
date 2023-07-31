@@ -1,0 +1,61 @@
+<!-- LOAD MODIFY  -->
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+	<div id="release-load-modal" class="modal fade">
+
+		<div class="modal-dialog modal-sm">
+
+			<div class="modal-content">
+
+				<div class="modal-header">
+
+					<button type="button" class="close" data-dismiss="modal"
+						aria-hidden="true">&times;</button>
+
+					<h4 class="modal-title">Release Load</h4>
+
+				</div>
+
+				<div class="modal-body">
+				
+				
+				<spring:url value="/store/release" var="formUrl"/>
+				<form:form cssClass="form-horizontal" id="release-load-form" action="${formUrl}" method="POST" modelAttribute="storeModel">
+
+						<div class="input-group">
+						
+							<span class="input-group-addon" id="amountFull-addon">Set Amount Full:</span>
+							
+							
+								<form:hidden path="loadId" id="loadIdConfirm"/>
+								<form:hidden path="station" id="stationConfirm"/>
+								<form:select path="amountFull" cssClass="form-control" id="amountFull" 
+										items="${dropdownMenus.amountsFull}" required="required"
+										aria-describedby="amountFull-addon"/>
+
+						
+						</div>
+						
+				
+				</form:form>
+
+
+					
+
+				</div>
+
+				<div class="modal-footer">
+
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+
+					<button id="confirm-release-load-button" type="button" class="btn btn-primary">Release Load</button>
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</div>
+<!-- END LOAD MODIFY  -->

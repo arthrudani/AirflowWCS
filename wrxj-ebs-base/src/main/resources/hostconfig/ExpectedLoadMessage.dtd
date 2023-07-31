@@ -1,0 +1,20 @@
+<!--
+     Document Type Definition for the Expected Load message from a host
+     system.
+
+     Author: A.D.
+     Version 1.0      05/16/08
+     Copyright 2008 Daifuku America Corporation  All Rights Reserved.
+-->
+<!ELEMENT ExpectedLoadMessage (ExpectedLoad+)>
+<!ELEMENT ExpectedLoad (ExpectedLoadHeader*, ExpectedLoadLine*)>
+<!ATTLIST ExpectedLoad action          (ADD|DELETE)    #REQUIRED
+                       sOrderID        NMTOKEN         #REQUIRED>
+<!ELEMENT ExpectedLoadHeader (sStoreStation?)>
+<!ELEMENT sStoreStation (#PCDATA)>
+
+<!-- ============================= -->
+<!--  Expected Receipt Line setup  -->
+<!-- ============================= -->
+<!ELEMENT ExpectedLoadLine EMPTY>
+<!ATTLIST ExpectedLoadLine sLoadID   CDATA   #REQUIRED>

@@ -1,0 +1,19 @@
+<assembly xmlns="http://maven.apache.org/ASSEMBLY/2.1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/ASSEMBLY/2.1.1 http://maven.apache.org/xsd/assembly-2.1.1.xsd">
+  <id>distribution</id>
+
+  <!-- Set to false so that we can unpack to any directory that we want -->
+  <includeBaseDirectory>false</includeBaseDirectory>
+  <formats>
+    <format>zip</format>
+  </formats>
+  <fileSets>
+    <fileSet>
+      <directory>../wrxj-ebs-custom/dist</directory>
+      <outputDirectory>${project.version}/server</outputDirectory>
+    </fileSet>
+    <fileSet>
+      <directory>../airflowwcs-web/dist</directory>
+      <outputDirectory>${project.version}/webapp</outputDirectory>
+    </fileSet>
+  </fileSets>
+</assembly>

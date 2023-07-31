@@ -1,0 +1,15 @@
+use [EBSWRXJ];
+go
+
+IF OBJECT_ID ('VIEW_HEARTBEAT', 'V') IS NOT NULL
+DROP VIEW VIEW_HEARTBEAT;
+go
+
+CREATE VIEW VIEW_HEARTBEAT
+(   
+    HeartBeat
+)
+AS SELECT
+	hb.dHBTime
+FROM asrs.SYSTEMHB hb with (nolock)
+go

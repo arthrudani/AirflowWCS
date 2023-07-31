@@ -1,0 +1,57 @@
+
+<div id="east-area"
+	data-options="region:'east',split:true,onResize:trackingResizeEvent,collapsed:true"
+	title="Equipment Detail" style="width: 330px;">
+	<div id="east-panel" class=" panel panel-default">
+		<div class="panel-body row" style="padding: 10px;">
+			<form>
+				<div style='display: none;'>
+					<label for="exampleFormControlInput1">Equipment ID</label>
+					<input type="text" class="form-control" id="equipmentIdDetail"
+						placeholder="Select equipment in overview"/>
+				</div>
+				<div class="form-group col-sm-12">
+					<label for="exampleFormControlSelect2">Description</label>
+					<input type="text" class="form-control" id="equipmentDescriptionDetail"/>
+
+				</div>
+				<div class="form-group  col-sm-6">
+					<label for="exampleFormControlSelect1">Status</label>
+					<input type="text" class="form-control" id="equipmentStatusDetail"/>
+
+				</div>
+
+				<div class="form-group col-sm-6">
+					<label for="exampleFormControlInput1">Error Code</label>
+					<input type="text" class="form-control" id="equipmentErrorCodeDetail"/>
+				</div>
+				<div class="form-group col-sm-12">
+					<label for="exampleFormControlInput1">Error Text</label>
+					<input type="text" class="form-control" id="equipmentErrorTextDetail"/>
+				</div>
+				<div id="enable-load-tracking" class="form-group col-sm-6">
+					<label for="enable-load-tracking-button"> Load Tracking</label>
+					<button type="button" class="btn btn-success" class="form-control"
+						id="enable-load-tracking-button">Enable Load Tracking</button>
+				</div>
+			</form>
+		</div>
+		<div id="tracking-area" >
+			<div id="disable-load-tracking" class="form-group col-sm-6 collapse">
+				<label for="disable-load-tracking-button">Tracking Enabled</label>
+				<button type="button" class="btn btn-danger" class="form-control"
+					id="disable-load-tracking-button">
+					Disable Tracking for <span id="currently-tracked">Load</span>
+				</button>
+			</div>
+			<wrxj:ajaxTable metaDataName="EquipmentTracking"
+				ajaxUri="/airflowwcs/equipment/loadtracking/list"
+				tableId="EquipmentTracking" metaId="Tracking ID" hasFooter="false"
+				hasAutoRefresh="true" hasRefresh="true"
+				regexHighlightList="${regexHighlights }" hasFilter="true"
+				compact="true" inModal="true" inSidebar="true" hasColVis="true"
+				prefHideColumns="${userPref.tableColumnVisibility['EquipmentTracking']}"
+				numPageLength="8"/>
+		</div>
+	</div>
+</div>

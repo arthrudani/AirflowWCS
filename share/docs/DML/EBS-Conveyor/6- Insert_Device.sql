@@ -1,0 +1,30 @@
+INSERT INTO [asrs].[DEVICE]
+           ([sDeviceID]
+           ,[iDeviceType]
+           ,[iAisleGroup]
+           ,[sCommDevice]
+           ,[iOperationalStatus]
+           ,[iPhysicalStatus]
+           ,[iEmulationMode]
+           ,[sCommSendPort]
+           ,[sCommReadPort]
+           ,[sErrorCode]
+           ,[sNextDevice]
+           ,[iDeviceToken]
+           ,[sSchedulerName]
+           ,[sAllocatorName]
+           ,[sStationName]
+           ,[sUserID]
+           ,[sPrinter]
+           ,[sWarehouse]
+           ,[sJVMIdentifier]
+           ,[dModifyTime]
+           ,[sAddMethod]
+           ,[sUpdateMethod]
+           ,[iLocSeqMethod])
+     VALUES
+           ('9001',182,1,NULL,186,233,198,'9001-Port',NULL,NULL,'9001',235,'Scheduler','Allocator',NULL,NULL,NULL,'WHS',NULL,NULL,NULL,NULL,1),
+		   ('9002',182,2,NULL,186,233,198,'9002-Port',NULL,NULL,'9002',235,'Scheduler','Allocator',NULL,NULL,NULL,'WHS',NULL,NULL,NULL,NULL,2),
+		   ('9003',182,3,NULL,186,233,198,'9003-Port',NULL,NULL,'9003',235,'Scheduler','Allocator',NULL,NULL,NULL,'WHN',NULL,NULL,NULL,NULL,1),
+		   ('9004',182,4,NULL,186,233,198,'9004-Port',NULL,NULL,'9004',235,'Scheduler','Allocator',NULL,NULL,NULL,'WHN',NULL,NULL,NULL,NULL,2)
+GO

@@ -1,0 +1,4 @@
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+	<script src="<spring:url value="/resources/assets/js/stomp.js"/>" type="text/javascript"></script>
+	<script src="<spring:url value="/resources/assets/js/sockjs.js"/>" type="text/javascript"></script>
+	<script src="<spring:url value="/resources/js/jms.js"/>" type="text/javascript"></script>

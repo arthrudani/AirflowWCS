@@ -1,0 +1,21 @@
+use [WRXJ];
+go
+BEGIN TRANSACTION;
+INSERT INTO asrs.Employee
+   (SUSERID, SUSERNAME, SROLE)
+ VALUES
+   ('Administrator', 'Administrator', 'Administrator');
+INSERT INTO asrs.Employee
+   (SUSERID, SUSERNAME, SROLE, SLANGUAGE)
+ VALUES
+   ('su', 'SKDaifuku', 'SKDaifuku', 'English');
+INSERT INTO asrs.Employee
+   (SUSERID, SUSERNAME, SROLE, SPASSWORD)
+ VALUES
+   ('SKDaifuku', 'SKDaifuku', 'SKDaifuku', 'SKDaifukuj1');
+INSERT INTO asrs.Employee
+   (SUSERID, SUSERNAME, SROLE)
+ VALUES
+   ('read', 'Read Only', 'ReadOnly');
+COMMIT TRANSACTION;
+go

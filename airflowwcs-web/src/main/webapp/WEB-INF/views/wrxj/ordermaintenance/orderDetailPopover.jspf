@@ -1,0 +1,19 @@
+<%@ taglib prefix="wrxj" uri="wrxj-taglib" %>
+<div class="modal fade" id="order-detail-modal">
+	<div class="modal-dialog detail-modal" style="width:1250px;">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal"
+					aria-hidden="true">&times;</button>
+				<h4 class="modal-title" id="myModalLabel">Order Detail</h4>
+			</div>
+			<div class="modal-body">
+				<wrxj:ajaxTable metaDataName="OrderLine" ajaxUri="/airflowwcs/order/empty"
+					metaId="Item ID" hasRefresh="true" hasFilter="true" hasColVis="true" tableId="detail" inModal="true"/>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

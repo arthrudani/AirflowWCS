@@ -1,0 +1,40 @@
+<div id="settings-ltw-move" style="display: none;">
+	<div class="row">
+		<div class="col-lg-6">
+			<div class="panel panel-default grey-background-override">
+				<div class="panel-body">
+					<center>
+					
+							
+					<input id="ltw-move-method" data-toggle="toggle" data-on="Yes" data-off="No"
+						data-onstyle="success" data-offstyle="danger" type="checkbox">
+
+						
+					</center>
+				</div>
+			</div>
+		</div>
+		<div class="col-lg-6">
+			<h4>
+				<span class="label label-default">COMPLETE MOVEMENT</span>
+			</h4>
+			<div id="detail-description">This recovery option will move the
+				load to the location designate as NEXT ADDRESS and NEXT WAREHOUSE in
+				the load's location record.</div>
+		</div>
+	</div>
+	
+	<div class="row">
+		<div class="col-md-12">
+			<div class="col-md-4"></div>
+			<div class="col-md-4">
+				<center>
+					<button id="recover-ltw-move-button" type="button"
+						class="btn btn-success btn-default">Start Recovery</button>
+				</center>
+			</div>
+			<div class="col-md-4"></div>
+		</div>
+
+	</div>
+</div>

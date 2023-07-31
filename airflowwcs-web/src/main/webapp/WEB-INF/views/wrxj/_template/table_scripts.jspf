@@ -1,0 +1,5 @@
+	<%-- load these resources before any wrxj:ajaxTable tag --%>
+	<script src="<spring:url value="/resources/assets/DataTables/datatables.min.js"/>" type="text/javascript"></script>
+	<script src="<spring:url value="/resources/assets/js/bootstrap-checkbox.min.js"/>" type="text/javascript"></script>
+	<script src="<spring:url value="/resources/assets/js/jquery.ui-contextmenu.min.js"/>" type="text/javascript"></script>
+	<link rel="stylesheet" type="text/css" href="<spring:url value="/resources/assets/DataTables/datatables.min.css"/>"/>

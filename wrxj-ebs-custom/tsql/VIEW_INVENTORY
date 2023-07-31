@@ -1,0 +1,57 @@
+use [EBSWRXJ];
+go
+
+IF OBJECT_ID ('VIEW_INVENTORY', 'V') IS NOT NULL
+DROP VIEW VIEW_INVENTORY;
+go
+
+CREATE VIEW VIEW_INVENTORY
+(   
+    TrayID,
+    BagID,
+    BatchID,
+	TrayStatus,
+	Location,
+	Device
+)
+AS SELECT
+	ld.sLoadid,
+	id.sItem,
+	id.sLot,
+    CASE ld.ILOADMOVESTATUS
+		WHEN 219 THEN    'ID Pending'
+		WHEN 220 THEN    'Arrival Pending'
+		WHEN 221 THEN    'Store Pending'
+		WHEN 222 THEN    'Retrieve Pending'
+		WHEN 223 THEN    'Retrieve Message Sent'
+		WHEN 224 THEN    'No Move'
+		WHEN 225 THEN    'Retrieving'
+		WHEN 226 THEN    'Storing'
+		WHEN 227 THEN    'Store Sent'
+		WHEN 228 THEN    'Moving'
+		WHEN 229 THEN    'Retrieve Error'
+		WHEN 230 THEN    'Store Error'
+		WHEN 231 THEN    'Arrived'
+		WHEN 232 THEN    'Staged'
+		WHEN 233 THEN    'ShipWait'
+		WHEN 234 THEN    'Shipping'
+		WHEN 235 THEN    'Picked'
+		WHEN 236 THEN    'Error'
+		WHEN 237 THEN    'Consolidating'
+		WHEN 238 THEN    'Consolidated'
+		WHEN 239 THEN    'Received'
+		WHEN 240 THEN    'Received and Checked'
+		WHEN 241 THEN    'Building'
+		WHEN 242 THEN    'Move Pending'
+		WHEN 243 THEN    'Move Error'
+		WHEN 244 THEN    'Move Sent'
+		WHEN 245 THEN    'Bin Full Error'
+		WHEN 246 THEN    'Size Mismatch Error'
+		ELSE 'Unknown'
+	END,
+	lc.SADDRESS,
+	lc.sDeviceid
+FROM asrs.LOADLINEITEM id with (nolock)
+	JOIN asrs.LOAD ld with (nolock) ON ( ld.sLoadid = id.sLoadid )
+	JOIN asrs.LOCATION lc with (nolock) ON (lc.SWAREHOUSE = ld.SWAREHOUSE AND lc.SADDRESS = ld.SADDRESS)
+go

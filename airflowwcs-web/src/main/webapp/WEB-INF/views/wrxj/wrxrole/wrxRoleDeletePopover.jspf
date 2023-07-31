@@ -1,0 +1,62 @@
+<!-- ITEM DETAIL MODIFY  -->
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+	<div id="delete-modal" class="modal fade">
+
+		<div class="modal-dialog modal-lg">
+
+			<div class="modal-content">
+
+				<div class="modal-header">
+
+					<button type="button" class="close" data-dismiss="modal"
+						aria-hidden="true">&times;</button>
+
+					<h4 class="modal-title">Delete Role?</h4>
+
+				</div>
+
+				<div class="modal-body">
+				<h4>Are you sure you want to delete the following role?</h4><br>
+				
+				<spring:url value="/role/delete" var="formUrl"/>
+				<form:form cssClass="form-horizontal" id="role-delete-form"
+					action="${formUrl}" method="POST" modelAttribute="RoleModel">
+
+					<div class="form-group">
+						<label class="control-label col-sm-2" for="article">Role:</label>
+							<div class="col-sm-4">
+								<form:input path="role" cssClass="form-control" id="roleModDelete" type="text"
+									placeholder="No Role Selected" required="required" readonly="true"/>
+							</div>
+						
+						<label class="control-label col-sm-2" for="item">Role Description:</label>
+						<div class="col-sm-4">
+							<form:input path="roleDescription" cssClass="form-control" id="roleDescriptionModDelete" type="text"
+								placeholder="No Role Selected" required="required" readonly="true"/>
+						</div>
+
+					</div>
+				
+				</form:form>
+
+
+
+
+			</div>
+
+				<div class="modal-footer">
+
+					<button id="role-delete-cancel-button" type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+
+					<button id="role-delete-button" type="button" class="btn btn-danger">Delete</button>
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</div>
+<!-- END ITEM DETAIL MODIFY  -->

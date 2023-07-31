@@ -1,0 +1,81 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<div id="weight-modal" class="modal fade">
+
+	<div class="modal-dialog modal-lg">
+
+		<div class="modal-content">
+
+			<div class="modal-header">
+
+				<button type="button" class="close" data-dismiss="modal"
+					aria-hidden="true">&times;</button>
+
+				<h4 class="modal-title">Spoof a Check Weight Message</h4>
+
+			</div>
+
+			<div class="modal-body">
+
+				<div class="container-fluid">
+					<div class="row">
+
+						<form action="../submit" id="formentry" class="form-horizontal"
+							role="form" data-parsley-validate novalidate>
+							<div class="container-fluid shadow">
+								<div class="row">
+									<div id="valErr" class="row viewerror clearfix hidden">
+										<div class="alert alert-danger">Oops! Seems there are
+											some errors..</div>
+									</div>
+									<div id="valOk" class="row viewerror clearfix hidden">
+										<div class="alert alert-success">Yay! ..</div>
+									</div>
+
+
+									<div class="row">
+										<div class="col-md-12">
+											<div class="row">
+												<div class="col-md-6">
+													<div class="form-group">
+														<label class="control-label control-label-left col-sm-3"
+															for="field3">Station</label>
+														<div class="controls col-sm-9">
+
+															<select id="weightStation" class="form-control"
+																data-role="select"
+																data-parsley-errors-container="#errId1">
+																<option hidden>Choose a Station...</option>
+																<c:forEach items="${dropdownMenus.stations}"
+																	var="stationEach">
+																	<option val="${stationEach}">${stationEach}</option>
+																</c:forEach>
+															</select> <span id="errId1" class="error"></span>
+														</div>
+
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+
+
+
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+
+			</div>
+
+			<div class="modal-footer">
+				<button id="spoof-weight-send-button" type="button"
+					class="btn btn-primary">Send</button>
+				<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+			</div>
+
+		</div>
+
+	</div>
+
+</div>

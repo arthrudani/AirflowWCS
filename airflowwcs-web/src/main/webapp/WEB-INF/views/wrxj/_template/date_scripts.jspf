@@ -1,0 +1,10 @@
+	<%-- load these resources before any using daterangepicker --%>
+	<script src="<spring:url value="/resources/assets/js/moment.min.js"/>" type="text/javascript"></script>
+	<script src="<spring:url value="/resources/assets/js/daterangepicker.min.js"/>" type="text/javascript"></script>
+	<link rel="stylesheet" type="text/css" href="<spring:url value="/resources/assets/css/daterangepicker.css"/>"/>
+	<%-- Correct sorting on the date column --%>
+	<script src="<spring:url value="/resources/assets/DataTables/sorting/datetime-moment.js"/>" type="text/javascript"></script>
+	<script>
+		$.fn.dataTable.moment('MMM D, YYYY h:mm:ss A');
+	</script>
+	

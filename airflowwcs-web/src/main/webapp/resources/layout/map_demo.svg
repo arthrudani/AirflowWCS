@@ -1,0 +1,195 @@
+<svg viewBox="0 0 1318 996.5" xmlns="http://www.w3.org/2000/svg">
+	<title>Demo Map Layout</title>
+	<g id="BaseLayer">
+		<rect class="baseLayerMapComponent" fill="none" height="476.5" stroke="#000" stroke-miterlimit="10" width="458.5" x="803.5" y="519.5"/>
+		<rect class="baseLayerMapComponent" fill="none" height="476.5" stroke="#000" stroke-miterlimit="10" width="741" x="50.5" y="519.5"/>
+		<rect class="baseLayerMapComponent" fill="none" height="506" stroke="#000" stroke-miterlimit="10" width="398.32" x="919.18" y="0.5"/>
+		<rect class="baseLayerMapComponent" fill="none" height="506" stroke="#000" stroke-miterlimit="10" width="909.53" x="0.5" y="0.5"/>
+		<rect class="baseLayerMapComponent" fill="#564482" height="11" stroke="#000" stroke-miterlimit="10" width="150" x="423.5" y="157.5"/>
+		<rect class="baseLayerMapComponent" fill="#564482" height="11" stroke="#000" stroke-miterlimit="10" width="150" x="226.5" y="157.5"/>
+		<rect class="baseLayerMapComponent" fill="#b3b3b3" height="40.88" stroke="#000" stroke-miterlimit="10" width="345.61" x="226.93" y="42.34"/>
+		<rect class="baseLayerMapComponent" fill="#b3b3b3" height="40.88" stroke="#000" stroke-miterlimit="10" width="345.61" x="226.93" y="88.77"/>
+		<rect class="baseLayerMapComponent" fill="#b3b3b3" height="40.88" stroke="#000" stroke-miterlimit="10" width="345.61" x="226.93" y="196.4"/>
+		<rect class="baseLayerMapComponent" fill="#b3b3b3" height="40.88" stroke="#000" stroke-miterlimit="10" width="345.61" x="226.93" y="242.83"/>
+		<rect class="baseLayerMapComponent" fill="#b3b3b3" height="40.88" stroke="#000" stroke-miterlimit="10" width="345.61" x="226.93" y="348.34"/>
+		<rect class="baseLayerMapComponent" fill="#b3b3b3" height="40.88" stroke="#000" stroke-miterlimit="10" width="345.61" x="226.93" y="394.77"/>
+		<rect class="baseLayerMapComponent" fill="#b3b3b3" height="38.45" stroke="#000" stroke-miterlimit="10" transform="translate(1305.44 -885.9) rotate(90)" width="286.24" x="952.55" y="196.55"/>
+		<rect class="baseLayerMapComponent" fill="#b3b3b3" height="38.45" stroke="#000" stroke-miterlimit="10" transform="translate(1426.9 -1007.36) rotate(90)" width="286.24" x="1074.01" y="196.55"/>
+		<rect class="baseLayerMapComponent" fill="#b3b3b3" height="38.45" stroke="#000" stroke-miterlimit="10" transform="translate(1096.44 369.1) rotate(90)" width="286.24" x="220.55" y="719.55"/>
+		<rect class="baseLayerMapComponent" fill="#b3b3b3" height="38.45" stroke="#000" stroke-miterlimit="10" transform="translate(1217.9 247.64) rotate(90)" width="286.24" x="342.01" y="719.55"/>
+		<rect class="baseLayerMapComponent" fill="#b3b3b3" height="38.45" stroke="#000" stroke-miterlimit="10" transform="translate(1717.44 -259.9) rotate(90)" width="286.24" x="845.55" y="715.55"/>
+		<rect class="baseLayerMapComponent" fill="#b3b3b3" height="38.45" stroke="#000" stroke-miterlimit="10" transform="translate(1838.9 -381.36) rotate(90)" width="286.24" x="967.01" y="715.55"/>
+		<polygon class="baseLayerMapComponent"  fill="#333" points="0.5 0.5 0.5 32 73.5 31.5 73.5 0.5 0.5 0.5" stroke="#000" stroke-miterlimit="10"/>
+		<text fill="#f2f2f2" font-family="Verdana-Bold, Verdana" font-size="20" font-weight="700" transform="translate(1.48 22.2)">AGC-1</text>
+		<polygon class="baseLayerMapComponent"  fill="#333" points="919.5 0.5 919.5 32 1001.5 31.5 1001.5 0.5 919.5 0.5" stroke="#000" stroke-miterlimit="10"/>
+		<text fill="#fff" font-family="Verdana-Bold, Verdana" font-size="20" font-weight="700" transform="translate(926.18 23.2)">SRC-4</text>
+		<rect class="baseLayerMapComponent" fill="#564482" height="11" stroke="#000" stroke-miterlimit="10" width="150" x="422.5" y="309.5"/>
+		<rect class="baseLayerMapComponent" fill="#564482" height="11" stroke="#000" stroke-miterlimit="10" width="150" x="226.5" y="309.5"/>
+		<rect class="baseLayerMapComponent" fill="#564482" height="123.65" stroke="#000" stroke-miterlimit="10" width="13.49" x="412.46" y="576"/>
+		<rect class="baseLayerMapComponent" fill="#564482" height="139.39" stroke="#000" stroke-miterlimit="10" width="13.49" x="412.46" y="758.11"/>
+		<rect class="baseLayerMapComponent" fill="#564482" height="110" stroke="#000" stroke-miterlimit="10" width="12" x="1037.5" y="585.5"/>
+		<rect class="baseLayerMapComponent" fill="#564482" height="124" stroke="#000" stroke-miterlimit="10" width="12" x="1037.5" y="747.5"/>
+		<polygon class="baseLayerMapComponent"  fill="#333" points="50.5 519.5 50.5 549 122.5 548.5 122.5 519.5 50.5 519.5" stroke="#000" stroke-miterlimit="10"/>
+		<rect class="baseLayerMapComponent" fill="#333" height="29.5" stroke="#000" stroke-miterlimit="10" width="81" x="803.5" y="519.5"/>
+		<text fill="#fff" font-family="Verdana-Bold, Verdana" font-size="20" font-weight="700" transform="translate(52.43 542.2)">SRC-5</text>
+		<text fill="#fff" font-family="Verdana-Bold, Verdana" font-size="20" font-weight="700" transform="translate(810.43 541.2)">SRC-9</text>
+		<rect class="baseLayerMapComponent" fill="#564482" height="96" stroke="#000" stroke-miterlimit="10" width="14" x="1143.5" y="66.5"/>
+		<rect class="baseLayerMapComponent" fill="#564482" height="106.5" stroke="#000" stroke-miterlimit="10" width="14" x="1143.5" y="282.5"/>
+		<rect class="baseLayerMapComponent" fill="#564482" height="100" stroke="#000" stroke-miterlimit="10" width="12" x="641.5" y="187.5"/>
+		<rect class="baseLayerMapComponent" fill="#564482" height="76" stroke="#000" stroke-miterlimit="10" width="12" x="641.5" y="339.5"/>
+		<rect class="baseLayerMapComponent" fill="#564482" height="73" stroke="#000" stroke-miterlimit="10" width="12" x="641.5" y="62.5"/>
+		<rect class="baseLayerMapComponent" fill="#564482" height="20" stroke="#000" stroke-miterlimit="10" width="11" x="154.5" y="304.5"/>
+		<rect class="baseLayerMapComponent" fill="#564482" height="21" stroke="#000" stroke-miterlimit="10" width="11" x="154.5" y="235.5"/>
+		<rect class="baseLayerMapComponent" fill="#564482" height="22" stroke="#000" stroke-miterlimit="10" width="11" x="154.5" y="165.5"/>
+		<path d="M171.5,120.5c-2-29.75-27.27-51.66-54-50-23,1.42-43.19,20-47,45v255c-2.36,36.13,27.06,63.31,55,61,22.59-1.88,43.53-23,46-51h-10c-2.26,22.38-18.53,39.23-36,41-22.17,2.24-46.75-19.77-45-50v-255c2.3-20.73,18.5-36.52,37-38,21.9-1.75,43.25,16.85,44,42v3h10Z" fill="#564482" stroke="#000" stroke-miterlimit="10" transform="translate(-6 -6)"/>
+		<text font-family="ArialNarrow-Bold, Arial" font-size="19" font-weight="700" transform="translate(246.83 70.84)">01</text>
+		<text font-family="ArialNarrow-Bold, Arial" font-size="19" font-weight="700" transform="translate(533.83 70.84)">01</text>
+		<text font-family="ArialNarrow-Bold, Arial" font-size="19" font-weight="700" transform="translate(246.83 114.84)">02</text>
+		<text font-family="ArialNarrow-Bold, Arial" font-size="19" font-weight="700" transform="translate(533.83 114.84)">02</text>
+		<text font-family="ArialNarrow-Bold, Arial" font-size="19" font-weight="700" transform="translate(533.83 225.84)">03</text>
+		<text font-family="ArialNarrow-Bold, Arial" font-size="19" font-weight="700" transform="translate(533.83 269.84)">04</text>
+		<text font-family="ArialNarrow-Bold, Arial" font-size="19" font-weight="700" transform="translate(246.83 222.84)">03</text>
+		<text font-family="ArialNarrow-Bold, Arial" font-size="19" font-weight="700" transform="translate(246.83 272.84)">04</text>
+		<text font-family="ArialNarrow-Bold, Arial" font-size="19" font-weight="700" transform="translate(246.83 374.84)">05</text>
+		<text font-family="ArialNarrow-Bold, Arial" font-size="19" font-weight="700" transform="translate(533.83 374.84)">05</text>
+		<text font-family="ArialNarrow-Bold, Arial" font-size="19" font-weight="700" transform="translate(246.83 420.84)">06</text>
+		<text font-family="ArialNarrow-Bold, Arial" font-size="19" font-weight="700" transform="translate(533.83 422.84)">06</text>
+		<text font-family="ArialNarrow-Bold, Arial" font-size="19" font-weight="700" transform="translate(1080.83 86.84)">07</text>
+		<text font-family="ArialNarrow-Bold, Arial" font-size="19" font-weight="700" transform="translate(1080.83 339.84)">07</text>
+		<text font-family="ArialNarrow-Bold, Arial" font-size="19" font-weight="700" transform="translate(1201.83 86.84)">08</text>
+		<text font-family="ArialNarrow-Bold, Arial" font-size="19" font-weight="700" transform="translate(1201.83 339.84)">08</text>
+		<text font-family="ArialNarrow-Bold, Arial" font-size="19" font-weight="700" transform="translate(973.83 727.84)">17</text>
+		<text font-family="ArialNarrow-Bold, Arial" font-size="19" font-weight="700" transform="translate(1095.83 727.84)">18</text>
+	</g>
+	<g class="selectableArea"  id="InputLifter">
+		<polygon  class="selectableMapComponent"  fill="#fff" points="1230.5 399.5 1211.5 391.5 1192.5 399.5 1192.5 365.5 1211.5 356.5 1230.5 365.5 1230.5 399.5" stroke="#000" stroke-miterlimit="10" stroke-width="1.5"/>
+		<polygon   class="selectableMapComponent" fill="#fff" id="Level-02-InputLifter" points="1192.5 435.5 1211.5 429.5 1230.5 435.5 1230.5 401.5 1211.5 393.5 1192.5 401.5 1192.5 435.5" stroke="#000" stroke-miterlimit="10" stroke-width="1.5"/>
+		<polygon class="selectableMapComponent"  fill="#fff" id="Level-01-InputLifter" points="327 14.5 327 45.5 364.87 45.5 433.13 45.34 433.13 132.65 452.07 126.5 471 132.65 471 45.34 470.43 14.5 327 14.5" stroke="#000" stroke-miterlimit="10" stroke-width="1.5"/>
+		<text font-family="Verdana-Bold, Verdana" font-size="12" font-weight="700" transform="translate(382.94 34.12)">0201</text>
+		<text font-family="Verdana-Bold, Verdana" font-size="10" font-weight="700" transform="translate(1197.78 418.6)">0142</text>
+	</g>
+	<g class="selectableArea"  id="OutputLifter">
+		<polygon class="selectableMapComponent"  fill="#fff" points="1070.5 356.5 1108.5 356.5 1108.5 393.5 1089.5 401.5 1070.5 393.5 1070.5 356.5" stroke="#000" stroke-miterlimit="10" stroke-width="1.5"/>
+		<polygon class="selectableMapComponent"  fill="#fff" id="Level-02-OutputLifter" points="1070.5 395.5 1089.5 403.5 1108.5 395.5 1108.5 429.5 1089.5 438.5 1070.5 429.5 1070.5 395.5" stroke="#000" stroke-miterlimit="10" stroke-width="1.5"/>
+		<polygon class="selectableMapComponent"  fill="#fff" id="Level-01-OutputLifter" points="326.88 45.34 326.88 132.65 346.96 141.5 371 132.65 371 45.34 348.34 50.5 326.88 45.34" stroke="#000" stroke-miterlimit="10" stroke-width="1.5"/>
+		<text font-family="Verdana-Bold, Verdana" font-size="10" font-weight="700" transform="translate(334.78 92.6)">0202</text>
+	</g>
+	<g class="selectableArea"  id="Cranes">
+		<polygon class="selectableMapComponent"  fill="#fff" id="Level-11-Shuttle" points="1158 219.5 1158 217.52 1171.88 217.52 1171.88 173.59 1158 173.59 1158 162.83 1143.24 162.83 1143.24 174.46 1128.48 174.46 1128.48 216.66 1143.24 216.66 1143.24 219.5 1143.24 226.13 1143.24 231.12 1128.48 231.12 1128.48 273.33 1143.24 273.33 1143.24 282.8 1158 282.8 1158 274.19 1171.88 274.19 1171.88 230.26 1158 230.26 1158 226.13 1158 219.5" stroke="#000" stroke-miterlimit="10" stroke-width="1.5"/>
+		<polygon class="selectableMapComponent"  fill="#fff" id="Level-10-Shuttle" points="1036.92 747.68 1036.92 739.92 1024 739.92 1024 705.34 1036.92 705.34 1036.92 695.81 1049.84 695.81 1049.84 704.63 1062 704.63 1062 740.62 1049.84 740.62 1049.84 747.68 1036.92 747.68" stroke="#000" stroke-miterlimit="10" stroke-width="1.5"/>
+		<polygon class="selectableMapComponent"  fill="#fff" id="Level-09-Shuttle" points="410.34 763.96 410.34 753.54 393 753.54 393 707.14 410.34 707.14 410.34 694.35 427.68 694.35 427.68 706.19 444 706.19 444 754.49 427.68 754.49 427.68 763.96 410.34 763.96" stroke="#000" stroke-miterlimit="10" stroke-width="1.5"/>
+		<polygon class="selectableMapComponent"  fill="#fff" id="Level-08-Shuttle" points="641.08 339.68 641.08 331.92 628.99 331.92 628.99 297.34 641.08 297.34 641.08 287.81 653.17 287.81 653.17 296.63 664.55 296.63 664.55 332.62 653.17 332.62 653.17 339.68 641.08 339.68" stroke="#000" stroke-miterlimit="10" stroke-width="1.5"/>
+		<polygon class="selectableMapComponent"  fill="#fff" id="Level-07-Shuttle" points="376.58 310.38 376.58 320.32 383.9 320.32 383.9 330.5 415.4 330.5 415.4 320.44 423.17 320.44 423.17 309.42 415.55 309.42 415.55 299.53 384.05 299.53 384.05 309.56 376.58 309.56 376.58 310.38" stroke="#000" stroke-miterlimit="10" stroke-width="1.5"/>
+		<polygon class="selectableMapComponent"  fill="#fff" id="Level-06-Shuttle" points="376.58 158.44 376.58 168.38 383.9 168.38 383.9 178.55 415.4 178.55 415.4 168.49 423.17 168.49 423.17 157.47 415.55 157.47 415.55 147.59 384.05 147.59 384.05 157.62 376.58 157.62 376.58 158.44" stroke="#000" stroke-miterlimit="10" stroke-width="1.5"/>
+		<polygon class="selectableMapComponent"  fill="#fff" id="Level-05-Shuttle" points="641.08 187.73 641.08 179.97 628.99 179.97 628.99 145.39 641.08 145.39 641.08 135.86 653.17 135.86 653.17 144.69 664.55 144.69 664.55 180.68 653.17 180.68 653.17 187.73 641.08 187.73" stroke="#000" stroke-miterlimit="10" stroke-width="1.5"/>
+		<text font-family="ArialNarrow-Bold, Arial" font-size="25" transform="translate(393 171)">1</text>
+		<text font-family="ArialNarrow-Bold, Arial" font-size="25" transform="translate(1144 202)">4</text>
+		<text font-family="ArialNarrow-Bold, Arial" font-size="9" transform="translate(1129.01 255.39)">UNKNOWN</text>
+		<text font-family="ArialNarrow-Bold, Arial" font-size="19" font-weight="700" transform="translate(642.17 167.6)">6</text>
+		<text font-family="ArialNarrow-Bold, Arial" font-size="19" font-weight="700" transform="translate(641.67 319.6)">7</text>
+		<text font-family="ArialNarrow-Bold, Arial" font-size="18" font-weight="700" transform="translate(413.97 725.46)">5</text>
+		<text font-family="ArialNarrow-Bold, Arial" font-size="19" font-weight="700" transform="translate(1039.17 727.6)">9</text>
+		<text font-family="Verdana-Bold, Verdana" font-size="8" font-weight="700" transform="translate(394 738)">UNKNOWN</text>
+	</g>
+	<g class="selectableArea"  id="FullnessIndicators">
+		<rect class="selectableMapComponent"  fill="#fff" height="67.02" id="Level-03-Fullness" rx="12" ry="12" stroke="#000" stroke-miterlimit="10" stroke-width="1.5" width="67.55" x="959.33" y="196.5"/>
+		<rect class="selectableMapComponent"  fill="#fff" height="67.02" id="Level-02-Fullness" rx="12" ry="12" stroke="#000" stroke-miterlimit="10" stroke-width="1.5" width="67.55" x="271.33" y="162.5"/>
+		<rect class="selectableMapComponent"  fill="#fff" height="67.02" id="Level-01-Fullness" rx="12" ry="12" stroke="#000" stroke-miterlimit="10" stroke-width="1.5" width="67.55" x="271.33" y="250.5"/>
+		<rect class="selectableMapComponent"  fill="#fff" height="67.02" id="Level-05-Fullness" rx="12" ry="12" stroke="#000" stroke-miterlimit="10" stroke-width="1.5" width="67.55" x="850.33" y="699.5"/>
+		<rect class="selectableMapComponent"  fill="#fff" height="67.02" id="Level-04-Fullness" rx="12" ry="12" stroke="#000" stroke-miterlimit="10" stroke-width="1.5" width="67.55" x="227.33" y="680.5"/>
+		<text id="Level-03-Fullness-text"   font-family="ArialMT, Arial" font-size="25" transform="translate(974.93 239.9)">3%</text>
+		<text id="Level-01-Fullness-text"  font-family="ArialMT, Arial" font-size="25" transform="translate(286.93 293.9)">1%</text>
+		<text id="Level-04-Fullness-text"   font-family="ArialMT, Arial" font-size="25" transform="translate(242.93 723.9)">4%</text>
+		<text id="Level-02-Fullness-text"   font-family="ArialMT, Arial" font-size="25" transform="translate(286.43 204.9)">2%</text>
+		<text id="Level-05-Fullness-text"   font-family="ArialMT, Arial" font-size="25" transform="translate(865.93 742.9)">5%</text>
+	</g>
+	<g class="selectableArea"  id="Shuttles">
+		<polygon class="selectableMapComponent"  fill="#fff" id="Level-04-Shuttle" points="154.54 372.36 154.54 365.26 143.48 365.26 143.48 333.64 154.54 333.64 154.54 324.93 165.59 324.93 165.59 332.99 176 332.99 176 365.91 165.59 365.91 165.59 372.36 154.54 372.36" stroke="#000" stroke-miterlimit="10" stroke-width="1.5"/>
+		<polygon class="selectableMapComponent"  fill="#fff" id="Level-03-Shuttle" points="154.54 304.41 154.54 297.31 143.48 297.31 143.48 265.69 154.54 265.69 154.54 256.97 165.59 256.97 165.59 265.04 176 265.04 176 297.95 165.59 297.95 165.59 304.41 154.54 304.41" stroke="#000" stroke-miterlimit="10" stroke-width="1.5"/>
+		<polygon class="selectableMapComponent"  fill="#fff" id="Level-02-Shuttle" points="154.54 235.2 154.54 228.1 143.48 228.1 143.48 196.48 154.54 196.48 154.54 187.76 165.59 187.76 165.59 195.83 176 195.83 176 228.75 165.59 228.75 165.59 235.2 154.54 235.2" stroke="#000" stroke-miterlimit="10" stroke-width="1.5"/>
+		<polygon class="selectableMapComponent"  fill="#fff" id="Level-01-Shuttle" points="154.54 165.69 154.54 158.59 143.48 158.59 143.48 126.97 154.54 126.97 154.54 118.26 165.59 118.26 165.59 126.32 176 126.32 176 159.24 165.59 159.24 165.59 165.69 154.54 165.69" stroke="#000" stroke-miterlimit="10" stroke-width="1.5"/>
+		<text font-family="Verdana-Bold, Verdana" font-size="15" font-weight="700" transform="translate(155 147)">1</text>
+		<text font-family="Verdana-Bold, Verdana" font-size="15" font-weight="700" transform="translate(155 217)">2</text>
+		<text font-family="Verdana-Bold, Verdana" font-size="15" font-weight="700" transform="translate(154 286)">3</text>
+		<text font-family="Verdana-Bold, Verdana" font-size="15" font-weight="700" transform="translate(154 354)">4</text>
+	</g>
+	<g class="selectableArea"  id="Input">
+		<polygon class="selectableMapComponent"  fill="#fff" points="338.9 896.18 359.69 882.06 376.6 897.18 376.6 944.25 358.06 933.32 338.9 944.32 338.9 896.18"/>
+		<path d="M365.63,889l16.21,14.51v45.41l-17-10-.75-.44-.76.44L345.65,949V902.57l20-13.56m.12-1.9-21.6,14.67v49.84l19.91-11.43,19.28,11.37V902.85l-17.59-15.74Z" transform="translate(-6 -6)"/>
+		<polygon class="selectableMapComponent"  fill="#fff" points="19.05 155.44 26.71 142.44 19 129.01 52.75 129.01 62.65 143.59 52.04 155.44 19.05 155.44"/>
+		<path d="M58.48,135.51l9.54,14-10.2,11.4H25.92L33,149l.3-.5-.29-.51-7.14-12.43H58.48m.53-1H24.13l8,13.93-8,13.5h34.1l11-12.31L59,134.51Z" transform="translate(-6 -6)"/>
+		<polygon class="selectableMapComponent"  fill="#fff" points="21.05 224.37 28.71 211.37 21 197.93 54.75 197.93 64.65 212.51 54.04 224.37 21.05 224.37"/>
+		<path d="M60.48,204.43l9.54,14-10.2,11.4H27.92l7.07-12,.3-.5-.29-.5-7.14-12.44H60.48m.53-1H26.13l8,13.94-8,13.5h34.1l11-12.32L61,203.43Z" transform="translate(-6 -6)"/>
+		<polygon class="selectableMapComponent"  fill="#fff" points="19.05 295.29 26.71 282.3 19 268.86 52.75 268.86 62.65 283.44 52.04 295.29 19.05 295.29"/>
+		<path d="M58.48,275.36l9.54,14-10.2,11.4H25.92l7.07-12,.3-.5-.29-.51-7.14-12.43H58.48m.53-1H24.13l8,13.93-8,13.5h34.1l11-12.31L59,274.36Z" transform="translate(-6 -6)"/>
+		<polygon class="selectableMapComponent"  fill="#fff" points="19.05 363.22 26.71 350.22 19 336.78 52.75 336.78 62.65 351.36 52.04 363.22 19.05 363.22"/>
+		<path d="M58.48,343.28l9.54,14-10.2,11.4H25.92l7.07-12,.3-.5-.29-.5-7.14-12.44H58.48m.53-1H24.13l8,13.94-8,13.5h34.1l11-12.32L59,342.28Z" transform="translate(-6 -6)"/>
+		<text font-family="Verdana-Bold, Verdana" font-size="10" font-weight="700" transform="translate(28.78 145.6)">0101</text>
+		<text font-family="Verdana-Bold, Verdana" font-size="10" font-weight="700" transform="translate(29.78 214.6)">0102</text>
+		<text font-family="Verdana-Bold, Verdana" font-size="10" font-weight="700" transform="translate(28.78 285.6)">0103</text>
+		<text font-family="Verdana-Bold, Verdana" font-size="10" font-weight="700" transform="translate(28.78 353.6)">0104</text>
+		<rect  class="selectableMapComponent"  fill="#fff" height="41" id="Level-05-LayerInput" stroke="#000" stroke-miterlimit="10" stroke-width="1.5" width="38.5" x="184" y="88.5"/>
+		<rect class="selectableMapComponent"  fill="#fff" height="41" id="Level-06-LayerInput" stroke="#000" stroke-miterlimit="10" stroke-width="1.5" width="39" x="183.5" y="196.5"/>
+		<rect class="selectableMapComponent"  fill="#fff" height="41" id="Level-07-LayerInput" stroke="#000" stroke-miterlimit="10" stroke-width="1.5" width="39" x="183.5" y="242.5"/>
+		<rect class="selectableMapComponent"  fill="#fff" height="41" id="Level-08-LayerInput" stroke="#000" stroke-miterlimit="10" stroke-width="1.5" width="39" x="183.5" y="348.5"/>
+		<text font-family="Verdana-Bold, Verdana" font-size="10" font-weight="700" transform="translate(343.78 915.6)">0151</text>
+		<rect class="selectableMapComponent"  fill="#fff" height="44" id="Level-09-LayerInput" stroke="#000" stroke-miterlimit="10" stroke-width="1.5" width="58" x="954" y="881"/>
+		<text font-family="Verdana-Bold, Verdana" font-size="13" font-weight="700" transform="translate(964.52 907.88)">0191</text>
+	</g>
+	<g class="selectableArea"  id="Output">
+		<polygon  class="selectableMapComponent"  fill="#fff" points="685.86 335.21 696.79 316.68 685.79 297.51 733.93 297.51 748.05 318.31 732.92 335.21 685.86 335.21"/>
+		<path  class="selectableMapComponent"  d="M739.53,304.26l13.57,20-14.51,16.22H693.17l10-17,.45-.76-.44-.75-10.14-17.67h46.45m.8-1.5H690.49l11.43,19.91L690.55,342h48.71L755,324.37l-14.67-21.61Z" transform="translate(-6 -6)"/>
+		<polygon  class="selectableMapComponent"  fill="#fff" id="Level-09-LayerOutput" points="740.5 296.5 755.5 318.5 739.5 336.5 807.5 336.5 888.5 336.5 888.5 296.5 740.5 296.5" stroke="#000" stroke-miterlimit="10" stroke-width="1.5"/>
+		<polygon class="selectableMapComponent"  fill="#fff" id="Level-10-LayerOutput" points="771.75 296.76 771.5 264.5 789.5 255.5 808.5 264.5 808.5 296.76 771.75 296.76" stroke="#000" stroke-miterlimit="10" stroke-width="1.5"/>
+		<polygon class="selectableMapComponent"  fill="#fff" id="Level-11-LayerOutput" points="834 296.5 833.5 264.5 850.5 255.5 870.5 263.5 870.5 296.5 834 296.5" stroke="#000" stroke-miterlimit="10" stroke-width="1.5"/>
+		<polygon class="selectableMapComponent"  fill="#fff" id="Level-12-LayerOutput" points="808.25 336.5 808.5 368.76 790.5 377.76 771.5 368.76 771.5 336.5 808.25 336.5" stroke="#000" stroke-miterlimit="10" stroke-width="1.5"/>
+		<polygon class="selectableMapComponent"  fill="#fff" id="Level-13-LayerOutput" points="870.25 336.5 870.5 368.76 852.5 377.76 833.5 368.76 833.5 336.5 870.25 336.5" stroke="#000" stroke-miterlimit="10" stroke-width="1.5"/>
+		<text font-family="Verdana-Bold, Verdana" font-size="10" font-weight="700" transform="translate(806.78 319.6)">0500</text>
+		<text font-family="Verdana-Bold, Verdana" font-size="10" font-weight="700" transform="translate(776.78 283.6)">0501</text>
+		<text font-family="Verdana-Bold, Verdana" font-size="10" font-weight="700" transform="translate(776.78 356.6)">0502</text>
+		<text font-family="Verdana-Bold, Verdana" font-size="10" font-weight="700" transform="translate(838.78 283.6)">0503</text>
+		<text font-family="Verdana-Bold, Verdana" font-size="10" font-weight="700" transform="translate(838.78 356.6)">0504</text>
+		<polygon class="selectableMapComponent"  fill="#fff" points="459.9 929.54 459.9 882.48 478.43 893.41 497.6 882.4 497.6 930.55 476.8 944.67 459.9 929.54"/>
+		<path d="M502.84,889.7v46.45l-20,13.57-16.22-14.51V889.79l17,10,.75.44.76-.43,17.66-10.14m1.5-2.59-19.91,11.43-19.28-11.37v48.71l17.59,15.74L504.34,937V887.11Z" transform="translate(-6 -6)"/>
+		<polygon class="selectableMapComponent"  fill="#fff" points="685.85 118.52 695.35 102.41 685.79 85.75 727.66 85.75 739.93 103.82 726.79 118.52 685.85 118.52"/>
+		<path d="M733.26,92.5,745,109.76l-12.53,14H693.17l8.61-14.6.44-.75-.44-.76-8.7-15.16h40.18m.8-1.5H690.49l10,17.41-9.94,16.86h42.58l13.76-15.38L734.06,91Z" transform="translate(-6 -6)"/>
+		<polygon class="selectableMapComponent"  fill="#fff" points="750.28 172.28 759.78 156.17 750.21 139.51 792.09 139.51 804.36 157.59 791.22 172.28 750.28 172.28"/>
+		<path class="selectableMapComponent"  d="M797.69,146.26l11.72,17.26-12.53,14H757.59l8.61-14.6.45-.75-.44-.76-8.7-15.16h40.18m.79-1.5H754.92l10,17.41L755,179h42.58l13.76-15.38-12.83-18.89Z" transform="translate(-6 -6)"/>
+		<polygon class="selectableMapComponent"  fill="#fff" points="685.85 224.36 695.35 208.25 685.79 191.59 727.66 191.59 739.93 209.67 726.79 224.36 685.85 224.36"/>
+		<path class="selectableMapComponent"  d="M733.26,198.35,745,215.61l-12.53,14H693.17l8.61-14.6.44-.75-.44-.76-8.7-15.15h40.18m.8-1.5H690.49l10,17.4-9.94,16.86h42.58l13.76-15.38-12.82-18.88Z" transform="translate(-6 -6)"/>
+		<text font-family="Verdana-Bold, Verdana" font-size="10" font-weight="700" transform="translate(700.78 105.6)">0401</text>
+		<text font-family="Verdana-Bold, Verdana" font-size="10" font-weight="700" transform="translate(766.78 159.6)">0403</text>
+		<text font-family="Verdana-Bold, Verdana" font-size="10" font-weight="700" transform="translate(701.78 211.6)">0402</text>
+		<rect class="selectableMapComponent"  fill="#fff" height="41" id="Level-01-LayerOutput" stroke="#000" stroke-miterlimit="10" stroke-width="1.5" width="39" x="577.5" y="88.5"/>
+		<rect class="selectableMapComponent"  fill="#fff" height="41" id="Level-02-LayerOutput" stroke="#000" stroke-miterlimit="10" stroke-width="1.5" width="39" x="577.5" y="196.5"/>
+		<rect class="selectableMapComponent"  fill="#fff" height="41" id="Level-03-LayerOutput" stroke="#000" stroke-miterlimit="10" stroke-width="1.5" width="39" x="577.5" y="242.5"/>
+		<rect class="selectableMapComponent"  fill="#fff" height="41" id="Level-04-LayerOutput" stroke="#000" stroke-miterlimit="10" stroke-width="1.5" width="39" x="577.5" y="348.5"/>
+		<text font-family="Verdana-Bold, Verdana" font-size="10" font-weight="700" transform="translate(464.78 915.6)">0152</text>
+		<rect  class="selectableMapComponent"  fill="#fff" height="44" id="Level-14-LayerOutput" stroke="#000" stroke-miterlimit="10" stroke-width="1.5" width="58" x="1075" y="881"/>
+		<text font-family="Verdana-Bold, Verdana" font-size="13" font-weight="700" transform="translate(1085.52 907.88)">0192</text>
+		<text font-family="Verdana-Bold, Verdana" font-size="10" font-weight="700" transform="translate(704.78 320.6)">0400</text>
+	</g>
+	<g class="selectableArea"  id="DualStation">
+		<polygon class="selectableMapComponent"  fill="#fff" id="Level-13-LayerInput" points="1070.5 431.5 1089.5 440.5 1108.5 431.5 1108.5 440.5 1192.5 440.5 1192.5 437.5 1211.5 431.5 1230.5 437.5 1230.5 440.5 1230.5 474.5 1070.5 474.5 1070.5 432.5 1070.5 431.5" stroke="#000" stroke-miterlimit="10" stroke-width="1.5"/>
+		<rect class="selectableMapComponent"  fill="#fff" height="44" id="Level-12-LayerInput" stroke="#000" stroke-miterlimit="10" stroke-width="1.5" width="58" x="1183" y="14"/>
+		<rect class="selectableMapComponent"  fill="#fff" height="44" id="Level-11-LayerInput" stroke="#000" stroke-miterlimit="10" stroke-width="1.5" width="58" x="450" y="541"/>
+		<text font-family="Verdana-Bold, Verdana" font-size="11" font-weight="700" transform="translate(1195.36 29.36)">0154</text>
+		<text font-family="Verdana-Bold, Verdana" font-size="10" font-weight="700" transform="translate(1184 47)">RETRIEVE</text>
+		<text font-family="Verdana-Bold, Verdana" font-size="13" font-weight="700" transform="translate(460.52 567.88)">0154</text>
+		<text font-family="Verdana-Bold, Verdana" font-size="13" font-weight="700" transform="translate(1131.52 461.88)">0141</text>
+	</g>
+	<g  class="selectableArea"  id="SwapZones">
+		<rect class="selectableMapComponent"  fill="#fff" height="31.66" id="Level-01-Swap" rx="12" ry="12" stroke="#000" stroke-miterlimit="10" stroke-width="1.5" width="149.94" x="226.51" y="449.37"/>
+		<rect class="selectableMapComponent"  fill="#fff" height="31.66" id="Level-02-Swap" rx="12" ry="12" stroke="#000" stroke-miterlimit="10" stroke-width="1.5" width="149.94" x="422.41" y="449.37"/>
+		<rect class="selectableMapComponent"  fill="#fff" height="31.66" id="Level-04-Swap" rx="12" ry="12" stroke="#000" stroke-miterlimit="10" stroke-width="1.5" width="149.94" x="140.51" y="822.37"/>
+		<rect class="selectableMapComponent"  fill="#fff" height="31.66" id="Level-03-Swap" rx="12" ry="12" stroke="#000" stroke-miterlimit="10" stroke-width="1.5" width="149.94" x="140.51" y="776.37"/>
+		<rect class="selectableMapComponent"  fill="#fff" height="31.66" id="Level-06-Swap" rx="12" ry="12" stroke="#000" stroke-miterlimit="10" stroke-width="1.5" width="149.94" x="546.51" y="829.37"/>
+		<rect class="selectableMapComponent"  fill="#fff" height="31.66" id="Level-05-Swap" rx="12" ry="12" stroke="#000" stroke-miterlimit="10" stroke-width="1.5" width="149.94" x="546.51" y="783.37"/>
+		<text id="Level-01-Swap-text"  font-family="Verdana-Bold, Verdana" font-size="15" font-weight="700" transform="translate(248.88 470.4)">1 : Unknown</text>
+		<text id="Level-02-Swap-text"  font-family="Verdana-Bold, Verdana" font-size="15" font-weight="700" transform="translate(440.88 470.4)">2 : Unknown</text>
+		<text id="Level-03-Swap-text"  font-family="Verdana-Bold, Verdana" font-size="15" font-weight="700" transform="translate(156.55 797.4)">11 : Unknown</text>
+		<text id="Level-05-Swap-text"  font-family="Verdana-Bold, Verdana" font-size="15" font-weight="700" transform="translate(562.55 804.4)">21 : Unknown</text>
+		<text id="Level-04-Swap-text"  font-family="Verdana-Bold, Verdana" font-size="15" font-weight="700" transform="translate(156.55 843.4)">12 : Unknown</text>
+		<text id="Level-06-Swap-text"  font-family="Verdana-Bold, Verdana" font-size="15" font-weight="700" transform="translate(562.55 850.4)">22 : Unknown</text>
+	</g>
+</svg>

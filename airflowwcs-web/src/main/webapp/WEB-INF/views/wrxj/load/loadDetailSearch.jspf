@@ -1,0 +1,91 @@
+<%-- DETAILED SEARCH  --%>
+	<div id="search-modal" class="modal fade">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					<h4 class="modal-title">Detailed Search</h4>
+				</div>
+				<div class="modal-body">
+					<form class="form-horizontal" id="load-detail-form" action="${pageContext.request.contextPath}/wrxj/SearchLoadTable" method="post">
+						<div class="form-group">
+							<label class="control-label col-sm-2" for="load">Load:</label>
+							<div class="col-sm-10">
+								<input name="load" type="text" class="form-control" id="load" placeholder="Enter Load ID"/>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="control-label col-sm-2" for="parentload">Parent Load:</label>
+							<div class="col-sm-10">
+								<input name="parentload" type="text" class="form-control" id="parentload" placeholder="Enter parent load"/>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label class="control-label col-sm-2" for="movestatus">Move Status:</label>
+							<div class="col-sm-10">
+								<select name="movestatus" class="form-control" id="movestatus">
+									<option></option>
+								</select>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="control-label col-sm-2" for="container">Container:</label>
+							<div class="col-sm-10">
+								<select name="container" class="form-control" id="container">
+									<option></option>
+								</select>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="control-label col-sm-2" for="zone">Zone:</label>
+							<div class="col-sm-10">
+								<select name="zone" class="form-control" id="zone">
+									<option></option>
+								</select>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="control-label col-sm-2" for="device">Device:</label>
+							<div class="col-sm-10">
+								<select name="device" class="form-control" id="device">
+									<option></option>
+								</select>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="control-label col-sm-2" for="location">Location:</label>
+							<div class="col-sm-10">
+								<input name="location" type="text" class="form-control" id="location" placeholder="Enter Location"/>
+							</div>
+						</div>
+						
+						
+						<div class="form-group">
+							<label class="control-label col-sm-2" for="destination">Destination:</label>
+							<div class="col-sm-10">
+								<input name="destination" type="text" class="form-control" id="destination" placeholder="Enter destination"/>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="control-label col-sm-2" for="order">Order:</label>
+							<div class="col-sm-10">
+								<input name="order" type="text" class="form-control" id="order" placeholder="Enter order"/>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="control-label col-sm-2" for="item">Item:</label>
+							<div class="col-sm-10">
+								<input name="item" type="text" class="form-control" id="item" placeholder="Enter item"/>
+							</div>
+						</div>
+					</form>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					<button id="load-detail-search" type="button" class="btn btn-primary">Search</button>
+				</div>
+			</div>
+		</div>
+	</div>
+<%-- END DETAILED SEARCH  --%>

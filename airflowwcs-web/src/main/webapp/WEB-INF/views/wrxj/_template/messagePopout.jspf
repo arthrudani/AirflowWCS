@@ -1,0 +1,38 @@
+<%@include file="../_template/message_scripts.jspf"%>
+<script src="<spring:url value="/resources/js/message.js"/>" type="text/javascript"></script>
+<div id="styleSelector">
+	<div class="selector-toggle">
+		<a href="javascript:void(0)"></a>
+	</div>
+	<ul>
+		<li>
+			<p class="selector-title">Message Log</p>
+		</li>
+		<li>
+			<table id="log-table" class="table table-striped">
+				<thead>
+					<tr>
+						<th width="100%">
+							<form class="form-inline">
+								<div class="form-group">
+									<button id="connect" class="btn btn-default" type="button">New</button>
+									<button id="disconnect" class="btn btn-default" type="button"
+										disabled="disabled">Disconnect</button>
+								</div>
+							</form>
+						</th>
+					</tr>
+					<tr>
+						<th width="75%">Message</th>
+						<th width="25%">Time</th>
+					</tr>
+				</thead>
+				<tbody id="messages">
+				</tbody>
+			</table>
+		</li>
+	</ul>
+</div>
+
+<%@include file="../message/messageLoadArrivalPopover.jspf"%>
+<%@include file="../message/messageWeightPopover.jspf"%>

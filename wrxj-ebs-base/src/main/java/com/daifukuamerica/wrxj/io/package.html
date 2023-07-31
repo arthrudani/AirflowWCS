@@ -1,0 +1,30 @@
+<body>
+
+Application configuration.
+
+<p><b>Details:</b> Package <code>com.daifukuamerica.wrxj.common.io</code> supports
+application configuration and startup.  The most important interfaces in this
+package is <code>ControllerListConfiguration</code>,
+<code>ControllerDefinition</code>, and <code>ControllerTypeDefinition</code>.
+These three interfaces encapsulates all of the controller configuration
+information for a given application instance.  Most of the other classes in this
+package are built around this interface.</p>
+
+<p>Classes beginning with the prefix "<code>Freeform</code>..." support the
+"freestyle" controller configuration format, the loosely-<wbr>defined text
+format that was originally used by <code>ControllerImplFactory</code>.  These
+classes are now deprecated and will soon be removed from the project.</p>
+
+<p><code>PropertyReader</code> and <code>PropertyFileReader</code> are the
+utility classes used to parse files in this freeform format.  Although they are
+no longer used for controller list configuration files, they are still employed
+elsewhere in the project and must be preserved until the modules that use them
+can be refactored.</p>
+
+<p>Classes beginning with the prefix "<code>Properties</code>..." support the
+currently-<wbr>preferred <tt>.properties</tt> file-<wbr> based controller
+configuration format.  These classes may also be deprecated some day, perhaps
+in favor of a database-<wbr>driven configuration source.</p>
+
+</body>
+

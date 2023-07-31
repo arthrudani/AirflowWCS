@@ -1,0 +1,82 @@
+<div id="role-readonly-card" style="display:none">
+									<div class="row">
+												<div class="col-md-6">
+													<div class="panel panel-default">
+														<div class="panel-body">
+															<center>
+																<h3>
+																	<i class="fa fa-eye" aria-hidden="true"></i> |
+																	ROLE_READONLY
+																</h3>
+															</center>
+														</div>
+													</div>
+												</div>
+												<div class="col-md-6">
+													<h4>
+														<span class="label label-default">DESCRIPTION</span>
+													</h4>
+													<div id="detail-description">
+													Limited access role. Has access to system information screens to read data. No picking or configuration access.
+													</div>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-md-2">
+													<center>
+														<h4>
+															<span class="label label-default"># Users</span>
+														</h4>
+														<h3>
+															<span id="ROLE_READONLY_COUNT" style="color: green">0</span>
+														</h3>
+													</center>
+												</div>
+
+
+												<div class="col-md-10">
+													<h4>
+														<span style="background-color: green" class="label label-default">Granted Access Rights</span>
+													</h4>
+
+													<table id="access-rights-table"
+														class="table table-dark access-rights-table-style">
+														<thead>
+															<tr>
+																<th scope="col" r>View</th>
+																<th scope="col">Update</th>
+																<th scope="col">Create</th>
+																<th scope="col">Delete</th>
+															</tr>
+														</thead>
+														<tbody>
+															<tr>
+																<td>Facility Status (view only)</td>
+																<td>-N/A-</td>
+																<td>-N/A-</td>
+																<td>-N/A-</td>
+															</tr>
+															<tr>
+																<td>Items/Loads/Locations (view only)</td>
+																<td></td>
+																<td></td>
+																<td></td>
+															</tr>
+															<tr>
+																<td>Orders (view only)</td>
+																<td></td>
+																<td></td>
+																<td></td>
+															</tr>
+															<tr>
+																<td>Recovery (view only)</td>
+																<td></td>
+																<td></td>
+																<td></td>
+															</tr>
+														</tbody>
+													</table>
+												</div>
+
+											</div>
+</div>

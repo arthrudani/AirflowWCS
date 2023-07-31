@@ -1,0 +1,17 @@
+<!-- Confirm MODAL  -->
+<div id="confirm-delete-modal" class="modal fade">
+	<div class="modal-dialog modal-sm">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h4 class="modal-title">Confirm Delete</h4>
+			</div>
+			<div class="modal-body">
+				Are you sure you want to DELETE selected expected receipt(s)? <br>
+			</div>
+			<div class="modal-footer">
+				<button id="confirm-delete-button" type="button" class="btn btn-primary">Yes</button>
+				<button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+			</div>
+		</div>
+	</div>
+</div>

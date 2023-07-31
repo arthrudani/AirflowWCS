@@ -1,0 +1,66 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+	<!-- LOCATION MODIFY -->
+	<div id="modify-modal" class="modal fade">
+		<div class="modal-dialog modal-sm">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					<h4 class="modal-title">Modify Location</h4>
+				</div>
+
+				<div class="modal-body">
+					<spring:url value="/location/modify" var="modifyFormUrl"/>
+					<form:form cssClass="form-horizontal" id="modify-form" action="${modifyFormUrl}" method="POST" modelAttribute="locationModel">
+						<%------- Location -------%>
+						<div class="row">
+							<div class="form-group-sm col-sm-12">
+								<label for="warehouse" class="control-label">Location</label>
+								<div class="input-group">
+									<form:select path="warehouse" cssClass="form-control" id="warehouseMod" style="min-width:65px;" readonly="true">
+										<form:options items="${dropdownMenus.warehouses}" readonly="true"/>
+									</form:select>
+									<div class="input-group-addon">-</div>
+									<form:input path="address" cssClass="form-control" id="addressMod" placeholder="Address" style="min-width:65px;" readonly="true"/>
+								</div>
+							</div>
+						</div>
+						<%------- Location Status -------%>
+						<div class="row">
+						<div class="form-group-sm col-sm-12">
+							<label for="scLocationStatus" class="control-label">Location&nbsp;Status</label>
+							<form:select path="locationStatus" cssClass="form-control" id="locationStatusMod">
+								<form:options items="${dropdownMenus.locStatuses}" />
+							</form:select>
+						</div>
+						</div>
+						<%------- Empty Flag -------%>
+						<div class="row">
+						<div class="form-group-sm col-sm-12">
+							<label for="scEmptyFlag" class="control-label">Empty&nbsp;Flag</label>
+							<form:select path="emptyFlag" cssClass="form-control" id="emptyFlagMod">
+								<form:options items="${dropdownMenus.locEmptyFlags}" />
+							</form:select>
+						</div>
+						</div>
+						<%------- Device Type -------%>
+						<div class="row">
+						<div class="form-group-sm col-sm-12">
+							<label for="scType" class="control-label">Device Type</label>
+							<form:select path="type" cssClass="form-control" id="typeMod">
+								<form:options items="${dropdownMenus.locType}" />
+							</form:select>
+						</div>
+						</div>
+					</form:form>
+				</div>
+				
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					<button id="modify-button" type="button" class="btn btn-primary">Update</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	

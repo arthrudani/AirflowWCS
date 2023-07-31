@@ -1,0 +1,60 @@
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+
+	<!-- LOAD RETRIEVE -->
+	<div id="retrieve-modal" class="modal fade">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-hidden="true">&times;</button>
+					<h4 class="modal-title">Retrieve Load</h4>
+				</div>
+
+				<div class="modal-body">
+					<spring:url value="/order/retrieve" var="formUrl"/>
+					<form:form cssClass="form-horizontal" id="load-retrieve-form" action="${formUrl}" method="POST" modelAttribute="orderDataModel">
+						<div class="form-group">
+							<label class="control-label col-sm-2" for="retrieveLoad">Load:</label>
+							<div class="col-sm-3">
+								<input name="orderId" type="text" class="form-control" id="retrieveLoad"
+									placeholder="Enter Load ID">
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label class="control-label col-sm-2" for="retrieveDestination">Destination:</label>
+							<div class="col-sm-5">
+								<form:select path="destStation" cssClass="form-control" id="retrieveDestination">
+		 							<form:options items="${dropdownMenus.destinations}" />
+								</form:select>
+								
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<label class="control-label col-sm-2" for="retrievePriority">Priority:</label>
+							<div class="col-sm-2">
+								<select name="priority" class="form-control" id="retrievePriority">
+									<option>1</option>
+									<option>2</option>
+									<option>3</option>
+									<option>4</option>
+									<option>5</option>
+									<option>6</option>
+									<option>7</option>
+									<option>8</option>
+									<option>9</option>
+								</select>
+							</div>
+						</div>
+					</form:form>
+				</div>
+
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					<button id="load-retrieve-button" type="button" class="btn btn-primary">Retrieve</button>
+				</div>
+			</div>
+		</div>
+	</div><!-- End of LOAD RETRIEVE-->

@@ -1,0 +1,244 @@
+#user-permission-div{
+	margin-left: 2%; 
+	margin-right: 2%; 
+	margin-top: 2%; 
+}
+
+#permission-container{ 
+	padding-right: 0; 
+	padding-left: 0; 
+	margin-right: 0; 
+	margin-left: 0;
+}
+
+.standard-contain{
+	padding: 10px;
+}
+#access-rights-table{
+	font-size: x-small; 
+	background-image: none !important; 
+}
+#access-rights-table th {
+	font-size: small; 
+}
+.card-container-header{ 
+	
+		background-image:linear-gradient(to bottom,  rgb(183, 80, 1) 0%, rgb(224, 114, 4) 70%) !important;
+		color: white !important; 
+		padding: 1px; 
+}
+
+.margin-border-10{ /* for bordering the panels */ 
+	margin: 10px; 
+
+}
+
+/**
+*		Regex Highlight colors
+*/
+
+.highlight-cell-background-failure{
+	color: white !important; 
+	/* background-color: red !important;  */
+	background-image:linear-gradient(to bottom,  rgb(160, 0, 0) 0%,  rgb(199, 0, 0) 70%) !important;
+	border: none !important; 
+}
+
+.highlight-cell-background-failure > td{
+	border-top: 1px outset rgb(160, 0, 0) !important; 
+	border-bottom: 1px outset rgb(160, 0, 0) !important; 
+	border-left: none !important; 
+	border-right: none !important; 
+}
+
+.highlight-cell-background-success > td{
+	border-top: 2px outset rgb(0, 60, 0) !important; 
+	border-bottom: 2px outset rgb(0, 60, 0) !important; 
+	border-left: none !important; 
+	border-right: none !important; 
+}
+
+.highlight-cell-background-success{
+	color: white !important; 
+	/* background-color: green !important;  */
+	background-image:linear-gradient(to bottom, rgb(0, 80, 0) 0%, rgb(0, 60, 0) 70%) !important;
+}
+
+.highlight-cell-background-warning{
+	color: white !important; 
+	background-color: rgb(255, 51, 0) !important; 
+}
+
+.highlight-cell-background-warning > td{
+	border-top: 2px outset rgb(204, 51, 0) !important; 
+	border-bottom: 2px outset rgb(204, 51, 0) !important; 
+	border-left: none !important; 
+	border-right: none !important; 
+}
+/**
+*	Table Styling 
+*/
+table.dataTable tbody > tr.selected {
+	background-image:linear-gradient(to bottom,  rgb(183, 80, 1) 0%, rgb(224, 114, 4) 70%) !important;
+
+}
+
+iframe {
+  height:calc(100vh - 4px);
+  width:calc(100vw - 4px);
+  box-sizing: border-box;
+}
+
+.links line {
+  stroke: #999;
+  stroke-opacity: 0.6;
+}
+
+.nodes circle {
+  stroke: #fff;
+  stroke-width: 1.5px;
+}
+
+
+
+/***********************************
+*		BUTTONS & UI ELEMENT STYLES
+************************************/
+
+/****
+* BASE recovery screen buttons
+*/
+#recovery-view-load-details-button.btn {
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#3b679e+0,2b88d9+50,207cca+51,0082e5+100 */
+ color:white !important; 
+background: #3b679e  !important; /* Old browsers */
+background: -moz-linear-gradient(top, #3b679e 0%, #2b88d9 50%, #207cca 51%, #0082e5 100%)  !important; /* FF3.6-15 */
+background: -webkit-linear-gradient(top, #3b679e 0%,#2b88d9 50%,#207cca 51%,#0082e5 100%)  !important; /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, #3b679e 0%,#2b88d9 50%,#207cca 51%,#0082e5 100%)  !important; /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3b679e', endColorstr='#0082e5',GradientType=0 )  !important; /* IE6-9 */
+	border: none !important; 
+}
+
+#recovery-delete-load-button.btn {
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#a90329+0,8f0222+44,6d0019+100;Brown+Red+3D */
+	color:white !important; 
+	background: #a90329  !important; /* Old browsers */
+	background: -moz-linear-gradient(top, #a90329 0%, #8f0222 44%, #6d0019 100%) !important; /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, #a90329 0%,#8f0222 44%,#6d0019 100%) !important; /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, #a90329 0%,#8f0222 44%,#6d0019 100%) !important; /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a90329', endColorstr='#6d0019',GradientType=0 ) !important; /* IE6-9 */
+	border: none !important; 
+}
+#recover-button{
+	color:white !important; 
+	background: #2f7721 !important; /* Old browsers */
+	background: -moz-linear-gradient(top, #2f7721 1%, #37a82f 51%, #289612 74%, #217707 100%) !important; /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, #2f7721 1%,#37a82f 51%,#289612 74%,#217707 100%) !important; /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, #2f7721 1%,#37a82f 51%,#289612 74%,#217707 100%) !important; /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2f7721', endColorstr='#217707',GradientType=0 ) !important; /* IE6-9 */
+	border: none !important; 
+	margin-bottom:10px; 
+}
+
+
+
+/*****************
+*		Modal styles 
+******************/
+.modal-footer{
+	background-color: white; 
+}
+.panel-footer.recovery-settings-footer{
+	background-color: white; 
+}
+
+
+/********
+*		Recovery Screen Panel elements
+**************/
+.panel.panel-default.grey-background-override{
+	background: #e1e1e1; 
+}
+
+div.panel-body.panel-body-noheader.panel-body-noborder
+{
+	overflow: hidden !important; 
+}
+
+
+
+
+.panel-actions {
+  margin-top: -20px;
+  margin-bottom: 0;
+  text-align: right;
+}
+.panel-actions a {
+  color:#333;
+}
+.panel-fullscreen {
+    display: block;
+    z-index: 9999;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    overflow: auto;
+}
+
+
+/**************************************
+*				Heartbeat chart
+***************************************/
+.axis text {
+    font: 10px sans-serif;
+  }
+  .chartTitle {
+    font-size: 12px;
+    font-weight: bold;
+    text-anchor: middle; 
+  }
+  .axis .title {
+    font-weight: bold;
+    text-anchor: middle;
+  }
+  .axis path,
+  .axis line {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+  }
+  .x.axis path {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+  }
+  .nav .area {
+    fill: lightgrey;
+    stroke-width: 0px;
+  }
+  .nav .line {
+    fill: none;
+    stroke: darkgrey;
+    stroke-width: 1px;
+  }
+  .viewport {
+    stroke: grey;
+    fill: black;
+    fill-opacity: 0.3;
+  }
+  .viewport .extent {
+    fill: green;
+  }
+  .well {
+    padding-top: 0px;
+    padding-bottom: 0px;
+  }
+  
+  #vis.mapContainer {
+  	height: 100%; 
+  	max-height: 950px; 
+  }

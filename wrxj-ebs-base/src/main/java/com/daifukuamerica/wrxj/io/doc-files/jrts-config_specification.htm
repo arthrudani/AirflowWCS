@@ -1,0 +1,133 @@
+<!-- Please view this document in an HTML browser. -->
+
+<title>jrts-config.properties</title>
+
+<h2>jrts-config.properties</h2>
+
+<p>This document specifies the syntax and meaning of the JFADA configuration file <tt>jrts-config.properties</tt>.
+This specification is subject to review, comment, and modification, and it may be updated from time to time in response to peer developer feedback.
+In this interest of efficiency, this specification will be given primarily by example;
+a rigid specification will be given later if there is sufficient interest or need.
+It is assumed that the reader is already familiar with the Java <code>.properties</code> file format and all of the spiffy ways in which it can be exploited.</p>
+
+<p>Foremost, <tt>jrts-config.properties</tt> will completely replace <tt>JrtsConfig.txt</tt>, which is currently used by <code>ControllerImplFactory</code> to build a list of controllers that need to be instantiated as the system is brought on-<wbr>line.
+Second, since <tt>jrts-config.properties</tt> adheres to the standard Java properties file format, additional runtime properties may also be moved into this file.
+For example, runtime properties for UI configuration may be merged into this configuration file.</tt>.
+For now, however, this proposal will focus only on <tt>jrts-config.properties</tt> as it pertains to <code>ControllerImplFactory</code> and controller start-<wbr>up.</p>
+
+<p><tt>jrts-config.properties</tt> supports muliple device list configurations.
+Each device list configuration has a unique name.
+<code>ControllerImplFactory</code> will select a single configuration by using the configuration's name.
+This name may be supplied through a variety of input methods, such as command line parameters, system properties, or even as another property in <tt>jrts-config.properties</tt> itself.</p>
+
+<p>A device list contains three mandatory fields:</p>
+
+<dl>
+	<dt><code>.ipc</code></dt>
+		<dd>The name of the IPC (InterProcess Communication) configuration.</dd>
+	<dt><code>.systemgateway</code></dt>
+		<dd>The name of the device definition corresponding to the system gateway device.</dd>
+	<dt><code>.list</code></dt>
+		<dd>A list of device definition names corresponding to the devices created in this configuration.</dd>
+</dl>
+
+<p>Here is an example:</p>
+
+<blockquote><pre>
+ExampleConfiguration.ipc=IpcMessageService
+ExampleConfiguration.systemgateway=SystemGateway
+ExampleConfiguration.list=SystemGateway SysHealthMonitor AllocationController-1 AGCSCHEDULER AGC1 AgcPort-1 AgcEmulatorPort-1 AgcEmulator-1
+</pre></blockquote>
+
+<p>In some configurations, the value of the <code>.list</code> field may become intolerably long.
+It is acceptable to break it up using the line continuation escape character, as shown below:</p>
+
+<blockquote><pre>
+ExampleConfiguration.list= \
+  SystemGateway \
+  SysHealthMonitor \
+  AllocationController-1 \
+  AGCSCHEDULER \
+  AGC1 \
+  AgcPort-1 \
+  AgcEmulatorPort-1 \
+  AgcEmulator-1
+</pre></blockquote>
+
+<p>The IPC configuration selected in the above example is "<code>IpcMessageService</code>".
+This value will be used as a key prefix to load the IPC configuration.
+At the very least, an IPC configuration defines a device type.
+Depending on the device type, additional properties may also be required.
+An example of an IPC configuration shown below:</p>
+
+<blockquote><pre>
+IpcMessageService.DeviceType=JBossMQ
+IpcMessageService.JmsInitialContextFactory=org.jnp.interfaces.NamingContextFactory
+IpcMessageService.JmsProviderUrl=jnp://ultra60:1099
+IpcMessageService.JmsUrlPkgPrefixes=org.jboss.naming:org.jnp.interfaces
+IpcMessageService.JmsTopicConnectionFactoryName=ConnectionFactory
+IpcMessageService.JmsTopicName=topic/SKDCTopic
+</pre></blockquote>
+
+<p><code>ControllerImplFactory</code> will use these values to enable IPC for all devices that require it.</p>
+
+<p>The system gateway declaration simply names the device definition for the system gateway.
+In the above example, the system gateway device name is "<code>SystemGateway</code>".
+Note that even though the system gateway is named in the declaration, it must also appear in the device list so that it can be created with all the other devices.</p>
+
+<p>The device list is a space-<wbr>separated list of device definition names.
+Like the IPC configuration name, these device names will be used as key prefixes to identify properties associated with each device definition.
+A sample device definition follows:</p>
+
+<blockquote><pre>
+SystemGateway.DeviceType=SystemGatewayType
+SystemGateway.Transporter=AGC1
+SystemGateway.Port=AgcEmulatorPort-1
+</pre></blockquote>
+
+<p>In the above example, the name of the device is "<code>SystemGateway</code>"
+At the very least, every device definition must define the <code>.DeviceType</code> field, which declares the device type identifier.
+The device type identifier is used as a key prefix to a property set definiting generic information for the device's type.
+In this example, the device's type identifier is "<code>SystemGatewayType</code>".
+Here is an example of a device type definition:</p>
+
+
+<blockquote><pre>
+SystemGatewayType.class=com.daifukuamerica.wrxj.common.device.gateway.SystemGateway
+</pre></blockquote>
+
+<p>As the example above demonstrates, a device type definition defines, at the very least, the fully qualified name of the implementing class.
+This class is expected to have a factory method that <code>ControllerImplFactory</code> can discover using reflection.
+The signature of the factory method must be as follows:</p>
+
+<blockquote><pre>
+public static Controller create(ReadOnlyProperties ipConfig) throws ControllerCreationException
+</pre></blockquote>
+
+<p>The input parameter to the reflected factory method is a <code>ReadOnlyProperties</code> object, which provides access to all of the attributes associated with the device definition ("<code>SystemGateway</code>") and its type definition ("<code>SystemGatewayType</code>").
+The factory method constructs the <code>Controller</code> instance from these attributes and returns it.
+If, for some reason, the <code>Controller</code> cannot be created, the factory must throw a <code>ControllerCreationException</code>, which describes the cause of the failure.
+In no case will the factory return <code>null</code>.</p>
+
+<p>Properties common to all devices of a particular type may optionally be included in the device type definition, instead of the devices definition.
+Properties defined in the type definition are interpreted as default values for fields of the same name in device's definition.</p>
+
+<p>In summary:</p>
+
+<ol>
+	<li>A properties file may contain multiple device list configurations.</li>
+	<li>Each device list configuration is identified by a unique name.</li>
+	<li>A device list configuration defines IPC parameters, the system gateway, and a list of devices.</li>
+	<li>Each device definition has a unique name.</li>
+	<li>All device definitions must have a device type identifier.</li>
+	<li>A device definition may also contain additional type-specific properties.</li>
+	<li>Each device type identifier is associated with the name of the class implementing the device.</li>
+	<li>Device type definitions may also define default properties for all instances of their type.</li>
+</ol>
+
+<p>The multiple levels of indirection provided by this configuration format offers both flexibility and readability.
+To switch or slightly modify an exisiting configuration, it is not necessary to comment out entire sections of the configuration file.
+Instead, a single line of code can be modified, or an input parameter can be changed, and everything else can be left in place.
+Additionally, the configuration file format is immediately comprehensible -- to some degree, at least -- to those who have not been briefed regarding it's format and meaning.
+There are also many tools available that can understand and modify files of this format.</p>
+

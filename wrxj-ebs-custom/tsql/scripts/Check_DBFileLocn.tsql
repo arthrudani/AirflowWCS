@@ -1,0 +1,6 @@
+-- Check tablespace file locations
+SELECT * FROM sys.database_files;
+
+-- Check tables associated with tablespaces
+SELECT DISTINCT obj.[name] AS "Table", fg.[name] AS "FileGroup" FROM sys.indexes ind, sys.filegroups fg, sys.tables obj
+WHERE ind.data_space_id = fg.data_space_id AND ind.[object_id] = obj.[object_id] AND obj.type = 'U'

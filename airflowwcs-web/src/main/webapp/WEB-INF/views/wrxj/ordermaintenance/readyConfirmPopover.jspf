@@ -1,0 +1,18 @@
+<%-- Confirm MODAL  --%>
+<div id="confirm-ready-modal" class="modal fade">
+	<div class="modal-dialog modal-sm">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h4 class="modal-title">Confirm Ready</h4>
+			</div>
+			<div class="modal-body">
+				Are you sure you want to READY selected order(s)? 
+			</div>
+			<div class="modal-footer">
+				<button id="confirm-ready-button" type="button" class="btn btn-primary">Yes</button>
+				<button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+			</div>
+		</div>
+	</div>
+</div>
+<%-- END Confirm MODAL--%>

@@ -1,0 +1,29 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+	<!-- LOAD ITEM DETAILS  -->
+	<div id="drilldown-modal" class="modal fade">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					<h4 class="modal-title"></h4>
+				</div>
+
+				<div class="modal-body">
+					<div class="resp-iframe-wrapper"></div>
+						<div class="resp-iframe">
+							<img class="ratio" src="http://placehold.it/16x9"/>
+							<iframe src="" frameborder="0" >
+								<p>Your browser does not support iframes.</p>
+							</iframe>
+						</div>
+					</div>
+				</div>
+
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>

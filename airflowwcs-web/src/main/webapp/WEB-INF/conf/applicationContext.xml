@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:jms="http://www.springframework.org/schema/jms" 
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd 
+						http://www.springframework.org/schema/util  http://www.springframework.org/schema/util/spring-util-3.1.xsd
+						http://www.springframework.org/schema/jms http://www.springframework.org/schema/jms/spring-jms-3.0.xsd">
+
+	<!-- Application Services -->
+	<bean id="tableService" class="com.daifukuamerica.wrxj.web.service.TableService"></bean>
+	<bean id="loginService" class="com.daifukuamerica.wrxj.web.service.LoginService"></bean>
+	<bean id="messageService" class="com.daifukuamerica.wrxj.web.service.MessageService"></bean>
+	<bean id="uiService" class="com.daifukuamerica.wrxj.web.service.UIService"></bean>
+	
+	<!-- SECURITY -->
+	<!-- Login authorization provider & user details service (LOGIN) -->
+	<bean id="wrxAuthProvider" class="com.daifukuamerica.wrxj.web.core.security.WrxjAuthenticationProvider"></bean>
+	<bean id="userDetailsService" class="com.daifukuamerica.wrxj.web.core.security.UserDetailsServiceImpl"></bean>
+	<bean id="wrxAuthenticationSuccessHandler" class="com.daifukuamerica.wrxj.web.core.security.WrxjAuthenticationSuccessHandler"></bean>
+	<bean id="wrxAuthenticationFailureHandler" class="com.daifukuamerica.wrxj.web.core.security.WrxjAuthenticationFailureHandler"></bean>
+	<bean id="wrxLogoutSuccessHandler" class="com.daifukuamerica.wrxj.web.core.security.WrxjLogoutSuccessHandler"></bean>
+	<!-- END SECURITY -->
+
+	<!-- Data Access Object (dao) Services -->
+	<bean id="authGroupService" class="com.daifukuamerica.wrxj.web.service.dao.UserAuthGroupService"></bean>
+	<bean id="containerService" class="com.daifukuamerica.wrxj.web.service.dao.ContainerService"></bean>
+	<bean id="deviceService" class="com.daifukuamerica.wrxj.web.service.dao.DeviceService"></bean>
+	<bean id="devPlayroundService" class="com.daifukuamerica.wrxj.web.service.dao.DevPlaygroundService"></bean>
+	<bean id="historyService" class="com.daifukuamerica.wrxj.web.service.dao.TransactionHistoryService"></bean>
+	<bean id="equipmentService" class="com.daifukuamerica.wrxj.web.service.dao.EquipmentService"></bean>
+	<bean id="equiplogViewService" class="com.daifukuamerica.wrxj.web.service.dao.EquipLogViewService"></bean>
+	<bean id="hostlogViewService" class="com.daifukuamerica.wrxj.web.service.dao.HostLogViewService"></bean>
+	<bean id="itemDetailService" class="com.daifukuamerica.wrxj.web.service.dao.ItemDetailService"></bean>
+	<bean id="itemService" class="com.daifukuamerica.wrxj.web.service.dao.ItemService"></bean>
+	<bean id="loadService" class="com.daifukuamerica.wrxj.web.service.dao.LoadService"></bean>
+	<bean id="loadLineItemService" class="com.daifukuamerica.wrxj.web.service.dao.LoadLineItemService"></bean>
+	<bean id="locationService" class="com.daifukuamerica.wrxj.web.service.dao.LocationService"></bean>
+	<bean id="logViewService" class="com.daifukuamerica.wrxj.web.service.dao.LogViewService"></bean>
+	<bean id="moveService" class="com.daifukuamerica.wrxj.web.service.dao.MoveService"></bean>
+	<bean id="orderService" class="com.daifukuamerica.wrxj.web.service.dao.OrderService"></bean>
+	<bean id="orderDetailService" class="com.daifukuamerica.wrxj.web.service.dao.OrderDetailService"></bean>
+	<bean id="pickService" class="com.daifukuamerica.wrxj.web.service.dao.PickService"></bean>
+	<bean id="portService" class="com.daifukuamerica.wrxj.web.service.dao.PortService"></bean>
+	<bean id="purchaseOrderDetailService" class="com.daifukuamerica.wrxj.web.service.dao.PurchaseOrderDetailService"></bean>
+	<bean id="purchaseOrderService" class="com.daifukuamerica.wrxj.web.service.dao.PurchaseOrderService"></bean>
+	<bean id="roleService" class="com.daifukuamerica.wrxj.web.service.dao.WrxRoleService"></bean>
+	<bean id="routeService" class="com.daifukuamerica.wrxj.web.service.dao.RouteService"></bean>
+	<bean id="recoveryService" class="com.daifukuamerica.wrxj.web.service.dao.RecoveryService"></bean>
+	<bean id="recovery2Service" class="com.daifukuamerica.wrxj.web.service.dao.Recovery2Service"></bean>
+	<bean id="storeService" class="com.daifukuamerica.wrxj.web.service.dao.StoreService"></bean>
+	<bean id="sysConfigService" class="com.daifukuamerica.wrxj.web.service.dao.SysConfigService"></bean>
+	<bean id="userService" class="com.daifukuamerica.wrxj.web.service.dao.UserService"></bean>
+	<bean id="userManagementService" class="com.daifukuamerica.wrxj.web.service.dao.UserManagementService"></bean>
+	<bean id="userPermissionService" class="com.daifukuamerica.wrxj.web.service.dao.UserPermissionService"></bean>
+	<bean id="userPrefereneService" class="com.daifukuamerica.wrxj.web.service.dao.UserPreferenceService"></bean>
+	<bean id="userSessionService" class="com.daifukuamerica.wrxj.web.service.dao.UserSessionService"></bean>
+	<bean id="warehouseService" class="com.daifukuamerica.wrxj.web.service.dao.WarehouseService"></bean>
+	<bean id="zoneService" class="com.daifukuamerica.wrxj.web.service.dao.ZoneService"></bean>
+	<bean id="zoneGroupService" class="com.daifukuamerica.wrxj.web.service.dao.ZoneGroupService"></bean>
+	<bean id="workMaintenanceService" class="com.daifukuamerica.wrxj.web.service.dao.WorkMaintenanceService"></bean>
+	<bean id="equipmentsService" class="com.daifukuamerica.wrxj.web.service.dao.EquipmentsService"></bean>
+	<bean id="occupancyService" class="com.daifukuamerica.wrxj.web.service.dao.OccupancyService"></bean>
+	
+	
+
+<!--	HORNET Q DEPRECATED CONNECTION FACTORY, UNCOMMENT TO ENABLE JMS Template to use HornetQ
+		connection libaries -->
+<!--
+ 	<bean name="transportConfiguration" class="org.hornetq.api.core.TransportConfiguration">
+		<constructor-arg
+			value="org.hornetq.core.remoting.impl.netty.NettyConnectorFactory" />
+		<constructor-arg>
+			<map key-type="java.lang.String" value-type="java.lang.Object">
+				<entry key="host" value="localhost" />
+				<entry key="port" value="5445" />
+			</map>
+		</constructor-arg>
+	</bean>
+	<util:constant id="TOPIC_CF"
+		static-field="org.hornetq.api.jms.JMSFactoryType.TOPIC_CF" />
+	<bean name="connectionFactory" class="org.hornetq.api.jms.HornetQJMSClient"
+		factory-method="createConnectionFactoryWithoutHA">
+		<constructor-arg index="0" ref="TOPIC_CF" />
+		<constructor-arg index="1" ref="transportConfiguration" />
+	</bean>
+-->
+
+<!-- - START ARTEMIS Connection factory -->
+<!--
+	<bean id="connectionFactory" class="org.apache.activemq.artemis.jms.client.ActiveMQJMSConnectionFactory">
+		<constructor-arg value="false" />
+		<constructor-arg>
+			 <bean name="transportConfiguration" class="org.apache.activemq.artemis.api.core.TransportConfiguration">
+				<constructor-arg value="org.apache.activemq.artemis.core.remoting.impl.netty.NettyConnectorFactory" />
+				<constructor-arg>
+					<map key-type="java.lang.String" value-type="java.lang.Object">
+						<entry key="host" value="localhost" />
+						<entry key="port" value="61616" />
+					</map>
+				</constructor-arg>
+			</bean>
+		</constructor-arg>
+	</bean>
+-->
+
+	<bean id="amqConnectionFactory" class="org.apache.activemq.artemis.jms.client.ActiveMQJMSConnectionFactory">
+		<constructor-arg type="java.lang.String" value="tcp://localhost:61616"/>
+	</bean>
+	
+	<!-- ConnectionFactory Definition -->
+	<bean id="connectionFactory" class="org.springframework.jms.connection.CachingConnectionFactory">
+		<constructor-arg ref="amqConnectionFactory" />
+		
+	</bean>
+
+	<bean name="wrxJmsTemplate" class="org.springframework.jms.core.JmsTemplate">
+		<property name="connectionFactory" ref="connectionFactory"/>
+		<property name="pubSubDomain" value="true"/>
+	</bean>
+
+	<bean name="jmsProducer" class="com.daifukuamerica.wrxj.web.core.messaging.JMSProducer">
+		<constructor-arg index="0" ref="wrxJmsTemplate" />
+	</bean>
+	
+	<import resource="securityContext.xml"/>
+</beans>

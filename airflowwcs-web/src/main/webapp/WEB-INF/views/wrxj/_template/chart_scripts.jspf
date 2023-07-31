@@ -1,0 +1,2 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>	
+	<script src="<spring:url value="/resources/assets/js/d3.min.js"/>" type="text/javascript"></script>

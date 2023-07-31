@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="TRACE">
+  <Properties>
+    <Property name="BASE_DIR">C:/daifuku/AirflowWCS/logs/Web/</Property>
+    <Property name="LOG_PATTERN_FILE">%d %p [%c] - %m%n</Property>
+    <Property name="LOG_PATTERN_ETC">[%d] [%p] : %m%n</Property>
+  </Properties>
+  <Appenders>
+    <Console name="CONSOLE" target="SYSTEM_OUT">
+      <ThresholdFilter level="DEBUG"/>
+      <PatternLayout>
+        <Pattern>%-4r [%t] %-5p %c %x - %m%n</Pattern>
+      </PatternLayout>
+    </Console>
+    <RollingFile name="FILE" fileName="${BASE_DIR}/airflowwcs.log" filePattern="${BASE_DIR}/airflowwcs.%i.log">
+      <ThresholdFilter level="INFO"/>
+      <PatternLayout pattern="${LOG_PATTERN_FILE}"/>
+      <Policies>
+        <SizeBasedTriggeringPolicy size="15MB"/>
+      </Policies>
+      <DefaultRolloverStrategy max="25"/>
+    </RollingFile>
+    <RollingFile name="LOAD" fileName="${BASE_DIR}/airflowwcs-load.log" filePattern="${BASE_DIR}/airflowwcs-load.%i.log">
+      <ThresholdFilter level="INFO"/>
+      <PatternLayout pattern="${LOG_PATTERN_ETC}"/>
+      <Policies>
+        <SizeBasedTriggeringPolicy size="3MB"/>
+      </Policies>
+      <DefaultRolloverStrategy max="25"/>
+    </RollingFile>
+    <RollingFile name="LOGIN" fileName="${BASE_DIR}/airflowwcs-login.log" filePattern="${BASE_DIR}/airflowwcs-login.%i.log">
+      <ThresholdFilter level="INFO"/>
+      <PatternLayout pattern="${LOG_PATTERN_ETC}"/>
+      <Policies>
+        <SizeBasedTriggeringPolicy size="3MB"/>
+      </Policies>
+      <DefaultRolloverStrategy max="25"/>
+    </RollingFile>
+    <RollingFile name="ORDERMAINT" fileName="${BASE_DIR}/airflowwcs-ordermaint.log" filePattern="${BASE_DIR}/airflowwcs-ordermaint.%i.log">
+      <ThresholdFilter level="INFO"/>
+      <PatternLayout pattern="${LOG_PATTERN_ETC}"/>
+      <Policies>
+        <SizeBasedTriggeringPolicy size="3MB"/>
+      </Policies>
+      <DefaultRolloverStrategy max="25"/>
+    </RollingFile>
+    <RollingFile name="WORKMAINT" fileName="${BASE_DIR}/airflowwcs-workmaint.log" filePattern="${BASE_DIR}/airflowwcs-workmaint.%i.log">
+      <ThresholdFilter level="INFO"/>
+      <PatternLayout pattern="${LOG_PATTERN_ETC}"/>
+      <Policies>
+        <SizeBasedTriggeringPolicy size="3MB"/>
+      </Policies>
+      <DefaultRolloverStrategy max="25"/>
+    </RollingFile>
+  </Appenders>
+  <Loggers>
+    <Root level="INFO">
+      <AppenderRef ref="CONSOLE"/>
+      <AppenderRef ref="FILE"/>
+    </Root>
+    <Logger name="requestLogger" level="INFO" additivity="false">
+      <AppenderRef ref="LOAD"/>
+      <AppenderRef ref="LOGIN"/>
+      <AppenderRef ref="ORDERMAINT"/>
+    </Logger>
+  </Loggers>
+</Configuration>

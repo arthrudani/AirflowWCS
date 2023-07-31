@@ -1,0 +1,9 @@
+use [WRXJ];
+go
+begin transaction;
+INSERT INTO asrs.WAREHOUSE ( SWAREHOUSE, SDESCRIPTION, IWAREHOUSETYPE, IWAREHOUSESTATUS
+, IONELOADPERLOC ) VALUES (
+'AS1', 'ASRS warehouse', 64, 240, 2);
+commit transaction;
+go
+

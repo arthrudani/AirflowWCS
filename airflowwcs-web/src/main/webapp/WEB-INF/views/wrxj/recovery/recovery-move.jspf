@@ -1,0 +1,63 @@
+<div id="settings-move" style="display: none;">
+	<div class="row">
+		<div class="col-lg-6">
+			<div class="panel panel-default grey-background-override">
+				<div class="panel-body">
+					<center>
+						<h3>
+							<i class="fa fa-exclamation" aria-hidden="true"></i>
+
+						</h3>
+					</center>
+				</div>
+			</div>
+		</div>
+		<div class="col-lg-6">
+			<h4>
+				<span class="label label-default">Complete Load Movement</span>
+			</h4>
+			<div id="detail-description">
+				Force the location of the load to be changed to the currently
+				defined <strong>NEXT ADDRESS</strong> and <strong>NEXT
+					WAREHOUSE</strong> record.
+			</div>
+		</div>
+
+	</div>
+	<div class="row">
+		<div class="col-lg-6">
+			<div class="panel panel-default grey-background-override">
+				<div class="panel-body">
+					<center>
+						<h3>
+							<i class="fa fa-exclamation" aria-hidden="true"></i>
+
+						</h3>
+					</center>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-lg-6">
+			<h4>
+				<span class="label label-default">Reschedule Crane</span>
+			</h4>
+			<div id="detail-description">Re-send message to schedule the
+				crane to either retrieve OR store the load depending on the loads
+				current statuses.</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			<div class="col-md-4"></div>
+			<div class="col-md-4">
+				<center>
+					<button id="recover-move-button" type="button"
+						class="btn btn-success btn-default">Start Recovery</button>
+				</center>
+			</div>
+			<div class="col-md-4"></div>
+		</div>
+
+	</div>
+</div>

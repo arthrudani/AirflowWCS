@@ -1,0 +1,1 @@
+select name, definition from sys.check_constraints ORDER BY name

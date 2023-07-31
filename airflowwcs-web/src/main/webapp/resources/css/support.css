@@ -1,0 +1,85 @@
+#supportPanel {
+	font-size: 15px;
+}
+
+#pageInformaton, .supportTitle, .supportWayToContact {
+    font-size: 1.125em;
+}
+
+#supportOptionsSection, #supportDisclaimer {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.supportSection {
+    float: left;
+    padding: 10px 15px;
+    height: 400px;
+    width: 300px;
+}
+.supportSection:nth-child(1) {
+    padding-left: 0px;
+}
+.supportSection:not(:nth-last-child(1)) {
+    border-right: 2px solid #E4E4E4;
+}
+.supportSection:nth-last-child(1) {
+    padding-right: 0px;
+}
+.supportSection p {
+    line-height: 15px;
+}
+
+.supportIcon {
+    background-position: center top;
+    background-repeat: no-repeat;
+    height: 120px;
+    margin: 0 auto;
+    padding: 0 0 130px 0;
+    width: 120px;
+}
+
+#onlineSupport .supportIcon {
+    background-image: url("./images/helpOnlineSupportImage.png");
+}
+
+#emailSupport .supportIcon {
+    background-image: url("./images/helpEmailSupportImage.png");
+}
+
+#phoneSupport .supportIcon {
+    background-image: url("./images/helpPhoneSupportImage.png");
+}
+
+.supportDescription {
+    font-size: 0.875em;
+    height: 60px;
+    margin: 0px 0 10px 0;
+    padding: 0 15px;
+}
+
+.supportWayToContact {
+    color: black;
+    font-weight: bold;
+    padding: 10px 0;
+}
+
+.supportDetails {
+    font-size: 0.75em;
+    padding: 0 30px;
+}
+
+#phoneSupport .supportDetails {
+    color: red;
+}
+
+#supportDisclaimer {
+    clear: left;
+    color: black;
+    float: left;
+    font-size: 0.875em;
+    font-style: italic;
+    font-weight: bold;
+    margin: 50px auto 0 auto;
+}
+

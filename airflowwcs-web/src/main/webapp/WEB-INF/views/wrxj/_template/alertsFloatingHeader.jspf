@@ -1,0 +1,4 @@
+<link rel="stylesheet" type="text/css" href="<spring:url value="/resources/css/floating-alert-top-right.css"/>"/>
+<nav class="navbar-fixed-top">
+<div id="alert-area" ></div>
+</nav>

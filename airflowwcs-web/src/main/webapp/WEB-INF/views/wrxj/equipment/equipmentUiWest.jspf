@@ -1,0 +1,84 @@
+<div id="west-area" data-options="region:'west',split:true,collapsed:true" title="Command Center" style="width: 330px;">
+	<div id="west-command-equipment" title="Equipment Command Center">
+		<div class="row col-sm-12">
+			<security:authorize access="hasAnyRole('ROLE_USER', 'ROLE_ELEVATED', 'ROLE_ADMIN', 'ROLE_MASTER')">
+			<div class="form-group col-sm-6">
+				<label for="exampleFormControlSelect2">Commands</label>
+				<div class="dropdown">
+					<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+						System Commands <span class="caret"></span>
+					</button>
+					<ul class="dropdown-menu">
+						<li><a id="start-system" href="#">Start System</a></li>
+						<li><a id="stop-system" href="#">Stop System</a></li>
+						<li><a id="reset-system-errors" href="#">Reset Errors</a></li>
+						<li><a id="silence-system-alarms" href="#">Silence Alarms</a></li>
+					</ul>
+				</div>
+			</div>
+			</security:authorize>
+			<div class="form-group col-sm-12">
+				<label for="exampleFormControlSelect2">Connection Status</label>
+				<ul class="list-group">
+					<li id="connection-status" class="list-group-item connected-background">
+						<span id="connection-status-detail" class="badge">OK</span> Database Connection
+					</li>
+					<li id="host-connection-status"	class="list-group-item connected-background">
+						<span id="host-connection-status-detail" class="badge">OK</span> Host Connection
+					</li>
+				</ul>
+			</div>
+		</div>
+		<security:authorize access="hasAnyRole('ROLE_MASTER')">
+		<div class="col-sm-12 row">
+			<div class="col-sm-4">
+				<span style="padding: 10px"> <input id="auto-scroll" data-toggle="toggle" data-on="Auto-Scroll"
+					data-off="No Auto-Scroll" data-onstyle="success" data-offstyle="danger" type="checkbox"/>
+				</span>
+			</div>
+			<div class="col-sm-4">
+				<!--  EMPTY BUTTON AREA -->
+			</div>
+			<div class="col-sm-4">
+				<a class="btn btn-warning dropdown-toggle pull-right" href="#legend-area" data-toggle="collapse">View Legend</a>
+			</div>
+		</div>
+		<div class="row col-sm-12">
+			<label for="command-output">Command Output</label>
+			<div id="command-output" class="scrollable-panel">
+				<p style="font-family: courier; color: lime;">Loading page resources...</p>
+			</div>
+		</div>
+		</security:authorize>
+
+		<div id="legend-area" class="row col-sm-12 collapse in">
+
+			<div class="col-sm-12">
+				<div class="panel-heading">
+					<h2 class="panel-title">Equipment Status</h2>
+				</div>
+				<ul class="list-group">
+					<!-- <li class="list-group-item displayTracking legendTextBlack">Display Tracking</li>  -->
+					<li class="list-group-item equipmentOnline legendTextBlack">Equipment Online</li>
+					<li class="list-group-item equipmentStopOffline legendText">Equipment Stop / Offline</li>
+					<li class="list-group-item equipmentError legendText">Equipment Error</li>
+					<li class="list-group-item equipmentDisconnected legendTextBlack">Equipment Disconnected</li>
+					<li class="list-group-item equipmentNotInitialized legendTextBlack">Equipment Not Initialized</li>
+					<li class="list-group-item serverDown legendText">Airflow WCS Server Down</li>
+				</ul>
+			</div>
+
+			<div class="col-sm-12">
+				<div class="panel-heading">
+					<h2 class="panel-title">Light Tower Status</h2>
+				</div>
+				<ul class="list-group">
+					<li class="list-group-item equipmentOnline legendTextBlack">Equipment Online (SRM&nbsp;or&nbsp;P&amp;D)</li>
+					<li class="list-group-item equipmentStopOffline legendText">EquipmentStop/Offline (SRM&nbsp;or&nbsp;P&amp;D)</li>
+					<li class="list-group-item equipmentError legendText">Equipment Error (SRM&nbsp;or&nbsp;P&amp;D)</li>
+					<li class="list-group-item equipmentError legendText">(Flashing) SRC Communication Error</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>

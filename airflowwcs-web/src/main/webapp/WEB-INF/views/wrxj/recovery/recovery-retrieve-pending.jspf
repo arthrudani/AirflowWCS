@@ -1,0 +1,36 @@
+<div id="settings-retrieve-pending" style="display: none;">
+	<div class="row">
+		<div class="col-lg-6">
+			<div class="panel panel-default grey-background-override">
+				<div class="panel-body">
+					<center>
+						<h3>
+							<i class="fa fa-exclamation" aria-hidden="true"></i> No Recovery
+							Options
+						</h3>
+					</center>
+				</div>
+			</div>
+		</div>
+		<div class="col-lg-6">
+			<h4>
+				<span class="label label-default">DESCRIPTION</span>
+			</h4>
+			<div id="detail-description">There are currently no recovery
+				methods implemented for this load type/status.</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			<div class="col-md-4"></div>
+			<div class="col-md-4">
+				<center>
+					<button id="recover-retrieve-pending-button" type="button"
+						class="btn btn-success btn-default">Start Recovery</button>
+				</center>
+			</div>
+			<div class="col-md-4"></div>
+		</div>
+
+	</div>
+</div>

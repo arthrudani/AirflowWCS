@@ -1,0 +1,965 @@
+﻿=========================================
+==  STATISTICS SERVER RELEASE NOTES    ==
+=========================================
+=====================================================================================================================
+Most recent release at the top
+======================================================================================================================
+Version 0.0
+
+    Host - Clean up task (US 1399)
+                                                                            
+Date: 13/07/2023
+Note Author: BT
+
+======================================================================================================================
+Version 0.0
+
+    SAC - Conveyor systme Put-Away logic (US 1155 - 1389)
+	- Added location search order to the put away logic
+                                                                            
+Date: 10/07/2023
+Note Author: KR
+
+======================================================================================================================
+Version 0.0
+
+    SAC - Implement ER with status = update & Cancel (US 1190)
+                                                                            
+Date: 04/07/2023
+Note Author: MT
+
+======================================================================================================================
+Version 0.0
+
+    Web UI - Display Bag position (US 1387)
+                                                                            
+Date: 30/06/2023
+Note Author: BT
+
+======================================================================================================================
+Version 0.0
+
+   Conv_PLC-Item_Released_Impl (US 1302)
+                                                                            
+Date: 30/06/2023
+Note Author: MT
+
+======================================================================================================================
+Version 0.0
+
+    Web UI - Hide Time Slot Screen (US 1305)
+                                                                            
+Date: 29/06/2023
+Note Author: BT
+
+======================================================================================================================
+Version 0.0
+
+    Conv PLC - Item Stored impl (US-1303)
+
+Date:27/06/2023
+Note Author: MT
+	
+======================================================================================================================
+Version 0.0
+
+    Web UI - Hide work maintenance menu (US 1308)
+                                                                            
+Date: 28/06/2023
+Note Author: BT
+
+======================================================================================================================
+Version 0.0
+
+    SAC - put away logic for the Conv system (US-1155)
+	
+                                                                            
+Date:27/06/2023
+Note Author: KR
+
+======================================================================================================================
+Version 0.0
+Version 0.0
+
+    SAC - Inventory Request by Warehouse (US 1269)
+                                                                            
+Date: 19/06/2023
+Note Author: MT
+
+======================================================================================================================
+Version 0.0
+
+    SAC - Inventory requst by flight and ack (US 1268 & 1271)
+                                                                            
+Date: 16/06/2023
+Note Author: BT
+
+======================================================================================================================
+Version 0.0
+
+     US1185 - Scheduler
+	- Restructured the Item Arrived, Item Stored, Item Picked up and Item Released releated classes to handle 
+		Shattle Rack and Conveyor WH based on configuration
+                                                                            
+Date: 13/06/2023
+Note Author: KR
+
+======================================================================================================================
+Version 0.0
+
+    Occupancy with pie chart (US 1183)
+                                                                            
+Date: 12/06/2023
+Note Author: BT
+
+======================================================================================================================
+Version 0.0
+
+    SAC -Item  Retrieval - Order (US 1196)
+                                                                            
+Date: 09/06/2023
+Note Author: BT
+
+======================================================================================================================
+Version 0.0
+
+    ACP - Exception: Tray arrives at wrong inbound station (US 1210)
+                                                                            
+Date: 08/06/2023
+Note Author: MT
+
+======================================================================================================================
+Version 0.0
+
+    ACP - Exception : Unknown tray on Inbound station (US 1178)
+                                                                            
+Date: 01/06/2023
+Note Author: MT
+
+======================================================================================================================
+Version 0.0
+
+   Initial Data - KXI initial data - US1153
+	- The required sql files under the AirflowWCS\share\docs\DML folder
+                                                                            
+Date: 30/05/2023
+Note Author: KR
+
+======================================================================================================================
+Version 0.0
+
+    Web UI - Add Current Location to the Modify screen (US 1177)
+                                                                            
+Date: 26/05/2023
+Note Author: BT
+
+======================================================================================================================
+Version 0.0
+
+    BI- Create a table & DAO for LoadTransactionHistory (US 1136)
+                                                                            
+Date: 25/05/2023
+Note Author: MT
+
+======================================================================================================================
+Version 0.0
+
+    SAC - Add status to Item Release to indicates the reason for releasing tray (US 1156)
+                                                                            
+Date: 25/05/2023
+Note Author: MT
+
+======================================================================================================================
+Version 0.0
+
+    BI - Create a table & DAO for Occupancy  (US 1164)
+                                                                            
+Date: 25/05/2023
+Note Author: BT
+
+======================================================================================================================
+Version 0.0
+
+    Web UI- Equipment Screen (US 1138)
+                                                                            
+Date: 23/05/2023
+Note Author: BT
+
+======================================================================================================================
+Version 0.0
+
+    Web UI- Location Screen should display only Locations (US 1137)
+                                                                            
+Date: 22/05/2023
+Note Author: BT
+
+======================================================================================================================
+Version 0.0
+
+    SAC Interface - Inventory Update (US 803)
+                                                                            
+Date: 19/05/2023
+Note Author: MT
+
+======================================================================================================================
+Version 0.0
+
+    Empty Location search - improvement (US 1045)
+                                                                            
+Date: 19/05/2023
+Note Author: KR
+
+======================================================================================================================
+Version 0.0
+
+    ACP - CommandAllocatorImpl business logic (US 963)
+                                                                            
+Date: 19/05/2023
+Note Author: KR
+
+======================================================================================================================
+Version 0.0
+
+    Web UI - Load from Location (US 1127)
+                                                                            
+Date: 18/05/2023
+Note Author: BT
+
+======================================================================================================================
+Version 0.0
+
+    ACP Interface - Bag Data Update[10] (US 828)
+                                                                            
+Date: 15/05/2023
+Note Author: MT
+
+======================================================================================================================
+Version 0.0
+
+    Web UI - Delete Load (US 1120)
+                                                                            
+Date: 15/05/2023
+Note Author: MT
+
+======================================================================================================================
+Version 0.0
+
+    Web UI - Move Command Screen validation (US 1122)
+                                                                            
+Date: 15/05/2023
+Note Author: BT
+
+======================================================================================================================
+Version 0.0
+
+    Web UI - Transaction History Screen (US 1121)
+                                                                            
+Date: 12/05/2023
+Note Author: BT
+
+======================================================================================================================
+
+Version 0.0
+
+    Retrieve a Bag from Load screen - refactoring (US 1109)
+                                                                            
+Date: 09/05/2023
+Note Author: MT
+
+======================================================================================================================
+Version 0.0
+
+    ACP - Item Stored process Refactoring (US 1091)
+                                                                            
+Date: 09/05/2023
+Note Author: MT
+
+======================================================================================================================
+Version 0.0
+
+    ACP Port - Make StxEtx configurable (US 1052)
+                                                                            
+Date: 09/05/2023
+Note Author: MT
+
+======================================================================================================================
+Version 0.0
+
+    Web UI Changes (US 1119)
+                                                                            
+Date: 10/05/2023
+Note Author: KR
+
+======================================================================================================================
+Version 0.0
+
+    Retrieve all bags for Flight - backend (US 1093)
+                                                                            
+Date: 09/05/2023
+Note Author: KR
+
+======================================================================================================================
+Version 0.0
+
+    Web UI - Retrieve Flight (US 1094)
+                                                                            
+Date: 08/05/2023
+Note Author: BT
+
+======================================================================================================================
+Version 0.0
+
+    Web UI - Display BagId and Current Location (US 1084)
+                                                                            
+Date: 05/05/2023
+Note Author: BT
+
+======================================================================================================================
+
+Version 0.0
+
+    PLC Conv - Flush request [3] (US 1055)
+    NOTE: Created Flush Request [3] and handle Flush Response [103]
+                                                                            
+Date: 04/05/2023
+Note Author: MT
+
+======================================================================================================================
+Version 0.0
+
+   Plc - Item Released (US 1051)
+                                                                            
+Date: 03/05/2023
+Note Author: BT
+
+======================================================================================================================
+Version 0.0
+
+    WEB UI - Update move command (US 1019)
+                                                                            
+Date: 27/04/2023
+Note Author: BT
+
+======================================================================================================================
+Version 0.0
+
+     WEB UI - Delete move command (US 1009)
+                                                                      
+Date: 27/04/2023
+Note Author: BT
+
+======================================================================================================================
+
+Version 0.0
+
+    ACP - Command Allocator Task setup  (US 981)
+    NOTE: Created a Task  'CmdAllocationTask' in Airflow WCS database ( [CONTROLLERCONFIG] ) table with required data                                                                        
+Date: 20/04/2023
+Note Author: MT
+
+======================================================================================================================
+Version 0.0
+
+    ACP - Command status update (US 982)
+                                                                            
+Date: 20/04/2023
+Note Author: MT
+
+======================================================================================================================
+Version 0.0
+
+    UI - Work maintenance add new screen (US 960)
+                                                                            
+Date: 19/04/2023
+Note Author: BT
+
+======================================================================================================================
+
+Version 0.0
+
+    ACP - Command Queue Manager (US 958)
+                                                                            
+Date: 17/04/2023
+Note Author: MT
+
+======================================================================================================================
+Version 0.0
+
+    SAC - Retrieval Order processing -Refactoring (US969)
+	NOTE: Change the current order processing to handle one to many relationship (OrderHeader -> OrderLine) in the database
+	The order process now creates one Order-Header record and for each Load creates one OrderLine record in the database
+                                                                            
+Date: 17/04/2023
+Note Author: KR
+
+======================================================================================================================
+Version 0.0
+
+    SAC - add the ER Order Id to LoadLineItem table (US 919)
+                                                                            
+Date: 06/04/2023
+Note Author: BT
+
+======================================================================================================================
+Version 0.0
+
+    SAC - Adding new column to LoadLineItem for Flight STD (US 927)
+                                                                            
+Date: 04/04/2023
+Note Author: MT
+
+======================================================================================================================
+Version 0.0
+
+    SAC interface - Retrieval Order [55] need Ack message & response [5] (US 920)
+                                                                            
+Date: 30/03/2023
+Note Author: MT
+
+======================================================================================================================
+Version 0.0
+
+    ACP Interface: Link Startup Sync Ack processing(US 893)
+                                                                            
+Date: 28/03/2023
+Note Author: LK
+
+======================================================================================================================
+Version 0.0
+
+    ACP - Flight Data update event publisher (US 853)
+                                                                            
+Date: 22/03/2023
+Note Author: LK
+
+======================================================================================================================
+Version 0.0
+
+    UI- Item type added and NO move replaced with stored (US 899)
+                                                                            
+Date: 21/03/2023
+Note Author: BT
+
+======================================================================================================================
+Version 0.0
+
+    ACP Interface - Get Move Type (US 897)
+                                                                            
+Date: 20/03/2023
+Note Author: MT
+
+======================================================================================================================
+Version 0.0
+
+    ACP Interface - Refactoring Item Stored process (US 874)
+                                                                            
+Date: 20/03/2023
+Note Author: ST
+
+======================================================================================================================
+Version 0.0
+
+    ACP Interface - Link Startup Synchronization[99] Ack msg (US 847)
+                                                                            
+Date: 16/03/2023
+Note Author: MT
+
+======================================================================================================================
+Version 0.0
+
+    Route Manager process update - Adding new condition (US 830)
+                                                                            
+Date: 16/03/2023
+Note Author: MT
+
+======================================================================================================================
+Version 0.0
+
+    ACP - Route Manager (US 784)
+                                                                            
+Date: 16/03/2023
+Note Author: MT
+
+======================================================================================================================
+Version 0.0
+UI Desktop Client: Updated current address on load screen (US 875)
+                                                                            
+Date: 14/03/2023
+Note Author: BT
+
+======================================================================================================================
+Version 0.0
+
+    ACP Interface - Update Load status on arrival (US 854)
+                                                                            
+Date: 14/03/2023
+Note Author: ST
+
+
+======================================================================================================================
+Version 0.0
+
+    ACP-Interface : Item Stored and Item Arrived Updated (US 827)
+                                                                            
+Date: 13/03/2023
+Note Author: BT
+
+======================================================================================================================
+Version 0.0
+
+     UI-Web: Deleted load Iteam from ASRS (US - 777)
+
+Date: 11/03/2023
+Note Author: BT
+
+======================================================================================================================
+Version 0.0
+
+     Location Detail screen done (US - 791)
+																			
+Date: 11/03/2023
+Note Author: BT
+
+======================================================================================================================
+Version 0.0
+
+    SAC interface - ER message processing (US - 761)
+                                                                            
+Date: 10/03/2023
+Note Author: LK
+
+======================================================================================================================
+Version 0.0
+
+	ACPPort should support Item Picked up and Location Status (US - 797)
+																			
+Date: 09/03/2023
+Note Author: ST
+======================================================================================================================
+Version 0.0
+
+	SRack: ACP Interface [51] Item Arrived, [53] Item Picked Up, [60] Location Status (US - 796)
+	
+	- Next station is calculated everytime Item Arrived
+	- Item Picked Up message updates load move status
+	- Item Picked Up is fixed to treat sequence number correctly
+	- Location Status message is fixed to treat sequence number correctly 
+																			
+Date: 09/03/2023
+Note Author: ST
+======================================================================================================================
+Version 0.0
+
+    ACP - Message Serial Number validation & Link Start Up Sync msg (US - 767)
+                                                                            
+Date: 07/03/2023
+Note Author: LK
+======================================================================================================================
+Version 0.0
+
+    SAC re-writing Com layer (US - 771)
+                                                                            
+Date: 02/03/2023
+Note Author: LK
+======================================================================================================================
+Version 0.0
+
+	Transaction history log is  written out for Item Arrived, ITem Picked Up, and Item Stored (US - 754)
+																			
+Date: 01/03/2023
+Note Author: ST
+======================================================================================================================
+Version 0.0
+
+	Refactored class structure of Message processing (US - 768)
+																			
+Date: 01/03/2023
+Note Author: ST
+======================================================================================================================
+Version 0.0
+
+	Support Location Status message in AirflowWCS (US - 746)
+																			
+Date: 01/03/2023
+Note Author: ST
+======================================================================================================================
+Version 0.0
+
+    SAC Intgerface - Comm update (US - 747)
+                                                                            
+Date: 23/02/2023
+Note Author: LK
+======================================================================================================================
+Version 0.0
+
+	Process the Item Arrived message by Airflow WCS received from PLC (US-31492)
+	Construct and Send Move order request to PLC (US - 31512)
+																			
+Date: 30/11/2022
+Note Author: DS
+=====================================================================================================================
+Version 0.0
+
+	SAC interface Retrieval Order [4] (US-30958)
+	SAC interface Response message [24] (US-30959)
+																			
+Date: 28/10/2022
+Note Author: KR
+=====================================================================================================================
+
+Version 0.0
+
+	Process store completion message from PLC (US-30400)
+																			
+Date: 30/08/2022
+Note Author: DK
+=====================================================================================================================
+
+Version 0.0
+
+    Added SAC Put-Away base classes    	
+
+
+Changeset/Revision/UserStory  US-29772 
+																			
+Date: 08/6/2022
+Note Author: KR
+=====================================================================================================================
+Version 0.0
+
+    Added SAC TCPIP communication base classes 
+    Added SAC Interface implementation - Keep Alive [1]     	
+
+
+Changeset/Revision/UserStory  US-29565, US-29190 
+																			
+Date: 19/05/2022
+Note Author: KR
+=====================================================================================================================
+Version 0.0
+
+    Added PLC Interface implementation - Item Released [6]     	
+
+
+Changeset/Revision/UserStory  US-28365
+																			
+Date: 14/04/2022
+Note Author: KR
+=====================================================================================================================
+Version 0.0
+
+    Added PLC Interface implementation - Location Status[6]     	
+
+
+Changeset/Revision/UserStory  US-28366
+																			
+Date: 08/04/2022
+Note Author: KR
+=====================================================================================================================
+Version 0.0
+
+    Added PLC Interface implementation - Storage Order[2]      	
+
+
+Changeset/Revision/UserStory  US-28362
+																			
+Date: 21/03/2022
+Note Author: KR
+=====================================================================================================================
+Version 0.0
+
+    Added a new screen "Load Item" and a new context menu ot the Item Details screen       	
+
+
+Changeset/Revision/UserStory  US-28030
+																			
+Date: 16/12/2021
+Note Author: KR
+=====================================================================================================================
+
+Version 0.0
+
+    Enabling "Add Load" on the web UI ( allows user to add a new load via web UI)         	
+
+
+Changeset/Revision/UserStory  US-27729
+																			
+Date: 14/12/2021
+Note Author: KR
+=====================================================================================================================
+Version 0.0
+
+    Retrival process via web screen
+    Changeing Root of the website from Wrjx-web to AirflowWCS	         	
+
+
+Changeset/Revision/UserStory  US-27891 , US-27859
+																			
+Date: 6/12/2021
+Note Author: KR
+=====================================================================================================================
+Version 0.0
+
+    Repalced logo and Title of each page 
+    As there is no TEST system setup yet the test executed in local pc	         	
+
+
+Changeset/Revision/UserStory  US-27533
+																			
+Date: 16/11/2021
+Note Author: KR
+======================================================================================================================
+Version 0.0
+
+    Re arrenge the dashboard icons and rename some of the text names 
+	Adding Flight Page and create a flight widget in the dashbord  
+	Adding Details age of flight
+
+Changeset/Revision/UserStory  US-28451, US-28647, US-28668, US-28609, US-28402
+																			
+Date: 23/02/2022
+Note Author: NHC
+======================================================================================================================
+Version 0.0
+
+   Dynamic Lane (KIX) Concept web UI page (empty page)
+
+Changeset/Revision/UserStory  US-28764
+																			
+Date: 03/03/2022
+Note Author: NHC
+======================================================================================================================
+Version 0.0
+
+    Dynamic Lane (KIX) web UI details in the page 
+	Dynamic Lane (KIX) web UI details in the page -Delete 
+	update Equipment Configuration Script
+
+Changeset/Revision/UserStory  US-28913, US-28867, US-28816
+																			
+Date: 14/03/2022
+Note Author: NHC
+======================================================================================================================
+Version 0.0
+
+	update Equipment Configuration Script
+	update STATION Configuration Script
+	Add new SCripts RElated to Sation Script update
+
+Changeset/Revision/UserStory  US-28935, US-28913
+																			
+Date: 22/03/2022
+Note Author: NHC
+======================================================================================================================
+Version 0.0
+
+	Add new Method (addBagPOExpectedReceipt) in EBSPoReceivingServer class
+	Override the addPOLine method in StandardPoReceivingServer class
+
+Changeset/Revision/UserStory  US-29164
+																			
+Date: 30/03/2022
+Note Author: NHC
+======================================================================================================================
+Version 0.0
+
+	Update the location and the Station Scripts
+	Add new Script for Route
+	Update the Hep site
+
+Changeset/Revision/UserStory  US-29185
+																			
+Date: 06/04/2022
+Note Author: NHC
+======================================================================================================================
+Version 0.0
+
+	Update the help site (adding location related changes)
+	Update the UI changes for Lushing lane Task-29345 (US29344)
+																			
+Date: 11/04/2022
+Note Author: NHC
+======================================================================================================================
+Version 0.0
+
+	Back end process update for flush lane  Task-29361 (US29344)
+																			
+Date: 13/04/2022
+Note Author: NHC
+======================================================================================================================
+Version 0.0
+
+	Add confirmation of Flush command and enable/disable Flush option. Task-29443 (US29414)
+																			
+Date: 21/04/2022
+Note Author: NHC
+======================================================================================================================
+Version 0.0
+
+	Update the PLC Simulator tool to handle SAC interface.  (US-29392)
+	Update the Simulator UI for multiple Message Factory from the config (US-29460)
+																			
+Date: 28/04/2022
+Note Author: NHC
+======================================================================================================================
+Version 0.0
+
+	SAC Interface - Expected Receipt Cancel bag  (US-29568)
+	SAC Interface - Expected Receipt new bag creation (US-29644)
+																			
+Date: 23/05/2022
+Note Author: NHC
+======================================================================================================================
+Version 0.0
+
+	Bug Fix for SAC interface and Expected Receipt - Delete (US-29746)
+																			
+Date: 02/06/2022
+Note Author: NHC
+======================================================================================================================
+Version 0.0
+
+	Create new Time Event Scheduler for check the expired bags details (US-29875)
+																			
+Date: 27/06/2022
+Note Author: NHC
+======================================================================================================================
+Version 0.0
+
+	Fetch location for the retrieval date time of expected receipts (US-30148)
+	Find full empty location and link to the time slot (US-30075)
+	Send expected receipt response msg to host (US-30294)
+																			
+Date: 20/07/2022
+Note Author: DK
+======================================================================================================================
+Version 0.0
+
+	Added SAC Interface - Item Released [6] process (US-28374)
+	Update the User guide and Techinical guide for Airflow WCS (US-30559)
+	Added PLC Item Release response [24] process (US-30299)
+																			
+Date: 26/08/2022
+Note Author: NHC
+======================================================================================================================
+Version 0.0
+
+    Migrated from Ant to Maven(US-30956)
+    Installation as a windows service(US-31130)
+    Log4J 1.x removed(US-31120)
+                                                                            
+Date: 26/10/2022
+Note Author: LK
+======================================================================================================================
+Version 0.0
+
+    Retrieve menu activated in loads screen(US-31232)
+
+Date: 01/11/2022
+Note Author: LK
+======================================================================================================================
+Version 0.0
+
+    The latest changes of expected receipt request/response is applied(US-31256)
+                                                                            
+Date: 04/11/2022
+Note Author: LK
+======================================================================================================================
+Version 0.0
+
+    A dedicated expected receipt message parser for shuttle rack introduced(US-31333)
+                                                                            
+Date: 07/11/2022
+Note Author: LK
+======================================================================================================================
+Version 0.0
+
+    SAC Interface: Stored Complete Ack(US-31367)
+                                                                            
+Date: 09/11/2022
+Note Author: LK
+======================================================================================================================
+Version 0.0
+
+    PLC Inbound message refactoring(US-31388)
+                                                                            
+Date: 23/11/2022
+Note Author: DK
+======================================================================================================================
+Version 0.0
+
+    SAC Interface: Retrieval Order [5] Hander(US-31621)
+                                                                            
+Date: 04/01/2023
+Note Author: LK
+======================================================================================================================
+Version 0.0
+
+    Empty location finding logic update(US-31648)
+                                                                            
+Date: 11/01/2023
+Note Author: LK
+======================================================================================================================
+Version 0.0
+
+    Add Order ID to Expected Receipt MessAGE(US-31688)
+                                                                            
+Date: 11/01/2023
+Note Author: LK
+======================================================================================================================
+Version 0.0
+
+    SRack: ACP Interface - updating message header(US-31707)
+                                                                            
+Date: 16/01/2023
+Note Author: ST
+======================================================================================================================
+Version 0.0
+
+    Host interface changes in header plus flight number length decreased to 8 bytes(US-31717)
+                                                                            
+Date: 11/01/2023
+Note Author: LK
+======================================================================================================================
+Version 0.0
+
+    sRack - ACP interface Wrapping option(US-31724)
+                                                                            
+Date: 20/01/2023
+Note Author: ST
+======================================================================================================================
+Version 0.0
+
+    ArrayIndexOutOfBounds is thrown by Airflow WCS(US-31809)
+                                                                            
+Date: 27/01/2023
+Note Author: ST
+======================================================================================================================
+Version 0.0
+
+    AirflowWCS should have better socket interaction implementation(US-31811)
+                                                                            
+Date: 01/02/2023
+Note Author: ST
+======================================================================================================================
+Version 0.0
+
+    AirflowWCS supports item picked up(US-31838)
+                                                                            
+Date: 10/02/2023
+Note Author: ST
+======================================================================================================================
+Version 0.0
+
+    Rewrite plc socket communication
+                                                                            
+Date: 13/02/2023
+Note Author: LK
+======================================================================================================================
+Version 0.0
+
+    AirflowWCS supports item picked up ack message(US-31839)
+                                                                            
+Date: 13/02/2023
+Note Author: ST
+======================================================================================================================

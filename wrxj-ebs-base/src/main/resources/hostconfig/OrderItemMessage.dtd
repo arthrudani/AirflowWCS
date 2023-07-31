@@ -1,0 +1,37 @@
+<!--
+     Document Type Definition for the Order Item message from a host
+     system.  The declarations below require that each tag appear zero or 1 
+     time, BUT when these elements appear, they must occur in the order 
+     specified here.
+
+     Author: A.D.
+     Version 1.0      03/30/05
+     Copyright 2005 Daifuku America Corporation  All Rights Reserved.
+-->
+<!ELEMENT OrderItemMessage (Order+)>
+<!ELEMENT Order (OrderHeader*, OrderLine*)>
+<!ATTLIST Order action          (ADD|MODIFY|DELETE)  #REQUIRED
+                sOrderID        NMTOKEN              #REQUIRED
+                iPriority       (1|2|3|4|5|6|7|8|9)  "7"
+                iOrderStatus    (READY|HOLD|UNKNOWN) "UNKNOWN">
+<!ELEMENT OrderHeader
+         (sDestinationStation?   ,
+          sDescription?          ,
+          sOrderMessage?)>
+
+<!ELEMENT sDestinationStation   (#PCDATA)>
+<!ELEMENT sDescription          (#PCDATA)>
+<!ELEMENT sOrderMessage         (#PCDATA)>
+
+<!-- ================== -->
+<!--  Order Line setup  -->
+<!-- ================== -->
+<!ELEMENT OrderLine
+          (sRouteID?       ,
+           fOrderQuantity? ,
+           sDescription?)>
+<!ATTLIST OrderLine sItem      CDATA  #REQUIRED
+                    sOrderLot  CDATA  #IMPLIED>
+
+<!ELEMENT sRouteID       (#PCDATA)>
+<!ELEMENT fOrderQuantity (#PCDATA)>

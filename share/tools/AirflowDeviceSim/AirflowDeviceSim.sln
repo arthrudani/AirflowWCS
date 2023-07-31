@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AirflowDeviceSim", "AirflowDeviceSim\AirflowDeviceSim.csproj", "{09AC1CFA-1B19-4061-BB6A-FEFC75B44709}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "AirflowDeviceSimulatorSetup", "AirflowDeviceSimulatorSetup\AirflowDeviceSimulatorSetup.vdproj", "{DA27C3D8-6BC6-431B-A92F-B0AC3C0A8DD2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{09AC1CFA-1B19-4061-BB6A-FEFC75B44709}.Debug|x86.ActiveCfg = Debug|x86
+		{09AC1CFA-1B19-4061-BB6A-FEFC75B44709}.Debug|x86.Build.0 = Debug|x86
+		{09AC1CFA-1B19-4061-BB6A-FEFC75B44709}.Release|x86.ActiveCfg = Release|x86
+		{09AC1CFA-1B19-4061-BB6A-FEFC75B44709}.Release|x86.Build.0 = Release|x86
+		{DA27C3D8-6BC6-431B-A92F-B0AC3C0A8DD2}.Debug|x86.ActiveCfg = Debug
+		{DA27C3D8-6BC6-431B-A92F-B0AC3C0A8DD2}.Release|x86.ActiveCfg = Release
+		{DA27C3D8-6BC6-431B-A92F-B0AC3C0A8DD2}.Release|x86.Build.0 = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,292 @@
+package com.daifukuamerica.wrxj.jdbc;
+
+import com.daifukuamerica.wrxj.log.Logger;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Set;
+import java.util.TreeMap;
+
+/**
+ * Description:<BR>
+ *   Data class that initializes the translation objects, and provides methods 
+ *   to retrieve them.
+ *
+ * <P><I>This is a generated class.  Do not edit directly!  If you need to add
+ * a translation, add it to jwmsadd.sql and run "ant db-tran".</I></P>
+ *
+ * @author       A.D.
+ * @version      2.0
+ * <BR>Created:  30-Aug-01    Original version<BR>
+ * <BR>Modified: 11-Dec-01    Converted to static methods.
+ * <BR>Copyright (c) 2001-2009
+ * <BR>Company:  Daifuku America Corporation
+ */
+public class DBTrans implements DBConstants
+{
+  protected static Map<String, DBTrandef[]> tm = new TreeMap<String, DBTrandef[]>();
+
+/*----------------------------------------------------------------------------
+   The code inside the init method is generated and overwritten by the
+   ParseDatabase utility when it parses the data definition file.  Please
+   do not edit this method.
+  ----------------------------------------------------------------------------*/
+ /**
+  *  Initializes Translation objects, and stores them for retrieval later.
+  */
+  public static void init()
+  {
+  }
+
+ /**
+  *  Returns string array of translations for a translation name
+  *
+  * @param  tran_name  String containing translation name
+  * @return String array of translations.
+  * @exception NoSuchFieldException
+  */
+  public static String[] getStringList(String tran_name)
+         throws NoSuchFieldException
+  {
+    DBTrandef[] td = null;
+                                    // If the Translation name is unknown,
+                                    // then throw an exception.
+    if ((td = tm.get(tran_name.toUpperCase())) == null)
+    {
+      throw new NoSuchFieldException("Invalid key value: " + tran_name);
+    }
+    else
+    {                                  // Loop over each Translation object
+                                       // and get its string representation.
+      int      idx;
+      String[] sList = new String[td.length];
+
+      for(idx = 0; idx < td.length; idx++)
+      {
+        sList[idx] = td[idx].getTranString();
+      }
+
+      return(sList);
+    }
+  }
+
+ /**
+  *  Returns string array of translations for a set of translation values.
+  *
+  * @param tranName  String containing translation name
+  * @param tranValues array of integer translations.
+  * @return String array of translations.
+  * @exception NoSuchFieldException if any of the user specified translation
+  *            values are not found.
+  */
+  public static String[] getStringList(String tranName, int[] tranValues)
+          throws NoSuchFieldException
+  {
+    String[] strTranslations = new String[tranValues.length];
+    for(int idx = 0; idx < tranValues.length; idx++)
+    {
+      strTranslations[idx] = DBTrans.getStringValue(tranName, tranValues[idx]);
+    }
+    
+    return(strTranslations);
+  }
+
+ /**
+  * Returns a string given a Translation name and value (which 
+  * is really an integer from the DBConstants file).
+  *               
+  * @param  tran_name  String containing Translation name.
+  * @param  tranval Integer value for this translation.
+  * @return A particular translation string related to <B>tranval</B>
+  *         argument.
+  * @exception NoSuchFieldException
+  */
+  public static String getStringValue(String tran_name, int tranval)
+         throws NoSuchFieldException
+  {
+    DBTrandef[] td = null;
+    String errString = "";
+                                       // If the hash key is unknown, then
+                                       // throw an exception.
+    if ((td = tm.get(tran_name.toUpperCase())) == null)
+    {
+      throw new NoSuchFieldException("Invalid key value: " + tran_name);
+    }
+    else
+    {                                  // Loop over each Translation object
+                                       // and get its string representation.
+      for(int idx = 0; idx < td.length; idx++)
+      {
+        if (tranval == td[idx].getTranInteger())
+        {
+            return(td[idx].getTranString());
+        }
+      }
+                                       // Didn't find it. Throw exception.
+      errString = "No string value for " + Integer.toString(tranval);
+      errString += " and translation named \"" + tran_name + "\"";
+      throw new NoSuchFieldException(errString);
+    }
+  }
+
+  /**
+   * Returns a string given a Translation name and value (which is really an
+   * integer from the DBConstants file).
+   * <p>The method logs an error and returns "Unknown ([tranval])" rather than
+   * throw an exception.</p>
+   * 
+   * @param tran_name String containing Translation name.
+   * @param tranval Integer value for this translation.
+   * @return A particular translation string related to <B>tranval</B> argument.
+   */
+  public static String getStringValueNoExc(String tran_name, int tranval)
+  {
+    try
+    {
+      return getStringValue(tran_name, tranval);
+    }
+    catch (NoSuchFieldException e)
+    {
+      Logger.getLogger().logError(e.getMessage());
+      return "Unknown (" + tranval + ")";
+    }
+  }
+
+ /**
+  * Returns all integer values in a translation name.
+  *               
+  * @param  tran_name  String containing Translation name.
+  * @return list of integer values for <B>tran_name</B> name.
+  */
+  public static int[] getIntegerList(String tran_name)
+  {
+    DBTrandef[] td = null;
+    int[] iList = new int[0];
+
+    if ((td = tm.get(tran_name.toUpperCase())) != null)
+    {
+      iList = new int[td.length];
+      for(int idx = 0; idx < td.length; idx++)
+      {
+        iList[idx] = td[idx].getTranInteger();
+      }
+    }
+
+    return(iList);
+  }
+
+ /**
+  * Returns an integer representation for a given translation name, and
+  * translation string.
+  *               
+  * @param  tran_name  String containing Translation name.
+  * @param  transtring String containing full Tranlation String.
+  * @return integer value for <B>transtring</B>.
+  * @exception NoSuchFieldException
+  */
+  public static int getIntegerValue(String tran_name, String transtring)
+         throws NoSuchFieldException
+  {
+    DBTrandef[] td = null;
+    String errString = "";
+
+                                       // If the hash key is unknown, then
+                                       // throw an exception.
+    if ((td = tm.get(tran_name.toUpperCase())) == null)
+    {
+      throw new NoSuchFieldException("Invalid key value: " + tran_name);
+    }
+    else
+    {
+      String stringValue = new String();
+      for(int idx = 0; idx < td.length; idx++)
+      {
+        stringValue = td[idx].getTranString();
+        if (stringValue.equalsIgnoreCase(transtring.trim()))
+        {
+          return(td[idx].getTranInteger());
+        }
+      }
+                                       // Didn't find it. Throw exception.
+      errString = "No Integer value for " + transtring;
+      errString += " and translation name \"" + tran_name + "\"";
+      throw new NoSuchFieldException(errString);
+    }
+  }
+
+ /**
+  * Convenience method to return integer object from translation as opposed
+  * to just an integer.
+  *               
+  * @param  tran_name  String containing Translation name.
+  * @param  transtring String containing full Tranlation String.
+  * @return integer value for <B>transtring</B>.
+  * @exception NoSuchFieldException
+  */
+  public static Integer getIntegerObject(String tran_name, String transtring)
+         throws NoSuchFieldException
+  {
+    int iValue = getIntegerValue(tran_name, transtring);
+
+    return(new Integer(iValue));
+  }
+
+ /**
+  * Method to check if a string is a translation type.
+  *               
+  * @param  column_name  String to verify as translation.
+  * @return boolean of true if argument is a translation type, false
+  * otherwise
+  */
+  public static boolean isTranslation(String column_name)
+  {
+    boolean rtn = false;
+    
+    Iterator<String> keyItr = tm.keySet().iterator();
+    while(keyItr.hasNext())
+    {
+      String sKey = keyItr.next();
+      if (column_name.equalsIgnoreCase(sKey))
+      {
+        rtn = true;
+      }
+    }
+
+    return(rtn);
+  }
+
+ /**
+  *  Method figures out the maximum length of a translation
+  * @param tran_name The translation name.
+  * @return length of the largest translation string.
+  */
+  public static int getMaxTranslationLength(String tran_name)
+  {
+    int maxTranLength = 0;
+    try
+    {
+      String[] tranNames = getStringList(tran_name);
+      maxTranLength = tranNames[0].length();
+      
+      for(int idx = 1; idx < tranNames.length; idx++)
+      {
+        int iTmpLen = tranNames[idx].length();
+        if (maxTranLength < iTmpLen) maxTranLength = iTmpLen;
+      }
+    }
+    catch(NoSuchFieldException exc)
+    {
+      exc.printStackTrace();
+    }
+    
+    return(maxTranLength);
+  }
+  
+  /**
+   * Return a list of all translation fields
+   * @return
+   */
+  public static Set<String> getTranslationFields()
+  {
+    return tm.keySet();
+  }
+} /*** End of class DBTrans ****/

@@ -1,0 +1,22 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@ taglib prefix="wrxj" uri="wrxj-taglib" %>
+	<!-- LOAD ITEM DETAILS  -->
+	<div id="load-moves-modal" class="modal fade">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					<h4 class="modal-title">Load Move Details ${loadId}</h4>
+				</div>
+				<div class="modal-body">
+					<wrxj:ajaxTable metaDataName="Move" ajaxUri="/airflowwcs/table/empty"
+					 metaId="Load ID" hasRefresh="true" hasFilter="true" hasColVis="true" tableId="LoadMove" inModal="true" inSidebar="true"/>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>

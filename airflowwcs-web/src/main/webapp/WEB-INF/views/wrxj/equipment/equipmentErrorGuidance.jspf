@@ -1,0 +1,51 @@
+<style>
+/* Temporary styles until the error guide it reformatted */
+#eg2-dialog h1 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 0px;
+}
+#eg2-dialog h2 {
+    font-size: 16px;
+    font-weight: bold;
+}
+</style>
+
+<div class="modal fade" id="eg1-dialog" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="modal-dialog modal-sm">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+				<h4 class="modal-title">Error Guidance</h4>
+			</div>
+			<div class="modal-body">
+				<label for="eg1-equipment">Equipment</label>
+				<br/><input type="text" name="eg1-equipment" id="eg1-equipment" placeholder="Equipment" disabled class="form-control"/>
+				<br/><label for="eg1-errorcode">Error Code</label>
+				<br/><input type="text" name="eg1-errorcode" id="eg1-errorcode" placeholder="Error Code" class="form-control"/>
+			</div>
+			<div class="modal-footer">
+				<button id="eg1-button" class="btn btn-default">View Guidance</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade" id="eg2-dialog" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+				<h4 class="modal-title"><span id="eg2-title">Error Guidance</span></h4>
+			</div>
+			<div class="modal-body">
+				<div id="eg2-errorguide">
+					Place Error Guide here.
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button id="eg2-button" class="btn btn-default" data-dismiss="modal" aria-label="Close">Close</button>
+			</div>
+		</div>
+	</div>
+</div>

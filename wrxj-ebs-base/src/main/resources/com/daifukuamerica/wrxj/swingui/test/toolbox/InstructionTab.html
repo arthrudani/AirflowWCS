@@ -1,0 +1,40 @@
+<html>
+<head>
+<style>
+p {
+    font-family: sans-serif;
+}
+code {
+    font-family: monospace;
+    font-size: 12px;
+}
+</style>
+</head>
+<body>
+<p>Test Toolbox tabs are configured via SysConfig.</p>
+
+<p>Tab classes must extend <code>TabbedFramePanel</code> and have a constructor that takes a <code>TestToolbox</code> as a parameter.</p>
+
+<p><b>SQL Template:</b></p>
+<pre>
+<font color="blue">
+INSERT INTO SYSCONFIG (sGroup,sParameterName,sParameterValue,sDescription)
+  VALUES (
+    'TestToolbox:Panel',
+    'TAB_NAME',
+    'com.daifukuamerica.wrxj.swingui.test.toolbox.PACKAGE.CLASS',
+    'TestToolbox Panel')
+</font>
+</pre>
+
+<p><b>Samples in baseline:</b></p>
+<pre>
+<font color="blue">
+INSERT INTO SYSCONFIG (sGroup,sParameterName,sParameterValue,sDescription)
+ VALUES ('TestToolbox:Panel','Developer','com.daifukuamerica.wrxj.swingui.test.toolbox.dev.DevPanel','TestToolbox Panel')
+INSERT INTO SYSCONFIG (sGroup,sParameterName,sParameterValue,sDescription)
+ VALUES ('TestToolbox:Panel','SQL','com.daifukuamerica.wrxj.swingui.test.toolbox.sql.SqlPanel','TestToolbox Panel')
+</font>
+</pre>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+                          "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+	<session-factory>
+		<property name="hibernate.dialect">org.hibernate.dialect.SQLServerDialect</property>
+        <property name="hibernate.connection.driver_class">com.microsoft.sqlserver.jdbc.SQLServerDriver</property>
+        <property name="hibernate.connection.url">jdbc:sqlserver://localhost:1433;instanceName=localhost;databaseName=AirflowWCS</property>
+		<property name="hibernate.connection.username">asrs</property>
+		<property name="hibernate.connection.password">asrs</property>
+		<property name="hibernate.show_sql">true</property>
+		<property name="hibernate.connection.release_mode">auto</property>
+		<property name="current_session_context_class">thread</property>
+		<property name="hibernate.connection.autoReconnect">true</property>
+		<property name="hibernate.connection.provider_class">org.hibernate.c3p0.internal.C3P0ConnectionProvider</property>
+		<property name="hibernate.c3p0.min_size">1</property>
+		<property name="hibernate.c3p0.max_size">19</property>
+		<property name="hibernate.c3p0.timeout">120</property>
+		<property name="hibernate.c3p0.max_statements">10</property>
+
+		<mapping class="com.daifukuamerica.wrxj.web.model.hibernate.UserPreference" />
+	</session-factory>
+</hibernate-configuration>

@@ -1,0 +1,26 @@
+  <!--
+     Document Type Definition for the RetrievalOrder message from a host system.
+     The declarations below require that each tag appear zero or 1 time, BUT
+     when these elements appear, they must occur in the order specified here.
+
+     Author: A.D.
+     Version 1.0      03/21/05
+     Copyright 2005 Daifuku America Corporation  All Rights Reserved.
+  -->
+  <!ELEMENT RetrievalOrderMessage (RetrievalOrder+)>
+  <!ELEMENT RetrievalOrder
+   (sOrderID                  ,
+    sItem?          ,
+    sLot? ,
+    fOrderQuantity?      ,
+    iPriority?           ,
+    sDestinationStation?)>
+
+  <!ATTLIST RetrievalOrder action                (ADD|MODIFY|DELETE) #REQUIRED>
+
+  <!ELEMENT sOrderID       		(#PCDATA)>
+  <!ELEMENT sItem          		(#PCDATA)>
+  <!ELEMENT sLot 				(#PCDATA)>
+  <!ELEMENT fOrderQuantity 		(#PCDATA)>
+  <!ELEMENT iPriority       	(#PCDATA)>
+  <!ELEMENT sDestinationStation	(#PCDATA)>

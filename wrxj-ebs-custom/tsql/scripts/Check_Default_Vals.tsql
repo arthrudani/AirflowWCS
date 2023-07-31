@@ -1,0 +1,1 @@
+select name, definition from sys.default_constraints where name like 'DF__DEVICE__%'

@@ -1,0 +1,86 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head><title>Parsers</title></head>
+  <body>
+    <B>Message parsers</B>
+    <P>This package contains classes to parse messages from the CMS.  The following classes are
+    implemented in this package:
+    <table border="1" cellpadding="2" style="table-layout:fixed">
+      <thead>
+        <tr>
+          <th style="font-size: 12pt; background-color: blue; color: yellow">Class Name</th>
+          <th style="font-size: 12pt; background-color: blue; color: yellow">Message Description</th>
+        </tr>
+      </thead>
+      <tbody style="font-size:smaller; font-family:monospace">
+        <tr>
+          <td align="center" style="font-weight:bold">ACKParserImpl</td>
+          <td>Class to process ACK messages.</td>
+        </tr>
+        <tr>
+          <td align="center" style="font-weight:bold">ALMParserImpl</td>
+          <td>Class to process ALM (Alarm) messages.</td>
+        </tr>
+        <tr>
+          <td align="center" style="font-weight:bold">ENDParserImpl</td>
+          <td >Class to process END (End of report) message.  A report request from Warehouse Rx
+          causes multiple responses from CMS.  This message marks the end of a set of responses.</td>
+        </tr>
+        <tr>
+          <td align="center" style="font-weight:bold">ERRParserImpl</td>
+          <td>Class to handle CMS Error message.  This message indicates some type
+          of internal error on CMS and is only for notification purposes. </td>
+        </tr>
+        <tr>
+          <td align="center" style="font-weight:bold">LALParserImpl</td>
+          <td>Class to handle LAL (Load-At-Location) message.  This message is received
+          after a load is dropped-off at a location.</td>
+        </tr>
+        <tr>
+          <td align="center" style="font-weight:bold">LPCParserImpl</td>
+          <td>Class to handle LPC (Load Pickup Complete) message.  This message is
+          received after a load has been picked up.</td>
+        </tr>
+        <tr>
+          <td align="center" style="font-weight:bold">LSSParserImpl</td>
+          <td>Class to handle LSS (Link Startup Synchronization) message. This is a
+          bidirectional message meaning Warehouse Rx initiates a synchronization request
+          using an LSS message and CMS responds in kind with another LSS message
+          containing its current sequence number.</td>
+        </tr>
+        <tr>
+          <td align="center" style="font-weight:bold">MABParserImpl</td>
+          <td>Class to handle MAB message. This message is received when an error 
+          occurs that prevents the completion of a move request, or if the move is
+          manually canceled by the operator.</td>
+        </tr>
+        <tr>
+          <td align="center" style="font-weight:bold">MRCParserImpl</td>
+          <td>Class to handle MRC (Move Request Changed/Cancelled) message.  This
+          message is in response to a cancel request issued by Warehouse Rx.</td>
+        </tr>
+        <tr>
+          <td align="center" style="font-weight:bold">NAKParserImpl</td>
+          <td>Class to handle NAK (Negative Acknowledgement) message.</td>
+        </tr>
+        <tr>
+          <td align="center" style="font-weight:bold">QMRParserImpl</td>
+          <td>CLass to process QMR (Queued Move Report) message.  These messages are sent
+          in response to a request from Warehouse Rx. <b>This message is not fully implemented at this writing.</b></td>
+        </tr>
+        <tr>
+          <td align="center" style="font-weight:bold">SSRParserImpl</td>
+          <td>Class to process SSR (Station Status Report) message.  This message is in
+          response to a request from Warehouse Rx for the status of all AGV stations.  This
+          message is normally sent at the beginning of the connection process with CMS.</td>
+        </tr>
+        <tr>
+          <td align="center" style="font-weight:bold">VSRParserImpl</td>
+          <td>Class to handle VSR (Vehicle Status Report) message. <b>This message is not implemented at this writing.</b></td>
+        </tr>
+      </tbody>
+    </table>
+  </P>
+  </body>
+</html>
+

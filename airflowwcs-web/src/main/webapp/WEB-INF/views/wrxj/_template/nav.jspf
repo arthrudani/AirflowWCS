@@ -1,0 +1,109 @@
+<!-- Navbar  ================================================== -->
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+<!-- 		<div class="container"> -->
+		
+		
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" 
+						data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+					<span class="icon-bar"></span> 
+					<span class="icon-bar"></span> 
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#">
+					<img id="nav-logo" src="<spring:url value="/resources/assets/ico/d_28.png"/>" align="left"/>
+					<span id="wrx-name">Airflow WCS</span></a>
+			</div>
+
+
+			<div id="navbar" class="navbar-collapse collapse">
+				<ul class="nav navbar-nav">
+					<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" 
+					aria-haspopup="true" aria-expanded="false" role="button">Facility<span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="<spring:url value="/container/view"/>">Containers</a></li>
+							<li><a href="<spring:url value="/device/view"/>">Devices</a></li>
+							<li><a href="<spring:url value="/location/view"/>">Locations</a></li>
+							<li><a href="<spring:url value="/reason/view"/>">Reason Codes</a></li>
+							<li><a href="<spring:url value="/route/view"/>">Routes</a></li>
+							<li><a href="<spring:url value="/stationparam/view"/>">Station Parameters</a></li>
+							<li><a href="<spring:url value="/station/view"/>">Stations</a></li>
+							<li><a href="<spring:url value="/warehouse/view"/>">Warehouse</a></li>
+							<li><a href="<spring:url value="/zonelocation/view"/>">Zone-Locations</a></li>
+							<li><a href="<spring:url value="/zonerecommended/view"/>">Zone-Recommended</a></li>
+						</ul></li>
+					<li class="dropdown"><a href="#" class="dropdown-toggle"
+						data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+						role="button">Inventory<span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="<spring:url value="/changeitemname/view"/>">Change Item Name</a></li>
+							<li><a href="<spring:url value="/itemdetails/view"/>">Item Details</a></li>
+							<li><a href="<spring:url value="/itemsynonyms/view"/>">Item Synonyms</a></li>
+							<li><a href="<spring:url value="/item/view"/>">Items</a></li>
+		<!-- id="loads"  --><li><a href="<spring:url value="/load/view" />">Loads</a></li>
+							<li><a href="<spring:url value="/location/view"/>">Locations</a></li>
+							<li><a href="<spring:url value="/modifyloadlocation/view"/>">Modify Load Location</a></li>
+							<li><a href="<spring:url value="/move/view"/>">Moves</a></li>
+						</ul></li>
+					<li class="dropdown"><a class="dropdown-toggle"
+						data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+						role="button">Orders<span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="<spring:url value="/cyclecount/view"/>">Cycle Count</a></li>
+							<li><a href="<spring:url value="/emptycontainer/view"/>">Empty Container</a></li>
+							<li><a href="<spring:url value="/expectedreceipts/view"/>">Expected Receipts</a></li>
+							<li><a href="<spring:url value="/newitemorder/view"/>">New Item Order</a></li>
+							<li><a href="<spring:url value="/ordermaintenance/view"/>">Order Maintenance</a></li>
+							<li><a href="<spring:url value="/retrieveloads/view"/>">Retrieve Loads</a></li>
+						</ul></li>
+					<li class="dropdown"><a class="dropdown-toggle"
+						data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+						role="button">Tools<span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="<spring:url value="/messages/view"/>">JMS Messages</a>
+							<li><a href="<spring:url value="/asrsmetadata/view"/>">ASRS Meta-data</a></li>
+							<li><a href="<spring:url value="/binerrorrecovery/view"/>">Bin Error Recovery</a></li>
+							<li><a href="<spring:url value="/equipmentmonitor/view"/>">Equipment Monitor</a></li>
+							<li><a href="<spring:url value="/locationutilization/view"/>">Location Utilization</a></li>
+							<li><a href="<spring:url value="/equiplogviewer/view"/>">Equipment Log Viewer</a></li>
+							<li><a href="<spring:url value="/hostlogviewer/view"/>">Host Log Viewer</a></li>
+							<li><a href="<spring:url value="/logviewer/view"/>">Log Viewer</a></li>
+							<li><a href="<spring:url value="/missingtranslations/view"/>">Missing Translations</a></li>
+							<li><a href="<spring:url value="/movesbydevice/view"/>">Moves By Device</a></li>
+							<li><a href="<spring:url value="/recovery/view"/>">Recovery</a></li>
+							<li><a href="<spring:url value="/missingtranslations/view"/>">Missing Translations</a></li>
+							<li><a href="<spring:url value="/swapzonemonitor/view"/>">Swap Zone Monitor</a></li>
+							<li><a href="<spring:url value="/systemmonitor/view"/>">System Monitor</a></li>
+							<li><a href="<spring:url value="/transactionhistory/view"/>">Transaction History</a></li>
+						</ul></li>
+					<li class="dropdown"><a class="dropdown-toggle"
+						data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+						role="button">Users<span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="<spring:url value="/roles/view"/>">Roles</a></li>
+							<li><a href="<spring:url value="/users/view"/>">Users</a></li>
+						</ul></li>
+					<li class="dropdown"><a class="dropdown-toggle"
+						data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+						role="button">Work<span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="<spring:url value="/pick/view"/>">Pick</a></li>
+							<li><a href="<spring:url value="/store/view"/>">Store</a></li>
+							<li><a href="<spring:url value="/transfer/view"/>">Transfer</a></li>
+							<li><a href="<spring:url value="/plock/view"/>">PLOCK</a></li>
+						</ul></li>
+						<!-- KR: to be completed later ... will be replaced with help md
+					<li class="dropdown"><a class="dropdown-toggle"
+						data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+						role="button">Help<span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="<spring:url value="/help/view"/>">Help</a></li>
+							<li><a href="<spring:url value="/about/view"/>">About Airflow WCS</a></li>
+						</ul></li>-->
+				</ul>
+		<!--   TODO ADD USERNNAME/LOGOUT -->
+
+	</div>
+<!-- 		</div> -->
+	</nav>
+	<!-- #END NAVBAR  -->

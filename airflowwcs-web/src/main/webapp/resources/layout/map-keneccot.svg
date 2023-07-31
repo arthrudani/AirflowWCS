@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   viewBox="0 0 725.42 570.5"
+   version="1.1"
+   id="svg1000"
+   sodipodi:docname="map-keneccot.svg"
+   inkscape:version="0.92.4 (5da689c313, 2019-01-14)">
+  <metadata
+     id="metadata1006">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title>kennecott-layout</dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs1004" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1051"
+     id="namedview1002"
+     showgrid="false"
+     inkscape:zoom="1.5039439"
+     inkscape:cx="362.70999"
+     inkscape:cy="232.05653"
+     inkscape:window-x="2391"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="Barcode" />
+  <title
+     id="title947">kennecott-layout</title>
+  <g
+     id="Animation">
+    <path
+       id="animate-path-1"
+       d="181.5 10 181.5 119 181.5 226 181.5 325 181.5 411"
+       fill="none"
+       stroke="#000"
+       totalLength="100"
+       stroke-miterlimit="10" />
+    <path
+       id="animate-path-2"
+       d="540.5 10.5 540.5 119.5 540.5 226.5 540.5 325.5 540.5 411.5"
+       fill="none"
+       totalLength="100"
+       stroke="#000"
+       stroke-miterlimit="10" />
+  </g>
+  <g
+     id="BaseLayer">
+    <rect
+       x="48"
+       y="0.5"
+       width="89"
+       height="324"
+       fill="#bcb0b3"
+       stroke="#000"
+       stroke-miterlimit="10"
+       id="rect952" />
+    <rect
+       x="408"
+       y="0.5"
+       width="89"
+       height="324"
+       fill="#bcb0b3"
+       stroke="#000"
+       stroke-miterlimit="10"
+       id="rect954" />
+    <rect
+       x="227"
+       y="0.5"
+       width="89"
+       height="324"
+       fill="#bcb0b3"
+       stroke="#000"
+       stroke-miterlimit="10"
+       id="rect956" />
+    <rect
+       x="587"
+       y="0.5"
+       width="89"
+       height="324"
+       fill="#bcb0b3"
+       stroke="#000"
+       stroke-miterlimit="10"
+       id="rect958" />
+    <rect
+       x="173.61"
+       y="1.05"
+       width="14.33"
+       height="433.33"
+       fill="#662d81"
+       stroke="#000"
+       stroke-miterlimit="10"
+       id="rect960" />
+    <rect
+       x="533.06"
+       y="1.05"
+       width="14.33"
+       height="433.33"
+       fill="#662d81"
+       stroke="#000"
+       stroke-miterlimit="10"
+       id="rect962" />
+    <text
+       transform="translate(82.08 166.72)"
+       font-size="19.85"
+       font-family="Arial-BoldMT, Arial"
+       font-weight="700"
+       id="text964">01</text>
+    <text
+       transform="translate(260.7 166.72)"
+       font-size="19.85"
+       font-family="Arial-BoldMT, Arial"
+       font-weight="700"
+       id="text966">02</text>
+    <text
+       transform="translate(440.43 166.72)"
+       font-size="19.85"
+       font-family="Arial-BoldMT, Arial"
+       font-weight="700"
+       id="text968">03</text>
+    <text
+       transform="translate(620.16 168.61)"
+       font-size="19.85"
+       font-family="Arial-BoldMT, Arial"
+       font-weight="700"
+       id="text970">04</text>
+  </g>
+  <g
+     id="Barcode">
+    <polygon
+       points="0.5 454.23 0.5 503.84 41.3 478.48 0.5 454.23"
+       fill="#e6e6e6"
+       stroke="#000"
+       stroke-miterlimit="10"
+       id="AS-RS-1-BCR" />
+    <polygon
+       points="724.92 453.12 724.92 502.74 684.12 477.38 724.92 453.12"
+       fill="#e6e6e6"
+       stroke="#000"
+       stroke-miterlimit="10"
+       id="AS-RS-2-BCR" />
+  </g>
+  <g
+     id="Conveyor">
+    <polygon
+       points="47.91 351.68 92.02 330.73 136.12 351.68 136.12 490.61 47.91 490.61 47.91 351.68"
+       fill="#e6e6e6"
+       stroke="#000"
+       stroke-miterlimit="10"
+       id="polygon978" />
+    <polygon
+       points="226.54 330.73 271.74 350.58 315.85 330.73 315.85 570 47.91 570 47.91 490.61 136.12 490.61 226.54 490.61 226.54 330.73"
+       fill="#e6e6e6"
+       stroke="#000"
+       stroke-miterlimit="10"
+       id="polygon980" />
+    <polygon
+       points="676.4 351.68 632.3 330.73 588.19 351.68 588.19 490.61 676.4 490.61 676.4 351.68"
+       fill="#e6e6e6"
+       stroke="#000"
+       stroke-miterlimit="10"
+       id="polygon982" />
+    <polygon
+       points="497.78 330.73 452.57 350.58 408.47 330.73 408.47 570 676.4 570 676.4 490.61 588.19 490.61 497.78 490.61 497.78 330.73"
+       fill="#e6e6e6"
+       stroke="#000"
+       stroke-miterlimit="10"
+       id="polygon984" />
+  </g>
+  <g
+     id="Input">
+    <rect
+       x="56.73"
+       y="357.2"
+       width="70.57"
+       height="70.57"
+       fill="#e6e6e6"
+       stroke="#000"
+       stroke-miterlimit="10"
+       id="rect987" />
+    <rect
+       x="766.01"
+       y="429.7"
+       width="70.57"
+       height="70.57"
+       transform="translate(1433.6 857.46) rotate(-180)"
+       fill="#e6e6e6"
+       stroke="#000"
+       stroke-miterlimit="10"
+       id="rect989" />
+  </g>
+  <g
+     id="Output">
+    <rect
+       x="236.46"
+       y="357.2"
+       width="70.57"
+       height="70.57"
+       fill="#e6e6e6"
+       stroke="#000"
+       stroke-miterlimit="10"
+       id="rect992" />
+    <rect
+       x="586.29"
+       y="429.7"
+       width="70.57"
+       height="70.57"
+       transform="translate(1074.14 857.46) rotate(-180)"
+       fill="#e6e6e6"
+       stroke="#000"
+       stroke-miterlimit="10"
+       id="rect994" />
+  </g>
+  <g
+     id="Crane">
+    <polygon
+       cx="0"
+       cy="0"
+       id="AS-RS-1-SRC"
+       points="171.41 160.93 191.25 160.93 191.25 181.88 211.1 181.88 211.1 241.42 191.25 241.42 191.25 261.27 171.41 261.27 171.41 241.42 151.56 241.42 151.56 181.88 171.41 181.88 171.41 160.93"
+       fill="#e6e6e6"
+       stroke="#000"
+       stroke-miterlimit="10" />
+    <polygon
+       cx="0"
+       cy="0"
+       id="AS-RS-2-SRC"
+       points="530.86 160.93 550.7 160.93 550.7 181.88 570.55 181.88 570.55 241.42 550.7 241.42 550.7 261.27 530.86 261.27 530.86 241.42 511.01 241.42 511.01 181.88 530.86 181.88 530.86 160.93"
+       fill="#e6e6e6"
+       stroke="#000"
+       stroke-miterlimit="10" />
+  </g>
+</svg>
