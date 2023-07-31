@@ -104,7 +104,7 @@ public class HostCleanupTask extends TimedEventTask {
 	private void changeStatusOfLocation(Map map) {
 		EBSTableJoin vpTJLoadHandler = new EBSTableJoin();
 		vpTJLoadHandler.changeStatusOfLocation(map);
-		mpLogger.logDebug("change status of LOCATION to available from arrival pending");
+		mpLogger.logDebug("change status of LOCATION to AVAILABLE from arrival pending");
 	}
 
 	//get LOCATION by sAddress
