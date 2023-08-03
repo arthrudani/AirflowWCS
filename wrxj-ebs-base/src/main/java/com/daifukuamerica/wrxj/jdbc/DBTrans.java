@@ -1108,12 +1108,12 @@ public class DBTrans implements DBConstants
   * is really an integer from the DBConstants file).
   *               
   * @param  tran_name  String containing Translation name.
-  * @param  tranval Integer value for this translation.
+  * @param  iPriorityAllocation Integer value for this translation.
   * @return A particular translation string related to <B>tranval</B>
   *         argument.
   * @exception NoSuchFieldException
   */
-  public static String getStringValue(String tran_name, int tranval)
+  public static String getStringValue(String tran_name, double iPriorityAllocation)
          throws NoSuchFieldException
   {
     DBTrandef[] td = null;
@@ -1129,13 +1129,13 @@ public class DBTrans implements DBConstants
                                        // and get its string representation.
       for(int idx = 0; idx < td.length; idx++)
       {
-        if (tranval == td[idx].getTranInteger())
+        if (iPriorityAllocation == td[idx].getTranInteger())
         {
             return(td[idx].getTranString());
         }
       }
                                        // Didn't find it. Throw exception.
-      errString = "No string value for " + Integer.toString(tranval);
+      errString = "No string value for " + Double.toString(iPriorityAllocation);
       errString += " and translation named \"" + tran_name + "\"";
       throw new NoSuchFieldException(errString);
     }

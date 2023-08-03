@@ -2,6 +2,7 @@ package com.daifukuamerica.wrxj.dataserver.standard;
 
 import com.daifukuamerica.wrxj.dbadapter.data.Load;
 import com.daifukuamerica.wrxj.dbadapter.data.LoadData;
+import com.daifukuamerica.wrxj.dbadapter.data.LoadDataAndLLIData;
 import com.daifukuamerica.wrxj.dbadapter.data.LoadLineItem;
 import com.daifukuamerica.wrxj.dbadapter.data.LoadLineItemData;
 import com.daifukuamerica.wrxj.dbadapter.data.LoadWord;
@@ -652,6 +653,16 @@ public class StandardLoadServer extends StandardServer
     logTransaction_LoadAdd(ldData);
     return vzRtn;
   }
+  
+  protected boolean addLLID(LoadLineItemData ldData) throws DBException
+  {
+    boolean vzRtn = false;
+    vzRtn = mpLoad.createLoadLineItem(ldData);
+    // Record Load Add Transaction
+    //logTransaction_LoadAdd(ldData);
+    return vzRtn;
+  }
+  
 
   /**
    *  Method to add a load without validation.
@@ -671,8 +682,27 @@ public class StandardLoadServer extends StandardServer
       vzRtn = addLD(ldData);
       if (vzRtn)
       {
-        mpInvServer.setLocationEmptyStatus(ldData.getWarehouse(),
-            ldData.getAddress(), ldData.getShelfPosition());
+        commitTransaction(tt);
+      }
+    }
+    finally
+    {
+      endTransaction(tt);
+    }
+    return vzRtn;
+  }
+  
+  public boolean addLoadLineItem(LoadLineItemData ldData) throws DBException
+  {
+    initializeInventoryServer();
+    TransactionToken tt = null;
+    boolean vzRtn = false;
+    try
+    {
+      tt = startTransaction();
+      vzRtn = addLLID(ldData);
+      if (vzRtn)
+      {
         commitTransaction(tt);
       }
     }
@@ -2825,6 +2855,7 @@ public class StandardLoadServer extends StandardServer
       mpStationServer = Factory.create(StandardStationServer.class, getClass().getSimpleName());
     }
   }
+
 
   /*========================================================================*/
   /*  End helper-server initialization methods                              */

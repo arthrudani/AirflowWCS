@@ -33,6 +33,7 @@ import com.daifukuamerica.wrxj.web.model.json.AjaxResponse;
 import com.daifukuamerica.wrxj.web.model.json.TableDataModel;
 import com.daifukuamerica.wrxj.web.model.json.wrx.LoadDataModel;
 import com.daifukuamerica.wrxj.web.model.json.wrx.OrderDataModel;
+import com.daifukuamerica.wrxj.web.model.json.wrx.loadAndLLIDataModel;
 import com.daifukuamerica.wrxj.web.service.UIService;
 import com.daifukuamerica.wrxj.web.service.dao.LoadService;
 import com.daifukuamerica.wrxj.web.service.dao.OrderService;
@@ -106,6 +107,11 @@ public class LoadController {
 	@ModelAttribute("loadDataModel")
 	public LoadDataModel initLoadDisplay() {
 		return new LoadDataModel();
+	}
+	
+	@ModelAttribute("loadAndLLIDataModel")
+	public loadAndLLIDataModel initLoadAndLLIDisplay() {
+		return new loadAndLLIDataModel();
 	}
 
 	@ModelAttribute("orderDataModel")
@@ -188,6 +194,7 @@ public class LoadController {
 	public String view(Model model) {
 		model.addAttribute("pageName", "LOADS");
 		model.addAttribute("loadDataModel", new LoadDataModel());
+		model.addAttribute("loadAndLLIDataModel", new loadAndLLIDataModel());
 		return UIConstants.VIEW_LOAD;
 	}
 
@@ -202,11 +209,12 @@ public class LoadController {
 	 */
 	@RequestMapping(value = "/add", method = RequestMethod.POST, produces = "application/json; charset=utf-8")
 	@ResponseBody
-	public String add(@ModelAttribute LoadDataModel loadDataModel) throws ServletException, IOException, AjaxException {
+	public String add(@ModelAttribute loadAndLLIDataModel loadAndLLIDataModel) throws ServletException, IOException, AjaxException {
 		AjaxResponse ajaxResponse;
+		System.out.println("Controller:"+loadAndLLIDataModel.toString());
 		try (WebDBObjectHelper dboh = new WebDBObjectHelper()) {
 			try {
-				ajaxResponse = loadService.add(loadDataModel);
+				ajaxResponse = loadService.add(loadAndLLIDataModel);
 			} catch (Exception e) {
 				throw new AjaxException();
 			}

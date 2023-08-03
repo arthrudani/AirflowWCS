@@ -18,6 +18,7 @@ import com.daifukuamerica.wrxj.dataserver.standard.StandardPickServer;
 import com.daifukuamerica.wrxj.dataserver.standard.StandardStationServer;
 import com.daifukuamerica.wrxj.dbadapter.data.Load;
 import com.daifukuamerica.wrxj.dbadapter.data.LoadData;
+import com.daifukuamerica.wrxj.dbadapter.data.LoadDataAndLLIData;
 import com.daifukuamerica.wrxj.dbadapter.data.LoadLineItemData;
 import com.daifukuamerica.wrxj.dbadapter.data.StationData;
 import com.daifukuamerica.wrxj.factory.Factory;
@@ -32,6 +33,7 @@ import com.daifukuamerica.wrxj.web.core.DBConstantsWeb;
 import com.daifukuamerica.wrxj.web.model.json.AjaxResponse;
 import com.daifukuamerica.wrxj.web.model.json.TableDataModel;
 import com.daifukuamerica.wrxj.web.model.json.wrx.LoadDataModel;
+import com.daifukuamerica.wrxj.web.model.json.wrx.loadAndLLIDataModel;
 import com.daifukuamerica.wrxj.web.ui.AjaxResponseCodes;
 import com.daifukuoc.wrxj.custom.ebs.dataserver.EBSInventoryServer;
 import com.daifukuoc.wrxj.custom.ebs.dataserver.EBSLoadServer;
@@ -68,36 +70,33 @@ public class LoadService
 	 *
 	 * TODO - remove some of this validation and put it into a validator class
 	 *
-	 * @param loadDataModel
+	 * @param loadAndLLIDataModel
 	 *            - load to be added
 	 * @return {@link AjaxResponse}
 	 * @throws NoSuchFieldException
+	 * @throws DBException 
 	 */
-	public AjaxResponse add(LoadDataModel loadDataModel) throws NoSuchFieldException
+	public AjaxResponse add(loadAndLLIDataModel loadAndLLIDataModel) throws NoSuchFieldException, DBException
 	{
 		StandardLoadServer mpLoadServer = Factory.create(StandardLoadServer.class);
 		ajaxResponse = new AjaxResponse();
-		LoadData loadData = loadDataModel.getLoadData();
+		LoadData loadData = loadAndLLIDataModel.getLoadData();
+		LoadLineItemData LLIData = loadAndLLIDataModel.getLoadLineItemData();
+		LLIData.setLoadID(loadAndLLIDataModel.getLoadId());
+		System.out.println(LLIData);
 		try
 		{
 		    // Rudimentary validation
-            if (SKDCUtility.isBlank(loadDataModel.getLoadId()))
+            if (SKDCUtility.isBlank(loadAndLLIDataModel.getLoadId()))
             {
               throw new Exception("Load ID cannot be blank!");
             }
-            if (SKDCUtility.isBlank(loadDataModel.getWarehouse()))
+            if (SKDCUtility.isBlank(loadAndLLIDataModel.getAddress()))
             {
-              throw new Exception("Warehouse cannot be blank!");
-            }
-            if (SKDCUtility.isBlank(loadDataModel.getNextWarehouse()) && SKDCUtility.isNotBlank(loadDataModel.getNextAddress()))
-            {
-              throw new Exception("Next Warehouse cannot be blank when Next Address is not blank!");
-            }
-            if (SKDCUtility.isBlank(loadDataModel.getFinalWarehouse()) && SKDCUtility.isNotBlank(loadDataModel.getFinalAddress()))
-            {
-              throw new Exception("Final Warehouse cannot be blank when Final Address is not blank!");
+              throw new Exception("Address cannot be blank!");
             }
 			mpLoadServer.addLoad(loadData);
+			mpLoadServer.addLoadLineItem(LLIData);
 		}
 		catch (Exception e)
 		{

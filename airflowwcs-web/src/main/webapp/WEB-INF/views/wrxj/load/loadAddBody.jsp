@@ -20,9 +20,9 @@
 
 				<div class="modal-body" id="addModalBody">
 				
-				<!--  body here inserted by javascript calling server to bet the rest... -->
+				<!--  body here inserted by java script calling server to bet the rest... -->
 				<spring:url value="/load/add" var="formUrl"/>
-				<form:form cssClass="form-horizontal" id="load-add-form" action="${formUrl}" method="POST" modelAttribute="loadDataModel">
+				<form:form cssClass="form-horizontal" id="load-add-form" action="${formUrl}" method="POST" modelAttribute="loadAndLLIDataModel">
 
 						<div class="form-group">
 							<label class="control-label col-sm-2" for="loadid">Load ID:</label>
@@ -36,16 +36,16 @@
 						</div>
 						
 						<div class="form-group">
-							<label class="control-label col-sm-2" for="weight">Weight:</label>
+							<label class="control-label col-sm-2" for="routeId">Shelf position:</label>
 							<div class="col-sm-4">
-								<form:input path="weight" cssClass="form-control" id="weight" value="0.0"/>
+								<form:input path="shelfPosition" cssClass="form-control" id="shelfPosition" placeholder="Enter shelf position" required="required"/>
 							</div>
-							<label class="control-label col-sm-2" for="height">Height:</label>
+							<label class="control-label col-sm-2" for="moveStatus">Move Status:</label>
 							<div class="col-sm-4">
-								<form:select path="height" cssClass="form-control" id="height" items="${dropdownMenus.heights}"/>
+								<form:select path="moveStatus" cssClass="form-control" id="moveStatus" items="${dropdownMenus.moveStatuses}"/>
 							</div>
 						</div>
-
+						
 						<div class="form-group" id="locationContainer">
 							<label class="control-label col-sm-2" for="locWarehouse">Location:</label>
 							<div class="col-sm-4">
@@ -58,55 +58,36 @@
 								<form:input path="address" cssClass="form-control col-sm-4" id="address" placeholder="Address"/>
 							</div>
 						</div>
+										
 
 						<div class="form-group" id="nextLocationContainer">
-						<label class="control-label col-sm-2">Next Location:</label>
+							<label class="control-label col-sm-2">Flight number:</label>
 							<div class="col-sm-4">
-								<form:select path="nextWarehouse" cssClass="form-control col-sm-2" id="nextWarehouse">
-										<form:option value=""></form:option>
-     									<form:options items="${dropdownMenus.warehouses}" />
-								</form:select>
-								
+								<form:input path="lot" cssClass="form-control col-sm-4" id="lot" placeholder="Flight number:"/>
 							</div>
+						</div>
+						
+<!-- 						<div class="form-group" id="nextLocationContainer"> -->
+<!-- 							<label class="control-label col-sm-2">Flight STD:</label> -->
+<!-- 							<div class="col-sm-4"> -->
+<%-- 								<form:input type="date" path="expectedDate" cssClass="form-control col-sm-4" id="expectedDate" placeholder="Flight STD:"/> --%>
+<!-- 							</div> -->
+<!-- 						</div> -->
+						
+<!-- 						<div class="form-group" id="nextLocationContainer"> -->
+<!-- 							<label class="control-label col-sm-2">Flight expiry date:</label> -->
+<!-- 							<div class="col-sm-4"> -->
+<%-- 								<form:input type="date" path="expirationDate" cssClass="form-control col-sm-4" id="expirationDate" placeholder="Flight expiry date:"/> --%>
+<!-- 							</div> -->
+<!-- 						</div> -->
+						
+						<div class="form-group" id="nextLocationContainer">
+							<label class="control-label col-sm-2">Global Id:</label>
 							<div class="col-sm-4">
-								<form:input path="nextAddress" cssClass="form-control col-sm-4" id="nextAddress" placeholder="Next Address"/>
+								<form:input path="globalId" cssClass="form-control col-sm-4" id="globalId" placeholder="Global Id"/>
 							</div>
 						</div>
 
-						<div class="form-group">
-							<label class="control-label col-sm-2" for="finalWarehouse">Final Location:</label>
-							<div class="col-sm-4">
-								<form:select path="finalWarehouse" cssClass="form-control col-sm-2" id="finalWarehouse">
-										<form:option value=""></form:option>
-     									<form:options items="${dropdownMenus.warehouses}" />
-								</form:select>
-							</div>
-							<div class="col-sm-4">
-								<form:input path="finalAddress" cssClass="form-control col-sm-4" id="finalAddress" placeholder="Final Address"/>
-							</div>
-						</div>
-						
-						<div class="form-group">
-							<label class="control-label col-sm-2" for="routeId">Route:</label>
-							<div class="col-sm-2">
-								<form:select path="routeId" cssClass="form-control col-sm-2" id="routeId" items="${dropdownMenus.routeList}">
-										<form:option value=""></form:option>
-     									<form:options items="${dropdownMenus.routeList}" />
-								</form:select>
-							</div>
-							<label class="control-label col-sm-2" for="moveStatus">Move Status:</label>
-							<div class="col-sm-4">
-								<form:select path="moveStatus" cssClass="form-control" id="moveStatus" items="${dropdownMenus.moveStatuses}"/>
-							</div>
-						</div>
-						
-						<div class="form-group">
-							<label class="control-label col-sm-2" for="message">Message:</label>
-							<div class="col-sm-10">
-								<form:input path="message" cssClass="form-control" id="message" placeholder="Enter Message"/>
-							</div>
-						</div>
-						
 						<div class="form-group">
 							<label class="control-label col-sm-2" for="barcode">Barcode:</label>
 							<div class="col-sm-10">
@@ -115,29 +96,9 @@
 						</div>
 						
 						<div class="form-group">
-							<label class="control-label col-sm-2" for="amountFull">Amount Full:</label>
-							<div class="col-sm-4">
-								<form:select path="sAmountFull" cssClass="form-control" id="amountFull" required="required" items="${dropdownMenus.amountFull}"/>
-							</div>
-							<label class="control-label col-sm-2" for="lpCheck">LP Check:</label>
-							<div class="col-sm-2">
-								<form:select path="lpCheck" cssClass="form-control" id="amountFull" required="required" items="${dropdownMenus.lpCheck}"/>
-							</div>
-						</div>
-						
-						<div class="form-group">
-
-						</div>
-						<div class="form-group">
-							<label class="control-label col-sm-2" for="deviceId">Device ID:</label>
-							<div class="col-sm-4">
-								<form:select path="deviceId" class="form-control" id="deviceId" items="${dropdownMenus.deviceList}"/>
-							</div>
-							<label class="control-label col-sm-2" for="recZone">Recommend Zone:</label>
-							<div class="col-sm-2">
-								  <select name="recZone" class="form-control" id="recZone">
-							        <option></option>
-							      </select>
+							<label class="control-label col-sm-2" for="message">Message:</label>
+							<div class="col-sm-10">
+								<form:input path="message" cssClass="form-control" id="message" placeholder="Enter Message"/>
 							</div>
 						</div>
 				

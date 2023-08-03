@@ -22,7 +22,7 @@ import com.daifukuamerica.wrxj.util.SKDCConstants;
 public class SKDCTranComboBox extends SKDCComboBox
 {
   private String   msTransName = "";
-  private int      mnDefaultSelectTran;
+  private double      mnDefaultSelectTran;
   private boolean  mzRedoList;
   private String[] masUserList;
 
@@ -143,14 +143,14 @@ public class SKDCTranComboBox extends SKDCComboBox
    *  Allows selection of combo-box element by Translation integer
    *  representation.
    */
-  public void setSelectedElement(int inSelectedTran)
+  public void setSelectedElement(double d)
          throws NoSuchFieldException
   {
                                    // If it's a valid translation, great!
                                    // If not, throw exception.
-      mnDefaultSelectTran = inSelectedTran;
+      mnDefaultSelectTran = d;
       msDefaultSelectTran = DBTrans.getStringValue(msTransName,
-                                                   inSelectedTran);
+                                                   d);
       setSelectedItem(msDefaultSelectTran);
   }
 

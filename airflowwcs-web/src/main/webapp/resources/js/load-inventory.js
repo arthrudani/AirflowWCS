@@ -442,7 +442,6 @@ $(document).ready(function() {
 	});
 	
 	$('#load-add-button').click(function(){
-	
 		$('#load-add-form').submit();
 	});
 	

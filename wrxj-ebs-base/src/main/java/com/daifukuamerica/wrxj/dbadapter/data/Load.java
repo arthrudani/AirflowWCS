@@ -103,6 +103,12 @@ public class Load extends BaseDBInterface
       return true;
     }
   }
+  
+  public boolean createLoadLineItem(LoadLineItemData newLoadLine) throws DBException
+  {
+      addLoadLineItem(newLoadLine);
+      return true;
+  }
 
   /**
    *  Method retrieves a load record using load as key.
@@ -394,6 +400,11 @@ public class Load extends BaseDBInterface
    * @throws DBException
    */
   public void addLoad(LoadData newLoad) throws DBException
+  {
+    addElement(newLoad);
+  }
+  
+  public void addLoadLineItem(LoadLineItemData newLoad) throws DBException
   {
     addElement(newLoad);
   }

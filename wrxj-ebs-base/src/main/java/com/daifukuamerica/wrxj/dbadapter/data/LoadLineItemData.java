@@ -60,7 +60,7 @@ public class LoadLineItemData extends AbstractSKDCData
   private double fCurrentQuantity    = 0;
   private double fAllocatedQuantity  = 0;
   private int    iHoldType           = DBConstants.ITMAVAIL;
-  private int    iPriorityAllocation = DBConstants.NO;
+  private double    iPriorityAllocation = DBConstants.NO;
   private String sGlobalID           = "";
   private Date   dExpectedDate		 = new Date();
   private static final Map<String, TableEnum> mpColumnMap = new ConcurrentHashMap<String, TableEnum>();
@@ -150,7 +150,7 @@ public class LoadLineItemData extends AbstractSKDCData
     fCurrentQuantity    = 1;
     fAllocatedQuantity  = 0;
     iHoldType           = DBConstants.ITMAVAIL;
-    iPriorityAllocation = DBConstants.NO;
+    iPriorityAllocation = 5;
 
     sLineID = "";
     sItem = "";
@@ -289,7 +289,7 @@ public class LoadLineItemData extends AbstractSKDCData
    * Fetches Priority Allocation
    * @return Priority Allocation as integer
    */
-  public int getPriorityAllocation()
+  public double getPriorityAllocation()
   {
     return iPriorityAllocation;
   }
@@ -393,7 +393,7 @@ public class LoadLineItemData extends AbstractSKDCData
   /**
    * Sets Priority Allocation value.
    */
-  public void setPriorityAllocation(int i)
+  public void setPriorityAllocation(double i)
   {
     iPriorityAllocation = i;
     addColumnObject(new ColumnObject(PRIORITYALLOCATION.getName(),
