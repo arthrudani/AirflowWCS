@@ -60,7 +60,7 @@ public class LoadLineItemData extends AbstractSKDCData
   private double fCurrentQuantity    = 0;
   private double fAllocatedQuantity  = 0;
   private int    iHoldType           = DBConstants.ITMAVAIL;
-  private double    iPriorityAllocation = DBConstants.NO;
+  private double    iPriorityAllocation =0;
   private String sGlobalID           = "";
   private Date   dExpectedDate		 = new Date();
   private static final Map<String, TableEnum> mpColumnMap = new ConcurrentHashMap<String, TableEnum>();

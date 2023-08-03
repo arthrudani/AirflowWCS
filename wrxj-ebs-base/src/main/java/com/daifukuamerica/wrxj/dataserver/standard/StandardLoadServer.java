@@ -56,7 +56,9 @@ public class StandardLoadServer extends StandardServer
   protected StandardRouteServer       mpRouteServer   = null;
 
   protected Load mpLoad = Factory.create(Load.class);
-  protected   LoadData mpLoadData = Factory.create(LoadData.class);
+  protected LoadData mpLoadData = Factory.create(LoadData.class);
+  protected LoadLineItem mpLoadLineItem = Factory.create(LoadLineItem.class);
+  protected LoadLineItemData mpLoadLineItemData = Factory.create(LoadLineItemData.class);
 
   /**
    * Constructor for load with no parameters
@@ -657,7 +659,7 @@ public class StandardLoadServer extends StandardServer
   protected boolean addLLID(LoadLineItemData ldData) throws DBException
   {
     boolean vzRtn = false;
-    vzRtn = mpLoad.createLoadLineItem(ldData);
+    vzRtn = mpLoadLineItem.createLoadLineItem(ldData);
     // Record Load Add Transaction
     //logTransaction_LoadAdd(ldData);
     return vzRtn;
@@ -694,6 +696,8 @@ public class StandardLoadServer extends StandardServer
   
   public boolean addLoadLineItem(LoadLineItemData ldData) throws DBException
   {
+	  System.out.println("CALLED");
+	  System.out.println(ldData);
     initializeInventoryServer();
     TransactionToken tt = null;
     boolean vzRtn = false;

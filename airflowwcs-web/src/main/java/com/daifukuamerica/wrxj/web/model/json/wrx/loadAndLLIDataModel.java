@@ -5,6 +5,8 @@ import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import com.daifukuamerica.wrxj.dbadapter.data.LoadData;
 import com.daifukuamerica.wrxj.dbadapter.data.LoadDataAndLLIData;
 import com.daifukuamerica.wrxj.dbadapter.data.LoadLineItemData;
@@ -71,11 +73,13 @@ public class loadAndLLIDataModel
 	public String lineId; 
 	public Date lastCCIDate = new Date(); 
 	public Date agingDate = new Date(); 
+	@DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
 	public Date expirationDate; 
+	@DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
 	public Date expectedDate; 
-	public double currentQuantity = 0; 
-	public double allocatedQuantity = 0;
-	public double priorityAllocation  = 0;
+	public double currentQuantity; 
+	public double allocatedQuantity;
+	public double priorityAllocation;
 	public int holdType;
 
 	/**
@@ -588,7 +592,7 @@ public class loadAndLLIDataModel
 		return priorityAllocation;
 	}
 
-	public void setPriorityAllocation(double priorityAllocation) {
+	public void setPriorityAllocation(int priorityAllocation) {
 		this.priorityAllocation = priorityAllocation;
 	}
 
@@ -643,27 +647,22 @@ public class loadAndLLIDataModel
 		return ld;
 	}
 	public LoadLineItemData getLoadLineItemData() throws NoSuchFieldException
-	{
-		Date date = new Date();  
-        Timestamp ts=new Timestamp(date.getTime());
-        System.out.println(ts);
-        
+	{        
 		LoadLineItemData lineItemData=new LoadLineItemData();
 		lineItemData.clear();
-		//lineItemData.setLot(this.getLot());
+		lineItemData.setLot(this.getLot());
 		//lineItemData.setExpectedReceipt(this.getExpectedReceipt());;
 		//lineItemData.setOrderLot(this.getOrderLot());
 		//lineItemData.setLastCCIDate(new Date());
 		//lineItemData.setAgingDate(new Date());
-		//lineItemData.setItem("Bag_On_Tray");
-		//lineItemData.setExpirationDate(new Date());
+		lineItemData.setItem("Bag_On_Tray");
+		lineItemData.setExpirationDate(this.getExpirationDate());
 		
-		//lineItemData.setGlobalID(this.getGlobalId());
-		//lineItemData.setExpectedDate(ts);
-		//lineItemData.setCurrentQuantity(6);
-		//lineItemData.setAllocatedQuantity(5.000);
-		//lineItemData.setPriorityAllocation(5);
-		//lineItemData.setHoldType(168);
+		lineItemData.setGlobalID(this.getGlobalId());
+		lineItemData.setExpectedDate(this.getExpectedDate());
+		lineItemData.setCurrentQuantity(1);
+		lineItemData.setAllocatedQuantity(0);
+		lineItemData.setPriorityAllocation(1);
 		return lineItemData;
 	}
 

@@ -681,6 +681,14 @@ public class LoadLineItem extends BaseDBInterface
     return fetchRecords(vpSql.toString());
   }
   
+  
+  public boolean createLoadLineItem(LoadLineItemData newLoadLine) throws DBException
+  {
+      addLoadLineItem(newLoadLine);
+      return true;
+  }
+  
+  
   /**
    * Initialize a large record list (the results are probably greater than
    * DB_MAX_ROWS).

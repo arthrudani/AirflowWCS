@@ -211,7 +211,6 @@ public class LoadController {
 	@ResponseBody
 	public String add(@ModelAttribute loadAndLLIDataModel loadAndLLIDataModel) throws ServletException, IOException, AjaxException {
 		AjaxResponse ajaxResponse;
-		System.out.println("Controller:"+loadAndLLIDataModel.toString());
 		try (WebDBObjectHelper dboh = new WebDBObjectHelper()) {
 			try {
 				ajaxResponse = loadService.add(loadAndLLIDataModel);

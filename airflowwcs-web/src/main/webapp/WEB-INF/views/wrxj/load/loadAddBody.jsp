@@ -67,19 +67,19 @@
 							</div>
 						</div>
 						
-<!-- 						<div class="form-group" id="nextLocationContainer"> -->
-<!-- 							<label class="control-label col-sm-2">Flight STD:</label> -->
-<!-- 							<div class="col-sm-4"> -->
-<%-- 								<form:input type="date" path="expectedDate" cssClass="form-control col-sm-4" id="expectedDate" placeholder="Flight STD:"/> --%>
-<!-- 							</div> -->
-<!-- 						</div> -->
+						<div class="form-group" id="nextLocationContainer">
+							<label class="control-label col-sm-2">Flight STD:</label>
+							<div class="col-sm-4">
+								<form:input type="date" path="expectedDate" cssClass="form-control col-sm-4" id="expectedDate" placeholder="Flight STD:"/>
+							</div>
+						</div>
 						
-<!-- 						<div class="form-group" id="nextLocationContainer"> -->
-<!-- 							<label class="control-label col-sm-2">Flight expiry date:</label> -->
-<!-- 							<div class="col-sm-4"> -->
-<%-- 								<form:input type="date" path="expirationDate" cssClass="form-control col-sm-4" id="expirationDate" placeholder="Flight expiry date:"/> --%>
-<!-- 							</div> -->
-<!-- 						</div> -->
+						<div class="form-group" id="nextLocationContainer">
+							<label class="control-label col-sm-2">Flight expiry date:</label>
+							<div class="col-sm-4">
+								<form:input type="date" path="expirationDate" cssClass="form-control col-sm-4" id="expirationDate" placeholder="Flight expiry date:"/>
+							</div>
+						</div>
 						
 						<div class="form-group" id="nextLocationContainer">
 							<label class="control-label col-sm-2">Global Id:</label>

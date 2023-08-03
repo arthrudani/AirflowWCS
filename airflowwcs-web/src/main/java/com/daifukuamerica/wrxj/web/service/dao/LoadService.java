@@ -83,7 +83,7 @@ public class LoadService
 		LoadData loadData = loadAndLLIDataModel.getLoadData();
 		LoadLineItemData LLIData = loadAndLLIDataModel.getLoadLineItemData();
 		LLIData.setLoadID(loadAndLLIDataModel.getLoadId());
-		System.out.println(LLIData);
+		//System.out.println(LLIData);
 		try
 		{
 		    // Rudimentary validation
