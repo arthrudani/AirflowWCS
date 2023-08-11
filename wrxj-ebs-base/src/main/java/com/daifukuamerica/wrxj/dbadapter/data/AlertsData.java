@@ -1,6 +1,6 @@
 package com.daifukuamerica.wrxj.dbadapter.data;
 
-import static com.daifukuamerica.wrxj.dbadapter.data.AlertEnum.*;
+import static com.daifukuamerica.wrxj.dbadapter.data.AlertsEnum.*;
 
 import com.daifukuamerica.wrxj.dbadapter.AbstractSKDCData;
 import com.daifukuamerica.wrxj.dbadapter.TableEnum;
@@ -14,14 +14,14 @@ import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * Description:<BR>
- *   Title:  Class to handle LoadData Object.
- *   Description : Handles all data for load
+ *   Title:  Class to handle AlertData Object.
+ *   Description : Handles all data for alert
  * @author       REA
  * @author       A.D.  Converted to use ColumnObjects for building SQL.
  * @version      1.0
  * @since       04-Jan-02
  */
-public class AlertData extends AbstractSKDCData
+public class AlertsData extends AbstractSKDCData
 {
   public static final String DEFAULT_POSITION_VALUE = "000";
   
@@ -44,11 +44,11 @@ public class AlertData extends AbstractSKDCData
   private static final Map<String, TableEnum> mpColumnMap = new ConcurrentHashMap<String, TableEnum>();
   private static Map<String, AmountFullTransMapper> mpPartialQtyMap;
 
-  public AlertData()
+  public AlertsData()
   {
     sdf.applyPattern(SKDCConstants.DateFormatString);
     clear();
-    initColumnMap(mpColumnMap, AlertEnum.class);
+    initColumnMap(mpColumnMap, AlertsEnum.class);
   }
 
   @Override
@@ -72,14 +72,14 @@ public class AlertData extends AbstractSKDCData
 	}
 
 /**
-   *  Method to perform clone of <code>LoadData</code>.
+   *  Method to perform clone of <code>AlertData</code>.
    *
-   *  @return copy of <code>LoadData</code>
+   *  @return copy of <code>AlertData</code>
    */
   @Override
-  public AlertData clone()
+  public AlertsData clone()
   {
-    AlertData vpClonedData = (AlertData)super.clone();
+    AlertsData vpClonedData = (AlertsData)super.clone();
     return vpClonedData;
   }
 
@@ -115,7 +115,7 @@ public class AlertData extends AbstractSKDCData
 
   public void setDescription(String description)
   {
-	  description = checkForNull(description);
+	  this.description = checkForNull(description);
     addColumnObject(new ColumnObject(DESCRIPTION_NAME, description));
   }
   
@@ -169,7 +169,7 @@ public class AlertData extends AbstractSKDCData
       return super.setField(isColName, ipColValue);
     }
 
-    switch((AlertEnum)vpEnum)
+    switch((AlertsEnum)vpEnum)
     {
     
       case ALERTID:

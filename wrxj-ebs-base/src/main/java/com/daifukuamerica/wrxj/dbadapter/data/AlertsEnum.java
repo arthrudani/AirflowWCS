@@ -8,7 +8,7 @@ import com.daifukuamerica.wrxj.dbadapter.TableEnum;
  *  @author A.D.
  *  @since  05-Jul-2007
  */
-public enum AlertEnum implements TableEnum
+public enum AlertsEnum implements TableEnum
 {	
   ALERTID("SALERTID"),
   TIMESTAMP("DTIMESTAMP"),
@@ -19,7 +19,7 @@ public enum AlertEnum implements TableEnum
 
   private String msMessageName;
 
-  AlertEnum(String isMessageName)
+  AlertsEnum(String isMessageName)
   {
     msMessageName = isMessageName;
   }

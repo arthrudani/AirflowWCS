@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.daifukuamerica.wrxj.dbadapter.data.AlertData;
+import com.daifukuamerica.wrxj.dbadapter.data.AlertsData;
 import com.daifukuamerica.wrxj.dbadapter.data.LoadData;
 import com.daifukuamerica.wrxj.jdbc.DBException;
 import com.daifukuamerica.wrxj.jdbc.DBTrans;
@@ -42,9 +42,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * Controller for Load operations. This is the main mapping declaration and will
+ * Controller for Alert operations. This is the main mapping declaration and will
  * map URL patterns to the controller methods. For example the top level
- * controller in this instance would be {servletContext}/load
+ * controller in this instance would be {servletContext}/Alert
  *
  * Controller methods annotated with the @ResponseBody will not return a Model
  * or View it will return a straight string response to the client. In this
@@ -61,7 +61,7 @@ import org.slf4j.LoggerFactory;
  *
  *
  *                 Most Update/Delete/Modify actions will only be called from
- *                 the wrxj/load/load.jsp view. Read operations could be called
+ *                 the wrxj/alert/alert.jsp view. Read operations could be called
  *                 from elsewhere in the application.
  *
  *                 Author: dystout Created : May 2, 2017
@@ -72,7 +72,7 @@ import org.slf4j.LoggerFactory;
 public class AlertController {
 
 	/**
-	 * Log4j logger: LoadController
+	 * Log4j logger: AlertController
 	 */
 	private static final Logger logger = LoggerFactory.getLogger("Alert");
 
@@ -99,31 +99,8 @@ public class AlertController {
 	private ServletContext context;
 
 	@ModelAttribute("alertDataModel")
-	public AlertDataModel initLoadDisplay() {
+	public AlertDataModel initAlertDisplay() {
 		return new AlertDataModel();
-	}
-
-	
-
-	/**
-	 * Populate the model with dropdown options for the load add/modify/search
-	 * popups
-	 *
-	 * This is called every time the controller is utilized.
-	 */
-	@ModelAttribute("dropdownMenus")
-	public Map<String, Object[]> getDropdowns() {
-		if (_dropdownMenus == null) {
-			Map<String, Object[]> dropdowns = new HashMap<String, Object[]>();
-			try (WebDBObjectHelper dboh = new WebDBObjectHelper()) {
-				dropdowns = uiService.initLoadDropDownOptions(context);
-				_dropdownMenus = dropdowns;
-			} catch (Exception e) {
-				logger.error("Error getting database connection", StackTraceFilter.filter(e));
-				return dropdowns;
-			}
-		}
-		return _dropdownMenus;
 	}
 
 	/**
@@ -131,16 +108,16 @@ public class AlertController {
 	 * 
 	 * @return
 	 */
-	@ModelAttribute("contextMenus")
-	public Map<String, Object[]> getContextMenuOptions() {
-		Map<String, Object[]> contextmenus = new HashMap<String, Object[]>();
-		try (WebDBObjectHelper dboh = new WebDBObjectHelper()) {
-			contextmenus = uiService.initLoadContextMenus();
-		} catch (Exception e) {
-			logger.error("Error getting database connection{}", e.getMessage(), e);
-		}
-		return contextmenus;
-	}
+//	@ModelAttribute("contextMenus")
+//	public Map<String, Object[]> getContextMenuOptions() {
+//		Map<String, Object[]> contextmenus = new HashMap<String, Object[]>();
+//		try (WebDBObjectHelper dboh = new WebDBObjectHelper()) {
+//			contextmenus = uiService.initLoadContextMenus();
+//		} catch (Exception e) {
+//			logger.error("Error getting database connection{}", e.getMessage(), e);
+//		}
+//		return contextmenus;
+//	}
 
 	/**
 	 * Capture Ajax exceptions here so we can send back a json response with the
@@ -174,31 +151,31 @@ public class AlertController {
 	}
 
 	/**
-	 * Add a load with a LoadDataModel pojo
+	 * Add a alert with a AlertDataModel pojo
 	 *
-	 * @param loadDataModel
+	 * @param alertDataModel
 	 * @return
 	 * @throws ServletException
 	 * @throws IOException
 	 * @throws AjaxException
 	 */
-	@RequestMapping(value = "/add", method = RequestMethod.POST, produces = "application/json; charset=utf-8")
-	@ResponseBody
-	public String add(@ModelAttribute loadAndLLIDataModel loadAndLLIDataModel) throws ServletException, IOException, AjaxException {
-		AjaxResponse ajaxResponse;
-		try (WebDBObjectHelper dboh = new WebDBObjectHelper()) {
-			try {
-				ajaxResponse = alertService.add(loadAndLLIDataModel);
-			} catch (Exception e) {
-				throw new AjaxException();
-			}
-		} catch (Exception e) {
-			logger.error("Error getting database connection{}", e.getMessage(), e);
-			throw new AjaxException();
-		}
-		Gson gson = new Gson();
-		return gson.toJson(ajaxResponse);
-	}
+//	@RequestMapping(value = "/add", method = RequestMethod.POST, produces = "application/json; charset=utf-8")
+//	@ResponseBody
+//	public String add(@ModelAttribute loadAndLLIDataModel loadAndLLIDataModel) throws ServletException, IOException, AjaxException {
+//		AjaxResponse ajaxResponse;
+//		try (WebDBObjectHelper dboh = new WebDBObjectHelper()) {
+//			try {
+//				ajaxResponse = alertService.add(loadAndLLIDataModel);
+//			} catch (Exception e) {
+//				throw new AjaxException();
+//			}
+//		} catch (Exception e) {
+//			logger.error("Error getting database connection{}", e.getMessage(), e);
+//			throw new AjaxException();
+//		}
+//		Gson gson = new Gson();
+//		return gson.toJson(ajaxResponse);
+//	}
 
 	/**
 	 * list
@@ -226,19 +203,19 @@ public class AlertController {
 	/**
 	 * listSearch
 	 *
-	 * @param warehouse
-	 * @param address
+	 * @param description
 	 * @return
 	 * @throws DBException
 	 */
 	@RequestMapping(value = "/listSearch", method = RequestMethod.GET, produces = "application/json; charset=utf-8")
 	@ResponseBody
-	public String listSearch(HttpSession session) throws DBException {
+	public String listSearch(@RequestParam("description") String description,HttpSession session) throws DBException {
 		Gson gson = new Gson();
 		TableDataModel tableData = null;
 		try (WebDBObjectHelper dboh = new WebDBObjectHelper()) {
-			AlertData alertData = new AlertData();
+			AlertsData alertData = new AlertsData();
 			try {
+					alertData.setDescription(description);
 
 				tableData = alertService.listSearch(alertData);
 			} catch (NoSuchFieldException e) {
@@ -253,55 +230,55 @@ public class AlertController {
 	/**
 	 * delete
 	 *
-	 * @param load
+	 * @param alert
 	 * @param session
 	 * @return
 	 */
-	@RequestMapping(value = "/delete", method = RequestMethod.POST, produces = "application/json; charset=utf-8")
-	@ResponseBody
-	public AjaxResponse delete(@RequestParam("load") String load, HttpSession session) {
-		User user = (User) session.getAttribute("user");
-		AjaxResponse response = new AjaxResponse();
-		try (WebDBObjectHelper dboh = new WebDBObjectHelper()) {
-			String[] vasLoadIDs = load.split(",");
-			for (int i = 0; i < vasLoadIDs.length; i++) {
-				logger.info("UserID[{}] Deleting LoadID[{}] ({} of {})", user.getUserId(), vasLoadIDs[i], (i + 1),
-						vasLoadIDs.length);
-				response = alertService.delete(vasLoadIDs[i]);
-				if (response.getResponseCode() != AjaxResponseCodes.SUCCESS) {
-					logger.error(response.getResponseMessage());
-					return response;
-				}
-			}
-			response.setResponse(AjaxResponseCodes.SUCCESS,
-					"Successfully deleted load" + (vasLoadIDs.length > 1 ? "s" : "") + ": " + load);
-		} catch (Exception e) {
-			logger.error("Error getting database connection{}", e.getMessage(), e);
-			response.setResponse(AjaxResponseCodes.FAILURE, "Error deleting load: " + e.getMessage());
-		}
-		return response;
-	}
+//	@RequestMapping(value = "/delete", method = RequestMethod.POST, produces = "application/json; charset=utf-8")
+//	@ResponseBody
+//	public AjaxResponse delete(@RequestParam("load") String load, HttpSession session) {
+//		User user = (User) session.getAttribute("user");
+//		AjaxResponse response = new AjaxResponse();
+//		try (WebDBObjectHelper dboh = new WebDBObjectHelper()) {
+//			String[] vasLoadIDs = load.split(",");
+//			for (int i = 0; i < vasLoadIDs.length; i++) {
+//				logger.info("UserID[{}] Deleting LoadID[{}] ({} of {})", user.getUserId(), vasLoadIDs[i], (i + 1),
+//						vasLoadIDs.length);
+//				response = alertService.delete(vasLoadIDs[i]);
+//				if (response.getResponseCode() != AjaxResponseCodes.SUCCESS) {
+//					logger.error(response.getResponseMessage());
+//					return response;
+//				}
+//			}
+//			response.setResponse(AjaxResponseCodes.SUCCESS,
+//					"Successfully deleted load" + (vasLoadIDs.length > 1 ? "s" : "") + ": " + load);
+//		} catch (Exception e) {
+//			logger.error("Error getting database connection{}", e.getMessage(), e);
+//			response.setResponse(AjaxResponseCodes.FAILURE, "Error deleting load: " + e.getMessage());
+//		}
+//		return response;
+//	}
 
 	/**
 	 * modify
 	 *
-	 * @param loadDataModel
+	 * @param alertDataModel
 	 * @param session
 	 * @return
 	 */
-	@RequestMapping(value = "/modify", method = RequestMethod.POST, produces = "application/json; charset=utf-8")
-	@ResponseBody
-	public String modify(@ModelAttribute LoadDataModel loadDataModel, HttpSession session) {
-		AjaxResponse ajaxResponse = new AjaxResponse();
-		User user = (User) session.getAttribute("user");
-		try (WebDBObjectHelper dboh = new WebDBObjectHelper()) {
-			logger.info("UserID[{}] Modifying LoadID[{}]", user.getUserId(), loadDataModel.getLoadId());
-			ajaxResponse = alertService.modify(loadDataModel);
-		} catch (Exception e) {
-			logger.error("Error getting database connection{}", e.getMessage(), e);
-		}
-		return new Gson().toJson(ajaxResponse);
-	}
+//	@RequestMapping(value = "/modify", method = RequestMethod.POST, produces = "application/json; charset=utf-8")
+//	@ResponseBody
+//	public String modify(@ModelAttribute LoadDataModel loadDataModel, HttpSession session) {
+//		AjaxResponse ajaxResponse = new AjaxResponse();
+//		User user = (User) session.getAttribute("user");
+//		try (WebDBObjectHelper dboh = new WebDBObjectHelper()) {
+//			logger.info("UserID[{}] Modifying LoadID[{}]", user.getUserId(), loadDataModel.getLoadId());
+//			ajaxResponse = alertService.modify(loadDataModel);
+//		} catch (Exception e) {
+//			logger.error("Error getting database connection{}", e.getMessage(), e);
+//		}
+//		return new Gson().toJson(ajaxResponse);
+//	}
 
 	/**
 	 * TODO reimplement
@@ -312,129 +289,16 @@ public class AlertController {
 	 * @throws ServletException
 	 * @throws IOException
 	 */
-	@RequestMapping(value = "/search", method = RequestMethod.POST, produces = "application/json; charset=utf-8")
-	@ResponseBody
-	public String search(@ModelAttribute LoadDataModel loadDataModel) throws ServletException, IOException {
-		TableDataModel tdm = null;
-		try (WebDBObjectHelper dboh = new WebDBObjectHelper()) {
-			tdm = alertService.searchLoads(loadDataModel);
-		} catch (Exception e) {
-			logger.error("Error getting database connection{}", e.getMessage(), e);
-		}
-		return new Gson().toJson(tdm);
-	}
-
-	/**
-	 * find
-	 *
-	 * @param loadId
-	 * @param model
-	 * @return
-	 * @throws ServletException
-	 * @throws IOException
-	 */
-	@RequestMapping(value = "/find", method = RequestMethod.POST, produces = "application/json; charset=utf-8")
-	@ResponseBody
-	public String viewLoad(@RequestParam("load") String loadId, Model model) throws ServletException, IOException {
-		LoadDataModel loadDataModel = null;
-		try (WebDBObjectHelper dboh = new WebDBObjectHelper()) {
-			loadDataModel = alertService.findLoad(loadId);
-		} catch (Exception e) {
-			logger.error("Error getting database connection{}", e.getMessage(), e);
-		}
-		return new Gson().toJson(loadDataModel);
-	}
-
-	/**
-	 * find
-	 *
-	 * @param loadId
-	 * @param model
-	 * @return
-	 * @throws ServletException
-	 * @throws IOException
-	 */
-	@RequestMapping(value = "/byLocation", method = RequestMethod.GET, produces = "application/json; charset=utf-8")
-	@ResponseBody
-	public String viewLoad(@RequestParam("warehouse") String warehouse, @RequestParam("address") String address,
-			@RequestParam("shelfPosition") Optional<String> position, Model model)
-			throws ServletException, IOException {
-
-		Gson gson = new Gson();
-		TableDataModel tableData = null;
-		try (WebDBObjectHelper dboh = new WebDBObjectHelper())
-		{
-			AlertData alertData = new AlertData();
-			try
-			{
-				alertData.setKey(LoadData.WAREHOUSE_NAME, warehouse);
-				alertData.setKey(LoadData.ADDRESS_NAME, address);
-				if (position.isPresent() && SKDCUtility.isNotBlank(position.get()) && !position.get().equals(UNDEFINED))
-					alertData.setKey(LoadData.SHELFPOSITION_NAME, position.get());
-
-				tableData = alertService.listSearch(alertData);
-			}
-			catch (DBException e)
-			{
-				logger.error("LoadController (byLocation) Exception", StackTraceFilter.filter(e));
-			} /*catch (NoSuchFieldException e) {
-				logger.error("LoadController (byLocation) Exception", StackTraceFilter.filter(e));
-			}*/
-		} catch (Exception e) {
-			logger.error("Error getting database connection", StackTraceFilter.filter(e));
-		}
-		return gson.toJson(tableData);
-	}
-
-//	@RequestMapping(value = "/retrieveLoads", method = RequestMethod.POST, produces = "application/json; charset=utf-8")
+//	@RequestMapping(value = "/search", method = RequestMethod.POST, produces = "application/json; charset=utf-8")
 //	@ResponseBody
-//	public AjaxResponse retrieveLoads(@RequestParam("loadIds") String[] loadIds,
-//			@RequestParam("destStation") String destStation, HttpSession session) {
-//		User user = (User) session.getAttribute("user");
-//		AjaxResponse response = new AjaxResponse();
-//		OrderDataModel orderData = new OrderDataModel();
-//		
-//		logger.info("KR:User[{}] RETRIEVING destStation {}", user.getUserId(), destStation);
+//	public String search(@ModelAttribute LoadDataModel loadDataModel) throws ServletException, IOException {
+//		TableDataModel tdm = null;
 //		try (WebDBObjectHelper dboh = new WebDBObjectHelper()) {
-//			for (String loadid : loadIds) {
-//				logger.info("User[{}] RETRIEVING Load ID: {}", user.getUserId(), loadid);
-//				orderData.setOrderId(loadid);
-//				orderData.setDestStation(destStation);
-//				orderData.setPriority(5);
-//				response = orderService.retrieve(orderData);
-//			}
+//			tdm = alertService.searchLoads(loadDataModel);
 //		} catch (Exception e) {
 //			logger.error("Error getting database connection{}", e.getMessage(), e);
-//			response.setResponse(AjaxResponseCodes.FAILURE, "Error getting database connection" + e.getMessage());
 //		}
-//		return response;
-//	}
-	
-//	@RequestMapping(value="/retrieveLoad",method=RequestMethod.POST, produces="application/json; charset=utf-8")
-//	@ResponseBody
-//	public AjaxResponse retrieveLoad(@RequestParam("loadId") String loadId, HttpSession session)
-//	{
-//		User user = (User) session.getAttribute("user");
-//		AjaxResponse response = new AjaxResponse();
-//		//OrderDataModel orderData = new OrderDataModel();
-//		logger.info("KR:User[{}] RETRIEVING Load ID {}", user.getUserId(), loadId);
-//		try (WebDBObjectHelper dboh = new WebDBObjectHelper())
-//		{
-//			  
-//				logger.info("User[{}] RETRIEVING Load ID: {}", user.getUserId(), loadId);
-//				//orderData.setOrderId(loadId);
-//				//orderData.setDestStation(destStation);
-//				//orderData.setPriority(5);
-//				response = orderService.buildOrderForThisTray(loadId);
-//						//orderService.retrieveTray(orderData);
-//			
-//		}
-//		catch (Exception e)
-//		{
-//			logger.error("Error getting database connection{}", e.getMessage(), e);
-//			response.setResponse(AjaxResponseCodes.FAILURE, "Error getting database connection" + e.getMessage());
-//		}
-//		return response;
+//		return new Gson().toJson(tdm);
 //	}
 	/**
 	 * empty table

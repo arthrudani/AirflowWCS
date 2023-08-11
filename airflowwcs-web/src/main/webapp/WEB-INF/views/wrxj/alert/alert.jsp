@@ -22,11 +22,90 @@
 
 <%@include file="../_template/navBodyWrapper.jspf"%>
 <%@include file="../_template/executing.jspf"%>
+
+<div id="divExecuting" style="margin: 0px; padding: 0px; position: fixed; right: 0px;
+    top: 0px; width: 100%; height: 100%; background-color: #666666; z-index: 30001;
+    opacity: .8; filter: alpha(opacity=70);display:none" >
+    <p style="position: absolute; top: 30%; left: 45%; color: White;">
+        Executing...<img src="<spring:url value="/resources/img/ajax-loading.gif"/>">
+    </p>
+</div>
+
+<div class="container-fluid">
+		<div class="row">
+			<spring:url value="/alerts/listSearch" var="formUrl"/>
+			<form:form cssClass="form-horizontal" id="load-filtering-form" action="${formUrl}" method="POST" modelAttribute="alertDataModel">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+				        <h4 class="panel-title">
+				          <a data-toggle="collapse" href="#collapseCriteria">Search Criteria</a>
+				        </h4>
+						<div class="clearfix"></div>							      
+					</div>
+					<div id="collapseCriteria" class="panel-collapse collapse in">
+					<div class="panel-body">
+					<div class="row">
+						<div class="col-sm-5" >
+						<!-------------------------------------------------------->
+						<!-------First Panel: Description Info----------------------->
+						<!-------------------------------------------------------->
+							<div class="panel panel-default">
+								<div class="panel-body">
+						<!---------Description Fields------------->
+									<div class="form-group-sm">
+										<div class="col-sm-5">
+										<span class="input-group-addon">Description</span>
+											<form:input path="description" cssClass="form-control" id="description" placeholder="Description"/>
+										</div>
+									 </div>	
+								</div>
+							</div>
+						</div>
+						
+					<!-------------SECOND Panel: Search Button---------------->
+					<!-------------------------------------------------------->
+					<div class="col-sm-5">
+						<div class="panel noborder">
+							<div class="panel-body">						
+								<div class="form-group-sm">									
+							<!---------Search Button------------->
+									<div class="controls col-sm-5">
+										<center>
+											<button id="searchAlertsButton" type="button" class="btn btn-primary"><i class="fa fa-search"></i> Search</button>
+										</center>
+									</div>
+										
+						<!---------Slave Board Field------------->	
+									
+								</div>											
+							</div>
+						
+						</div>						
+					</div>
+					<!---------End of Third panel------------->
+				</div>
+<!---------End of First Row------------->	
+			</div>
+			</div>
+		</div>							
+	</form:form>
+	</div>
+
+</div>
+
+<%-- <security:authorize access="hasAnyRole('ROLE_USER','ROLE_ADMIN','ROLE_MASTER')"> --%>
+<%-- 		<wrxj:ajaxTable metaDataName="Alert" ajaxUri="/airflowwcs/alerts/list" --%>
+<%-- 				metaId="Alert" hasRefresh="true" hasFilter="true" hasAdd="true"  --%>
+<%-- 				hasAutoRefresh="true" hasExcel="true" hasColVis="true" hasSearch="true" numPageLength="10"></wrxj:ajaxTable> --%>
+<%-- </security:authorize> --%>
+	
+	
 <wrxj:ajaxTable metaDataName="Alert" ajaxUri="/airflowwcs/alerts/list"
 	hasAutoRefresh="true" refreshRateSec="7" metaId="Alert"
-	hasRefresh="true" hasFilter="true" hasColVis="true" theme="inverse" numPageLength="10" ></wrxj:ajaxTable>
+	hasRefresh="true" hasFilter="true" hasColVis="true" theme="inverse" numPageLength="10" hasOnAll="true"></wrxj:ajaxTable>
 	
 <%@include file="../_template/alertsFloatingHeader.jspf"%>
+<script src="<spring:url value="/resources/js/alert.js"/>" type="text/javascript"></script>
 <security:authorize access="hasAnyRole('ROLE_ADMIN','ROLE_MASTER')">
 	<script type="text/javascript">
 		isAdmin = true;

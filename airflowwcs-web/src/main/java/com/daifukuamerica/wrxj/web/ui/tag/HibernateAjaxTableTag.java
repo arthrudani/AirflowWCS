@@ -51,6 +51,7 @@ public class HibernateAjaxTableTag extends SimpleTagSupport
 	  protected boolean hasColVis = false;
 	  protected boolean hasAutoRefresh = false;
 	  protected boolean hasFilter = false;
+	  protected boolean hasOnAll = false;
 	  protected boolean hasEdit = false;
 	  protected boolean hasDelete = false;
 	  protected boolean inModal = false;
@@ -294,6 +295,10 @@ public class HibernateAjaxTableTag extends SimpleTagSupport
 		if(hasEdit)
 			sb.append("{text:'<i class=\"fa fa-pencil fa-2x fa-fw\" aria-hidden=\"true\"></i>'," // open generic edit modal
 						+"action: function(e,dt,node,config) { $('#edit-modal').modal('show'); }},");
+		if(hasOnAll)
+			sb.append("{text:'<i class=\"fa fa-toggle-on fa-2x fa-fw\" aria-hidden=\"true\"></i>'," // open generic edit modal
+						+"action: function(e,dt,node,config) { $('#edit-modal').modal('show'); }},");
+		
 		if(hasDelete)
 			sb.append("{text:'<i class=\"fa fa-trash fa-2x fa-fw\" aria-hidden=\"true\"></i>'," 		// open generic delete modal
 						+"action: function(e,dt,node,config) { $('#delete-modal').modal('show');}},");
@@ -440,6 +445,10 @@ public class HibernateAjaxTableTag extends SimpleTagSupport
 	{
 		this.hasFilter = hasFilter;
 	}
+	public void setHasOnAll(boolean hasOnAll)
+	{
+		this.hasOnAll = hasOnAll;
+	}
 
 	public void setNoTranslation(String noTranslation)
 	{
@@ -501,6 +510,11 @@ public class HibernateAjaxTableTag extends SimpleTagSupport
 	public boolean isHasFilter()
 	{
 		return hasFilter;
+	}
+	
+	public boolean isHasOnAll()
+	{
+		return hasOnAll;
 	}
 
 	public String getNoTranslation()

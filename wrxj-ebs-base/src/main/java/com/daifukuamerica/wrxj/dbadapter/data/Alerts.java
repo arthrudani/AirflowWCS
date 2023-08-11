@@ -1,24 +1,18 @@
 package com.daifukuamerica.wrxj.dbadapter.data;
 
 import com.daifukuamerica.wrxj.dbadapter.BaseDBInterface;
-import com.daifukuamerica.wrxj.dbadapter.DBHelper;
 import com.daifukuamerica.wrxj.factory.Factory;
-import com.daifukuamerica.wrxj.jdbc.AmountFullTransMapper;
 import com.daifukuamerica.wrxj.jdbc.DBConstants;
 import com.daifukuamerica.wrxj.jdbc.DBException;
 import com.daifukuamerica.wrxj.jdbc.DBResultSet;
 import com.daifukuamerica.wrxj.jdbc.KeyObject;
-import com.daifukuamerica.wrxj.util.SKDCConstants;
-import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 
 /**
  * Description:<BR>
- *   Title:  Class to handle Load Object.
- *   Description : Handles all reading and writing database for load
+ *   Title:  Class to handle Alert Object.
+ *   Description : Handles all reading and writing database for alert
  * @author       REA
  * @version      1.0
  * <BR>Created: 4-Feb-25<BR>
@@ -28,16 +22,16 @@ import java.util.Set;
 public class Alerts extends BaseDBInterface
 {
   private DBResultSet mpDBResultSet;
-  protected AlertData mpAlertData;
+  protected AlertsData mpAlertData;
 
   public Alerts()
   {
     super("Alerts");
-    mpAlertData = Factory.create(AlertData.class);
+    mpAlertData = Factory.create(AlertsData.class);
   }
 
   /**
-   * Retrieves one column value from the Load table.
+   * Retrieves one column value from the Alert table.
    *
    * @param isAlertID the unique key to use in the search.
    * @param isColumnName the name of the column whose value is returned.
@@ -61,9 +55,9 @@ public class Alerts extends BaseDBInterface
 
 
   /**
-   * use data that is sent to create load
+   * use data that is sent to create alert
    */
-  public boolean createAlert(AlertData newAlert) throws DBException
+  public boolean createAlert(AlertsData newAlert) throws DBException
   {
     if (exists(newAlert.getAlertId()))
     {
@@ -77,44 +71,44 @@ public class Alerts extends BaseDBInterface
   }
 
   /**
-   *  Method retrieves a load record using load as key.
+   *  Method retrieves a alert record using load as key.
    *
-   *  @param loadID <code>String</code> containing load to search for.
+   *  @param alertID <code>String</code> containing alert to search for.
    *  @param withLock <code>int</code> flag indicating if record should be locked.
    *
    *  @return <code>AlertData</code> object. <code>null</code> if no record found.
    */
-  public AlertData getAlertData(String alertID, int withLock) throws DBException
+  public AlertsData getAlertData(String alertID, int withLock) throws DBException
   {
     mpAlertData.clear();
-    mpAlertData.setKey(AlertData.ALERTID_NAME, alertID);
+    mpAlertData.setKey(AlertsData.ALERTID_NAME, alertID);
 
     return getElement(mpAlertData, withLock);
   }
 
 
   /**
-   * Convenience method.  This gets a Load record with no lock.
+   * Convenience method.  This gets a alert record with no lock.
    */
-  public AlertData getAlertData(String alertID) throws DBException
+  public AlertsData getAlertData(String alertID) throws DBException
   {
     return getAlertData(alertID, DBConstants.NOWRITELOCK);
   }
 
  
   /**
-   * Add a load
+   * Add a alert
    *
    * @param newAlert
    * @throws DBException
    */
-  public void addLoad(AlertData newAlert) throws DBException
+  public void addLoad(AlertsData newAlert) throws DBException
   {
     addElement(newAlert);
   }
 
   /**
-   * Delete a load
+   * Delete a alert
    *
    * @param loadID
    * @throws DBException
@@ -124,21 +118,21 @@ public class Alerts extends BaseDBInterface
     if (exists(alertID))
     {
       mpAlertData.clear();
-      mpAlertData.setKey(AlertData.ALERTID_NAME, alertID);
+      mpAlertData.setKey(AlertsData.ALERTID_NAME, alertID);
       deleteElement(mpAlertData);
     }
   }
 
   /**
-   * Does this load ID exist?
+   * Does this alert ID exist?
    *
-   * @param loadID
+   * @param alertID
    * @return <code>true</code>
    */
   public boolean exists(String alertID)
   {
     mpAlertData.clear();
-    mpAlertData.setKey(AlertData.ALERTID_NAME, alertID);
+    mpAlertData.setKey(AlertsData.ALERTID_NAME, alertID);
 
     return(exists(mpAlertData));
   }
@@ -155,33 +149,33 @@ public class Alerts extends BaseDBInterface
   }
 
   /**
-   * Get a list of load data
+   * Get a list of alert data
    *
-   * @param isSearchLoad Load ID or partial load string.  If a partial string is
+   * @param isSearchAlert alert ID or partial alert string.  If a partial string is
    *        passed, the partial match will only be done from the end of the string.
-   * @return List&lt;Map&gt; representing list of load data.
+   * @return List&lt;Map&gt; representing list of alert data.
    * @throws DBException database access error.
    */
   public List<Map> getAlertDataList(String isSearchLoad) throws DBException
   {
     mpAlertData.clear();
-    mpAlertData.setWildcardKey(AlertData.ALERTID_NAME, isSearchLoad, false);
+    mpAlertData.setWildcardKey(AlertsData.ALERTID_NAME, isSearchLoad, false);
 
     return(getAllElements(mpAlertData));
   }
 
   /**
-   * Get a list of load data
+   * Get a list of alert data
    *
    * @param iapKeys search keys.
-   * @return List&lt;Map&gt; representing list of load data.
+   * @return List&lt;Map&gt; representing list of alert data.
    * @throws DBException database access error.
    */
   public List<Map> getAlertDataList(KeyObject[] iapKeys) throws DBException
   {
     mpAlertData.clear();
     mpAlertData.setKeys(iapKeys);
-    mpAlertData.setOrderByColumns(AlertData.ALERTID_NAME);
+    mpAlertData.setOrderByColumns(AlertsData.ALERTID_NAME);
 
     return(getAllElements(mpAlertData));
   }

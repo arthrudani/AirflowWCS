@@ -1,7 +1,7 @@
 package com.daifukuamerica.wrxj.dataserver.standard;
 
-import com.daifukuamerica.wrxj.dbadapter.data.Alert;
-import com.daifukuamerica.wrxj.dbadapter.data.AlertData;
+import com.daifukuamerica.wrxj.dbadapter.data.Alerts;
+import com.daifukuamerica.wrxj.dbadapter.data.AlertsData;
 import com.daifukuamerica.wrxj.dbadapter.data.Load;
 import com.daifukuamerica.wrxj.dbadapter.data.LoadData;
 import com.daifukuamerica.wrxj.dbadapter.data.LoadDataAndLLIData;
@@ -57,10 +57,10 @@ public class StandardAlertServer extends StandardServer
   protected StandardStationServer     mpStationServer = null;
   protected StandardRouteServer       mpRouteServer   = null;
 
-  protected Alert mpAlert = Factory.create(Alert.class);
+  protected Alerts mpAlert = Factory.create(Alerts.class);
 
   /**
-   * Constructor for load with no parameters
+   * Constructor for alert with no parameters
    */
   public StandardAlertServer()
   {
@@ -68,7 +68,7 @@ public class StandardAlertServer extends StandardServer
   }
 
   /**
-   *  Constructor for load with name of who is creating it and the scheduler name
+   *  Constructor for alert with name of who is creating it and the scheduler name
    *
    *  @param isKeyName name of creator
    */
@@ -145,26 +145,26 @@ public class StandardAlertServer extends StandardServer
   }
 
   /**
-   *  Convenience method to read load record with <i>no</i> lock.
+   *  Convenience method to read alert record with <i>no</i> lock.
    *
-   *  @return LoadData containing load record. <code>null</code> value if a
+   *  @return AlertData containing alert record. <code>null</code> value if a
    *          database error occurs, or no record found.
    */
-  public AlertData getAlert(String alertID)
+  public AlertsData getAlert(String alertID)
   {
     return(getAlert(alertID, false));    // Read with no write lock.
   }
 
   /**
-   *  Method to read a load record with/without a record lock.
+   *  Method to read a alert record with/without a record lock.
    *
-   *  @param loadID value of the loadid
+   *  @param alertID value of the alertid
    *  @param setWriteLock <code>boolean</code> set to <code>true</code> if
    *         record should be locked; <code>false</code> if read with <i>no</i> lock.
-   *  @return LoadData containing load record. <code>null</code> value if a
+   *  @return AlertData containing alert record. <code>null</code> value if a
    *          database error occurs, or no record found.
    */
-  public AlertData getAlert(String alertID, boolean setWriteLock)
+  public AlertsData getAlert(String alertID, boolean setWriteLock)
   {
     try
     {
@@ -180,10 +180,9 @@ public class StandardAlertServer extends StandardServer
   }
   
   /**
-   * Update the load in the database to the current values and (optionally)
-   * change movedate.
+   * Update the alert in the database to the current values and (optionally)
    *
-   * @param loadData load that needs to be updated
+   * @param alertData alert that needs to be updated
    */
 //  public void updateLoadData(LoadData loadData, boolean izUpdateMoveDate)
 //  {
@@ -235,9 +234,9 @@ public class StandardAlertServer extends StandardServer
 //  }
 
  /**
-  * Method to update a load record.
+  * Method to update a alert record.
   *
-  * @param ipLoadInfo load info. to update.
+  * @param ipLoadInfo alert info. to update.
   * @throws DBException
   */
 //  public void modifyLoad(LoadData ipNewLoadInfo) throws DBException
@@ -262,52 +261,52 @@ public class StandardAlertServer extends StandardServer
 //  }
 
   /**
-   *  Method to add a load without validation and without a transaction.
+   *  Method to add a alert without validation and without a transaction.
    *
-   *  @param ldData Filled in load data object.
+   *  @param adData Filled in load data object.
    *  @exception DBException
    */
-  protected boolean addAD(AlertData adData) throws DBException
+  protected boolean addAD(AlertsData adData) throws DBException
   {
     boolean vzRtn = false;
     vzRtn = mpAlert.createAlert(adData);
     // Record Load Add Transaction
-    logTransaction_LoadAdd(adData);
+    //logTransaction_AlertAdd(adData);
     return vzRtn;
   }
   
 
   /**
-   *  Method to add a load without validation.
+   *  Method to add a alert without validation.
    *
    *  @param ldData Filled in load data object.
    *  @exception DBException
    */
-  public boolean addAlert(AlertData adData) throws DBException
-  {
-    initializeInventoryServer();
-    TransactionToken tt = null;
-    boolean vzRtn = false;
-    try
-    {
-      tt = startTransaction();
-      vzRtn = addAD(adData);
-      if (vzRtn)
-      {
-        commitTransaction(tt);
-      }
-    }
-    finally
-    {
-      endTransaction(tt);
-    }
-    return vzRtn;
-  }
+//  public boolean addAlert(AlertsData adData) throws DBException
+//  {
+//    initializeInventoryServer();
+//    TransactionToken tt = null;
+//    boolean vzRtn = false;
+//    try
+//    {
+//      tt = startTransaction();
+//      vzRtn = addAD(adData);
+//      if (vzRtn)
+//      {
+//        commitTransaction(tt);
+//      }
+//    }
+//    finally
+//    {
+//      endTransaction(tt);
+//    }
+//    return vzRtn;
+//  }
 
   /**
-   *  Method to see if the load exists.
+   *  Method to see if the alert exists.
    *
-   *  @param loadID Load ID to look for.
+   *  @param alertID Alert ID to look for.
    *  @return boolean of <code>true</code> if it exists.
    *  @exception DBException
    */
@@ -317,14 +316,14 @@ public class StandardAlertServer extends StandardServer
   }
   
   /**
-   *  Method to get data objects for matching loads using ColumnObject.
+   *  Method to get data objects for matching alerts using ColumnObject.
    *
-   * @param loadSearch no information available
-   *  @return List of <code>LoadData</code> objects.
+   * @param alertSearch no information available
+   *  @return List of <code>AlertData</code> objects.
    *  @exception DBException
    */
   @SuppressWarnings("rawtypes")
-  public List<Map> getAlertDataList(AlertData vpLoadKey) throws DBException
+  public List<Map> getAlertDataList(AlertsData vpLoadKey) throws DBException
   {
     return mpAlert.getAllElements(vpLoadKey);
   }
@@ -332,8 +331,8 @@ public class StandardAlertServer extends StandardServer
   /**
    *  Method to get data objects for matching loads using KeyObject.
    *
-   * @param loadSearch no information available
-   *  @return List of <code>LoadData</code> objects.
+   * @param alertSearch no information available
+   *  @return List of <code>AlertData</code> objects.
    *  @exception DBException
    */
   @SuppressWarnings("rawtypes")
@@ -343,14 +342,14 @@ public class StandardAlertServer extends StandardServer
   }
 
   /**
-   *  Method to get a load data object by load ID.
+   *  Method to get a alert data object by alert ID.
    *
-   *  @param loadID Load ID to get.
-   *  @return LoadData object containing Load info. matching our
+   *  @param alertID alert ID to get.
+   *  @return AlertData object containing Load info. matching our
    *          search criteria.
    *  @exception DBException
    */
-  public AlertData getAlertl(String alertID) throws DBException
+  public AlertsData getAlertl(String alertID) throws DBException
   {
     return mpAlert.getAlertData(alertID);
   }
@@ -363,33 +362,33 @@ public class StandardAlertServer extends StandardServer
   /*========================================================================*/
 
   /**
-   * Log a Load Add to transaction history
-   * @param adData - <code>LoadData</Code> - The added load
+   * Log a Alert Add to transaction history
+   * @param adData - <code>AlertData</Code> - The added load
    */
-  public void logTransaction_LoadAdd(AlertData adData)
-  {
-    tnData.clear();
-    tnData.setTranType(DBConstants.ADD_LOAD);
-    tnData.setTranCategory(DBConstants.LOAD_TRAN);
-    logTransaction(tnData);
-  }
+//  public void logTransaction_AlertAdd(AlertsData adData)
+//  {
+//    tnData.clear();
+//    tnData.setTranType(DBConstants.ADD_LOAD);
+//    tnData.setTranCategory(DBConstants.LOAD_TRAN);
+//    logTransaction(tnData);
+//  }
 
    /**
    * Log a Load Modify to transaction history
    * @param ipNewLoadData - <code>LoadData</Code> - The new load data
    * @param ipOldLoadData - <code>LoadData</Code> - The old load data
    */
-  public void logTransaction_LoadModify(LoadData ipNewLoadData, LoadData ipOldLoadData)
-  {
-    tnData.clear();
-    tnData.setTranType(DBConstants.MODIFY_LOAD);
-    tnData.setTranCategory(DBConstants.LOAD_TRAN);
-    tnData.setLoadID(ipNewLoadData.getLoadID());
-    tnData.setLocation(ipOldLoadData.getWarehouse(), ipOldLoadData.getAddress());
-    tnData.setToLocation(ipNewLoadData.getNextWarehouse(), ipNewLoadData.getNextAddress());
-    tnData.setRouteID(ipNewLoadData.getRouteID());
-    logTransaction(tnData);
-  }
+//  public void logTransaction_LoadModify(LoadData ipNewLoadData, LoadData ipOldLoadData)
+//  {
+//    tnData.clear();
+//    tnData.setTranType(DBConstants.MODIFY_LOAD);
+//    tnData.setTranCategory(DBConstants.LOAD_TRAN);
+//    tnData.setLoadID(ipNewLoadData.getLoadID());
+//    tnData.setLocation(ipOldLoadData.getWarehouse(), ipOldLoadData.getAddress());
+//    tnData.setToLocation(ipNewLoadData.getNextWarehouse(), ipNewLoadData.getNextAddress());
+//    tnData.setRouteID(ipNewLoadData.getRouteID());
+//    logTransaction(tnData);
+//  }
 
  
   /*========================================================================*/

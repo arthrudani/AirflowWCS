@@ -2,12 +2,12 @@ package com.daifukuamerica.wrxj.web.model.json.wrx;
 
 import java.util.Date;
 
-import com.daifukuamerica.wrxj.dbadapter.data.AlertData;
+import com.daifukuamerica.wrxj.dbadapter.data.AlertsData;
 
 /**
  * @author dystout
  *
- * Encapsulation of LoadData for use in Spring Databinding. Naming of variable
+ * Encapsulation of AlertData for use in Spring Databinding. Naming of variable
  * names to match <form/> 'path' variable names in the view is required to data
  * bind easily when posting.
  *
@@ -35,7 +35,7 @@ public class AlertDataModel
 	private String activeFlag;
 
 	/**
-	 * Encapsulation of wrxj LoadData
+	 * Encapsulation of wrxj AlertData
 	 */
 	private WebAlertData alertData = null;
 
@@ -50,7 +50,7 @@ public class AlertDataModel
 	 * @param ld
 	 * @throws NoSuchFieldException
 	 */
-	public AlertDataModel(AlertData ad) throws NoSuchFieldException
+	public AlertDataModel(AlertsData ad) throws NoSuchFieldException
 	{	
 		this.alertId = ad.getAlertId();
 		this.timeStamp = ad.getTimeStamp();
@@ -72,12 +72,12 @@ public class AlertDataModel
 	 * Created : May 5, 2017
 	 *
 	 */
-	protected class WebAlertData extends AlertData
+	protected class WebAlertData extends AlertsData
 	{
 		/**
-		 * Additional constructor to LoadData for direct access to class variables.
+		 * Additional constructor to AlertData for direct access to class variables.
 		 *
-		 * @param ldm
+		 * @param adm
 		 * @throws NoSuchFieldException
 		 */
 		public WebAlertData(AlertDataModel adm) throws NoSuchFieldException
@@ -139,7 +139,7 @@ public class AlertDataModel
 
 	/**
 	 * If we dont already have an instance of the encapsulated
-	 * load data, construct one using the current state of the
+	 * alert data, construct one using the current state of the
 	 * outer class.
 	 *
 	 * @return

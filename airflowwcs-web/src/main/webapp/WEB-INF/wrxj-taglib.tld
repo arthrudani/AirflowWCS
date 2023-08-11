@@ -84,6 +84,8 @@
 	<required>false</required>
 	</attribute>
 	
+	
+	
 	<attribute>
 	<name>hasExcel</name>
 	<required>false</required>
@@ -101,6 +103,11 @@
 	
 	<attribute>
 	<name>hasFilter</name>
+	<required>false</required>
+	</attribute>
+	
+	<attribute>
+	<name>hasOnAll</name>
 	<required>false</required>
 	</attribute>
 	
@@ -241,6 +248,11 @@
 	
 	<attribute>
 	<name>hasFilter</name>
+	<required>false</required>
+	</attribute>
+	
+	<attribute>
+	<name>hasOnAll</name>
 	<required>false</required>
 	</attribute>
 	

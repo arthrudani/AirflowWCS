@@ -62,6 +62,7 @@ public class AjaxTableTag extends SimpleTagSupport
 	  protected boolean hasColVis = false;
 	  protected boolean hasAutoRefresh = false;
 	  protected boolean hasFilter = false;
+	  protected boolean hasOnAll = false;
 	  protected boolean hasEdit = false;
 	  protected boolean hasDelete = false;
 	  protected boolean inModal = false;
@@ -283,6 +284,7 @@ public class AjaxTableTag extends SimpleTagSupport
 		if(hasDelete)
 			sb.append("{text:'<i class=\"fa fa-trash fa-2x fa-fw\" aria-hidden=\"true\"></i>'," 		// open generic delete modal
 						+"action: function(e,dt,node,config) { $('#delete-modal').modal('show');}},");
+		
 		if(hasExcel) {
 		    /*
 		     * Numeric-looking columns are saved as numbers by default, and this loses leading 
@@ -307,7 +309,12 @@ public class AjaxTableTag extends SimpleTagSupport
 						+"action: function(e,dt,node,config){ $(\"#search-modal\").modal('show');	}}"); // open generic search modal (page specific)
 
 		sb.append("], responsive: true, \"scrollX\": true, ");
-
+		
+		if(hasOnAll) {
+			sb.append("{text:'<i class=\"fa fa-toggle-on fa-2x fa-fw\" aria-hidden=\"true\"></i>'," // on off all alerts
+						+"action: function(e,dt,node,config) { console.log('ON OFF alerts') }},");
+		
+		}
 		if(regexHighlightList!=null && regexHighlightList.length>=1)
 		{
 			sb.append("rowCallback: function(row, data, index){ ");
@@ -354,12 +361,16 @@ public class AjaxTableTag extends SimpleTagSupport
 
 
 		}
-
+		
+			
+		
 		//LOADING GIF HOLDER
 		sb.append("$(\"div.dt-buttons.btn-group \", \"#tblWrap"+tableId+"\").append('<span id=\"loading_gif_container"+ tableId + "\"></span>');");
 		//sb.append(" table"+tableId+".columns.adjust().draw(false);");
-
+		
 		/** Column Visibility listener to  for when a column has been hidden/shown */
+
+		
 		if(hasColVis)
 			sb.append("$('#ajaxTable"+tableId+"').on('responsive-resize.dt', function(e, datatable, columns){ updateHiddenColumns('"+getMetaDataName()+"', columns); console.log(  columns ); });");
 
@@ -392,8 +403,13 @@ public class AjaxTableTag extends SimpleTagSupport
 			"});"+
 		"}"+
 		"}");
+		
+		
+		
 		sb.append("var temp = "+tableId+"selectedRows;");
 		sb.append("</script>");
+		
+		
 
 		return sb.toString();
 
@@ -473,6 +489,10 @@ public class AjaxTableTag extends SimpleTagSupport
 	{
 		this.hasFilter = hasFilter;
 	}
+	public void setHasOnAll(boolean hasOnAll)
+	{
+		this.hasOnAll = hasOnAll;
+	}
 
 	public void setNoTranslation(String noTranslation)
 	{
@@ -547,6 +567,10 @@ public class AjaxTableTag extends SimpleTagSupport
 	public boolean isHasFilter()
 	{
 		return hasFilter;
+	}
+	public boolean isHasOnAll()
+	{
+		return hasOnAll;
 	}
 
 	public String getNoTranslation()
