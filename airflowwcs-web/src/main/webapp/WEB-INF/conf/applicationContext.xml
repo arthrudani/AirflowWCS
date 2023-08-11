@@ -61,6 +61,7 @@
 	<bean id="workMaintenanceService" class="com.daifukuamerica.wrxj.web.service.dao.WorkMaintenanceService"></bean>
 	<bean id="equipmentsService" class="com.daifukuamerica.wrxj.web.service.dao.EquipmentsService"></bean>
 	<bean id="occupancyService" class="com.daifukuamerica.wrxj.web.service.dao.OccupancyService"></bean>
+	<bean id="alertService" class="com.daifukuamerica.wrxj.web.service.dao.AlertService"></bean>
 	
 	
 

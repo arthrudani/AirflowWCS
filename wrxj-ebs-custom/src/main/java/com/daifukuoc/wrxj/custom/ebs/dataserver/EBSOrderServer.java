@@ -268,8 +268,8 @@ public class EBSOrderServer extends StandardOrderServer {
     }
     private int generatedOrderId()
     {
-    	int min = 0;
-    	int max = 9999;
+    	int min = 8800;
+    	int max = 8899;
     	return min + (int)(Math.random() * ((max - min) + 1));
     }
 

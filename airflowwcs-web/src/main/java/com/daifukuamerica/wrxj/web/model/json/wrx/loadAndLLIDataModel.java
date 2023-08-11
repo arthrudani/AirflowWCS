@@ -649,7 +649,7 @@ public class loadAndLLIDataModel
 	public LoadLineItemData getLoadLineItemData() throws NoSuchFieldException
 	{        
 		LoadLineItemData lineItemData=new LoadLineItemData();
-		lineItemData.clear();
+		lineItemData.clear(); 
 		lineItemData.setLot(this.getLot());
 		//lineItemData.setExpectedReceipt(this.getExpectedReceipt());;
 		//lineItemData.setOrderLot(this.getOrderLot());

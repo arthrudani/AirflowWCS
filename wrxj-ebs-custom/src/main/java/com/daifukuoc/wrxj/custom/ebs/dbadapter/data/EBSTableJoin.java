@@ -10,6 +10,7 @@ import java.util.stream.Collectors;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.daifukuamerica.wrxj.dbadapter.DBHelper;
+import com.daifukuamerica.wrxj.dbadapter.data.AlertData;
 import com.daifukuamerica.wrxj.dbadapter.data.ItemMaster;
 import com.daifukuamerica.wrxj.dbadapter.data.LoadData;
 import com.daifukuamerica.wrxj.dbadapter.data.LoadLineItemData;
@@ -1393,5 +1394,21 @@ public class EBSTableJoin extends TableJoin {
 		
 	}
 
+
+	public List<Map> getAlertListWeb(AlertData alertData, Object object) throws DBException {
+		StringBuilder vpSQL = new StringBuilder();
+
+        vpSQL.append("SELECT * FROM ALERTS WHERE 1=1 ");
+
+        return fetchRecords(vpSQL.toString());
+	}
+
+	public List<Map> getAlertListDataWeb() throws DBException {
+		StringBuilder vpSQL = new StringBuilder();
+
+        vpSQL.append("SELECT * FROM ALERTS WHERE 1=1 ");
+
+        return fetchRecords(vpSQL.toString());
+	}
 
 }

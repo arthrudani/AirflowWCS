@@ -40,6 +40,7 @@ public interface UIConstants
 	final String LOGIN_IN_USE = "<center><font class=\"errorHelpText\">Login in use - Logout from terminal</font></center>";
 
 	/*********** VIEW NAMES ******/
+	final String VIEW_ALERT = "wrxj/alert/alert";
 	final String VIEW_CONTAINER = "wrxj/container/container";
 	final String VIEW_DEVICE = "wrxj/device/device";
 	final String VIEW_DISPATCHID = "wrxj/dispatchid/dispatchid";

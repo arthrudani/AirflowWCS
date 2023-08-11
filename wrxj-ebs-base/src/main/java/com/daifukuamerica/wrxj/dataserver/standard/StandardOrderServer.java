@@ -2112,6 +2112,7 @@ public class StandardOrderServer extends StandardServer
     StringBuffer orderID = new StringBuffer("LD");
     orderID.append(isLoadToRetrieve);
     oh.setKey(OrderHeaderData.ORDERID_NAME, orderID);
+    System.out.println("HELLO:"+oh.getOrderID());
     while (OrderHeaderExists(oh))
     {
       orderID.setLength(2);

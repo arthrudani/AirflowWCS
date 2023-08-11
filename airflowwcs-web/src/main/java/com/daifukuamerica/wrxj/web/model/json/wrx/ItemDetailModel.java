@@ -31,7 +31,7 @@ public class ItemDetailModel
 	{
 		this.item = llid.getItem(); 
 		this.lot = llid.getLot(); 
-		this.loadId = llid.getLoadID(); 
+		this.loadId = llid.getLoadID();
 		this.positionId = llid.getPositionID(); 
 		this.holdReason = llid.getHoldReason(); 
 		this.orderId = llid.getOrderID(); 
