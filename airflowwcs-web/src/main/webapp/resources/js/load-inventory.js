@@ -322,9 +322,11 @@ $(document).ready(function() {
 				select: function(event, ui) {
 
 					var idText = table.row(ui.target).id(); 
+					
 					var celltext = ui.target.text();
 					switch(ui.cmd){
 					case "addLoad":
+					console.log("ID"+idText);
 						showAddLoad();
 						break;
 					case "modify":

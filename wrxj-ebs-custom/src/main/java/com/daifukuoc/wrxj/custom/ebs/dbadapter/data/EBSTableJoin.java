@@ -1405,5 +1405,41 @@ public class EBSTableJoin extends TableJoin {
 
         return fetchRecords(vpSQL.toString());
 	}
+	
+	
+	//set PURCHASEORDER to completed state
+		public boolean changeAlertStatus(String alertId, String status) throws DBException {
+			StringBuilder vpSQL = new StringBuilder();
+
+	        vpSQL.append("SELECT * FROM ALERTS WHERE 1=1");
+	        vpSQL.append(" AND iId = ").append(alertId);
+	        try {
+		        
+	        	if(status.trim().equals("ON")) {
+					this.execute("UPDATE ALERTS set iActiveFlag = ? where iID = ? ", 36, alertId);
+					return true;
+				}
+				else {
+					this.execute("UPDATE ALERTS set iActiveFlag = ? where iID = ? ", 35, alertId);
+					return true;
+				}
+	        }
+	        catch(Exception e) {
+	        	return false;
+	        }
+			
+		}
+		
+		public boolean changeAllAlertStatus(int status) throws DBException {
+			StringBuilder vpSQL = new StringBuilder();
+	        try {
+				this.execute("UPDATE ALERTS set iActiveFlag = ? ", status);
+				return true;
+	        }
+	        catch(Exception e) {
+	        	return false;
+	        }
+			
+		}
 
 }

@@ -145,6 +145,14 @@ public class DBTrans implements DBConstants
       iAutoOrderType[2] = new DBTrandef(ITEM_ORDER, "Auto-Order Item.");
 
       tm.put("IAUTOORDERTYPE", iAutoOrderType);
+      
+      								// Object array for "iActiveFlag"
+      DBTrandef[] iActiveFlag = new DBTrandef[2];
+      iActiveFlag[0] = new DBTrandef(ON, "ON");
+      iActiveFlag[1] = new DBTrandef(OFF, "OFF");
+      
+      tm.put("IACTIVEFLAG", iActiveFlag);
+      
     
 
                                       // Object array for "iBidirectionalStatus"

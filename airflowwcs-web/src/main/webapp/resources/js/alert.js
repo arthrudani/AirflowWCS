@@ -3,8 +3,7 @@ var autoRefresh = false;
 var isAdmin = false; 
 
 function startAutoRefresh() 
-{
-	// reimplement  	 
+{	 
 	tid = setTimeout(table.ajax.reload, 8000); // repeat 
 }
 
@@ -18,68 +17,60 @@ $(document).ready(function() {
 	
 	var table = $('#ajaxTable').DataTable();
 	
-//	table.ajax.success(function() {
-//		$("#divExecuting").hide();
-//	});
-
+	$('#onOffButton').change(function() {
+		var Status="";
+	    if($('#onOffButton').is(":checked"))
+		{
+			Status="ON";
+		} 
+		else{
+			Status="OFF";
+		}
+		$.confirm({
+		    title: 'Confirm change all alert status',
+		    content: 'Are you sure you want to change the all alert status?',
+		    buttons: {
+		        confirm: function () {
+		    		$("#divExecuting").show();
+		    	    $.post(`/airflowwcs/alerts/changeAllStatus?status=`+Status, $(this).serialize(), function(response) { 
+					$("#divExecuting").hide();
+					    	alertOnResponse(response); 
+					   		table.ajax.reload();
+					});
+		        },
+		        cancel: function () {
+		            //do nothing
+		        }
+		    }
+		});
+		
+	});
+	
 	$("#address").on('keyup', function (e) {
 	    if (e.keyCode == 13) 
 	    {
 	    	$("#divExecuting").show(); 
-	    	searchLoads();
+	    	searchAlerts();
 	    }
 	});
 	
 	
 	$("#searchAlertsButton").click(function() {
 		$("#divExecuting").show(); 
-		//$('#load-filtering-form').submit()
-		searchLoads();
+		searchAlerts();
 		
     });
    
-   
-    /**
-	 * Context action popups. 
-	 * shows Add Load form
-	 **/
-    function showAddLoad()
-    {
-    	//show the add load dialog box
-		$('#add-modal').modal('show');
-    }
-	/**
-	 * Context action popups. 
-	 * @param loadId
-	 *
-	function showModifyLoad(loadId)
-	{ 
-	
-		clearModifyForm();
-		$.post('/airflowwcs/load/find?load='+loadId, $(this).serialize(), function(response){
-		
-			for(var key in response){
-	    		if(response.hasOwnProperty(key)){
-	    			$("#"+key+"Mod").html(response[key]);
-	    			$("#"+key+"Mod").val(response[key]);
-	    			$("#" +key+ " option[value='" + response[key] + "']").prop('selected', true);
-
-	    		}
-	    	}
-		});
-		$('#modify-modal').modal('show'); 
-	}*/
-	
 
 	
-	/*function deleteAlert(alertId){
+	function changeStatus(activeFlag,alertId){
 		$.confirm({
-		    title: 'Confirm Delete',
-		    content: 'Are you sure you want to delete Load <strong>' + loadId +'</strong>?',
+		    title: 'Confirm change alert status',
+		    content: 'Are you sure you want to change the alert status?',
 		    buttons: {
 		        confirm: function () {
 		    		$("#divExecuting").show();
-		    	    $.post('/airflowwcs/load/delete?load='+loadId, $(this).serialize(), function(response) { 
+		    	    $.post('/airflowwcs/alerts/changeStatus?alert='+alertId+'&status='+activeFlag, $(this).serialize(), function(response) { 
 		    	    	$("#divExecuting").hide();
 		    	    	alertOnResponse(response); 
 		    			table.ajax.reload();
@@ -90,9 +81,9 @@ $(document).ready(function() {
 		        }
 		    }
 		});
-	}*/
+	}
 	
-	function searchLoads()
+	function searchAlerts()
 	{	
 		table.ajax.url('/airflowwcs/alerts/listSearch?description='+$("#description").val()).load(function() {
 			$("#divExecuting").hide();
@@ -103,12 +94,7 @@ $(document).ready(function() {
 	/************************************************************
 	 * 	 CLEAR MODIFY SCREEN FIELDS
 	 ************************************************************/
-	/*
-	
-	function clearModifyForm()
-	{
-		$('#description').html('');
-	}
+
 	
 	if(isAdmin) //admin specific context menu
 	{
@@ -118,65 +104,28 @@ $(document).ready(function() {
 		$(document).contextmenu({
 			delegate: ".dataTable td",
 			menu: [
-				{title: "Add Load", cmd: "addLoad"},
-				{title: "Modify Load", cmd: "modify"},
-//				{title: "Mark Load QCHOLD", cmd: "qchold"},
-//				{title: "Mark Load AVAILABLE", cmd: "avail"},
-				{title: "Delete Load", cmd: "delete" },
-				{title: "----"},
-				{title: "Show Details", cmd: "details" },
-				{title: "Show Location", cmd: "location" },
-				{title: "Show Moves", cmd: "moves" },
-				{title: "----"},
-				{title: "Retrieve", cmd: "retrieve" }
-				//{title: "Make Oldest", cmd: "oldest" }
+				{title: "Change alert status", cmd: "changeStatus"}
 				], 
 				select: function(event, ui) {
 
-					var idText = table.row(ui.target).id(); 
-					var celltext = ui.target.text();
+					var iId,activeFlag;
+					var columnData = table.row(ui.target).data();
+					console.log(columnData);
+					if (typeof columnData != "undefined") {
+						iId = columnData["iId"];
+						activeFlag = columnData["Active flag"]; 
+					}
+			
+					console.log("ID"+iId);
+					console.log("Active flag"+activeFlag);
 					switch(ui.cmd){
-					case "addLoad":
-						showAddLoad();
-						break;
-					case "modify":
-						showModifyLoad(idText); 
+					case "changeStatus":
+						changeStatus(activeFlag,iId); 
 						break; 					
-					case "qchold":
-						markLoadQCHOLD(idText); 
-						break; 
-					case "avail":
-						markLoadAVAIL(idText); 
-						break; 
-					case "delete":
-						deleteLoad(idText); 
-						break;
-					case "details":
-						showLoadDetails(idText); 
-						break;
-					case "location":
-						showLocation(idText); 
-						break;
-					case "moves":
-						showMoves(idText); 
-						break;				
-					case "retrieve":
-						showRetrieveLoad(idText);
-						//getRetrieveDest(idText);
-						break; 
-					case "oldest": 
-						makeOldest(idText); 
-						break;
-				
+					
 					default:
 						alert("ERROR: option not recognized."); 
 					}
-				},
-				beforeOpen: function(event, ui) {
-					var $menu = ui.menu,
-					$target = ui.target,
-					extraData = ui.extraData;
-
 				}
 		});
 	}else{
@@ -191,7 +140,6 @@ $(document).ready(function() {
 				select: function(event, ui) {
 
 					var idText = table.row(ui.target).id(); 
-					var celltext = ui.target.text();
 					switch(ui.cmd){
 					case "details":
 						showLoadDetails(idText); 
@@ -205,46 +153,9 @@ $(document).ready(function() {
 					default:
 						alert("ERROR: option not recognized."); 
 					}
-				},
-				beforeOpen: function(event, ui) {
-					var $menu = ui.menu,
-					$target = ui.target,
-					extraData = ui.extraData;
-
 				}
 		});
 	}
-	
-
-	$('#load-add-form').submit(function(){
-		$.post($(this).attr('action'), $(this).serialize(), function(response){
-			$("#add-modal .close").click()  // close modal
-			alertOnResponse(response); // alert if success or fail 
-			table.ajax.reload(); // reload the results
-			table.draw(); 
-		}); 
-		return false;
-	}); 
-	
-	$("#load-modify-form").submit(function(){
-		$.post($(this).attr('action'), $(this).serialize(), function(response){
-			$("#modify-modal .close").click()
-			alertOnResponse(response); 
-			table.ajax.reload(); 
-			table.draw(); 
-		}); 
-		return false; 
-	});
-	
-	$('#load-add-button').click(function(){
-		$('#load-add-form').submit();
-	});
-	
-	$('#load-modify-button').click(function(){
-		$('#load-modify-form').submit();
-	});
-	
-	*/
 
 } );
 

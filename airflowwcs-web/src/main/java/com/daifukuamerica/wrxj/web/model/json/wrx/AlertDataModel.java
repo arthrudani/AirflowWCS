@@ -3,6 +3,8 @@ package com.daifukuamerica.wrxj.web.model.json.wrx;
 import java.util.Date;
 
 import com.daifukuamerica.wrxj.dbadapter.data.AlertsData;
+import com.daifukuamerica.wrxj.dbadapter.data.OrderHeaderData;
+import com.daifukuamerica.wrxj.jdbc.DBTrans;
 
 /**
  * @author dystout
@@ -30,10 +32,10 @@ public class AlertDataModel
 
 	private String alertId;
 	private Date timeStamp;
-	private String eventCode;
+	private Integer eventCode;
 	private String description;
-	private String activeFlag;
-
+	private Integer activeFlag;
+	private String sActiveFlag;
 	/**
 	 * Encapsulation of wrxj AlertData
 	 */
@@ -56,7 +58,9 @@ public class AlertDataModel
 		this.timeStamp = ad.getTimeStamp();
 		this.eventCode = ad.getEventCode();
 		this.description = ad.getDescription();
-		this.activeFlag = ad.getActiveFlag();
+		this.activeFlag=ad.getActiveFlag();
+		this.sActiveFlag = DBTrans.getStringValue(AlertsData.ACTIVEFLAG_NAME, ad.getActiveFlag());
+		System.out.println("ACTIVE FLAG"+this.sActiveFlag);
 	}
 
 	/**
@@ -110,11 +114,11 @@ public class AlertDataModel
 		this.timeStamp = timeStamp;
 	}
 	
-	public String getEventCode()
+	public int getEventCode()
 	{
 		return eventCode;
 	}
-	public void setEventCode(String eventCode) {
+	public void setEventCode(int eventCode) {
 		this.eventCode = eventCode;
 	}
 	
@@ -127,12 +131,20 @@ public class AlertDataModel
 	}
 
 	
-	public String getActiveFlag()
+	public Integer getActiveFlag()
 	{
 		return activeFlag;
 	}
-	public void setActiveFlag(String activeFlag) {
+	public void setActiveFlag(Integer activeFlag) {
 		this.activeFlag = activeFlag;
+	}
+	
+	public String getsActiveFlag()
+	{
+		return sActiveFlag;
+	}
+	public void setsActiveFlag(String sActiveFlag) {
+		this.sActiveFlag = sActiveFlag;
 	}
 	
 	
@@ -145,7 +157,7 @@ public class AlertDataModel
 	 * @return
 	 * @throws NoSuchFieldException
 	 */
-	public WebAlertData getLoadData() throws NoSuchFieldException
+	public WebAlertData getAlertData() throws NoSuchFieldException
 	{
 		WebAlertData wad = null;
 		if(this.alertData==null)
@@ -154,6 +166,7 @@ public class AlertDataModel
 		}else{
 			wad = this.alertData;
 		}
+		System.out.println("WAD"+wad);
 		return wad;
 	}
 

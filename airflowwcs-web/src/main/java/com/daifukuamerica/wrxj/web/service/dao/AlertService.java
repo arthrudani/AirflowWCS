@@ -7,7 +7,11 @@ import java.util.Set;
 import java.util.TreeSet;
 
 import javax.servlet.ServletContext;
+import javax.swing.SwingUtilities;
 
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -17,6 +21,7 @@ import com.daifukuamerica.wrxj.dataserver.standard.StandardLoadServer;
 import com.daifukuamerica.wrxj.dataserver.standard.StandardMoveServer;
 import com.daifukuamerica.wrxj.dataserver.standard.StandardPickServer;
 import com.daifukuamerica.wrxj.dataserver.standard.StandardStationServer;
+import com.daifukuamerica.wrxj.dataserver.standard.TransactionToken;
 import com.daifukuamerica.wrxj.dbadapter.data.Alerts;
 import com.daifukuamerica.wrxj.dbadapter.data.AlertsData;
 import com.daifukuamerica.wrxj.dbadapter.data.Load;
@@ -27,12 +32,15 @@ import com.daifukuamerica.wrxj.dbadapter.data.StationData;
 import com.daifukuamerica.wrxj.factory.Factory;
 import com.daifukuamerica.wrxj.jdbc.DBConstants;
 import com.daifukuamerica.wrxj.jdbc.DBException;
+import com.daifukuamerica.wrxj.jdbc.DBObject;
+import com.daifukuamerica.wrxj.jdbc.DBObjectTL;
 import com.daifukuamerica.wrxj.jdbc.DBTrans;
 import com.daifukuamerica.wrxj.jdbc.InKeyObject;
 import com.daifukuamerica.wrxj.jdbc.KeyObject;
 import com.daifukuamerica.wrxj.util.SKDCUtility;
 import com.daifukuamerica.wrxj.web.core.AsrsMetaDataTransUtil;
 import com.daifukuamerica.wrxj.web.core.DBConstantsWeb;
+import com.daifukuamerica.wrxj.web.core.hibernate.HibernateUtils;
 import com.daifukuamerica.wrxj.web.model.json.AjaxResponse;
 import com.daifukuamerica.wrxj.web.model.json.TableDataModel;
 import com.daifukuamerica.wrxj.web.model.json.wrx.LoadDataModel;
@@ -65,104 +73,7 @@ public class AlertService
 
 	private AjaxResponse ajaxResponse;
 	private final String metaId = "Alert";
-
-	
-
-	/**
-	 * Delete a load with the specified ID
-	 *
-	 * @param id
-	 * @return {@link AjaxResponse}
-	 * @throws DBException
-	 */
-//	public AjaxResponse delete(String loadId)
-//	{
-//		AjaxResponse ajaxResponse = new AjaxResponse();
-//		//StandardInventoryServer mpInvServer = new StandardInventoryServer();
-//		EBSInventoryServer mpInvServer = new EBSInventoryServer();
-//		try
-//		{
-//			mpInvServer.deleteLoadWithAllData(loadId, "");
-//		}
-//		catch (DBException e)
-//		{
-//			ajaxResponse.setResponse(AjaxResponseCodes.FAILURE, "A database exception has occured");
-//			logger.error("LoadService (delete) Exception: {}", e.getMessage());
-//		}
-//		if (ajaxResponse.getResponseCode() == AjaxResponseCodes.DEFAULT)
-//		{
-//			ajaxResponse.setResponse(AjaxResponseCodes.SUCCESS, "Successfully deleted load: " + loadId);
-//			logger.info("Deleted Load ID : {}", loadId);
-//		}
-//		return ajaxResponse;
-//	}
-
-	/**
-	 * Modify a Alert with AlertDataModel {@see StandardAlertServer}
-	 *
-	 * @param req
-	 * @param resp
-	 * @return {@link AjaxResponse}
-	 */
-//	public AjaxResponse modify(AlertDataModel alertDataModel)
-//
-//	{
-//		AjaxResponse ajaxResponse = new AjaxResponse();
-//		StandardLoadServer mpLoadServer = Factory.create(StandardLoadServer.class);
-//		try
-//		{
-//			if (loadDataModel.getLoadDate() == null)
-//				loadDataModel.setLoadDate(new Date());
-//			// StandardLoadServer.updateLoadData is a TERRIBLE method that swallows exceptions
-//			// Try to avoid some false successes
-//			if (SKDCUtility.isBlank(loadDataModel.getWarehouse()))
-//			{
-//			  throw new Exception("Warehouse cannot be blank!");
-//			}
-//			if (SKDCUtility.isBlank(loadDataModel.getNextWarehouse()) && SKDCUtility.isNotBlank(loadDataModel.getNextAddress()))
-//            {
-//              throw new Exception("Next Warehouse cannot be blank when Next Address is not blank!");
-//            }
-//            if (SKDCUtility.isBlank(loadDataModel.getFinalWarehouse()) && SKDCUtility.isNotBlank(loadDataModel.getFinalAddress()))
-//            {
-//              throw new Exception("Final Warehouse cannot be blank when Final Address is not blank!");
-//            }
-//			mpLoadServer.updateLoadData(loadDataModel.getLoadData(), false);
-//		}
-//		catch (Exception e)
-//		{
-//			ajaxResponse.setResponse(AjaxResponseCodes.FAILURE, "Error modifying load: " + e.getMessage());
-//			logger.error("LoadService (modify) Exception: {}", e.getMessage());
-//		}
-//		if (ajaxResponse.getResponseCode() == AjaxResponseCodes.DEFAULT)
-//			ajaxResponse.setResponse(AjaxResponseCodes.SUCCESS, "Updated load " + loadDataModel.getLoadId());
-//		return ajaxResponse;
-//	}
-
-	/**
-	 * Find a specific load by ID
-	 *
-	 * @param loadId
-	 * @return LoadDataModel
-	 */
-//	public LoadDataModel findLoad(String loadId)
-//	{
-//		StandardLoadServer mpLoadServer = Factory.create(StandardLoadServer.class);
-//		LoadData loadData = mpLoadServer.getLoad(loadId);
-//		LoadDataModel ldm = null;
-//		try
-//		{
-//			ldm = new LoadDataModel(loadData);
-//			ldm.setAmountFull(ldm.getAmountFull()); // this will set our string
-//													// value for the amount full
-//		}
-//		catch (NoSuchFieldException e)
-//		{
-//			logger.error("LoadService (findLoad) Exception: {}", e.getMessage());
-//		}
-//
-//		return ldm;
-//	}
+	protected DBObject  mpDBObject;
 
 	
 	/**
@@ -214,17 +125,92 @@ public class AlertService
 			row = AsrsMetaDataTransUtil.getInstance().translateColumnValueMap(row, dbColumns, transColumns, metaId);
 		}
 		 results = new TableDataModel(utAlertData);
-		 System.out.println(utAlertData);
 		return results;
 	}
 
-//	public boolean isPicksRemainingOnLoad(String loadId) throws DBException
-//	{
-//		StandardMoveServer mpMoveServ = Factory.create(StandardMoveServer.class);
-//		boolean picksRemaining = (mpMoveServ.getMoveCount("", loadId, "") > 0);
-//
-//		return (picksRemaining);
-//	}
+	public AjaxResponse changeStatus(String alert, String status) {
+		try {
+			AjaxResponse ajaxResponse= new AjaxResponse();
+			TransactionToken ttok = null;
+			ensureDBConnection();
+			ttok = mpDBObject.startTransaction();
+			EBSTableJoin vpTJAlertHandler = new EBSTableJoin();
+			if(vpTJAlertHandler.changeAlertStatus(alert,status)) {
+				ajaxResponse.setResponse(1,"Successfully edited");
+			}
+			mpDBObject.commitTransaction(ttok);
+			mpDBObject.endTransaction(ttok);
+			removeDBConnection();
+		}
+		catch(Exception e) {
+			ajaxResponse.setResponse(0,"Can not change status");
+		}
+		
+		return ajaxResponse;
+	}
+	
+	public AjaxResponse changeAllStatus(int status) {
+		try {
+			AjaxResponse ajaxResponse= new AjaxResponse();
+			TransactionToken ttok = null;
+			ensureDBConnection();
+			ttok = mpDBObject.startTransaction();
+			EBSTableJoin vpTJAlertHandler = new EBSTableJoin();
+			if(vpTJAlertHandler.changeAllAlertStatus(status)) {
+				ajaxResponse.setResponse(1,"Successfully edited");
+			}
+			mpDBObject.commitTransaction(ttok);
+			mpDBObject.endTransaction(ttok);
+			removeDBConnection();
+		}
+		catch(Exception e) {
+			ajaxResponse.setResponse(0,"Can not change status");
+		}
+		
+		return ajaxResponse;
+	}
+	
+	
+	/**
+	  *  Method simply ensures database connectivity.  This is useful
+	  */
+	  protected void ensureDBConnection()
+	  {
+		if (mpDBObject == null || !mpDBObject.isConnectionActive())
+		{
+	      mpDBObject = new DBObjectTL().getDBObject();
+	      try { mpDBObject.connect(); }
+	      catch(DBException e)
+	      {
+	      }
+	    }
+	  }  
+	  
+	  /**
+	   * Method to close database connection
+	   */
+	  protected void removeDBConnection()
+	  {
+	    boolean threadCheckingOn = true;
+	    if(mpDBObject != null)
+	    {
+	      if(mpDBObject.checkConnected())
+	      {
+	        try
+	        {
+	          mpDBObject.disconnect(threadCheckingOn);
+	          if ((!threadCheckingOn) ||
+	            (!SwingUtilities.isEventDispatchThread()))
+	          {
+	            mpDBObject = null;
+	          }
+	        }
+	        catch (DBException e)
+	        {
+	        }
+	      }
+	    }
+	  }
 
 	
 }

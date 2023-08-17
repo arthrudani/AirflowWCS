@@ -12,7 +12,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="description" content="WRXJ - Work Maintenance Screen" />
 <meta charset="utf-8" />
-
+<link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
 <%-- Static Include --%>
 <%@include file="../_template/header.jspf"%>
 <%@include file="../_template/core_scripts.jspf"%>
@@ -82,6 +83,11 @@
 						
 						</div>						
 					</div>
+					<!-- Default switch -->
+					<lable>On/Off all alerts</lable>
+					<div>
+						<input type="checkbox" checked data-toggle="toggle" id="onOffButton" class="mt-5">
+					</div>
 					<!---------End of Third panel------------->
 				</div>
 <!---------End of First Row------------->	
@@ -93,16 +99,11 @@
 
 </div>
 
-<%-- <security:authorize access="hasAnyRole('ROLE_USER','ROLE_ADMIN','ROLE_MASTER')"> --%>
-<%-- 		<wrxj:ajaxTable metaDataName="Alert" ajaxUri="/airflowwcs/alerts/list" --%>
-<%-- 				metaId="Alert" hasRefresh="true" hasFilter="true" hasAdd="true"  --%>
-<%-- 				hasAutoRefresh="true" hasExcel="true" hasColVis="true" hasSearch="true" numPageLength="10"></wrxj:ajaxTable> --%>
-<%-- </security:authorize> --%>
 	
 	
 <wrxj:ajaxTable metaDataName="Alert" ajaxUri="/airflowwcs/alerts/list"
 	hasAutoRefresh="true" refreshRateSec="7" metaId="Alert"
-	hasRefresh="true" hasFilter="true" hasColVis="true" theme="inverse" numPageLength="10" hasOnAll="true"></wrxj:ajaxTable>
+	hasRefresh="true" hasFilter="true" hasColVis="true" theme="inverse" numPageLength="10"></wrxj:ajaxTable>
 	
 <%@include file="../_template/alertsFloatingHeader.jspf"%>
 <script src="<spring:url value="/resources/js/alert.js"/>" type="text/javascript"></script>

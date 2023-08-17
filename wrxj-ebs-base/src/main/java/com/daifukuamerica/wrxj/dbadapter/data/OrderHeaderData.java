@@ -51,7 +51,7 @@ public class OrderHeaderData extends AbstractSKDCData
   private int    iNextStatus          = DBConstants.HOLD;
   private int    iOrderStatus         = DBConstants.ORBUILDING;
   private int    iOrderType           = DBConstants.ITEMORDER;
-  protected int    iPriority            = 5;
+  protected int  iPriority            = 5;
   private Date   dOrderedTime         = new Date();
   private Date   dScheduledDate       = new Date();
   private Date   dShortOrderCheckTime = new Date();

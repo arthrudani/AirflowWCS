@@ -304,17 +304,41 @@ public class AjaxTableTag extends SimpleTagSupport
 		}
 		if(hasColVis)
 			sb.append("{ extend: 'colvis', text: '<i class=\"fa fa-columns fa-2x fa-fw\" aria-hidden=\"true\"></i>', postfixButtons: ['colvisRestore'] },");  // hide/show existing columns data tables function
+		if(hasOnAll) {
+//			sb.append("refreshEnabled"+tableId+"=true; ");
+//			sb.append("setInterval(function(){ if(refreshEnabled"+tableId+"){"
+//					+ "showLoadingAnimation('"+ tableId + "'); "
+//					//+ "table.ajax.reload(null, false); "
+//					+ "table"+ tableId + ".ajax.reload(function(){$(\".paginate_button > a\").on(\"focus\", function(){$(this).blur();});}, false);"
+//					+ " hideLoadingAnimation('"+ tableId + "');}},");
+//			sb.append(refreshRateSec*1000 + "); "); // default is 5 seconds
+//			sb.append("$(\"div.dt-buttons.btn-group \", \"#tblWrap"+tableId+"\").append('<label class=\"checkbox-inline\"> "
+//					+ "<input id=\"alert_toggle"+tableId+"\" type=\"checkbox\" name=\"alert_toggle\" data-toggle=\"toggle\" data-onstyle=\"success\" data-height=\"42\" data-offstyle=\"danger\" checked> <span class=\"label label-default\">On/Off All Alerts</span></label>'); 	 "
+//					+ "$(document).ready(function(){ console.log('alerts started for - "+tableId+" to state:'+ refreshEnabled"+tableId+"); $(\"#alert_toggle"+tableId+"\").change(function () { "
+//					+ " refreshEnabled"+tableId+" =!refreshEnabled"+tableId+"; console.log('alerts toggled to state:'+ refreshEnabled"+tableId+");"
+//					+ "}); }); ");
+			
+//			sb.append("<input type=\"checkbox\" class=\"multi-switch\" \r\n"
+//					+ "       initial-value=\"0\" \r\n"
+//					+ "       unchecked-value=\"2\" \r\n"
+//					+ "       checked-value=\"1\" \r\n"
+//					+ "       value=\"0\"\r\n"
+//					+ ">");
+//			sb.append("$('.multi-switch').multiSwitch({\r\n"
+//					+ "  functionOnChange: function ($element) {\r\n"
+//					+ "    // do something here\r\n"
+//					+ "  }\r\n"
+//					+ "});");
+			sb.append("{text:'<i class=\"fa fa-toggle-on fa-2x fa-fw\" aria-hidden=\"true\"></i>'," // on off all alerts
+						+"action: function(e,dt,node,config) { console.log('ON OFF alerts') }},");
+		}
 		if(hasSearch)
 			sb.append("	{ text:'<i class=\"fa fa-search fa-2x fa-fw\" aria-hidden=\"true\"></i>',"
 						+"action: function(e,dt,node,config){ $(\"#search-modal\").modal('show');	}}"); // open generic search modal (page specific)
 
 		sb.append("], responsive: true, \"scrollX\": true, ");
 		
-		if(hasOnAll) {
-			sb.append("{text:'<i class=\"fa fa-toggle-on fa-2x fa-fw\" aria-hidden=\"true\"></i>'," // on off all alerts
-						+"action: function(e,dt,node,config) { console.log('ON OFF alerts') }},");
 		
-		}
 		if(regexHighlightList!=null && regexHighlightList.length>=1)
 		{
 			sb.append("rowCallback: function(row, data, index){ ");

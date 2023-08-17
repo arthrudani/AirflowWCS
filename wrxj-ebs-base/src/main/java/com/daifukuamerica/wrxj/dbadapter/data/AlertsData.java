@@ -6,6 +6,8 @@ import com.daifukuamerica.wrxj.dbadapter.AbstractSKDCData;
 import com.daifukuamerica.wrxj.dbadapter.TableEnum;
 import com.daifukuamerica.wrxj.jdbc.AmountFullTransMapper;
 import com.daifukuamerica.wrxj.jdbc.ColumnObject;
+import com.daifukuamerica.wrxj.jdbc.DBConstants;
+import com.daifukuamerica.wrxj.jdbc.DBTrans;
 import com.daifukuamerica.wrxj.util.SKDCConstants;
 
 import java.util.Date;
@@ -22,9 +24,7 @@ import java.util.concurrent.ConcurrentHashMap;
  * @since       04-Jan-02
  */
 public class AlertsData extends AbstractSKDCData
-{
-  public static final String DEFAULT_POSITION_VALUE = "000";
-  
+{  
   public static final String ALERTID_NAME         = ALERTID.getName();
   public static final String TIMESTAMP_NAME       = TIMESTAMP.getName();
   public static final String EVENTCODE_NAME       = EVENTCODE.getName();
@@ -37,9 +37,9 @@ public class AlertsData extends AbstractSKDCData
 
   private String sAlertId           = "";
   private Date dTimeStamp			= new Date();
-  private String iEventCode         = "";
+  private int iEventCode			= 0;
   private String description     	= "";
-  private String iActiveFlag        = "";
+  private int iActiveFlag			= DBConstants.ON;
  
   private static final Map<String, TableEnum> mpColumnMap = new ConcurrentHashMap<String, TableEnum>();
   private static Map<String, AmountFullTransMapper> mpPartialQtyMap;
@@ -57,9 +57,9 @@ public class AlertsData extends AbstractSKDCData
     super.clear();
     sAlertId           	= "";
     dTimeStamp			= new Date();
-    iEventCode         	= "";
+    iEventCode			= 0;
     description     	= "";
-    iActiveFlag        	= "";
+    iActiveFlag			= DBConstants.ON;
   }
 
 
@@ -107,10 +107,9 @@ public class AlertsData extends AbstractSKDCData
     addColumnObject(new ColumnObject(TIMESTAMP_NAME, ipColValue));
   }
 
-  public void setEventCode(String iEventCode)
+  public void setEventCode(Integer ipColValue)
   {
-	  iEventCode = checkForNull(iEventCode);
-    addColumnObject(new ColumnObject(EVENTCODE_NAME, iEventCode));
+    addColumnObject(new ColumnObject(EVENTCODE_NAME, ipColValue));
   }
 
   public void setDescription(String description)
@@ -119,11 +118,20 @@ public class AlertsData extends AbstractSKDCData
     addColumnObject(new ColumnObject(DESCRIPTION_NAME, description));
   }
   
-  public void setActiveFlag(String iActiveFlag)
+  public void setActiveFlag(int inActiveFlag)
   {
-	  iActiveFlag = checkForNull(iActiveFlag);
-    addColumnObject(new ColumnObject(ACTIVEFLAG_NAME, iActiveFlag));
+	  try
+	    {
+	      DBTrans.getStringValue(ACTIVEFLAG_NAME, inActiveFlag);
+	    }
+	  catch(NoSuchFieldException e)
+	    {                                  // Passed value wasn't valid. Default it
+		  inActiveFlag = DBConstants.ON;
+	    }
+	  iActiveFlag=inActiveFlag;
+    addColumnObject(new ColumnObject(ACTIVEFLAG_NAME, inActiveFlag));
   }
+
 
 /*---------------------------------------------------------------------------
                               Get Methods.
@@ -138,7 +146,7 @@ public class AlertsData extends AbstractSKDCData
     return dTimeStamp;
   }
 
-  public String getEventCode()
+  public int getEventCode()
   {
     return iEventCode;
   }
@@ -148,9 +156,9 @@ public class AlertsData extends AbstractSKDCData
     return description;
   }
 
-  public String getActiveFlag()
+  public int getActiveFlag()
   {
-    return iActiveFlag;
+    return (iActiveFlag);
   }
 
 
@@ -181,7 +189,7 @@ public class AlertsData extends AbstractSKDCData
         break;
 
       case EVENTCODE:
-        setEventCode((String)ipColValue);
+        setEventCode((Integer)ipColValue);
         break;
         
       case DESCRIPTION:
@@ -189,7 +197,7 @@ public class AlertsData extends AbstractSKDCData
         break;
 
       case ACTIVEFLAG:
-        setActiveFlag((String)ipColValue);
+        setActiveFlag((Integer)ipColValue);
         break;
     }
 
