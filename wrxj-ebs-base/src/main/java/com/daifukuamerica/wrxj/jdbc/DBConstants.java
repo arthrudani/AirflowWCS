@@ -380,5 +380,13 @@ public interface DBConstants
   
   final int FULL_LOCATION 				  = 25;	//When Conveyor location is full 
   
-  final int DEFAULT_SHELF_POS = 0; 
+  final int DEFAULT_SHELF_POS 			   = 0;
+  final int IS_NOT_COMPLETED 			   = 0;
+  final int IS_COMPLETED				   = 1;
+  
+  final int SHUTTLE_RACK_LOCATION_TYPE	  = 20;
+  final int ALERT_ON	  				  = 1;
+  final int ALERT_OFF	 				  = 0;
+  
+  final String LOAD_ID_ZERO 			  = "0";
 }

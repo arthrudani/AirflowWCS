@@ -14,6 +14,7 @@ import com.daifukuamerica.wrxj.dbadapter.data.AlertsData;
 import com.daifukuamerica.wrxj.dbadapter.data.ItemMaster;
 import com.daifukuamerica.wrxj.dbadapter.data.LoadData;
 import com.daifukuamerica.wrxj.dbadapter.data.LoadLineItemData;
+import com.daifukuamerica.wrxj.dbadapter.data.LoadTransactionHistoryData;
 import com.daifukuamerica.wrxj.dbadapter.data.LocationData;
 import com.daifukuamerica.wrxj.dbadapter.data.MoveCommandData;
 import com.daifukuamerica.wrxj.dbadapter.data.OccupancyData;

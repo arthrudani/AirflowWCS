@@ -17,6 +17,8 @@ import com.daifukuamerica.wrxj.dbadapter.DBHelper;
 import com.daifukuamerica.wrxj.dbadapter.data.Load;
 import com.daifukuamerica.wrxj.dbadapter.data.LoadData;
 import com.daifukuamerica.wrxj.dbadapter.data.LoadLineItemData;
+import com.daifukuamerica.wrxj.dbadapter.data.LoadTransactionHistory;
+import com.daifukuamerica.wrxj.dbadapter.data.LoadTransactionHistoryData;
 import com.daifukuamerica.wrxj.dbadapter.data.Location;
 import com.daifukuamerica.wrxj.dbadapter.data.LocationData;
 import com.daifukuamerica.wrxj.dbadapter.data.Move;
@@ -68,6 +70,7 @@ public class EBSInventoryServer extends StandardInventoryServer {
     protected Load mpLoad ;
     private Location mpLocation;
     private ConveyorTableJoin conveyorTableJoin;
+    protected LoadTransactionHistory mpLoadTransactionHistory = Factory.create(LoadTransactionHistory.class);
    
 
     /**
@@ -1096,6 +1099,10 @@ public class EBSInventoryServer extends StandardInventoryServer {
 			endTransaction(tt);
 		}
 
+	}
+
+	public List<Map> getLoadTransactionHistoryList(LoadTransactionHistoryData vpLoadTransactionKey) throws DBException {
+		return mpLoadTransactionHistory.getAllElements(vpLoadTransactionKey);
 	}
 	
 }

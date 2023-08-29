@@ -1,6 +1,7 @@
 package com.daifukuamerica.wrxj.dataserver.standard;
 
 import com.daifukuamerica.wrxj.dbadapter.DBHelper;
+import com.daifukuamerica.wrxj.dbadapter.data.Alerts;
 import com.daifukuamerica.wrxj.dbadapter.data.ContainerType;
 import com.daifukuamerica.wrxj.dbadapter.data.ContainerTypeData;
 import com.daifukuamerica.wrxj.dbadapter.data.ItemMaster;
@@ -9,6 +10,8 @@ import com.daifukuamerica.wrxj.dbadapter.data.Load;
 import com.daifukuamerica.wrxj.dbadapter.data.LoadData;
 import com.daifukuamerica.wrxj.dbadapter.data.LoadLineItem;
 import com.daifukuamerica.wrxj.dbadapter.data.LoadLineItemData;
+import com.daifukuamerica.wrxj.dbadapter.data.LoadTransactionHistory;
+import com.daifukuamerica.wrxj.dbadapter.data.LoadTransactionHistoryData;
 import com.daifukuamerica.wrxj.dbadapter.data.Location;
 import com.daifukuamerica.wrxj.dbadapter.data.LocationData;
 import com.daifukuamerica.wrxj.dbadapter.data.Move;
@@ -61,7 +64,7 @@ public class StandardInventoryServer extends StandardServer
   protected LoadLineItem mpLLI = Factory.create(LoadLineItem.class);
   protected ItemMaster mpIM = Factory.create(ItemMaster.class);
   protected Load mpLoad = Factory.create(Load.class);
-
+  
   protected StandardHostServer mpHostServ = null;
 
   /**
@@ -3422,6 +3425,8 @@ public class StandardInventoryServer extends StandardServer
       mpHostServ = Factory.create(StandardHostServer.class);
     }
   }
+
+
 
   /*========================================================================*/
   /*  End helper-server initialization methods                              */

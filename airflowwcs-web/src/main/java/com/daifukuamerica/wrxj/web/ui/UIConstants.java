@@ -53,6 +53,7 @@ public interface UIConstants
 	final String VIEW_ITEMDETAILS_BYLOAD = "wrxj/itemdetails/itemDetailsByLoad";
 	final String VIEW_ITEMDETAILS_BYLOADLINEITEM = "wrxj/itemdetails/itemDetailsByLoadLineItem";	
 	final String VIEW_LOAD = "wrxj/load/load";
+	final String VIEW_LOADTRANSACTIONHISTORY = "wrxj/history/loadtransactionhistory";
 	final String VIEW_LOCATION = "wrxj/location/location";
 	final String VIEW_LOGIN = "login";
 	final String VIEW_LOGVIEW = "wrxj/logview/logview";

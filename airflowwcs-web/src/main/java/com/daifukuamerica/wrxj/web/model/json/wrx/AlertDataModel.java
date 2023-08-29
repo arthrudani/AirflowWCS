@@ -60,7 +60,6 @@ public class AlertDataModel
 		this.description = ad.getDescription();
 		this.activeFlag=ad.getActiveFlag();
 		this.sActiveFlag = DBTrans.getStringValue(AlertsData.ACTIVEFLAG_NAME, ad.getActiveFlag());
-		System.out.println("ACTIVE FLAG"+this.sActiveFlag);
 	}
 
 	/**
@@ -166,7 +165,6 @@ public class AlertDataModel
 		}else{
 			wad = this.alertData;
 		}
-		System.out.println("WAD"+wad);
 		return wad;
 	}
 

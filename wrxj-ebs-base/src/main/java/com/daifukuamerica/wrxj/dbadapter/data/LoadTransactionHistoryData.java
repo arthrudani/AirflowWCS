@@ -55,6 +55,9 @@ public class LoadTransactionHistoryData extends AbstractSKDCData {
 	public static final String STORAGESHUTTLEWAITINGTIME_NAME = STORAGESHUTTLEWAITINGTIME.getName();
 	public static final String RETRIEVALLIFTERWAITINGTIME_NAME = RETRIEVALLIFTERWAITINGTIME.getName();
 	public static final String RETRIEVALSHUTTLEWAITINGTIME_NAME = RETRIEVALSHUTTLEWAITINGTIME.getName();
+	public static final String ISCOMPLETED_NAME = ISCOMPLETED.getName();
+	public static final String ERTIMEOUTDATE_NAME = ERTIMEOUTDATE.getName();
+	
 
 	// -------------------Load Transaction History Table data -----------------------------
 	private String sLoadID          				= "";
@@ -63,34 +66,42 @@ public class LoadTransactionHistoryData extends AbstractSKDCData {
 	private String sCarrier							= "";
 	private String sGlobalID						= "";
 	private String sFlightNum 						= "";
-	private Date dFlightSTD							= null;
-	private Date dLastExpiryDate					= null;
-	private Date dExpectedReceiptDate				= null;
+	private Date dFlightSTD							;
+	private Date dLastExpiryDate					;
+	private Date dExpectedReceiptDate				=new Date();
 	private String sArrivalAisleID					= "";
 	private String sStorageLocationID				= "";
 	private String sStorageLifterID					= "";
-	private Date dStorageLoadAtEBSDate				= null;
-	private Date dStorageLoadPickedbyLifterDate 	= null;
-	private Date dStorageLoadDroppedbyLifterDate 	= null;
+	private Date dStorageLoadAtEBSDate				;
+	private Date dStorageLoadPickedbyLifterDate 	;
+	private Date dStorageLoadDroppedbyLifterDate 	;
 	private String sStorageShuttleID				= "";
-	private Date dStorageLoadPickedbyShuttleDate 	= null;
-	private Date dStorageLoadDroppedbyshuttleDate 	= null;
-	private Date dRetrievalOrderDate 				= null;
+	private Date dStorageLoadPickedbyShuttleDate 	;
+	private Date dStorageLoadDroppedbyshuttleDate 	;
+	private Date dRetrievalOrderDate 				;
 	private String dRetrievalShuttleID 				= "";
-	private Date dRetrievalLoadPickedbyShuttleDate 	= null;
-	private Date dRetrievalLoadDroppedbyshuttleDate = null;
+	private Date dRetrievalLoadPickedbyShuttleDate 	;
+	private Date dRetrievalLoadDroppedbyshuttleDate ;
 	private String sRetrievalLifterID 				= "";
-	private Date dRetrievalLoadPickedbyLiffterDate 	= null;
-	private Date dRetrievalLoadDroppedbyLiffterDate = null;
+	private Date dRetrievalLoadPickedbyLiffterDate 	;
+	private Date dRetrievalLoadDroppedbyLiffterDate ;
 	private String sRetrievalLocationID 			= "";
-	private int iStorageDuration 					= 0;
-	private int iDwelveTime 						= 0;
-	private int iRetrievalDuration 					= 0;
-	private int iStorageLifterWaitingTime 			= 0;
-	private int iStorageShuttleWaitingTime 			= 0;
-	private int iRetrievalLifterWaitingTime 		= 0;
-	private int iRetrievalShuttleWaitingTime 		= 0;
+	private long iStorageDuration 					= 0l;
+	private long iDwelveTime 						= 0l;
+	private long iRetrievalDuration 					= 0l;
+	private long iStorageLifterWaitingTime 			= 0l;
+	private long iStorageShuttleWaitingTime 			= 0l;
+	private long iRetrievalLifterWaitingTime 		= 0l;
+	private long iRetrievalShuttleWaitingTime 		= 0l;
+	private int iIsCompleted							= 0;
+	private Date dERTimeoutDate						;
 	
+	
+	// These are not data fields.  They're here to support weirdness in the 
+	// transaction history screens.  Someday that will hopefully be changed.
+	private Date mpStartingDate;
+	private Date mpEndingDate;
+	  
 	private static final Map<String, TableEnum> mpColumnMap = new ConcurrentHashMap<String, TableEnum>();
 	
 	public LoadTransactionHistoryData() {
@@ -134,7 +145,9 @@ public class LoadTransactionHistoryData extends AbstractSKDCData {
 				"\niStorageLifterWaitingTime: " + iStorageLifterWaitingTime +
 				"\niStorageShuttleWaitingTime: " + iStorageShuttleWaitingTime +
 				"\niRetrievalLifterWaitingTime: " + iRetrievalLifterWaitingTime +
-				"\niRetrievalShuttleWaitingTime: " + iRetrievalShuttleWaitingTime;
+				"\niRetrievalShuttleWaitingTime: " + iRetrievalShuttleWaitingTime +
+				"\niIsCompleted: " + iIsCompleted +
+				"\ndERTimeoutDate: " + dERTimeoutDate;
 		super.toString();
 		return s;
 	}
@@ -148,25 +161,12 @@ public class LoadTransactionHistoryData extends AbstractSKDCData {
 		sCarrier = "";
 		sGlobalID = "";
 		sFlightNum = "";
-		dFlightSTD = null;
-		dLastExpiryDate = null;
-		dExpectedReceiptDate = null;
 		sArrivalAisleID = "";
 		sStorageLocationID = "";
 		sStorageLifterID = "";
-		dStorageLoadAtEBSDate = null;
-		dStorageLoadPickedbyLifterDate = null;
-		dStorageLoadDroppedbyLifterDate = null;
 		sStorageShuttleID = "";
-		dStorageLoadPickedbyShuttleDate = null;
-		dStorageLoadDroppedbyshuttleDate = null;
-		dRetrievalOrderDate = null;
 		dRetrievalShuttleID = "";
-		dRetrievalLoadPickedbyShuttleDate = null;
-		dRetrievalLoadDroppedbyshuttleDate = null;
 		sRetrievalLifterID = "";
-		dRetrievalLoadPickedbyLiffterDate = null;
-		dRetrievalLoadDroppedbyLiffterDate = null;
 		sRetrievalLocationID = "";
 		iStorageDuration = 0;
 		iDwelveTime = 0;
@@ -175,6 +175,7 @@ public class LoadTransactionHistoryData extends AbstractSKDCData {
 		iStorageShuttleWaitingTime = 0;
 		iRetrievalLifterWaitingTime = 0;
 		iRetrievalShuttleWaitingTime = 0;
+		iIsCompleted = 0;
 	}
 	
 	@Override
@@ -234,7 +235,7 @@ public class LoadTransactionHistoryData extends AbstractSKDCData {
 
 	public void setFlightNum(String flightNum) {
 		sFlightNum = flightNum;
-		addColumnObject(new ColumnObject(FLIGHTNUM_NAME, sGlobalID));
+		addColumnObject(new ColumnObject(FLIGHTNUM_NAME, sFlightNum));
 	}
 
 	public Date getFlightSTD() {
@@ -417,68 +418,105 @@ public class LoadTransactionHistoryData extends AbstractSKDCData {
 		addColumnObject(new ColumnObject(RETRIEVALLOCATIONID_NAME, sRetrievalLocationID));
 	}
 
-	public int getStorageDuration() {
+	public long getStorageDuration() {
 		return iStorageDuration;
 	}
 
-	public void setStorageDuration(int storageDuration) {
+	public void setStorageDuration(long storageDuration) {
 		iStorageDuration = storageDuration;
 		addColumnObject(new ColumnObject(STORAGEDURATION_NAME, iStorageDuration));
 	}
 
-	public int getDwelveTime() {
+	public long getDwelveTime() {
 		return iDwelveTime;
 	}
 
-	public void setDwelveTime(int dwelveTime) {
+	public void setDwelveTime(long dwelveTime) {
 		iDwelveTime = dwelveTime;
 		addColumnObject(new ColumnObject(DWELVETIME_NAME, iDwelveTime));
 	}
 
-	public int getRetrievalDuration() {
+	public long getRetrievalDuration() {
 		return iRetrievalDuration;
 	}
 
-	public void setRetrievalDuration(int retrievalDuration) {
+	public void setRetrievalDuration(long retrievalDuration) {
 		iRetrievalDuration = retrievalDuration;
 		addColumnObject(new ColumnObject(RETRIEVALDURATION_NAME, iRetrievalDuration));
 	}
 
-	public int getStorageLifterWaitingTime() {
+	public long getStorageLifterWaitingTime() {
 		return iStorageLifterWaitingTime;
 	}
 
-	public void setStorageLifterWaitingTime(int storageLifterWaitingTime) {
+	public void setStorageLifterWaitingTime(long storageLifterWaitingTime) {
 		iStorageLifterWaitingTime = storageLifterWaitingTime;
 		addColumnObject(new ColumnObject(STORAGELIFTERWAITINGTIME_NAME, iStorageLifterWaitingTime));
 	}
 
-	public int getStorageShuttleWaitingTime() {
+	public long getStorageShuttleWaitingTime() {
 		return iStorageShuttleWaitingTime;
 	}
 
-	public void setStorageShuttleWaitingTime(int storageShuttleWaitingTime) {
+	public void setStorageShuttleWaitingTime(long storageShuttleWaitingTime) {
 		iStorageShuttleWaitingTime = storageShuttleWaitingTime;
 		addColumnObject(new ColumnObject(STORAGESHUTTLEWAITINGTIME_NAME, iStorageShuttleWaitingTime));
 	}
 
-	public int getRetrievalLifterWaitingTime() {
+	public long getRetrievalLifterWaitingTime() {
 		return iRetrievalLifterWaitingTime;
 	}
 
-	public void setRetrievalLifterWaitingTime(int retrievalLifterWaitingTime) {
+	public void setRetrievalLifterWaitingTime(long retrievalLifterWaitingTime) {
 		iRetrievalLifterWaitingTime = retrievalLifterWaitingTime;
 		addColumnObject(new ColumnObject(RETRIEVALLIFTERWAITINGTIME_NAME, iRetrievalLifterWaitingTime));
 	}
 
-	public int getRetrievalShuttleWaitingTime() {
+	public long getRetrievalShuttleWaitingTime() {
 		return iRetrievalShuttleWaitingTime;
 	}
 
-	public void setRetrievalShuttleWaitingTime(int retrievalShuttleWaitingTime) {
+	public void setRetrievalShuttleWaitingTime(long retrievalShuttleWaitingTime) {
 		iRetrievalShuttleWaitingTime = retrievalShuttleWaitingTime;
 		addColumnObject(new ColumnObject(RETRIEVALSHUTTLEWAITINGTIME_NAME, iRetrievalShuttleWaitingTime));
 	}
+	
+	public int getIsCompleted() {
+		return iIsCompleted;
+	}
+
+	public void setIsCompleted(int isCompleted) {
+		iIsCompleted = isCompleted;
+		addColumnObject(new ColumnObject(ISCOMPLETED_NAME, isCompleted));
+	}
+	
+	
+	
+	public Date getERTimeoutDate() {
+		return dERTimeoutDate;
+	}
+
+	public void setERTimeoutDate(Date eRTimeoutDate) {
+		dERTimeoutDate = eRTimeoutDate;
+		addColumnObject(new ColumnObject(ERTIMEOUTDATE_NAME, dERTimeoutDate));
+	}
+	
+	public Date getStartingDate()
+	{
+		return mpStartingDate;
+	}
+	  
+	public Date getEndingDate()
+	{	
+		return mpEndingDate;
+	}
+	public void setDateRangeKey(Date ipStartDate, Date ipEndDate)
+	  {
+	    setBetweenKey(FLIGHTSTD_NAME, ipStartDate, ipEndDate);
+	    mpStartingDate = ipStartDate;
+	    mpEndingDate = ipEndDate;
+	  }
+	
 	
 	/**
 	 * {@inheritDoc}
@@ -594,10 +632,15 @@ public class LoadTransactionHistoryData extends AbstractSKDCData {
 		case RETRIEVALSHUTTLEWAITINGTIME:
 			setRetrievalShuttleWaitingTime((int) ipColValue);
 			break;
+		case ISCOMPLETED:
+			setIsCompleted((int) ipColValue);
+			break;
+		case ERTIMEOUTDATE:
+			setERTimeoutDate((Date) ipColValue);
+			break;
 		}
 
 		return (0);
 	}
-
 	
 }

@@ -287,27 +287,6 @@ public class BaseDBInterface implements ModelInterface
 
 	    return 0;
   }
-  
-  
-  /**
-   * Retrieves List of all records matching some criteria.
-   *
-   * @param ipKey <code>AbstractSKDCData</code> object containing key
-   *            information to do the lookup. If there is no key info. then we
-   *            do a wild-card search.
-   *
-   * @return List of data.
-   */
-  @Override
-  public List<Map> getAllElements(AbstractSKDCData ipKey) throws DBException
-  {
-    // Clear out SQL String buffer.
-    StringBuilder vpSql = new StringBuilder("SELECT * FROM ").append(msReadTableName)
-               .append(DBHelper.buildWhereClause(ipKey.getKeyArray()))
-               .append(DBHelper.buildOrderByClause(ipKey.getOrderByColumns()));
-
-    return fetchRecords(vpSql.toString());
-  }
 
   /**
    * Method gets records with selected columns specified in ColumnObjects
@@ -1283,4 +1262,26 @@ public class BaseDBInterface implements ModelInterface
   {
     return mpDBObj.executeFunction(itReturnType, isFunctionName, iapParams);
   }
+  
+  
+  /**
+   * Retrieves List of all records matching some criteria.
+   *
+   * @param ipKey <code>AbstractSKDCData</code> object containing key
+   *            information to do the lookup. If there is no key info. then we
+   *            do a wild-card search.
+   *
+   * @return List of data.
+   */
+  @Override
+  public List<Map> getAllElements(AbstractSKDCData ipKey) throws DBException
+  {
+    // Clear out SQL String buffer.
+    StringBuilder vpSql = new StringBuilder("SELECT * FROM ").append(msReadTableName)
+               .append(DBHelper.buildWhereClause(ipKey.getKeyArray()))
+               .append(DBHelper.buildOrderByClause(ipKey.getOrderByColumns()));
+
+    return fetchRecords(vpSql.toString());
+  }
+  
 }

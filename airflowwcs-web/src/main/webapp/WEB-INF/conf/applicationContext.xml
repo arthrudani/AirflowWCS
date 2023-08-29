@@ -35,6 +35,7 @@
 	<bean id="itemService" class="com.daifukuamerica.wrxj.web.service.dao.ItemService"></bean>
 	<bean id="loadService" class="com.daifukuamerica.wrxj.web.service.dao.LoadService"></bean>
 	<bean id="loadLineItemService" class="com.daifukuamerica.wrxj.web.service.dao.LoadLineItemService"></bean>
+	
 	<bean id="locationService" class="com.daifukuamerica.wrxj.web.service.dao.LocationService"></bean>
 	<bean id="logViewService" class="com.daifukuamerica.wrxj.web.service.dao.LogViewService"></bean>
 	<bean id="moveService" class="com.daifukuamerica.wrxj.web.service.dao.MoveService"></bean>
@@ -62,7 +63,7 @@
 	<bean id="equipmentsService" class="com.daifukuamerica.wrxj.web.service.dao.EquipmentsService"></bean>
 	<bean id="occupancyService" class="com.daifukuamerica.wrxj.web.service.dao.OccupancyService"></bean>
 	<bean id="alertService" class="com.daifukuamerica.wrxj.web.service.dao.AlertService"></bean>
-	
+	<bean id="loadTransactionHistory" class="com.daifukuamerica.wrxj.web.service.dao.LoadTransactionHistoryService"></bean>	
 	
 
 <!--	HORNET Q DEPRECATED CONNECTION FACTORY, UNCOMMENT TO ENABLE JMS Template to use HornetQ

@@ -35,7 +35,7 @@ public class LoadTransactionHistory extends BaseDBInterface {
 	 * @param loadTransactionHistoryData
 	 * @throws DBException When anything goes wrong
 	 */
-	public void addLoadTransactionHistoty(LoadTransactionHistoryData loadTransactionHistoryData) throws DBException {
+	public void addLoadTransactionHistory(LoadTransactionHistoryData loadTransactionHistoryData) throws DBException {
 		addElement(loadTransactionHistoryData);
 	}
 
@@ -48,6 +48,7 @@ public class LoadTransactionHistory extends BaseDBInterface {
 	public LoadTransactionHistoryData findByLoadId(String loadID) throws DBException {
 		mpLoadTransactionHistoryData.clear();
 		mpLoadTransactionHistoryData.setKey(LoadTransactionHistoryData.LOADID_NAME, loadID);
+		mpLoadTransactionHistoryData.setKey(LoadTransactionHistoryData.ISCOMPLETED_NAME, DBConstants.IS_NOT_COMPLETED);
 		return getElement(mpLoadTransactionHistoryData, DBConstants.NOWRITELOCK);
 	}
 	
@@ -61,5 +62,20 @@ public class LoadTransactionHistory extends BaseDBInterface {
 		mpLoadTransactionHistoryData.clear();
 		mpLoadTransactionHistoryData.setKey(LoadTransactionHistoryData.BARCODE_NAME, barcode);
 		return getElement(mpLoadTransactionHistoryData, DBConstants.NOWRITELOCK);
+	}
+
+	/**
+	 * Update a load transaction history
+	 *
+	 * @param loadTransactionHistoryData
+	 * @throws DBException When anything goes wrong
+	 */
+	public void updateLoadTransactionHistory(LoadTransactionHistoryData loadTransactionHistoryData) throws DBException {
+		if (loadTransactionHistoryData.getKeyObject(LoadData.LOADID_NAME) == null)
+	    {
+	      loadTransactionHistoryData.setKey(LoadData.LOADID_NAME, loadTransactionHistoryData.getLoadID());
+	    }
+		loadTransactionHistoryData.setKey(LoadTransactionHistoryData.ISCOMPLETED_NAME, DBConstants.IS_NOT_COMPLETED);
+		modifyElement(loadTransactionHistoryData);
 	}
 }
